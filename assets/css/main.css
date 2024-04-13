@@ -255,6 +255,7 @@ body a,
 
 body a:hover,
 .btn.flat:hover,
+.btn-round:hover,
 .search-bar-btn:hover {
   filter: brightness(117.5%);
 }
