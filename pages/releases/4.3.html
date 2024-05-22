@@ -2,26 +2,40 @@
 permalink: /releases/4.3/
 title: "Godot 4.3 - Godot Engine"
 description: "Godot 4.3 release page"
-layout: default
+layout: release
 
 version: "4.3"
 ---
-{% include header.html %}
-{% include releases.html %}
 
-<div>
-	<article class="container">
-		<h2>More stable than ever.</h2>
-	</article>
-
-	<style type="text/css">
-	@layer release-4-3 {
-		h2 {
-			width: 100%;
-			text-align: center;
-		}
-	}
-	</style>
+<div id="release-4-3">
+	<div class="hero container">
+		<div class="tagline">
+			<h2>More stable than ever.</h2>
+		</div>
+		<div class="description">
+			<p>
+				Test test test test.
+			</p>
+		</div>
+	</div>
 </div>
 
-{% include footer.html %}
+<style type="text/css">
+@layer release, release-4-3;
+
+@layer release-4-3 {
+	#release-4-3 .hero {
+		display: grid;
+		grid-template-areas:
+			"tag desc";
+	}
+
+	#release-4-3 .hero .tagline {
+		grid-area: tag;
+	}
+
+	#release-4-3 .hero .description {
+		grid-area: desc;
+	}
+}
+</style>

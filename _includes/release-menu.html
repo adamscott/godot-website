@@ -1,0 +1,87 @@
+{% assign releases = "4.3, 4.2, 4.1, 4.0, 3.5" | split: ", " %}
+
+<nav class="release-menu">
+	<div class="release-menu-container container">
+		<ul class="release-list">
+			<li class="release-list-item">
+				<span>Releases</span>
+			</li>
+
+			{% for release in releases %}
+				<li class="release-list-item">
+					<a
+						href="/releases/{{ release }}/"
+						{% if page.version == release %}
+						class="active"
+						{% endif %}
+					>
+						<span>{{ release }}</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</nav>
+
+<style type="text/css">
+@layer main, release-menu;
+
+@layer release-menu {
+	.release-menu a {
+		display: block;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	.release-menu ul {
+		height: auto;
+	}
+
+	.release-menu-container {
+		width: 100%;
+	}
+
+	.release-menu {
+		background-color: var(--navbar-background-color);
+		box-shadow: var(--base-shadow);
+		width: 100%;
+		height: auto;
+	}
+
+	.release-list {
+		width: 100%;
+		max-width: 1200px;
+		margin: auto;
+		display: flex;
+		flex-direction: row;
+		justify-items: normal;
+		align-items: center;
+		gap: 1em;
+	}
+
+	.release-list-item {
+		margin: 0;
+		padding: 5px 10px;
+		width: auto;
+		text-align: center;
+	}
+
+	.release-menu .release-list a {
+		position: relative;
+		padding: 5px 10px;
+		margin: 0;
+	}
+
+	.release-menu .release-list a.active::after {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background-color: white;
+		bottom: 0;
+		left: 0;
+	}
+}
+</style>
