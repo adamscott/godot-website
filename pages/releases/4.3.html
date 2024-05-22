@@ -16,7 +16,29 @@ version: "4.3"
 			<p>
 				Test test test test.
 			</p>
+
+			<div class="links">
+				<a class="button" href="/download">
+					<span>Download</span>
+				</a>
+			</div>
 		</div>
+	</div>
+
+	<div id="visual-shader-editor" class="entry">
+		<div class="cover">
+			<div class="left"></div>
+			<div class="image"></div>
+			<div class="right"></div>
+		</div>
+		<div class="content container">
+			<div class="subtitle">Visual shader editor</div>
+			<h3 class="title">Reimagined</h3>
+		</div>
+	</div>
+
+	<div class="platforms">
+
 	</div>
 </div>
 
@@ -24,6 +46,11 @@ version: "4.3"
 @layer release, release-4-3;
 
 @layer release-4-3 {
+	#release-4-3 {
+		--max-width: 2000px;
+		--subtitle-font-size: clamp(1.2em, 2.5vw, 1.8em);
+	}
+
 	#release-4-3 .hero {
 		display: grid;
 		grid-template-areas:
@@ -36,6 +63,68 @@ version: "4.3"
 
 	#release-4-3 .hero .description {
 		grid-area: desc;
+	}
+
+	#release-4-3 .entry {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+
+	#release-4-3 #visual-shader-editor {
+		position: relative;
+		--header-size: 400px;
+		--header-size-mask: 100px;
+		--header-size-padding: 10px;
+		--mask-image: linear-gradient(
+			to bottom,
+			rgba(0,0,0,1) 0 calc(var(--header-size) - var(--header-size-mask)),
+			rgba(0,0,0,0) var(--header-size)
+		);
+	}
+
+	#release-4-3 #visual-shader-editor .cover {
+		display: grid;
+		grid-template-areas:
+			"left image right";
+		grid-template-columns:
+			1fr 100vw 1fr;
+		mask-image: var(--mask-image);
+	}
+
+	@media screen and (min-width: 2000px) {
+		#release-4-3 #visual-shader-editor .cover {
+			grid-template-columns:
+				1fr var(--max-width) 1fr;
+		}
+	}
+
+	#release-4-3 #visual-shader-editor .cover .image {
+		grid-area: image;
+		height: var(--header-size);
+		background-image: url("/assets/releases/4.3/visual-shader-editor.png");
+		background-size: cover;
+	}
+
+	#release-4-3 #visual-shader-editor .cover .left,
+	#release-4-3 #visual-shader-editor .cover .right {
+		background-color: #21262e;
+	}
+
+	#release-4-3 #visual-shader-editor .cover .left {
+		grid-area: left;
+	}
+	#release-4-3 #visual-shader-editor .cover .right {
+		grid-area: right;
+	}
+
+	#release-4-3 #visual-shader-editor .content {
+		padding-top: var(--header-size-padding);
+		text-align: center;
+	}
+
+	#release-4-3 .subtitle {
+		font-size: var(--subtitle-font-size);
+		font-weight: 700;
 	}
 }
 </style>
