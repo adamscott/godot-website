@@ -14,30 +14,36 @@
 
 - name: "android.apk"
   title: "Android"
-  caption: "Universal APK (ARM64 + ARMv7 + x86_64 + x86)"
+  caption: "Universal APK"
   tags:
     - APK download
-    - ARM64/v7
-    - x86 (64 & 32 bit)
+    - ARM64
+    - ARMv7
+    - x86-64
+    - x86
 
 - name: "android.playstore"
   title: "Android"
-  caption: "Play Store Universal (ARM64 + ARMv7 + x86_64 + x86)"
+  caption: "Play Store Universal"
   tags:
     - Play Store
-    - ARM64/v7
-    - x86 (64 & 32 bit)
+    - ARM64
+    - ARMv7
+    - x86-64
+    - x86
 
 - name: "linux.32"
   title: "Linux"
   caption: "Standard (x86)"
   tags:
+    - x86
     - 32 bit
 
 - name: "linux.64"
   title: "Linux"
-  caption: "Standard (x86_64)"
+  caption: "Standard (x86-64)"
   tags:
+    - x86-64
     - 64 bit
 
 - name: "linux.arm32"
@@ -56,22 +62,25 @@
 
 - name: "linux_server.64"
   title: "Linux Server"
-  caption: "Standard (x86_64)"
+  caption: "Standard (x86-64)"
   tags:
+    - x86-64
     - 64 bit
 
 - name: "linux_server.headless.64"
   title: "Linux Server"
-  caption: "Headless (x86_64)"
+  caption: "Headless (x86-64)"
   tags:
+    - x86-64
     - 64 bit
     - Headless
 
 - name: "macos.universal"
   title: "macOS"
-  caption: "Universal (x86_64 + Apple Silicon)"
+  caption: "Standard"
   tags:
-    - Intel/Apple Silicon
+    - Apple Silicon
+    - x86-64
     - 64 bit
 
 - name: "web"
@@ -85,10 +94,19 @@
   title: "Windows"
   caption: "Standard (x86)"
   tags:
+    - x86
     - 32 bit
 
 - name: "windows.64"
   title: "Windows"
-  caption: "Standard (x86_64)"
+  caption: "Standard (x86-64)"
   tags:
+    - x86-64
+    - 64 bit
+
+- name: "windows.arm64"
+  title: "Windows"
+  caption: "Standard (ARM64)"
+  tags:
+    - ARM64
     - 64 bit
