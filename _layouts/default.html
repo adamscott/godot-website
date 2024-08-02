@@ -3,6 +3,56 @@
 
 <head>
 	<meta charset="utf-8">
+
+	<!-- adamscott.github.io/godot-website -->
+	<base href="https://adamscott.github.io/godot-website/">
+	<link rel="canonical" href="https://adamscott.github.io/godot-website/" />
+	<script type="module">
+		// This code sample uses features introduced in Workbox v6.
+		import {Workbox} from "https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-window.prod.mjs";
+
+		if ("serviceWorker" in navigator) {
+		  const wb = new Workbox("/godot-website/sw.js");
+		  let registration;
+
+		  const showSkipWaitingPrompt = async (event) => {
+			// Assuming the user accepted the update, set up a listener
+			// that will reload the page as soon as the previously waiting
+			// service worker has taken control.
+			wb.addEventListener("controlling", () => {
+			  // At this point, reloading will ensure that the current
+			  // tab is loaded under the control of the new service worker.
+			  // Depending on your web app, you may want to auto-save or
+			  // persist transient state before triggering the reload.
+			  window.location.reload();
+			});
+
+			// When `event.wasWaitingBeforeRegister` is true, a previously
+			// updated service worker is still waiting.
+			// You may want to customize the UI prompt accordingly.
+
+			// This code assumes your app has a promptForUpdate() method,
+			// which returns true if the user wants to update.
+			// Implementing this is app-specific; some examples are:
+			// https://open-ui.org/components/alert.research or
+			// https://open-ui.org/components/toast.research
+			const updateAccepted = await promptForUpdate();
+
+			if (updateAccepted) {
+			  wb.messageSkipWaiting();
+			}
+		  };
+
+		  // Add an event listener to detect when the registered
+		  // service worker has installed but is waiting to activate.
+		  wb.addEventListener("waiting", (event) => {
+			showSkipWaitingPrompt(event);
+		  });
+
+		  wb.register();
+		}
+	  </script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Godot Engine">
 	<meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}Develop your 2D & 3D games, cross-platform projects, or even XR ideas!{% endif %}">
