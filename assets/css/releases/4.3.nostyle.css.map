@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "4.3.nostyle.css",
+	"sources": [
+		"4.3.nostyle.scss"
+	],
+	"sourcesContent": [
+		"#download-download {\n\t.release-card-media {\n\t\t.card-download {\n\t\t\t.card-download-details {\n\t\t\t\t.card-download-platforms {\n\t\t\t\t\t.download-platform,\n\t\t\t\t\t.btn-download-primary {\n\t\t\t\t\t\tdisplay: unset;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n"
+	],
+	"names": [],
+	"mappings": "AAAA,AAKK,kBALa,CACjB,mBAAmB,CAClB,cAAc,CACb,sBAAsB,CACrB,wBAAwB,CACvB,kBAAkB,CALvB,kBAAkB,CACjB,mBAAmB,CAClB,cAAc,CACb,sBAAsB,CACrB,wBAAwB,CAEvB,qBAAqB,AAAC,CACrB,OAAO,CAAE,KAAK,CACd"
+}
