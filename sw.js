@@ -7,7 +7,7 @@ const matchCb = ({url, request, event}) => {
 	if (url.origin !== "https://adamscott.github.io") {
 		return false;
 	}
-	return url.pathnmame.startsWith("/") && !url.pathname.startsWith("/godot-website");
+	return url.pathname.startsWith("/") && !url.pathname.startsWith("/godot-website");
 };
 
 /** @type {(options: { url: URL, request: Request, event: Event, params: string[] }) => Promise<Response>} */
