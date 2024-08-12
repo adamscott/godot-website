@@ -232,7 +232,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										enable you to create complex, layered music and transitions.
 									</p>
 									<p>
-										This allows you to build your own dynamic music system, which reacts to the context of your game!
+										This allows you to build your own dynamic music system, which reacts to the context of your game.
 									</p>
 								</div>
 								<div class="c-link"
@@ -262,16 +262,25 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										Physics interpolation is the key to decouple physics ticks and display
-										frame rates. What it does is to create dynamically frames inbetween the last
-										physics position and the current one.
+										Physics interpolation is used to decouple physics ticks and display
+										frame rates. It creates additional frames inbetween the last
+										physics position and the current one. This reduces jitter, effectively
+										making for a smoother appearance overall.
 									</p>
 
 									<p>
-										While it is not a silver bullet, these additional frames can greatly improve support
-										for high-refresh displays. Or, it can enable you to display smooth animations with a
-										low physics tick rate.
+										This is useful for two things:
 									</p>
+									<ol>
+										<li>
+											If you are making a mobile game, a lower tick rate is less
+											taxing on the hardware you develop for, but normally would
+											have meant compromising on smoothness. Not anymore!
+										</li>
+										<li>
+											Your games will look better on high refresh displays
+										</li>
+									</ol>
 								</div>
 								<div class="c-link"
 									data-contributors="rburing,lawnjelly"
@@ -294,18 +303,24 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#highlights-visual-shader">Visual shader editor</a>
+									<a href="#highlights-visual-shader">Overhauled visual shader editor</a>
 								</h4>
 								<div class="c-blockquote">
-									<span class="highlight">Complete overhaul</span>
+									<span class="highlight">Declutter</span> your shader nodes
 								</div>
 								<div class="c-content">
 									<p>
 										The visual shader editor has been revamped from the ground up.
 									</p>
 									<p>
-										Selected nodes are now highlighted! You can also now add reroute nodes to space
-										out content and you can insert frames in order to organize neatly your shader.
+										Clicking on a node now highlights it for better visibility.
+									</p>
+									<p>
+										Two new node types have been added: a reroute node and a frame node.
+										Neither of them influence your shader code, rather than being useful to
+										organize your workspace.<br>
+										You can add a reroute node to any existing connection between nodes
+										and move it freely. A frame node is used to bundle related nodes visually.
 									</p>
 								</div>
 								<div class="c-link"
@@ -329,19 +344,23 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#highlights-interactive-music-support">Single-threaded Web export</a>
+									<a href="#highlights-interactive-music-support">Single-threaded Web exports</a>
 								</h4>
 								<div class="c-blockquote">
-									Back to our <span class="highlight">single-threaded</span> roots
+									Back to the basics
 								</div>
 								<div class="c-content">
 									<p>
-										We orignially aimed for the stars, but browsers are still down to Earth.
+										Godot 3 supported both single- and multi-threaded Web exports.
+										When we released Godot 4, we assumed that browser technology would soon
+										improve enough to only focus on multi-threading. Since that did not happen,
+										we are adding back the option to export single-threaded applications.
 									</p>
 									<p>
-										By bringing back single-threaded export for the Web platform,
-										we got more compatible across browsers and we eliminated
-										the need of complicated server-side configurations.
+										By doing so, we achive better browser compatibility, making it easier and
+										faster to upload your games to the Web platform. This also removes the
+										need for complicated server-side configurations and other limitations
+										users experienced before.
 									</p>
 								</div>
 								<div class="c-link"
@@ -367,25 +386,32 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#highlights-new-tilemaplayer-node">
-										<code>TileMapLayer</code>
+										<code>TileMap</code> layers turn into <code>TileMapLayer</code> nodes
 									</a>
 								</h4>
 								<div class="c-blockquote">
-									A <span class="highlight">new node</span> has moved into town
+									Layers have become <span class="highlight">more flexible</span>
 								</div>
 								<div class="c-content">
 									<p>
-										Gone is the era of handling multiple layers of <code>TileMap</code>.
+										Before this release, if you wanted to add layers to your <code>TileMap</code>,
+										you had to add them in the inspector. We simplified this by creating a new
+										<code>TileMapLayer</code> node to replace the old way completely.
 									</p>
 									<p>
-										With Godot 4.3, we deprecated the <code>TileMap</code> node in order and we
-										created the <code>TileMapLayer</code> node. By doing this, we reduced clutter in
-										the inspector, we simplified the API, and layers are now in line with common
-										Godot design patterns.
+										Aside from being more intuitive to use, this is now more in line with
+										Godot Engine's design philosophy in general.
+									</p>
+									<p>
+										For your convenience, you can convert your existing <code>TileMap</code>
+										nodes into <code>TileMapLayer</code> nodes with one click directly in the
+										editor. The deprecated node type is still supported for the time being,
+										if you prefer.
 									</p>
 								</div>
 								<div class="c-link"
-									data-contributors="groud">
+									data-contributors="groud"
+									data-read-more="https://github.com/godotengine/godot/pull/89179">
 								</div>
 							</div>
 						</div>
@@ -418,7 +444,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#2d-parallax2d-node">
-										<code>Parallax2D</code>
+										New <code>Parallax2D</code> node available
 									</a>
 								</h4>
 								<div class="c-blockquote">
@@ -426,12 +452,18 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										The new <code>Parallax2D</code> node aims to greatly simplify the use of
-										parallax in your games. You don't have to deal with <code>CanvasLayer</code>
-										anymore.
+										Parallax is a visual effect used in 2D games to give players the
+										illusion of depth. This is done by moving background elements at
+										different speeds.
 									</p>
 									<p>
-										We even included a nifty converter!
+										While you were able to add a parallax effect to your games already,
+										the previous implementation of <code>ParallaxLayer</code> came with
+										limitations. For instance, overlaying effects as seen in the video
+										here was impossible before.
+									</p>
+									<p>
+										Once again, we also built in a converter for your existing scenes.
 									</p>
 								</div>
 								<div class="c-link"
@@ -454,19 +486,24 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#2d-pixel-art-stability">Pixel art stability</a>
+									<a href="#2d-pixel-art-stability">Improved pixel art stability</a>
 								</h4>
 								<div class="c-blockquote">
-									<span class="highlight">Stabilize</span> those pixels
+									Moving pixels<span class="highlight">align</span> again
 								</div>
 								<div class="c-content">
 									<p>
-										In the last release, some users reported issues despite checking
-										"Snap 2D Transforms to Pixel" in the project settings.
+										What was happening: when snapping transformations to surfaces,
+										users reported gaps and misplaced pixels. This was caused by
+										previously unrefined calculations within those transforms.
+										This could only be circumvented by unsnapping, which was not
+										an ideal solution.
 									</p>
 									<p>
-										In 4.3, new algorithms are used to stabilize pixel positions
-										which should ensure your character staying grounded.
+										This is now fixed, as can be seen in the video below.
+										Focus on the red markings on the left, and compare to the
+										proper transforms on the right. Notice that the objects
+										properly snap this time.
 									</p>
 								</div>
 								<div class="c-link"
@@ -504,7 +541,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#animation-skeletonmodifier3d-node">
-										<code>SkeletonModifier3D</code>
+										New <code>SkeletonModifier3D</code> node
 									</a>
 								</h4>
 								<div class="c-blockquote">
@@ -512,20 +549,14 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										This new abstract node was made to animate <code>Skeleton3D</code> outside of
-										<code>AnimationMixer</code> and is now the base class for several existing
-										nodes.
+										Prior to this release, moving bones via script was tricky.
+										The new <code>SkeletonModifier3D</code> node makes this process both easier
+										to grasp and more flexible overall.
 									</p>
 									<p>
-										You can't use it directly, but you can create your own custom
-										<code>SkeletonModifier3D</code> node easily using a simple script.
-									</p>
-									<p>
-										You'll be able to implement the new
-										<code class="highlight">
-											<span class="function">_process_modification</span><span class="symbol">()</span>
-										</code>
-										function to modify the bones how ever you like!
+										Important to note: this is an abstract node, meaning you cannot add it to
+										your projects directly. Instead you can <code>extend</code> it in your
+										scripts for custom functionality.
 									</p>
 								</div>
 								<div class="c-link"
@@ -543,7 +574,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#animation-skeletal-animation-import-options">
-										Skeletal animation import options
+										New skeletal animation import options
 									</a>
 								</h4>
 								<div class="c-blockquote">
@@ -551,13 +582,13 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										We implemented new import options in order to assist you in retargeting
-										animation sets, especially those using the <code>.fbx</code> format.
+										These new import options assist you in retargeting
+										animation sets, especially those using the <code>.fbx</code>
+										format.
 									</p>
 									<p>
-										From importing a rest pose as <em>RESET</em> animation to a retargeting option
-										to use a template for silhouette, we've made sure that you'll be able to fully
-										use all the skeletons in your closet.
+										To ensure that you'll be able to fully use all the skeletons in your closet,
+										you can now set rest poses, use your own templates, and more.
 									</p>
 								</div>
 								<div class="c-link"
@@ -581,7 +612,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#animation-keyframe-manipulation">
-										Keyframe manipulation
+										Enable keyframe manipulation
 									</a>
 								</h4>
 								<div class="c-blockquote">
@@ -589,7 +620,6 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>You can finally select, copy, paste, and duplicate keyframes.</p>
-									<p>What a relief!</p>
 								</div>
 								<div class="c-link"
 									data-contributors="CookieBadger"
