@@ -162,6 +162,10 @@ $donate-robot-size: 500px;
 		margin-top: auto;
 		margin-bottom: auto;
 	}
+
+	.release-card-media {
+		justify-content: end;
+	}
 }
 
 #download-download {
@@ -229,6 +233,12 @@ $donate-robot-size: 500px;
 				margin-top: 20px;
 			}
 		}
+	}
+
+	.c-blockquote {
+		text-align: center;
+		max-width: 500px;
+		margin: auto;
 	}
 }
 
