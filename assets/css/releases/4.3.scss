@@ -348,51 +348,79 @@ $donate-robot-size: 500px;
 	/** Color **/
 	--card-background-color: white;
 	--card-color: #2d2d2d;
+	--color-code-symbol: #{$color-code-symbol--light};
+	--color-code-keyword: #{$color-code-keyword--light};
+	--color-code-controlflow: #{$color-code-controlflow--light};
+	--color-code-basetype: #{$color-code-basetype--light};
+	--color-code-enginetype: #{$color-code-enginetype--light};
+	--color-code-usertype: #{$color-code-usertype--light};
+	--color-code-string: #{$color-code-string--light};
+	--color-code-background: #{$color-code-background--light};
+	--color-code-text: #{$color-code-text--light};
+	--color-code-function: #{$color-code-function--light};
+	--color-code-membervariable: #{$color-code-membervariable--light};
+	--color-code-gdscript-function: #{$color-code-gdscript-function--light};
+	--color-code-gdscript-globalfunction: #{$color-code-gdscript-globalfunction--light};
+	--color-code-gdscript-nodepath: #{$color-code-gdscript-nodepath--light};
+	--color-code-gdscript-nodereference: #{$color-code-gdscript-nodereference--light};
+	--color-code-gdscript-annotation: #{$color-code-gdscript-annotation--light};
+	--color-code-gdscript-stringname: #{$color-code-gdscript-stringname--light};
 	@include is-dark() {
 		--card-background-color: #333639;
 		--card-color: white;
+		--color-code-symbol: #{$color-code-symbol--dark};
+		--color-code-keyword: #{$color-code-keyword--dark};
+		--color-code-controlflow: #{$color-code-controlflow--dark};
+		--color-code-basetype: #{$color-code-basetype--dark};
+		--color-code-enginetype: #{$color-code-enginetype--dark};
+		--color-code-usertype: #{$color-code-usertype--dark};
+		--color-code-string: #{$color-code-string--dark};
+		--color-code-background: #{$color-code-background--dark};
+		--color-code-text: #{$color-code-text--dark};
+		--color-code-function: #{$color-code-function--dark};
+		--color-code-membervariable: #{$color-code-membervariable--dark};
+		--color-code-gdscript-function: #{$color-code-gdscript-function--dark};
+		--color-code-gdscript-globalfunction: #{$color-code-gdscript-globalfunction--dark};
+		--color-code-gdscript-nodepath: #{$color-code-gdscript-nodepath--dark};
+		--color-code-gdscript-nodereference: #{$color-code-gdscript-nodereference--dark};
+		--color-code-gdscript-annotation: #{$color-code-gdscript-annotation--dark};
+		--color-code-gdscript-stringname: #{$color-code-gdscript-stringname--dark};
 	}
 
 	code.highlight {
 		$_padding: 5px;
 
 		display: inline-block;
-		background-color: $color-code-background;
-		@include is-light() {
-			background-color: white;
-		}
+		background-color: var(--color-code-background);
 		padding: 0 $_padding;
 		margin: 0 ($_padding / 2);
 		border-radius: $_padding;
 
-		color: $color-code-text;
-		@include is-light() {
-			color: #393939;
-		}
+		color: var(--color-code-text);
 
 		.symbol {
-			color: $color-code-symbol;
+			color: var(--color-code-symbol);
 		}
 		.keyword {
-			color: $color-code-keyword;
+			color: var(--color-code-keyword);
 		}
 		.controlflow {
-			color: $color-code-controlflow;
+			color: var(--color-code-controlflow);
 		}
 		.basetype {
-			color: $color-code-basetype;
+			color: var(--color-code-basetype);
 		}
 		.function {
-			color: $color-code-function;
+			color: var(--color-code-function);
 		}
 		.membervariable {
-			color: $color-code-membervariable;
+			color: var(--color-code-membervariable);
 		}
 		.gdscript-globalfunction {
-			color: $color-code-gdscript-globalfunction;
+			color: var(--color-code-gdscript-globalfunction);
 		}
 		.gdscript-annotation {
-			color: $color-code-gdscript-annotation;
+			color: var(--color-code-gdscript-annotation);
 		}
 	}
 
