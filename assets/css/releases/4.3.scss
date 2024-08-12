@@ -358,11 +358,17 @@ $donate-robot-size: 500px;
 
 		display: inline-block;
 		background-color: $color-code-background;
+		@include is-light() {
+			background-color: white;
+		}
 		padding: 0 $_padding;
 		margin: 0 ($_padding / 2);
 		border-radius: $_padding;
 
 		color: $color-code-text;
+		@include is-light() {
+			color: #393939;
+		}
 
 		.symbol {
 			color: $color-code-symbol;
