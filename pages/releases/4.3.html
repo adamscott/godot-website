@@ -1700,6 +1700,20 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										They can be used for everything from advanced post processing
 										effects to completely custom rendering!
 									</p>
+									<p>--ADDITIONAL DEFINITION BY BASTIAAN--</p>
+									<p>
+										Compositor effects allow a user to inject additional render passes
+										at predetermined points in the render pipeline. This is an advanced
+										feature that does require intimate knowledge of how rendering works
+										but enables users to efficiently create a variety of special effects.
+										Advanced users of Godot can implement new features that regular users
+										can adapt to their needs.
+									</p>
+									<p>
+										We're already seeing some great examples from early adaptors who are
+										using this feature to create god rays, implement motion blur or completely
+										change the styling of their game.
+									</p>
 								</div>
 								<div class="c-link"
 									data-contributors="BastiaanOlij"
@@ -1946,22 +1960,35 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #xr-composition-layers-2d-quality -->
 
-				<div id="xr-fixed-tracking-issues-native-mobile-interface" class="release-card inverted">
+				<div id="xr-scene-discovery-spacial-anchors-on-meta-headsets" class="release-card inverted">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#xr-fixed-tracking-issues-native-mobile-interface">
-										Fixed tracking issues in the native mobile interface
+									<a href="#xr-scene-discovery-spacial-anchors-on-meta-headsets">
+										Scene discovery/spatial anchors on Meta headsets
 									</a>
 								</h4>
 								<div class="c-content">
-									<p class="replace-me"></p>
+									<p>
+										Augmented reality requires you to have knowledge of the world
+										around you so you can interact with it. Meta's new scene discovery
+										capabilities allow you to do just that and off course Godot now has
+										support for this feature. From simply getting a mesh of the world
+										around you, to getting informed of key elements of the room such
+										as where walls are, tables are placed, etc.
+									</p>
+									<p>
+										Spatial anchors let you further decorate this data by identifying
+										points in your space and having the system remember those locations
+										even after restarting your games. This lets you anchor screens, place
+										objects that will reappear in the same location, etc.
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> <!-- #xr-fixed-tracking-issues-native-mobile-interface -->
+				</div> <!-- #xr-scene-discovery-spacial-anchors-on-meta-headsets -->
 
 				<div id="xr-standardized-support-tracking" class="release-card span-3">
 					<div class="release-card-container">
@@ -1983,25 +2010,34 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #xr-standardized-support-tracking -->
 
-				<div id="xr-meta-extensions" class="release-card span-2 inverted">
+				<div id="xr-meta-xr-simulator-support" class="release-card span-2 inverted">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#xr-meta-extensions">
-										Support for various Meta extensions such as hand models, render models, and
-										scene discovery
+									<a href="#xr-meta-xr-simulator-support">
+										Meta XR simulator support
 									</a>
 								</h4>
-								<div class="c-blockquote replace-me">
-								</div>
 								<div class="c-content">
-									<p class="replace-me"></p>
+									<p>
+										One difficulty in developing XR games is having to continuously test your
+										application on a headset, especially when developing for stand alone
+										headsets.
+									</p>
+									<p>
+										The Meta XR simulator is a free option to run your XR game without using
+										your headset.
+									</p>
+									<p>
+										We've made it easy to configure the simulator to use it directly from Godot.
+										It works both on Windows and on macOS.
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> <!-- #xr-meta-extensions -->
+				</div> <!-- #xr-meta-xr-simulator-support -->
 
 				<div id="xr-improvements" class="release-card">
 					<div class="release-card-container">
@@ -2009,12 +2045,21 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#xr-improvements">
-										Improvements to foveated rendering/vrs, passthrough, and various other
-										supporting systems
+										Performance and stability improvements
 									</a>
 								</h4>
 								<div class="c-content">
-									<p class="replace-me"></p>
+									<p>
+										Various improvements have been made to make XR more stable and perform better.
+										We have improved the timing of tracking data for more stable tracking.
+										The core of the XR implementation is now thread safe allowing you to run rendering
+										on a separate thread.
+									</p>
+									<p>
+										More control has been added over foveated rendering on the mobile and Forward+
+										renderer. Glasses based AR and passthrough based AR have been unified to make it easier
+										to create augmented reality games without having to worry about hardware differences.
+									</p>
 								</div>
 							</div>
 						</div>
