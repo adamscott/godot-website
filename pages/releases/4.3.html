@@ -275,12 +275,12 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</p>
 									<ol>
 										<li>
+											Your games will look better on displays with a high refresh rate
+										</li>
+										<li>
 											If you are making a mobile game, a lower tick rate is less
 											taxing on the hardware you develop for, but normally would
 											have meant compromising on smoothness. Not anymore!
-										</li>
-										<li>
-											Your games will look better on high refresh displays
 										</li>
 									</ol>
 								</div>
@@ -312,10 +312,14 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										The visual shader editor has been revamped from the ground up.
+										The visual shader editor has been revamped from the ground up,
+										to be more visually appealing and to enhance the readability of large,
+										complex shader graphs.
 									</p>
 									<p>
-										Clicking on a node now highlights it for better visibility.
+										Nodes are now colored based on their category and the colors of connections
+										have been adjusted to be easier on the eye. Clicking on a node now highlights
+										it for better visibility.
 									</p>
 									<p>
 										Two new node types have been added: a reroute node and a frame node.
@@ -850,21 +854,21 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										Since Direct3D is preferred by Windows, this new rendering driver
-										improves compatibility with any Microsoft platform. Additionally, with
-										Windows coming to ARM recently, this means you can use the Godot
-										Engine on those devices from now on, as well as export your games
-										for them.
+										Since Direct3D is preferred by Windows, the addition of this new
+										rendering driver improves compatibility with any Microsoft platform.
+										Moreover, with Windows coming to ARM recently, this means you can use
+										the Godot Engine on those devices from now on, as well as export your
+										games for them.
 									</p>
 									<p>
-										Until now, you had to build a custom Godot version yourself and
-										include the <code>DXIL.dll</code> library at the root of your project
-										in order to use Direct3D 12 in Godot. All of this because that file
-										used to be proprietary, which prevented us from bundling
-										it with the Godot Engine. Thanks to
+										Until now, you had to build a custom Godot version yourself and include
+										the <code>DXIL.dll</code> library at the root of your project in order
+										to use Direct3D 12. This complication stemmed from the file being
+										proprietary, which prevented us from bundling it with the Godot Engine.
+										Thanks to
 										<a href="https://devblogs.microsoft.com/directx/open-sourcing-dxil-validator-hash/">Microsoft open-sourcing it last month</a>,
-										this is not a problem anymore, enabling us to support and enable using
-										the Direct3D 12 rendering driver directly in official builds.
+										this is not a problem anymore, enabling us to support the Direct3D 12
+										rendering driver directly in official builds.
 									</p>
 								</div>
 								<div class="c-link"
@@ -933,13 +937,17 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										Following the lead of other software documentations, we added a comment section to
-										the Godot Docs. Please note that it is intended to be used for general corrections
-										and not individual tech-support; for problems with your project please visit the
-										<a href="https://forum.godotengine.org/">official forum</a> instead.
+										Following the lead of other software documentations, we added a comment section
+										to the <a href="https://docs.godotengine.org/en/stable/">Godot Docs</a> backed
+										by <a href="https://giscus.app/">Giscus</a>: another
+										<abbr title="free open-source software">FOSS</abbr> project that utilizes
+										GitHub Discussions to let you comment on a page. You need to be logged into your
+										GitHub account for that reason.
 									</p>
 									<p>
-										To comment on a page, you need to be logged into your GitHub account.
+										Please note that commenting is intended for general corrections and not individual
+										tech-support; for problems with your project please visit the
+										<a href="https://forum.godotengine.org/">official forum</a> instead.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1988,28 +1996,30 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 		</div>
 		<div class="container">
 			<div class="release-cards">
-				<div id="xr-composition-layers" class="release-card span-2 media-left">
+				<div id="xr-2d-content-renders-less-blurry" class="release-card span-2 media-left inverted">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#xr-composition-layers">
-										Composition layers
+									<a href="#xr-2d-content-renders-less-blurry">
+										2D content renders less blurry
 									</a>
 								</h4>
 								<div class="c-blockquote">
-									Blur, go away
+									Finally, someone cleaned the glass
 								</div>
 								<div class="c-content">
 									<p>
-										Visuals rendered by Godot will be modified by the XR compositor in order
-										to correct for the lens distortion. This extra processing can cause 2D
-										content rendered into 3D by Godot to become a little blurry and harder-to-read,
-										especially the small text found in user interfaces.
+										To correct for lens distortion, visuals in 3D space have to be
+										modified by the XR compositor. This extra processing can cause
+										2D content to become a little blurry and harder-to-read, especially
+										the small text found in user interfaces.
 									</p>
 									<p>
-										Composition layers allow the XR compositor to directly render a Godot viewport,
-										leading to crisper and clearer 2D content.
+										By adding your UI in a
+										<code class="highlight"><span class="basetype">OpenXRCompositionLayer</span></code>
+										node, you can force the XR compositor to directly render a viewport,
+										leading to crisper and clearer 2D content.
 									</p>
 								</div>
 								<div class="c-link"
@@ -2026,35 +2036,35 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							</video>
 						</div>
 					</div>
-				</div> <!-- #xr-composition-layers -->
+				</div> <!-- #xr-2d-content-renders-less-blurry -->
 
-				<div id="xr-hand-body-face-tracking-standardized" class="release-card">
+				<div id="xr-standardized-hand-body-face-tracking" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#xr-hand-body-face-tracking-standardized">
-										Hand, body, and face tracking standardized
+									<a href="#xr-standardized-hand-body-face-tracking">
+										Standardized hand, body, and face tracking
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										Godot has long supported hand tracking, however, this was limited to only OpenXR.
-										Now we have a standardized system for XR hand tracking, that can be used by any XR interface,
-										allowing developers to use the same nodes and code to create a hand tracking experience that
-										will work in multiple XR eco-systems. This is currently supported by both OpenXR and WebXR.
+										In this release, we introduced a new standardized system for XR hand tracking,
+										which allows developers to use one kind of node (and code) to create a hand
+										tracking experience that will work in multiple XR eco-systems. This is currently
+										supported by both OpenXR and WebXR.
 									</p>
 									<p>
-										Similar systems were added for body and face tracking, which are brand new features in Godot 4.3!
-										This is currently supported in OpenXR on Meta Quest headsets.
+										Brand new features are systems for body and face tracking, that are built in the
+										same standartized way, but currently only supported in OpenXR on Meta Quest headsets.
 									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> <!-- #xr-hand-body-face-tracking-standardized -->
+				</div> <!-- #xr-standardized-hand-body-face-tracking -->
 
-				<div id="xr-performance-stability-improvements" class="release-card span-3 inverted">
+				<div id="xr-performance-stability-improvements" class="release-card span-3">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
@@ -2082,7 +2092,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 											renderers
 										</li>
 										<li>
-											glasses-based AR and passthrough-based AR have been unified
+											glasses-based AR & passthrough-based AR have been unified
 										</li>
 									</ul>
 								</div>
@@ -2251,13 +2261,13 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</h4>
 								<div class="c-content">
 									<p>
-										Coded by <a href="https://adamscott.studio">Adam Scott</a> &amp; <a href="https://coppolaemilio.com/">Emilio Coppola</a>
+										Web development by <a href="https://adamscott.studio">Adam Scott</a> with help from <a href="https://coppolaemilio.com/">Emilio Coppola</a>
 									</p>
 									<p>
 										Design template by <a href="https://luiscarli.com/">Luis Carli</a>
 									</p>
 									<p>
-										Visual content by <a href="https://adamscott.studio">Adam Scott</a> with special thanks to <a href="https://gdquest.com/">GDQuest</a> and <a href="https://kenney.nl/">Kenney</a>
+										Visuals by <a href="https://adamscott.studio">Adam Scott</a> with special thanks to <a href="https://gdquest.com/">GDQuest</a> and <a href="https://kenney.nl/">Kenney</a>
 									</p>
 									<p>
 										Texts by <a href="https://bio.link/murderveggie">Nathalie Galla</a> &amp; <a href="https://adamscott.studio">Adam Scott</a>
