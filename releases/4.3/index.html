@@ -309,7 +309,7 @@ the editor or not
 (<code class=highlight><span class=function>is_editor_hint</span><span class=symbol>()</span></code>).<p>How you declare a runtime class depends on the bindings you use. For
 the officially maintained
 <a href=https://github.com/godotengine/godot-cpp/>godot-cpp</a>
-you use <code class=highlight><span class=function>GDREGISTER_RUNTIME_CLASS</span><span class=symbol>(</span>ExampleRuntime<span class=symbol>)</span></code> in your module
+you use <code class=highlight><span class=function>GDREGISTER_RUNTIME_CLASS</span><span class=symbol>(</span><wbr>ExampleRuntime<span class=symbol>)</span></code> in your module
 initialization; screenshot on the right for reference.</div><div class=c-link data-contributors=dsnopek data-read-more=https://github.com/godotengine/godot/pull/82554></div></div></div><div class=release-card-media><img class="release-card-image position-bottom-left" src=/storage/releases/4.3/images/gdextension-runtime-class.webp alt="Image of the documentation syntax highlight and copy button features." draggable=false></div></div></div><div id=gdextension-register-virtual-methods class="release-card span-2 inverted"><div class=release-card-container><div class=release-card-content><div class=release-card-content-container><h4 class=c-title><a href=#gdextension-register-virtual-methods>Register virtual methods</a></h4><div class=c-content><p>A virtual method (also known as virtual function) is a declared within
 a base class, but implemented only by the derived class. This means the
 actual method call depends on the object type during runtime.<p>GDExtension classes already were able to implement virtual methods
