@@ -180,7 +180,21 @@ for (const cLink of cLinks) {
 
 		const button = cLink.appendChild(document.createElement("button"));
 		button.classList.add("c-link-popover-button");
-		button.classList.add("codicon", "codicon-git-merge");
+		const span = button.appendChild(document.createElement("span"));
+		switch (contributors.length) {
+			case 2: {
+				span.textContent = "group";
+			} break;
+			case 3: {
+				span.textContent = "groups";
+			} break;
+			case 1:
+			default: {
+				span.textContent = "person";
+			}
+		}
+		span.classList.add("material-symbols-outlined");
+		span.style.transform = "translateY(5px)";
 		button.title = contributorsText;
 		button.setAttribute("popovertarget", contributorsId);
 
