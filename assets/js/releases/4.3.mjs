@@ -251,3 +251,26 @@ const popovers = document.querySelectorAll("[popover]");
 for (const popover of popovers) {
 	popover.addEventListener("toggle", positionPopover);
 }
+
+// Lazy-load videos
+const lazyVideos = Array.from(document.querySelectorAll("video.lazy"));
+const lazyVideoObserver = new IntersectionObserver((entries, observer) => {
+	for (const entry of entries) {
+		if (!entry.isIntersecting) {
+			continue;
+		}
+
+		for (var entryChildElement of entry.target.children) {
+			if (typeof entryChildElement.tagName === "string" && entryChildElement.tagName === "SOURCE") {
+				entryChildElement.src = entryChildElement.dataset.src;
+			}
+		}
+
+		entry.target.load();
+		entry.target.classList.remove("lazy");
+		observer.unobserve(entry.target);
+	}
+});
+for (const lazyVideo of lazyVideos) {
+	lazyVideoObserver.observe(lazyVideo);
+}
