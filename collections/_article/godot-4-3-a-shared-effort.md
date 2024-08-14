@@ -4,7 +4,7 @@ excerpt: "With over 3,400 commits authored by over 500 contributors, the latest 
 categories: ["release"]
 author: "Godot contributors"
 image: /storage/blog/covers/godot-4-3-a-shared-effort.webp
-date: 2024-08-13 12:00:00
+date: 2024-08-15 12:00:00
 redirect_to:
  - /releases/4.3/
 ---
