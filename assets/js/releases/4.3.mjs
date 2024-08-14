@@ -46,7 +46,7 @@ for (const el of ["commits", "contributors"]) {
 // Add a scrolling effect to each card and title.
 const windowHeight = window.innerHeight;
 /** @type {HTMLDivElement[]} */
-const elements = Array.from(gsap.utils.toArray(".release-content .section .release-cards .release-card"));
+const elements = Array.from(gsap.utils.toArray(".release-content .section .release-cards .release-card, .release-content .section .section-title"));
 for (const element of elements) {
 	if (element.getBoundingClientRect().top < windowHeight) {
 		continue;
