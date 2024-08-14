@@ -692,6 +692,13 @@ $donate-robot-size: 500px;
 							}
 						}
 
+						.c-content {
+							a {
+								color: var(--color-invert-highlight);
+								text-decoration: var(--color-invert-highlight);
+							}
+						}
+
 						.c-link {
 							.c-link-a,
 							.c-link-popover-button {
@@ -905,6 +912,11 @@ $donate-robot-size: 500px;
 								&:last-of-type {
 									margin-bottom: 0;
 								}
+							}
+
+							a {
+								color: var(--color-highlight);
+								text-decoration-color: var(--color-highlight);
 							}
 						}
 
