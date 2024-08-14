@@ -17,6 +17,7 @@
 		$base-color-bottom: adjust-color(offset-hue($base-color, $offset, $diff + 1), $lightness: -10);
 		$color-top: adjust-color($base-color-top, $saturation: -10);
 		$color-bottom: adjust-color($base-color-bottom, $saturation: -10);
+		$color-selection: adjust-color($base-color-bottom, $saturation: -30);
 		$color-invert: adjust-color($base-color-top, $hue: 180, $lightness: 0, $saturation: 30);
 		$color-highlight: adjust-color($base-color-top, $lightness: 0, $saturation: 30);
 		$color-highlight--dark: adjust-color($base-color-top, $lightness: 30, $saturation: 30);
@@ -25,6 +26,7 @@
 			#{$section}: (
 				color-top: $color-top,
 				color-bottom: $color-bottom,
+				color-selection: $color-selection,
 				color-invert: $color-invert,
 				color-highlight: $color-highlight,
 				color-highlight--dark: $color-highlight--dark,

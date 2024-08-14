@@ -660,6 +660,10 @@ $donate-robot-size: 500px;
 				}
 			}
 
+			& *::selection {
+				background-color: var(--color-selection);
+			}
+
 			&.inverted {
 				background:
 					var(--color-top)
@@ -1050,6 +1054,7 @@ $donate-robot-size: 500px;
 				&.section-#{$section-name} {
 					--color-top: #{map-get($section-colors, "color-top")};
 					--color-bottom: #{map-get($section-colors, "color-bottom")};
+					--color-selection: #{map-get($section-colors, "color-selection")};
 					--color-invert: #{map-get($section-colors, "color-invert")};
 					--color-highlight: #{map-get($section-colors, "color-highlight")};
 					--color-highlight-switch: #{map-get($section-colors, "color-highlight--dark")};
