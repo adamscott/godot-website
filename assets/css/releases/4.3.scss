@@ -962,8 +962,8 @@ $donate-robot-size: 500px;
 								inset: unset;
 
 								a {
-									color: var(--color-invert-highlight);
-									text-decoration-color: var(--color-invert-highlight);
+									color: var(--color-highlight-switch);
+									text-decoration-color: var(--color-highlight-switch);
 								}
 							}
 						}
@@ -1047,9 +1047,11 @@ $donate-robot-size: 500px;
 					--color-bottom: #{map-get($section-colors, "color-bottom")};
 					--color-invert: #{map-get($section-colors, "color-invert")};
 					--color-highlight: #{map-get($section-colors, "color-highlight")};
+					--color-highlight-switch: #{map-get($section-colors, "color-highlight--dark")};
 					--color-invert-highlight: #{map-get($section-colors, "color-invert-highlight")};
 					@include is-dark() {
 						--color-highlight: #{map-get($section-colors, "color-highlight--dark")};
+						--color-highlight-switch: #{map-get($section-colors, "color-highlight")};
 					}
 				}
 			}
