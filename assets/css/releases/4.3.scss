@@ -305,6 +305,25 @@ $donate-robot-size: 500px;
 	}
 }
 
+#special-thanks-remi {
+	.c-blockquote {
+		padding-left: var(--card-padding);
+		border-left: 2px solid grey;
+		font-size: 1em;
+		font-weight: 400;
+		font-style: italic;
+
+		& > p {
+			&:first-of-type {
+				margin-top: 0;
+			}
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
 .container {
 	// gsap issue on mobile otherwise.
 	overflow: hidden;
@@ -574,6 +593,10 @@ $donate-robot-size: 500px;
 
 			background-color: var(--card-background-color);
 			color: var(--card-color);
+
+			&.transparent-card {
+				background-color: transparent;
+			}
 
 			@mixin media-top() {
 				grid-template-areas:
@@ -1217,4 +1240,8 @@ $donate-robot-size: 500px;
 	@include screen-is-one-column-wide() {
 		grid-column: span 1;
 	}
+}
+
+.align-right {
+	text-align: right;
 }
