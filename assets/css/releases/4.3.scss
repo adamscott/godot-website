@@ -309,7 +309,11 @@ $donate-robot-size: 500px;
 	.c-blockquote {
 		padding-left: var(--card-padding);
 		border-left: 2px solid grey;
-		font-size: 1em;
+		font-size: clamp(
+			var(--card-content-font-size-clamp-min),
+			var(--card-content-font-size-clamp-val),
+			var(--card-content-font-size-clamp-max)
+		);
 		font-weight: 400;
 		font-style: italic;
 
