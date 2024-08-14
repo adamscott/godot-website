@@ -19,6 +19,7 @@
 		$color-bottom: adjust-color($base-color-bottom, $saturation: -10);
 		$color-invert: adjust-color($base-color-top, $hue: 180, $lightness: 0, $saturation: 30);
 		$color-highlight: adjust-color($base-color-top, $lightness: 0, $saturation: 30);
+		$color-highlight--dark: adjust-color($base-color-top, $lightness: 30, $saturation: 30);
 		$color-invert-highlight: adjust-color($color-invert, $lightness: 20, $saturation: 30);
 		$return-value: map-merge($return-value, (
 			#{$section}: (
@@ -26,6 +27,7 @@
 				color-bottom: $color-bottom,
 				color-invert: $color-invert,
 				color-highlight: $color-highlight,
+				color-highlight--dark: $color-highlight--dark,
 				color-invert-highlight: $color-invert-highlight
 			)
 		));
