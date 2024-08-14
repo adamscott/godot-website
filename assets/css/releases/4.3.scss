@@ -431,6 +431,10 @@ $donate-robot-size: 500px;
 	}
 }
 
+#highlights {
+	margin-top: var(--release-section-margin-bottom);
+}
+
 .container {
 	// gsap issue on mobile otherwise.
 	overflow: hidden;
