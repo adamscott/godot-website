@@ -1175,7 +1175,8 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									<p>
 										Before, whenever you wanted to register a GDextension class that is only used
 										during runtime, you had to wrap it in a check to see if you were currently in
-										the editor or not (<code>is_editor_hint()</code>).
+										the editor or not
+										(<code class="highlight"><span class="function">is_editor_hint</span><span class="symbol">()</span></code>).
 									</p>
 									<p>
 										How you declare a runtime class depends on the bindings you use. For
@@ -1573,8 +1574,11 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										processing of runtime changes within the navigation map.
 									</p>
 									<p>
-										In this release, both <code>NavigationPolygon</code> (2D) and <code>NavigationMesh</code>
-										(3D) resources received new properties to define baking bounds and border size offsets.
+
+										In this release, both
+										<code class="highlight"><span class="basetype">NavigationPolygon</span></code> (2D)
+										and <code class="highlight"><span class="basetype">NavigationMesh</span></code> (3D)
+										resources received new properties to define baking bounds and border size offsets.
 										Combined, these two properties can be used to bake navigation mesh chunks automatically
 										with perfectly aligned edges to their neighbor chunks.
 									 </p>
@@ -1608,16 +1612,18 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										<code>NavigationObstacle2D</code> and <code>NavigationObstacle3D</code>
+										<code class="highlight"><span class="basetype">NavigationObstacle2D</span></code>
+										and
+										<code class="highlight"><span class="basetype">NavigationObstacle3D</span></code>
 										now include two new properties to affect baking:
 									</p>
 									<ol>
 										<li>
-											<code>affect_navigation_mesh</code> makes the obstacle contribute to the
+											<code class="highlight">affect_navigation_mesh</code> makes the obstacle contribute to the
 											navigation mesh during baking
 										</li>
 										<li>
-											<code>carve_navigation_mesh</code> additionally makes the shape unaffected
+											<code class="highlight">carve_navigation_mesh</code> additionally makes the shape unaffected
 											by offsets of the baking. The obstacle now basically acts as a stencil and
 											cuts into the final navigation mesh surface. It still will be affected by
 											further postprocessing.
@@ -1653,7 +1659,9 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</h4>
 								<div class="c-content">
 									<p>
-										With the new path simplification option on <code>NavigationAgent</code> nodes,
+										With the new path simplification option on
+										<code class="highlight"><span class="basetype">NavigationAgent</span></code>
+										nodes,
 										it is now possible to remove less critical path points algorithmically.
 									</p>
 									<p>
@@ -1662,8 +1670,11 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										path points remain as targets.
 									</p>
 									<p>
-										The algorithm is also exposed from the <code>NavigationServer</code> where it can
-										be used to simply any generic <code>Vector2</code>/<code>Vector3</code> array.
+										The algorithm is also exposed from the
+										<code class="highlight"><span class="basetype">NavigationServer</span></code>
+										where it can be used to simply any generic
+										<code class="highlight"><span class="basetype">Vector2</span></code>/<code class="highlight"><span class="basetype">Vector3</span></code>
+										array.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1760,17 +1771,21 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#rendering-new-renderingdevice-architecture">
-										New <code>RenderingDevice</code> architecture
+										New
+										<code class="highlight"><span class="basetype">RenderingDevice</span></code>
+										architecture
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										We refactored <code>RenderingDevice</code>, specifically how it manages device contexts,
+										We refactored
+										<code class="highlight"><span class="basetype">RenderingDevice</span></code>,
+										specifically how it manages device contexts,
 										in order to annihilate some stubborn bugs in this area.
 									</p>
 									<p>
-										As a bonus, this lets us create new RenderingDevices whenever needed, which paved the way
-										for finally baking lightmaps in the Compatibility renderer (which we recommend when
+										As a bonus, this lets us create new rendering devices whenever needed, which paved the way
+										for finally baking lightmaps in the <em>Compatibility</em> renderer (which we recommend when
 										targeting low-end devices and the Web platform at the moment).
 									</p>
 								</div>
@@ -1833,7 +1848,8 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										<code>RenderingDevice</code>, the part of the engine that powers the <em>Forward+</em>
+										<code class="highlight"><span class="basetype">RenderingDevice</span></code>,
+										the part of the engine that powers the <em>Forward+</em>
 										and <em>Mobile</em> renderering backends, was improved by the introduction of a directed
 										acyclic render graph.
 									</p>
@@ -1845,7 +1861,8 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</p>
 									<p>
 										Without making any changes to your 3D scene, you should expect to see a frame rate improvement
-										of 5% to 15% (and more if you heavily use GPUParticles)!
+										of 5% to 15% (and more if you heavily use
+										<code class="highlight"><span class="basetype">GPUParticles</span></code>)!
 									</p>
 								</div>
 								<div class="c-link"
@@ -1862,7 +1879,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#rendering-compatibility-renderer-features">
-										Compatibility renderer features
+										<em>Compatibility</em> renderer features
 									</a>
 								</h4>
 								<div class="c-content">
