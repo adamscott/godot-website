@@ -398,7 +398,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										<code class="highlight"><span class="basetype">TileMap</span></code>,
 										you had to add them in the inspector. We simplified this by creating a new
 										<code class="highlight"><span class="basetype">TileMapLayer</span></code>
-										node to replace the old way completely.
+										node to replace the old approach completely
 									</p>
 									<p>
 										Aside from being more intuitive to use, this is now more in line with
@@ -718,8 +718,8 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										or roofs.
 									</p>
 									<p>
-										Shoutout to the game developement streamers in our community, since this was one
-										of the issues brought forward by them.
+										Shoutout to the game developement streamers in our community, since they were the ones to
+										raise this issue first!
 									</p>
 								</div>
 								<div class="c-link"
@@ -755,7 +755,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									<p>
 										The algorithm is also exposed from the
 										<code class="highlight"><span class="basetype">NavigationServer</span></code>
-										where it can be used to simply any generic
+										where it can be used to simplify any generic
 										<code class="highlight"><span class="basetype">Vector2</span></code>/<code class="highlight"><span class="basetype">Vector3</span></code>
 										array.
 									</p>
@@ -802,7 +802,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</p>
 									<p>
 										By supporting this industry standard, we hope to improve your 3D
-										workflows. This update also comes with some general improvements
+										workflows. This release also comes with some general improvements
 										in this area of the engine.
 									</p>
 								</div>
@@ -961,11 +961,11 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									<a href="#twod-pixel-art-stability">Improved pixel art stability</a>
 								</h4>
 								<div class="c-blockquote">
-									Moving pixels <span class="highlight">align</span> again
+									Moving pixels <span class="highlight">re-aligned</span>
 								</div>
 								<div class="c-content">
 									<p>
-										What was happening: when snapping transformations to surfaces,
+										Here is what was happening: when snapping transformations to surfaces,
 										users reported gaps and misplaced pixels. This was caused by
 										previously unrefined calculations within those transforms.
 										This could only be circumvented by unsnapping, which was not
@@ -1117,7 +1117,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										With depth-based fog, you can now decide where the fog begins
+										With depth-based fog, you can decide where the fog begins
 										and when it transitions to fully opaque.
 									</p>
 									<p>
@@ -1264,7 +1264,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</p>
 									<p>
 										Until now, you had to build a custom Godot version yourself and include
-										the <code>DXIL.dll</code> library at the root of your project in order
+										the <code>DXIL.dll</code> library in your project in order
 										to use Direct3D 12. This complication stemmed from the file being
 										proprietary, which prevented us from bundling it with the Godot Engine.
 										Thanks to
@@ -1293,6 +1293,9 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									Leading the <span class="highlight">Wayland</span>
 								</div>
 								<div class="c-content">
+									<p>
+										<em>This feature is currently experimental and requires opt-in</em>
+									</p>
 									<p>
 										Wayland is a modern display server protocol that can be used on Linux
 										and some BSD-derived operating systems. It aims to be a replacement
@@ -1383,7 +1386,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										supported by both OpenXR and WebXR.
 									</p>
 									<p>
-										Brand new features are systems for body and face tracking, that are built in the
+										On top of that, we introduced brand-new systems for body and face tracking, that are built in the
 										same standartized way, but currently only supported in OpenXR on Meta Quest headsets.
 									</p>
 								</div>
@@ -1420,9 +1423,6 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 											improved timing of tracking data
 										</li>
 										<li>
-											XR is now thread safe, allowing you to move rendering onto a separate thread
-										</li>
-										<li>
 											foveated rendering has been tweaked on the <em>Mobile</em> and <em>Forward+</em>
 											renderers
 										</li>
@@ -1456,12 +1456,11 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										unit (read: not connected to a computer).
 									</p>
 									<p>
-										The Meta XR Simulator is a free tool to test your XR application outside
-										of the headset, but only works if you are targeting the Quest series models.
-										After downloading and installing it on your machine, you can now configure
-										it to work directly within your Godot editor. This feature is limited to
-										Windows and macOS because the simulator itself currently does not support
-										Linux.
+										The Meta XR Simulator is a free tool to test your XR application in a simulated
+										Quest headset instead. After downloading and installing it on your machine, you
+										can now configure it to work directly within your Godot editor. This feature is
+										limited to Windows and macOS because the simulator itself currently does not
+										support Linux.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1501,9 +1500,9 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										key elements in the room.
 									</p>
 									<p>
-										Spatial anchors let you save this data, so the system can remember locations
-										even after a restart. You can use them to for instance assign a permanent
-										location to a game object, or to anchor screens in one place.
+										Developers can add their own Spatial Anchors for the headset to track and remember
+										across sessions. You can use them to for instance assign a permanent location to a
+										game object, or to anchor virtual screens in one place.
 									</p>
 									<p>
 										Theoretically, this feature can be repurposed for any headset that implements
@@ -1581,7 +1580,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								<div class="c-content">
 									<p>
 										The splash screen feature has been pretty established on all other platforms,
-										and is now coming to the Web as well! As always, it is entirely optional for
+										and is now coming to the Web as well. As always, it is entirely optional for
 										you to set one, and you are welcome to customize it to your liking.
 									</p>
 									<p>
@@ -1617,7 +1616,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#dotnet-rebuild-notification">New C# bindings to get rebuild notifications</a>
+									<a href="#dotnet-rebuild-notification">Reminding users to re-build projects</a>
 								</h4>
 								<div class="c-blockquote">
 									A useful <span class="highlight">reminder</span>
@@ -1629,9 +1628,9 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										rebuilt the project yet.
 									</p>
 									<p>
-										Before this change, there was no visible indication of this discrepancy, leading
-										to unecessary debug sessions. Hopefully this will help avoid confusion and save
-										time!
+										Before this change, there was no visible indication of this discrepancy, causing
+										confusion as to why things did not update. Hopefully this warning can help save
+										valuable time!
 									</p>
 								</div>
 								<div class="c-link"
@@ -1680,7 +1679,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#dotnet-better-support-generic-csharp-classes">
-										<span>Generics now supported out of the box</span>
+										<span>Type hierarchies can now include generics</span>
 									</a>
 								</h4>
 								<div class="c-blockquote">
@@ -1694,7 +1693,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										efficient.
 									</p>
 									<p>
-										While generics were supported previously, the editor used to throw
+										While you could use generics previously, the editor potentially threw
 										exceptions when reloading your code. This is now fixed.
 									</p>
 								</div>
@@ -2076,10 +2075,9 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</h4>
 								<div class="c-content">
 									<p>
-										A virtual method (also known as virtual function) is a declared within a
-										base class and has a default implementation. Opposed to abstract methods,
-										which don't have actual code in them, you are not obligated to override
-										virtual methods when you derive a class.
+										A virtual method (also known as virtual function) is a declared within
+										a base class, but implemented only by the derived class. This means the
+										actual method call depends on the object type during runtime.
 									</p>
 									<p>
 										GDExtension classes already were able to implement virtual methods
@@ -2118,11 +2116,9 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									<p>
 										With this new feature, you are now able to add documentation to your
 										GDExtension code, akin to how the editor already contains an offline copy
-										of the Class Reference section from the Godot Docs.
-									</p>
-									<p>
-										Refer to this documentation page to understand how, since the explicit
-										directions would exceed the scope of a feature highlight.
+										of the
+										<a href="https://docs.godotengine.org/en/stable/classes/index.html#">Class Reference</a>
+										section from the <a href="https://docs.godotengine.org/">Godot Docs</a>.
 									</p>
 								</div>
 								<div class="c-link"
@@ -2167,7 +2163,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										to the <a href="https://docs.godotengine.org/en/stable/">Godot Docs</a> backed
 										by <a href="https://giscus.app/">Giscus</a>: another
 										<abbr title="free open-source software">FOSS</abbr> project that utilizes
-										GitHub Discussions to let you comment on a page. You need to be logged into your
+										GitHub Discussions to let you comment on pages. You need to be logged into your
 										GitHub account for that reason.
 									</p>
 									<p>
@@ -2242,7 +2238,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										<a href="https://docs.godotengine.org/en/stable/classes/index.html#">Class Reference</a>
 										section received a handy new feature: you can copy
 										a direct link to whatever method you are currently looking at by clicking
-										the link icon next to its name.
+										the icon next to its name.
 									</p>
 								</div>
 								<div class="c-link"
@@ -2347,7 +2343,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content align-right">
 									— <a href="https://github.com/akien-mga">Rémi Verschelde</a>, project manager,
-									<a href="https://github.com/godotengine/godot/commit/8787029c8e6b496deeb15c87d141f66aacd200ef">for the 4.3 release commit</a>
+									<a href="https://github.com/godotengine/godot/commit/8787029c8e6b496deeb15c87d141f66aacd200ef">4.3 release commit</a>
 								</div>
 							</div>
 						</div>
