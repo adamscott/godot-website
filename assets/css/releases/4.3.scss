@@ -243,49 +243,55 @@ $donate-robot-size: 500px;
 	}
 }
 
-#links-links {
-	.links-container {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		width: 100%;
+#links {
+	margin-top: 0;
+	margin-bottom: 0;
 
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--card-padding);
-		align-items: center;
-		justify-content: center;
-
-		& > li {
+	#links-links {
+		.links-container {
+			list-style: none;
 			margin: 0;
-		}
+			padding: 0;
+			width: 100%;
 
-		.link {
 			display: flex;
-			min-width: 100px;
-			font-weight: 700;
+			flex-wrap: wrap;
+			gap: calc(var(--card-padding) / 2);
 			align-items: center;
 			justify-content: center;
-			padding: var(--card-padding);
-			border-radius: var(--card-padding);
-			text-decoration: none;
-			color: white;
 
-			@each $section-name, $section-colors in $sections {
-				&.link-#{$section-name} {
-					--color-top: #{map-get($section-colors, "color-top")};
-					--color-bottom: #{map-get($section-colors, "color-bottom")};
-					background: linear-gradient(
-						to bottom,
-						var(--color-top),
-						var(--color-bottom)
-					);
-				}
+			& > li {
+				margin: 0;
 			}
 
-			&:hover {
-				& > span {
-					text-decoration: underline;
+			.link {
+				display: flex;
+				min-width: 50px;
+				font-weight: 700;
+				align-items: center;
+				justify-content: center;
+				padding: calc(var(--card-padding) / 2);
+				border-radius: calc(var(--card-padding) / 2);
+				text-decoration: none;
+				color: white;
+				font-size: 0.75em;
+
+				@each $section-name, $section-colors in $sections {
+					&.link-#{$section-name} {
+						--color-top: #{map-get($section-colors, "color-top")};
+						--color-bottom: #{map-get($section-colors, "color-bottom")};
+						background: linear-gradient(
+							to bottom,
+							var(--color-top),
+							var(--color-bottom)
+						);
+					}
+				}
+
+				&:hover {
+					& > span {
+						text-decoration: underline;
+					}
 				}
 			}
 		}
