@@ -436,11 +436,14 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										Internal engine components have been reworked to improve the performance
-										of multi-threading across the board. By reducing the chance for edge cases
-										causing deadlocks, loading resources is now much more reliable overall.
-										This effect is noticable even during runtime, no matter the complexity of
-										resources and dependencies!
+										Internal engine components have been reworked to improve
+										the performance of multi-threading across the board.
+									</p>
+									<p>
+										By reducing the chance for edge cases causing deadlocks,
+										loading resources is now much more reliable overall.
+										This effect is noticable even during runtime, no matter
+										the complexity of resources and dependencies!
 									</p>
 								</div>
 								<div class="c-link"
@@ -907,18 +910,18 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</a>
 								</h4>
 								<div class="c-blockquote">
-									"No <span class="highlight">comment</span>." no more
+									"No <span class="highlight">comment</span>."<br>
+									no more
 								</div>
 								<div class="c-content">
 									<p>
-										Following the lead of other online documentations, we added a comment section to
+										Following the lead of other software documentations, we added a comment section to
 										the Godot Docs. Please note that it is intended to be used for general corrections
 										and not individual tech-support; for problems with your project please visit the
-										<a href="https://forum.godotengine.org/">official forums</a> instead.
+										<a href="https://forum.godotengine.org/">official forum</a> instead.
 									</p>
 									<p>
-										To comment on a page, you need to be logged into your GitHub account, this is due
-										to the software we are using and helpful for moderation purposes.
+										To comment on a page, you need to be logged into your GitHub account.
 									</p>
 								</div>
 								<div class="c-link"
@@ -940,7 +943,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</a>
 								</h4>
 								<div class="c-blockquote">
-									What a glow-up
+									What a glow-up!
 								</div>
 								<div class="c-content">
 									<p>
@@ -985,7 +988,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									<p>
 										The
 										<a href="https://docs.godotengine.org/en/stable/classes/index.html#">Class Reference</a>
-										section of the online docs received a handy new feature: you can get
+										section received a handy new feature: you can copy
 										a direct link to whatever method you are currently looking at by clicking
 										the link icon next to its name.
 									</p>
@@ -1093,12 +1096,12 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#editor-layout-ux-improvements-project-manager">
-										Layout and UX improvements for the project manager
+										Project Manager: Layout and UX improvements
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										The design of the project manager has been revamped. You can now directl
+										The design of the project manager has been revamped. You can now directly
 										access some editor settings from here: language, interface theme, display
 										scale, network mode, and directory naming conventions.
 									</p>
@@ -1118,7 +1121,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<img class="release-card-image" src="/storage/releases/4.3/images/improved-ui-ux-project-manager.webp"
 								srcset="
 									/storage/releases/4.3/images/improved-ui-ux-project-manager-2x.webp 2x
-								" alt="Image of the export GDScript binary tokenization settings." draggable="false" />
+								" alt="Image of the improved project manager." draggable="false" />
 						</div>
 					</div>
 				</div> <!-- #editor-layout-ux-improvements-project-manager -->
@@ -1157,11 +1160,11 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										the editor or not (<code>is_editor_hint()</code>).
 									</p>
 									<p>
-										How you declare a runtime class exactly depends on the bindings you use. For
+										How you declare a runtime class depends on the bindings you use. For
 										the officially maintained
 										<a href="https://github.com/godotengine/godot-cpp/">godot-cpp</a>
 										you use <code class="highlight"><span class="function">GDREGISTER_RUNTIME_CLASS</span><span class="symbol">(</span>ExampleRuntime<span class="symbol">)</span></code> in your module
-										initialization (screenshot for reference).
+										initialization; screenshot on the right for reference.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1178,23 +1181,32 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #gdextension-runtime-class-registration -->
 
-				<div id="gdextension-virtual-method-registration" class="release-card">
+				<div id="gdextension-register-virtual-methods" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#gdextension-virtual-method-registration">
-										Virtual method registration
+									<a href="#gdextension-register-virtual-methods">
+										Register virtual methods
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										Ever wanted to register your own virtual methods like
-										<code>_ready()</code>, <code>_process()</code>, or <code>_draw()</code> for
-										users to use in their code?
+										A virtual method (also known as virtual function) is a declared within a
+										base class and has a default implementation. Opposed to abstract methods,
+										which don't have actual code in them, you are not obligated to override
+										virtual methods when you derive a class.
 									</p>
 									<p>
-										Now, scripts can implement virtual functions registered by GDExtension classes.
+										GDExtension classes already were able to implement virtual methods
+										registered in Godot. Since this release, GDExtensions classes can also
+										register their own virtual methods, which scripts attached to them can
+										implement.
+									</p>
+									<p>
+										As a plugin developer, this allows you to expose your own virtual methods
+										to your users now, in the same way that Godot exposes <code>_ready()</code>,
+										<code>_process()</code>, or <code>_draw()</code> to you.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1204,7 +1216,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							</div>
 						</div>
 					</div>
-				</div> <!-- #gdextension-virtual-method-registration -->
+				</div> <!-- #gdextension-register-virtual-methods -->
 
 				<div id="gdextension-generate-gdextension-docs-with-doctool" class="release-card">
 					<div class="release-card-container">
@@ -1247,20 +1259,21 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#gdscript-binary-tokenization-on-export">Binary tokenization on
-										export</a>
+									<a href="#gdscript-binary-tokenization-on-export">Binary tokenization on export</a>
 								</h4>
 								<div class="c-blockquote">
-									<span class="highlight">Lean</span> and mean
+									<span class="highlight">Slim down</span> your export sizes
 								</div>
 								<div class="c-content">
 									<p>
-										With this new export option, you can reduce the size of the exported
-										GDScript code. But it also offers a way to obfuscate your source code.
+										With this new export option, you can reduce the size of your GDScript exports
+										drastically. This works by stripping your code back to its bare essentials;
+										in technical terms this is called binary tokenization.
 									</p>
 									<p>
-										While it doesn't protect your work from being decompiled, it at least hides
-										your source code from being available publicly.
+										As a side effect, this effectively obfuscates your code as well. Keep in mind
+										that it still can be decompiled, but this raises the entry barrier and prevents
+										your code from being available in plaintext at least.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1284,14 +1297,12 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#gdscript-is-not-operator">
-										<code>
-											<span class="keyword">is not</span>
-										</code>
-										operator
+										<code><span class="keyword">is not</span></code> operator
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
+										Instead of writing <br>
 										<code class="highlight">
 											<span class="controlflow">if</span>
 											<span class="keyword">not</span>
@@ -1301,22 +1312,20 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										</code>
 									</p>
 									<p>
-										It isn't much readable, huh? This line tests if
-										<code class="highlight">my_node</code>
-										is <em>not</em> of type
-										<code class="highlight">
-											<span class="basetype">Node3D</span>
-										</code>.
-									</p>
-									<p>
-										You can now type this instead, which is really closer syntax wise from what
-										we actually say and mean:<br>
+										You can now simply write <br>
 										<code class="highlight">
 											<span class="controlflow">if</span>
 											my_node
 											<span class="keyword">is not</span>
 											<span class="basetype">Node3D</span><span class="symbol">:</span>
 										</code>
+									</p>
+									<p>
+										This rather small change should help keep your code readable,
+										by being closer to the natural language equivalent of what you
+										are attempting to do: the test checks whether my_node
+										<code><span class="keyword">is not</span></code> of the type
+										Node3D.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1328,13 +1337,13 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #gdscript-is-not-operator -->
 
-				<div id="gdscript-built-in-methods-callable" class="release-card">
+				<div id="gdscript-built-in-functions-usable-as-callable" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#gdscript-built-in-methods-callable">
-										Built-in methods and utility functions usable as
+									<a href="#gdscript-built-in-functions-usable-as-callable">
+										Built-in functions are now usable as
 										<code>
 											<span class="basetype">Callable</span>
 										</code>
@@ -1342,26 +1351,18 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</h4>
 								<div class="c-content">
 									<p>
-										You have an array and you want to print each element without creating
-										a for loop?
+										This change affects both methods and utility functions.
+										We made it so that when you try to call these functions as you
+										would with a Callable, an internal conversion happens to allow that
+										to work.
 									</p>
 									<p>
-										By making built-in methods and utility functions usable as
-										<code>Callable</code> makes it possible to call variadic functions such as
-										<code class="highlight">
-											<span class="gdscript-globalfunction">print</span><span class="symbol">()</span>
-										</code>
-										with
-										<code class="highlight">
-											<span class="basetype">Callable</span><span class="symbol">.</span><span class="function">callv</span><span class="symbol">()</span>
-										</code>
-										easily, without the need of boilerplate code.
+										For instance <code class="highlight"><span class="gdscript-globalfunction">print</span><span class="symbol">()</span></code>
+										Can now be called like so:
+										<code class="highlight">print<span class="symbol">.</span><span class="function">callv</span><span class="symbol">(</span>my_array<span class="symbol">)</span></code>
 									</p>
 									<p>
-										You can now call this:<br>
-										<code class="highlight">
-											print<span class="symbol">.</span><span class="function">callv</span><span class="symbol">(</span>my_array<span class="symbol">)</span>
-										</code>
+										This is particularly useful for variadic functions.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1371,7 +1372,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							</div>
 						</div>
 					</div>
-				</div> <!-- #gdscript-built-in-methods-callable -->
+				</div> <!-- #gdscript-built-in-functions-usable-as-callable -->
 
 				<div id="gdscript-export-storage-property-hint" class="release-card">
 					<div class="release-card-container">
@@ -1382,22 +1383,24 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										<code>
 											<span class="gdscript-annotation">@export_storage</span>
 										</code>
-										property hint
+										property annotation
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										Addon developers, you can now use
+										This feature is for the plugin developers amongst you.
+									</p>
+									<p>
+										Using the new
 										<code class="highlight">
 											<span class="gdscript-annotation">@export_storage</span>
 										</code>
-										to store hidden
-										values in a scene.
+										 annotation allows you to store hidden values in a scene.
 									</p>
 									<p>
-										Useful if you need to store data on a node or a resource that need to be
-										accessed by the addon, but that isn't meant to be edited by the user in the
-										inspector.
+										A common use case for this could be storing addon information
+										in a node and preventing users from (accidentally) editing it in
+										the inspector.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1418,23 +1421,20 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										<code>
 											<span class="gdscript-annotation">@export_custom</span>
 										</code>
-										property hint
+										property annotation
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										You need specific types of export? We got you covered.
+										Another plugin development feature.
 									</p>
 									<p>
 										You can now use
 										<code class="highlight">
 											<span class="gdscript-annotation">@export_custom</span>
 										</code>
-										to export a value suited to your needs.
-									</p>
-									<p>
-										It allows you to set a custom hint, hint string, and usage flags for the
-										exported property. Great for highly specific exports and for addon developers.
+										to export a value suited to your needs. This means you can define pre-
+										and suffixes, custom hint and hint strings, usage flags, and more.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1456,18 +1456,19 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</a>
 								</h4>
 								<div class="c-blockquote">
-									Do you need a <span class="highlight">suggestion</span>?
+									Looks like you're coding. Do you need assistance?
 								</div>
 								<div class="c-content">
 									<p>
 										We improved the autocompletion of several components, including enums,
 										subscripts, and
-										<code
-											class="highlight"><span class="function">get_node</span><span class="symbol">()</span></code>.
+										<code class="highlight"><span class="function">get_node</span><span class="symbol">()</span></code>.
 									</p>
 									<p>
-										As it is a difficult feature to detect regressions, we even started doing some
-										automated testing to specifically test autocompletion results.
+										Regressions in this area are hard to detect, so we began automated testing
+										to verify the quality of these results. As always, you can help by opening
+										<a href="https://github.com/godotengine/godot/issues/new/choose">GitHub issues</a>
+										whenever you find a wrong or missing autocomplete suggestion.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1479,23 +1480,27 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #gdscript-autocompletion-fixes -->
 
-				<div id="gdscript-circular-dependencies-between-scenes-and-scripts" class="release-card">
+				<div id="gdscript-on-circular-dependencies" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#gdscript-circular-dependencies-between-scenes-and-scripts">
-										GDScript circular dependencies between scenes and scripts
+									<a href="#gdscript-on-circular-dependencies">
+										On circular dependencies
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										A lot of issues with circular dependencies between scenes and scripts have
-										been fixed!
+										Circular dependencies (also known as cyclic dependencies) happen when
+										two scripts call upon one another. While this might be considered an
+										anti-pattern in software engineering, in reality it is a rather common
+										occurence.
 									</p>
 									<p>
-										Not only this makes you less worry about cyclic dependencies, but it makes
-										scenes more resilient and stable.
+										We fixed some known issues in GDScript that would show up in connection
+										with such circular dependencies, to allow you to worry less about them
+										in your projects. These changes will make your scenes more resilient
+										and stable in general.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1505,7 +1510,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							</div>
 						</div>
 					</div>
-				</div> <!-- #gdscript-circular-dependencies-between-scenes-and-scripts -->
+				</div> <!-- #gdscript-on-circular-dependencies -->
 			</div>
 		</div>
 	</div> <!-- #gdscript -->
