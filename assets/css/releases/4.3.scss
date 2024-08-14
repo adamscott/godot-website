@@ -755,6 +755,32 @@ $donate-robot-size: 500px;
 									1fr;
 							}
 
+							&.force-one-column {
+								grid-template-areas:
+									"quote"
+									"title"
+									"contnt"
+									"link";
+								grid-template-columns:
+									1fr;
+								grid-template-rows:
+									min-content
+									auto
+									1fr
+									auto;
+
+								&:not(:has(.c-link)) {
+									grid-template-areas:
+										"quote"
+										"title"
+										"contnt";
+									grid-template-rows:
+										min-content
+										auto
+										1fr;
+								}
+							}
+
 							@container release-card-content (width < #{$container-break}) {
 								grid-template-areas:
 									"quote"
@@ -796,6 +822,28 @@ $donate-robot-size: 500px;
 									"quote contnt";
 								grid-template-rows:
 									1fr;
+							}
+
+							&.force-one-column {
+								grid-template-areas:
+									"quote"
+									"contnt"
+									"link";
+								grid-template-columns:
+									1fr;
+								grid-template-rows:
+									min-content
+									1fr
+									auto;
+
+								&:not(:has(.c-link)) {
+									grid-template-areas:
+										"quote"
+										"contnt";
+									grid-template-rows:
+										min-content
+										1fr;
+								}
 							}
 
 							@container release-card-content (width < #{$container-break}) {
