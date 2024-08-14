@@ -319,6 +319,10 @@ $donate-robot-size: 500px;
 		background-color: #cecece;
 	}
 
+	a {
+		text-decoration-thickness: 1px;
+	}
+
 	/**
 	 * Responsive sizes.
 	 */
@@ -445,7 +449,6 @@ $donate-robot-size: 500px;
 		background-image: $header-background-image;
 		background-position: $header-background-position;
 		background-repeat: $header-background-repeat;
-
 
 		background-color: #121315;
 		@include is-light() {
@@ -695,7 +698,11 @@ $donate-robot-size: 500px;
 						.c-content {
 							a {
 								color: var(--color-invert-highlight);
-								text-decoration: var(--color-invert-highlight);
+								text-decoration-color: var(--color-invert-highlight);
+								&:visited {
+									color: color-mix(in srgb, var(--color-invert-highlight), black 10%);
+									text-decoration-color: color-mix(in srgb, var(--color-invert-highlight), black 10%);
+								}
 							}
 						}
 
@@ -917,6 +924,10 @@ $donate-robot-size: 500px;
 							a {
 								color: var(--color-highlight);
 								text-decoration-color: var(--color-highlight);
+								&:visited {
+									color: color-mix(in srgb, var(--color-highlight), black 10%);
+									text-decoration-color: color-mix(in srgb, var(--color-highlight), black 10%);
+								}
 							}
 						}
 
