@@ -182,17 +182,12 @@ for (const cLink of cLinks) {
 		const button = cLink.appendChild(document.createElement("button"));
 		button.classList.add("c-link-popover-button");
 		const span = button.appendChild(document.createElement("span"));
-		switch (contributors.length) {
-			case 2: {
-				span.textContent = "group";
-			} break;
-			case 3: {
-				span.textContent = "groups";
-			} break;
-			case 1:
-			default: {
-				span.textContent = "person";
-			}
+		if (contributors.length === 1) {
+			span.textContent = "person";
+		} else if (contributors.length === 2) {
+			span.textContent = "group";
+		} else {
+			span.textContent = "groups";
 		}
 		span.classList.add("material-symbols-outlined");
 		span.style.transform = "translateY(5px)";
