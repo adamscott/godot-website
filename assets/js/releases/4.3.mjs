@@ -274,3 +274,58 @@ const lazyVideoObserver = new IntersectionObserver((entries, observer) => {
 for (const lazyVideo of lazyVideos) {
 	lazyVideoObserver.observe(lazyVideo);
 }
+
+// Show/hide the scroll-to-top button
+const linksElement = document.querySelector("#links");
+const scrollToTopElement = document.querySelector("#scroll-to-top");
+let scrollToTopTween = null;
+let scrollState = "";
+const showScrollToTop = () => {
+	if (scrollState === "show") {
+		return;
+	}
+	scrollState = "show";
+	if (scrollToTopTween != null) {
+		scrollToTopTween.kill();
+	}
+	scrollToTopElement.style.display = "block";
+	scrollToTopTween = gsap.to(scrollToTopElement, {
+		opacity: 1,
+		duration: 0.5,
+	});
+};
+const hideScrollToTop = () => {
+	if (scrollState === "hide") {
+		return;
+	}
+	scrollState = "hide";
+	if (scrollToTopTween != null) {
+		scrollToTopTween.kill();
+	}
+	scrollToTopTween = gsap.to(scrollToTopElement, {
+		opacity: 0,
+		duration: 0.5,
+		onComplete: () => {
+			scrollToTopElement.style.display = "none";
+		}
+	});
+};
+const scrollToTopObserver = new IntersectionObserver((entries, observer) => {
+	// requestAnimationFrame(animationFrameHandler);
+	const entry = entries[0];
+	if (entry.isIntersecting) {
+		hideScrollToTop();
+		console.log("intersecting");
+	} else {
+		const rect = linksElement.getBoundingClientRect();
+		console.log(rect);
+		if (rect.y > window.innerHeight) {
+			console.log("hide");
+			hideScrollToTop();
+		} else {
+			console.log("show");
+			showScrollToTop();
+		}
+	}
+});
+scrollToTopObserver.observe(linksElement);
