@@ -1218,19 +1218,24 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #gdextension-register-virtual-methods -->
 
-				<div id="gdextension-generate-gdextension-docs-with-doctool" class="release-card">
+				<div id="gdextension-custom-documentation" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#gdextension-generate-gdextension-docs-with-doctool">
-										Generate GDExtension documentation with <code>--doctool</code>
+									<a href="#gdextension-custom-documentation">
+										Custom documentation
 									</a>
 								</h4>
-								<div class="c-blockquote replace-me">
-								</div>
 								<div class="c-content">
-									<p class="replace-me">
+									<p>
+										With this new feature, you are now able to add documentation to your
+										GDExtension code, akin to how the editor already contains an offline copy
+										of the Class Reference section from the Godot Docs.
+									</p>
+									<p>
+										Refer to this documentation page to understand how, since the explicit
+										directions would exceed the scope of a feature highlight.
 									</p>
 								</div>
 								<div class="c-link">
@@ -1238,7 +1243,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							</div>
 						</div>
 					</div>
-				</div> <!-- #gdextension-generate-gdextension-docs-with-doctool -->
+				</div> <!-- #gdextension-custom-documentation -->
 			</div>
 		</div>
 	</div> <!-- #gdextension -->
@@ -1531,27 +1536,28 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#navigation-mesh-chunks-baking">Navigation mesh chunks baking</a>
+									<a href="#navigation-mesh-chunks-baking">Adding chunks to navigation systems</a>
 								</h4>
 								<div class="c-blockquote">
-									<span class="highlight">Split</span> and <span class="highlight">bake</span>!
+									<span class="highlight">Bake</span> this!
 								</div>
 								<div class="c-content">
 									<p>
-										If you're working on a project with large game worlds, this update will
-										definitely be interesting to you.
+										If you're working on a project with large game worlds, you might want to consider
+										splitting your navigation meshes in more managable chunks. This helps with memory
+										allocation and therefore performance.
 									</p>
 									<p>
-										Both <code>NavigationPolygon</code> (2D) and <code>NavigationMesh</code> (3D)
-										resources received new properties to define baking bounds, as well as border size
-										offsets. Combined, the two new properties can be used to bake navigation mesh chunks
-										with perfectly aligned edges that fit the neighbor chunks.
+										While it was possible to manually split your meshes before, making sure that your
+										chunks align properly was non-trivial. This alignment is necessary to ensure efficient
+										processing of runtime changes within the navigation map.
 									</p>
 									<p>
-										Aligned edges allow efficient processing of any runtime changes of the navigation
-										map. Beforehand, helpers were needed to process edges at high cost and it didn't
-										scale for large game worlds.
-									</p>
+										In this release, both <code>NavigationPolygon</code> (2D) and <code>NavigationMesh</code>
+										(3D) resources received new properties to define baking bounds and border size offsets.
+										Combined, these two properties can be used to bake navigation mesh chunks automatically
+										with perfectly aligned edges to their neighbor chunks.
+									 </p>
 								</div>
 								<div class="c-link"
 									data-contributors="smix8"
@@ -1568,42 +1574,53 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #navigation-mesh-chunks-baking -->
 
-				<div id="navigation-navigation-obstacle-option-to-affect-navigation-mesh-baking"
-					class="release-card span-2-at-3-col">
+				<div id="navigation-baking-obstacles-into-navigation-meshes" class="release-card span-2-at-3-col">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#navigation-navigation-obstacle-option-to-affect-navigation-mesh-baking">
-										<span>Navigation obstacle option to affect baking</span>
+									<a href="#navigation-baking-obstacles-into-navigation-meshes">
+										Baking obstacles into navigation meshes
 									</a>
 								</h4>
 								<div class="c-blockquote">
-									Our new <span class="highlight">cookie cutter</span>
+									Set those <span class="highlight">boundaries</span>
 								</div>
 								<div class="c-content">
 									<p>
-										<code>NavigationObstacle2D</code> and <code>NavigationObstacle3D</code> now have
-										two new options to affect navigation mesh baking.
+										<code>NavigationObstacle2D</code> and <code>NavigationObstacle3D</code>
+										now include two new properties to affect baking:
+									</p>
+									<ol>
+										<li>
+											<code>affect_navigation_mesh</code> makes the obstacle contribute to the
+											navigation mesh during baking
+										</li>
+										<li>
+											<code>carve_navigation_mesh</code> additionally makes the shape unaffected
+											by offsets of the baking. The obstacle now basically acts as a stencil and
+											cuts into the final navigation mesh surface. It still will be affected by
+											further postprocessing.
+										</li>
+									</ol>
+									<p>
+										In practice, this means obstacles now discard other source geometry inside of them.
+										In 3D, this helps discard unwanted navigation meshes inside of objects like walls
+										or roofs.
 									</p>
 									<p>
-										Obstacles now discard other source geometry inside their vertices defined shape.
-										They can be either baked with agent radius offset similar to other geometry,
-										or act more like a stencil and carve the shape into the navigation mesh.
-									</p>
-									<p>
-										In 3D, obstacles baked this way can be used to remove unwanted navigation
-										meshes inside other geometry, like inside walls or roofs.
+										Shoutout to the game developement streamers in our community, since this was one
+										of the issues brought forward by them.
 									</p>
 								</div>
 								<div class="c-link"
-								     data-contributors="smix8"
-								     data-read-more="https://github.com/godotengine/godot/pull/89034">
+									data-contributors="smix8"
+									data-read-more="https://github.com/godotengine/godot/pull/89034">
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> <!-- #navigation-navigation-obstacle-option-to-affect-navigation-mesh-baking -->
+				</div> <!-- #navigation-baking-obstacles-into-navigation-meshes -->
 
 				<div id="navigation-navigation-path-simplification" class="release-card">
 					<div class="release-card-container">
@@ -1611,27 +1628,27 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#navigation-navigation-path-simplification">
-										<span>Navigation path simplification</span>
+										Simplifying navigation paths
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
 										With the new path simplification option on <code>NavigationAgent</code> nodes,
-										it is now possible to remove less critical path points.
+										it is now possible to remove less critical path points algorithmically.
 									</p>
 									<p>
-										This is useful to resolve some issues that comes with agent movement in large
-										areas. It also helps agents that use navigation points to steer as it leaves
-										only the critical path points as targets.
+										This helps resolve some issues that come along with agent movement in large areas.
+										It also benefits agents that use navigation points to steer as only the critical
+										path points remain as targets.
 									</p>
 									<p>
-										The algorithm is also exposed from the <code>NavigationServer</code> where it
-										can be used with any generic <code>Vector2</code>/<code>Vector3</code> array.
+										The algorithm is also exposed from the <code>NavigationServer</code> where it can
+										be used to simply any generic <code>Vector2</code>/<code>Vector3</code> array.
 									</p>
 								</div>
 								<div class="c-link"
-								     data-contributors="smix8"
-								     data-read-more="https://github.com/godotengine/godot/pull/90434">
+									data-contributors="smix8"
+									data-read-more="https://github.com/godotengine/godot/pull/90434">
 								</div>
 							</div>
 						</div>
@@ -1698,26 +1715,14 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</h4>
 								<div class="c-content">
 									<p>
-										Compositor effects let users hook into the built in
-										Godot rendering pipeline to add custom rendering code.
+										Compositor effects let users hook into the built in Godot rendering pipeline
+										to add custom rendering code. This is an advanced feature that does require
+										intimate knowledge of how rendering works. Yet, it enables those specialists
+										to create a variety of effects more efficiently.
 									</p>
 									<p>
-										They can be used for everything from advanced post processing
-										effects to completely custom rendering!
-									</p>
-									<p>--ADDITIONAL DEFINITION BY BASTIAAN--</p>
-									<p>
-										Compositor effects allow a user to inject additional render passes
-										at predetermined points in the render pipeline. This is an advanced
-										feature that does require intimate knowledge of how rendering works
-										but enables users to efficiently create a variety of special effects.
-										Advanced users of Godot can implement new features that regular users
-										can adapt to their needs.
-									</p>
-									<p>
-										We're already seeing some great examples from early adaptors who are
-										using this feature to create god rays, implement motion blur or completely
-										change the styling of their game.
+										We're already seeing some great examples from early adaptors who utilize this
+										feature to create god rays, implement motion blur, and more!
 									</p>
 								</div>
 								<div class="c-link"
@@ -1729,24 +1734,24 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #rendering-compositor-effects-api -->
 
-				<div id="rendering-renderingdevice-context-management-refactor" class="release-card">
+				<div id="rendering-new-renderingdevice-architecture" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#rendering-renderingdevice-context-management-refactor">
-										RenderingDevice context management refactor
+									<a href="#rendering-new-renderingdevice-architecture">
+										New <code>RenderingDevice</code> architecture
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										We refactored the management of device contexts in the RenderingDevice
-										to fix many hard to track down bugs.
+										We refactored <code>RenderingDevice</code>, specifically how it manages device contexts,
+										in order to annihilate some stubborn bugs in this area.
 									</p>
 									<p>
-										As a bonus, this lets us create new RenderingDevices whenever we want
-										which paved the way for baking lightmaps in the Compatibility rendering
-										backend!
+										As a bonus, this lets us create new RenderingDevices whenever needed, which paved the way
+										for finally baking lightmaps in the Compatibility renderer (which we recommend when
+										targeting low-end devices and the Web platform at the moment).
 									</p>
 								</div>
 								<div class="c-link"
@@ -1756,27 +1761,27 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							</div>
 						</div>
 					</div>
-				</div> <!-- #rendering-renderingdevice-context-management-refactor -->
+				</div> <!-- #rendering-new-renderingdevice-architecture -->
 
 				<div id="rendering-depth-based-fog" class="release-card media-left span-2">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#rendering-depth-based-fog">Depth-based fog</a>
+									<a href="#rendering-depth-based-fog">Depth-based fog now possible</a>
 								</h4>
 								<div class="c-blockquote">
 									<span class="highlight">Hide</span> and seek
 								</div>
 								<div class="c-content">
 									<p>
-										With depth-based fog, you can now decide when the fog begins and when it is
-										fully opaque.
+										With depth-based fog, you can now decide where the fog begins
+										and when it transitions to fully opaque.
 									</p>
 									<p>
-										Compared to exponential (and realistic) fog mode, it may seem less realistic,
-										but you now have the tools to create an atmosphere worthy of old-school horror
-										games.
+										Compared to exponential fog mode, it may seem less realistic,
+										but you now have the tools to create an atmosphere worthy of
+										old-school horror games.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1794,23 +1799,24 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #rendering-depth-based-fog -->
 
-				<div id="rendering-compatibility-rendering-backend-features" class="release-card">
+				<div id="rendering-compatibility-renderer-features" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#rendering-compatibility-rendering-backend-features">
-										Compatibility rendering backend features
+									<a href="#rendering-compatibility-renderer-features">
+										Compatibility renderer features
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										The Compatibility rendering backend received a lot of attention this release cycle.
-										We now consider it feature complete as it has all the features we intended it to have.
+										The <em>Compatibility</em> rendering backend received a lot of attention this release
+										cycle. It is now considered feature complete.
 									</p>
 									<p>
-										New in this release are MSAA, resolution scaling, Glow, ReflectionProbes, LightmapGI,
-										Adjustments, and Color Correction.
+										Keywords to look out for in this release are
+										<abbr title="multisample anti-aliasing">MSAA</abbr>, resolution scaling, Glow,
+										ReflectionProbes, LightmapGI, Adjustments, and Color Correction.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1820,7 +1826,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							</div>
 						</div>
 					</div>
-				</div> <!-- #rendering-compatibility-rendering-backend-features -->
+				</div> <!-- #rendering-compatibility-renderer-features -->
 
 				<div id="rendering-acyclic-rendering-graph" class="release-card span-3 inverted">
 					<div class="release-card-container">
@@ -1832,7 +1838,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</a>
 								</h4>
 								<div class="c-blockquote">
-									<span class="higlight">More for less</span>
+									Sit back and watch the <span class="highlight">frame rate</span> go up
 								</div>
 								<div class="c-content">
 									<p>
@@ -1878,21 +1884,21 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#web-web-audio-samples">Web Audio samples</a>
+									<a href="#web-web-audio">Web Audio</a>
 								</h4>
 								<div class="c-blockquote">
 									Enhanced <span class="highlight">audio quality</span>
 								</div>
 								<div class="c-content">
 									<p>
-										With great power comes great responsibility when it comes to the Web.
+										By supporting audio samples on the Web platform, we leverage their API
+										to deliver seamlessly low-latency and high-quality audio.
 									</p>
-
 									<p>
-										As there was audio issues when running games single-threaded, we updated the
-										engine to support audio samples. This enabled us to leverage the Web Audio
-										API
-										in order to deliver seamlessly low-latency and high-quality audio.
+										This addition was needed to combat persistent audio issues experienced
+										when exporting
+										<a href="#highlights-single-threaded-web-export">single-threaded Web</a>
+										builds.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1909,17 +1915,17 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#web-splash-screen-showing-up">Splash screen is now showing up</a>
+									<a href="#web-splash-screen-showing-up">Splash screens arrived on the Web</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										Not only the Web progress bar has been reworked and optimized, but the
-										splash
-										screen is now showing up before the game loads!
+										The splash screen feature has been pretty established on all other platforms,
+										and is now coming to the Web as well! As always, it is entirely optional for
+										you to set one, and you are welcome to customize it to your liking.
 									</p>
 									<p>
-										Don't worry: if no boot splash screen has been set, the classic Godot boot
-										splash will be seen, as it is currently displayed on other platforms.
+										Additionally, the Web progress bar has been reworked. We refrained from adding
+										a fake time estimation.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1971,23 +1977,25 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#xr-scene-discovery-spacial-anchors-on-meta-headsets">
-										Scene discovery/spatial anchors on Meta headsets
+										Meta headsets: scene discovery and anchors
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										Augmented reality requires you to have knowledge of the world
-										around you so you can interact with it. Meta's new scene discovery
-										capabilities allow you to do just that and off course Godot now has
-										support for this feature. From simply getting a mesh of the world
-										around you, to getting informed of key elements of the room such
-										as where walls are, tables are placed, etc.
+										Augmented reality requires you to have knowledge of the world around you
+										so you can interact with it. Meta provides you with this kind of information
+										via their scene discovery feature, which we are now supporting in Godot.
+										This way you can get a mesh of the world around you, or the position of
+										key elements in the room.
 									</p>
 									<p>
-										Spatial anchors let you further decorate this data by identifying
-										points in your space and having the system remember those locations
-										even after restarting your games. This lets you anchor screens, place
-										objects that will reappear in the same location, etc.
+										Spatial anchors let you save this data, so the system can remember locations
+										even after a restart. You can use them to for instance assign a permanent
+										location to a game object, or to anchor screens in one place.
+									</p>
+									<p>
+										Theoretically, this feature can be repurposed for any headset that implements
+										similar functionality in the future.
 									</p>
 								</div>
 								<div class="c-link"
@@ -2025,22 +2033,22 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#xr-meta-xr-simulator-support">
-										Meta XR simulator support
+										Meta XR Simulator support
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										One difficulty in developing XR games is having to continuously test your
-										application on a headset, especially when developing for stand alone
-										headsets.
+										One complication of developing XR games is having to repeatedly test your
+										application on a headset, especially if your headset is a standalone VR
+										unit (read: not connected to a computer).
 									</p>
 									<p>
-										The Meta XR simulator is a free option to run your XR game without using
-										your headset.
-									</p>
-									<p>
-										We've made it easy to configure the simulator to use it directly from Godot.
-										It works both on Windows and on macOS.
+										The Meta XR Simulator is a free tool to test your XR application outside
+										of the headset, but only works if you are targeting the Quest series models.
+										After downloading and installing it on your machine, you can now configure
+										it to work directly within your Godot editor. This feature is limited to
+										Windows and macOS because the simulator itself currently does not support
+										Linux.
 									</p>
 								</div>
 							</div>
@@ -2048,32 +2056,42 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 					</div>
 				</div> <!-- #xr-meta-xr-simulator-support -->
 
-				<div id="xr-improvements" class="release-card">
+				<div id="xr-performance-stability-improvements" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#xr-improvements">
+									<a href="#xr-performance-stability-improvements">
 										Performance and stability improvements
 									</a>
 								</h4>
 								<div class="c-content">
 									<p>
-										Various improvements have been made to make XR more stable and perform better.
-										We have improved the timing of tracking data for more stable tracking.
-										The core of the XR implementation is now thread safe allowing you to run rendering
-										on a separate thread.
+										Due to countless improvements made to this part of the engine, XR applications are now more stable and performant.
 									</p>
 									<p>
-										More control has been added over foveated rendering on the mobile and Forward+
-										renderer. Glasses based AR and passthrough based AR have been unified to make it easier
-										to create augmented reality games without having to worry about hardware differences.
+										Highlights include:
 									</p>
+									<ul>
+										<li>
+											improved timing of tracking data
+										</li>
+										<li>
+											XR is now thread safe, allowing you to move rendering onto a separate thread
+										</li>
+										<li>
+											foveated rendering has been tweaked on the <em>Mobile</em> and <em>Forward+</em>
+											renderers
+										</li>
+										<li>
+											glasses-based AR and passthrough-based AR have been unified
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> <!-- #xr-improvements -->
+				</div> <!-- #xr-performance-stability-improvements -->
 			</div>
 		</div>
 	</div> <!-- #xr -->
@@ -2103,13 +2121,14 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										Here are all the contributors that saw their PRs merged, ordered alphabetically,
-										and sized accordingly to their number of merged PRs.
+										Here you can see all the contributors with PRs merged into this release.
+										The names are ordered alphabetically, and sized accordingly to their number
+										of contributions.
 									</p>
 									<p>
-										Also special thanks to our teams (communications, documentation, godot-cpp,
-										and translations to name a few) and to everyone that contributed in any form
-										to this release.
+										Special thanks goes out to all the engine teams that collaborated on this release,
+										especially since commits to other related repositories (documentation, godot-cpp,
+										etc.) do not show up in this graphic.
 									</p>
 								</div>
 							</div>
@@ -2144,13 +2163,16 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</h4>
 								<div class="c-content">
 									<p>
-										Design by <a href="https://luiscarli.com/">Luis Carli</a>.
+										Coded by <a href="https://adamscott.studio">Adam Scott</a> &amp; <a href="https://coppolaemilio.com/">Emilio Coppola</a>
 									</p>
 									<p>
-										Integration, demo creation, footage capture, and video editing by <a href="https://adamscott.studio">Adam Scott</a>. Additional help by <a href="https://coppolaemilio.com/">Emilio Coppola</a>.
+										Design template by <a href="https://luiscarli.com/">Luis Carli</a>
 									</p>
 									<p>
-										Shout-out to <a href="https://gdquest.com/">GDQuest</a> for their <a href="#outstanding-new-tilemaplayer-node"><code>TileSetLayer</code> footage</a>.
+										Visual content by <a href="https://adamscott.studio">Adam Scott</a> with special thanks to <a href="https://gdquest.com/">GDQuest</a> and <a href="https://kenney.nl/">Kenney</a>
+									</p>
+									<p>
+										Texts by <a href="https://bio.link/murderveggie">Nathalie Galla</a> &amp; <a href="https://adamscott.studio">Adam Scott</a>
 									</p>
 								</div>
 							</div>
