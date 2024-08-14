@@ -59,7 +59,7 @@ for (const element of elements) {
 		}
 	});
 	timeline.from(element, {
-		y: "+=100",
+		y: "+=50",
 		duration: 0.5,
 		opacity: 0
 	});
