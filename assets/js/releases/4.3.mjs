@@ -329,15 +329,12 @@ const scrollToTopObserver = new IntersectionObserver((entries, observer) => {
 	const entry = entries[0];
 	if (entry.isIntersecting) {
 		hideScrollToTop();
-		console.log("intersecting");
 	} else {
 		const rect = linksElement.getBoundingClientRect();
 		console.log(rect);
 		if (rect.y > window.innerHeight) {
-			console.log("hide");
 			hideScrollToTop();
 		} else {
-			console.log("show");
 			showScrollToTop();
 		}
 	}
