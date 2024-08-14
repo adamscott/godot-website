@@ -933,6 +933,7 @@ $donate-robot-size: 500px;
 								color: var(--color-top);
 								@include is-dark() {
 									color: white;
+									text-decoration-color: white;
 								}
 
 								text-decoration: none;
@@ -1177,6 +1178,7 @@ $donate-robot-size: 500px;
 
 			.section-title a {
 				color: white;
+				text-decoration-color: white;
 
 				text-decoration: none;
 				&:hover {
