@@ -253,6 +253,11 @@ $donate-robot-size: 500px;
 			gap: 10px;
 			padding: var(--card-padding);
 
+			&::after {
+				content: "";
+				flex: auto;
+			}
+
 			.release-card-author {
 				line-height: 0.5em;
 				font-size: 12px;
