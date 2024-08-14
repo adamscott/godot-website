@@ -1951,27 +1951,153 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 		</div>
 		<div class="container">
 			<div class="release-cards">
-				<div id="xr-composition-layers-2d-quality" class="release-card span-2">
+				<div id="xr-composition-layers-quality" class="release-card span-2 media-left">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<h4 class="c-title">
-									<a href="#xr-composition-layers-2d-quality">
-										Composition layers to allow 2D viewports to be displayed at much higher
-										quality
+									<a href="#xr-composition-layers-quality">
+										Composition layers quality
 									</a>
 								</h4>
-								<div class="c-blockquote replace-me">
+								<div class="c-blockquote">
+									Blur, go away
 								</div>
 								<div class="c-content">
-									<p class="replace-me"></p>
+									<p>
+										Visuals rendered by Godot will be modified by the XR compositor in order
+										to correct for the lens distortion. This extra processing can cause 2D
+										content rendered into 3D by Godot to become a little blurry and harder-to-read,
+										especially the small text found in user interfaces.
+									</p>
+									<p>
+										Composition layers allow the XR compositor to directly render a Godot viewport,
+										leading to crisper and clearer 2D content.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="release-card-media">
+							<video class="release-card-video" autoplay loop muted
+								poster="/storage/releases/4.3/images/composition-layers.webp">
+								<source src="/storage/releases/4.3/video/composition-layers.webm"
+									type="video/webm" />
+							</video>
+						</div>
+					</div>
+				</div> <!-- #xr-composition-layers-quality -->
+
+				<div id="xr-hand-body-face-tracking-standardized" class="release-card">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container">
+								<h4 class="c-title">
+									<a href="#xr-hand-body-face-tracking-standardized">
+										Hand, body, and face tracking standardized
+									</a>
+								</h4>
+								<div class="c-content">
+									<p>
+										Godot has long supported hand tracking, however, this was limited to only OpenXR.
+										Now we have a standardized system for XR hand tracking, that can be used by any XR interface,
+										allowing developers to use the same nodes and code to create a hand tracking experience that
+										will work in multiple XR eco-systems. This is currently supported by both OpenXR and WebXR.
+									</p>
+									<p>
+										Similar systems were added for body and face tracking, which are brand new features in Godot 4.3!
+										This is currently supported in OpenXR on Meta Quest headsets.
+									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> <!-- #xr-composition-layers-2d-quality -->
+				</div> <!-- #xr-hand-body-face-tracking-standardized -->
 
-				<div id="xr-scene-discovery-spacial-anchors-on-meta-headsets" class="release-card inverted">
+				<div id="xr-performance-stability-improvements" class="release-card span-3 inverted">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container">
+								<h4 class="c-title">
+									<a href="#xr-performance-stability-improvements">
+										Performance and stability improvements
+									</a>
+								</h4>
+								<div class="c-content">
+									<p>
+										Due to countless improvements made to this part of the engine, XR applications are now more stable and performant.
+									</p>
+									<p>
+										Highlights include:
+									</p>
+									<ul>
+										<li>
+											improved timing of tracking data
+										</li>
+										<li>
+											XR is now thread safe, allowing you to move rendering onto a separate thread
+										</li>
+										<li>
+											foveated rendering has been tweaked on the <em>Mobile</em> and <em>Forward+</em>
+											renderers
+										</li>
+										<li>
+											glasses-based AR and passthrough-based AR have been unified
+										</li>
+									</ul>
+								</div>
+								<div class="c-link"
+									data-contributors="BastiaanOlij,dsnopek"
+									data-read-more="https://github.com/godotengine/godot/pulls?q=87630+89734+89894">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- #xr-performance-stability-improvements -->
+
+				<div id="xr-meta-xr-simulator-support" class="release-card span-2 media-right">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container">
+								<h4 class="c-title">
+									<a href="#xr-meta-xr-simulator-support">
+										Meta XR Simulator support
+									</a>
+								</h4>
+								<div class="c-content">
+									<p>
+										One complication of developing XR games is having to repeatedly test your
+										application on a headset, especially if your headset is a standalone VR
+										unit (read: not connected to a computer).
+									</p>
+									<p>
+										The Meta XR Simulator is a free tool to test your XR application outside
+										of the headset, but only works if you are targeting the Quest series models.
+										After downloading and installing it on your machine, you can now configure
+										it to work directly within your Godot editor. This feature is limited to
+										Windows and macOS because the simulator itself currently does not support
+										Linux.
+									</p>
+								</div>
+								<div class="c-link"
+									data-contributors="dsnopek,BastiaanOlij"
+									data-read-more="https://github.com/godotengine/godot/pull/85117">
+								</div>
+							</div>
+						</div>
+						<div class="release-card-media">
+							<img class="release-card-image position-top-left"
+								src="/storage/releases/4.3/images/xr-meta-xr-simulator.webp"
+								srcset="
+									/storage/releases/4.3/images/xr-meta-xr-simulator-2x.webp 2x
+								"
+								alt="Image of a Godot scene running in the Meta XR Simulator"
+								draggable="false"
+							/>
+						</div>
+					</div>
+				</div> <!-- #xr-meta-xr-simulator-support -->
+
+				<div id="xr-scene-discovery-spacial-anchors-on-meta-headsets" class="release-card">
 					<div class="release-card-container">
 						<div class="release-card-content">
 							<div class="release-card-content-container">
@@ -2006,92 +2132,6 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 						</div>
 					</div>
 				</div> <!-- #xr-scene-discovery-spacial-anchors-on-meta-headsets -->
-
-				<div id="xr-standardized-support-tracking" class="release-card span-3">
-					<div class="release-card-container">
-						<div class="release-card-content">
-							<div class="release-card-content-container">
-								<h4 class="c-title">
-									<a href="#xr-standardized-support-tracking">
-										Standardized and enhanced support for hand/finger tracking, body tracking,
-										and face tracking
-									</a>
-								</h4>
-								<div class="c-blockquote replace-me">
-								</div>
-								<div class="c-content">
-									<p class="replace-me"></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> <!-- #xr-standardized-support-tracking -->
-
-				<div id="xr-meta-xr-simulator-support" class="release-card span-2 inverted">
-					<div class="release-card-container">
-						<div class="release-card-content">
-							<div class="release-card-content-container">
-								<h4 class="c-title">
-									<a href="#xr-meta-xr-simulator-support">
-										Meta XR Simulator support
-									</a>
-								</h4>
-								<div class="c-content">
-									<p>
-										One complication of developing XR games is having to repeatedly test your
-										application on a headset, especially if your headset is a standalone VR
-										unit (read: not connected to a computer).
-									</p>
-									<p>
-										The Meta XR Simulator is a free tool to test your XR application outside
-										of the headset, but only works if you are targeting the Quest series models.
-										After downloading and installing it on your machine, you can now configure
-										it to work directly within your Godot editor. This feature is limited to
-										Windows and macOS because the simulator itself currently does not support
-										Linux.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> <!-- #xr-meta-xr-simulator-support -->
-
-				<div id="xr-performance-stability-improvements" class="release-card">
-					<div class="release-card-container">
-						<div class="release-card-content">
-							<div class="release-card-content-container">
-								<h4 class="c-title">
-									<a href="#xr-performance-stability-improvements">
-										Performance and stability improvements
-									</a>
-								</h4>
-								<div class="c-content">
-									<p>
-										Due to countless improvements made to this part of the engine, XR applications are now more stable and performant.
-									</p>
-									<p>
-										Highlights include:
-									</p>
-									<ul>
-										<li>
-											improved timing of tracking data
-										</li>
-										<li>
-											XR is now thread safe, allowing you to move rendering onto a separate thread
-										</li>
-										<li>
-											foveated rendering has been tweaked on the <em>Mobile</em> and <em>Forward+</em>
-											renderers
-										</li>
-										<li>
-											glasses-based AR and passthrough-based AR have been unified
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> <!-- #xr-performance-stability-improvements -->
 			</div>
 		</div>
 	</div> <!-- #xr -->
