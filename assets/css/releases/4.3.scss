@@ -540,7 +540,7 @@ $donate-robot-size: 500px;
 		.release-cards {
 			display: grid;
 			width: 100%;
-			gap: $grid-gap;
+			gap: var(--card-padding);
 			grid-template-columns:
 				repeat(3, minmax($column-min-width, 1fr));
 			grid-auto-flow: row dense;
@@ -679,7 +679,7 @@ $donate-robot-size: 500px;
 				color: white;
 
 				.release-card-container {
-					.release-card-content .release-card-content-container{
+					.release-card-content .release-card-content-container {
 						.c-title {
 							color: white;
 
@@ -719,7 +719,7 @@ $donate-robot-size: 500px;
 
 			.release-card-container {
 				display: grid;
-				gap: $grid-gap;
+				gap: var(--card-padding);
 				grid-template-areas:
 					"contnt";
 
@@ -732,7 +732,7 @@ $donate-robot-size: 500px;
 
 					.release-card-content-container {
 						display: grid;
-						gap: $grid-gap;
+						gap: var(--card-padding);
 						height: 100%;
 
 						&:has(.c-title):has(.c-blockquote):has(.c-content) {
