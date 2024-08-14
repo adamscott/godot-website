@@ -73,6 +73,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 				</div>
 				<div class="header-numbers">
 					<div class="header-numbers-entry header-numbers-commits">
+						<strong>Commits</strong>
 						{% assign version_max = 3487 %}
 						{% assign versions = "4.3,3487|4.2,1876|4.1,1464" | split: "|" %}
 
@@ -84,12 +85,13 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							data-value="{{version_value}}" data-max="{{version_max}}">
 							<span class="version">{{version_number}}</span>
 							<div class="bar"></div>
-							<span class="number"><noscript>{{version_value}}</noscript></span>{% if forloop.first %}&nbsp;<span class="text">commits</span>{%
+							<span class="number"><noscript>{{version_value}}</noscript></span>{% if forloop.first %}&nbsp;<span class="text"><!-- commits --></span>{%
 							endif %}
 						</div>
 						{% endfor %}
 					</div>
 					<div class="header-numbers-entry header-numbers-contributors">
+						<strong>Contributors</strong>
 						{% assign version_max = 518 %}
 						{% assign versions = "4.3,518|4.2,359|4.1,311" | split: "|" %}
 
@@ -102,7 +104,7 @@ authors_list: "0x0ACB,8,8|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<span class="version">{{version_number}}</span>
 							<div class="bar"></div>
 							<span class="number"><noscript>{{version_value}}</noscript></span>{% if forloop.first %}&nbsp;<span
-								class="text">contributors</span>{%
+								class="text"><!-- contributors --></span>{%
 							endif %}
 						</div>
 						{% endfor %}
