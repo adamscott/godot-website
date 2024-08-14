@@ -227,8 +227,10 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										The new resources <code>AudioStreamInteractive</code>,
-										<code>AudioStreamPlaylist</code>, and <code>AudioStreamSynchronized</code>, you
+										The new resources
+										<code class="highlight"><span class="basetype">AudioStreamInteractive</span></code>,
+										<code class="highlight"><span class="basetype">AudioStreamPlaylist</span></code>,
+										and <code class="highlight"><span class="basetype">AudioStreamSynchronized</span></code>
 										enable you to create complex, layered music and transitions.
 									</p>
 									<p>
@@ -345,7 +347,10 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#highlights-new-tilemaplayer-node">
-										<code>TileMap</code> layers turn into <code>TileMapLayer</code> nodes
+										<code class="highlight"><span class="basetype">TileMap</span></code>
+										layers turn into
+										<code class="highlight"><span class="basetype">TileMapLayer</span></code>
+										nodes
 									</a>
 								</h4>
 								<div class="c-blockquote">
@@ -353,19 +358,22 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								</div>
 								<div class="c-content">
 									<p>
-										Before this release, if you wanted to add layers to your <code>TileMap</code>,
+										Before this release, if you wanted to add layers to your
+										<code class="highlight"><span class="basetype">TileMap</span></code>,
 										you had to add them in the inspector. We simplified this by creating a new
-										<code>TileMapLayer</code> node to replace the old way completely.
+										<code class="highlight"><span class="basetype">TileMapLayer</span></code>
+										node to replace the old way completely.
 									</p>
 									<p>
 										Aside from being more intuitive to use, this is now more in line with
 										Godot Engine's design philosophy in general.
 									</p>
 									<p>
-										For your convenience, you can convert your existing <code>TileMap</code>
-										nodes into <code>TileMapLayer</code> nodes with one click directly in the
-										editor. The deprecated node type is still supported for the time being,
-										if you prefer.
+										For your convenience, you can convert your existing
+										<code class="highlight"><span class="basetype">TileMap</span></code>
+										nodes into <code class="highlight"><span class="basetype">TileMapLayer</span></code>
+										nodes with one click directly in the editor. The deprecated node type is still supported
+										for the time being, if you prefer.
 									</p>
 								</div>
 								<div class="c-link"
@@ -475,7 +483,9 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#2d-parallax2d-node">
-										New <code>Parallax2D</code> node available
+										New
+										<code class="highlight"><span class="basetype">Parallax2D</span></code>
+										node available
 									</a>
 								</h4>
 								<div class="c-blockquote">
@@ -489,9 +499,10 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 									</p>
 									<p>
 										While you were able to add a parallax effect to your games already,
-										the previous implementation of <code>ParallaxLayer</code> came with
-										limitations. For instance, overlaying effects as seen in the video
-										here was impossible before.
+										the previous implementation of
+										<code class="highlight"><span class="basetype">Parallax2D</span></code>
+										came with limitations. For instance, overlaying effects as seen in the
+										video here was impossible before.
 									</p>
 									<p>
 										Once again, we also built in a converter for your existing scenes.
@@ -572,22 +583,29 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#animation-skeletonmodifier3d-node">
-										New <code>SkeletonModifier3D</code> node
+										New
+										<code class="highlight"><span class="basetype">SkeletonModifier3D</span></code>
+										node
 									</a>
 								</h4>
 								<div class="c-blockquote">
-									The <code>AnimationMixer</code> grew new <span class="highlight">bones</span>
+									The
+									<code class="highlight"><span class="basetype">AnimationMixer</span></code>
+									grew new <span class="highlight">bones</span>
 								</div>
 								<div class="c-content">
 									<p>
 										Prior to this release, moving bones via script was tricky.
-										The new <code>SkeletonModifier3D</code> node makes this process both easier
+										The new
+										<code class="highlight"><span class="basetype">SkeletonModifier3D</span></code>
+										node makes this process both easier
 										to grasp and more flexible overall.
 									</p>
 									<p>
 										Important to note: this is an abstract node, meaning you cannot add it to
-										your projects directly. Instead you can <code>extend</code> it in your
-										scripts for custom functionality.
+										your projects directly. Instead you can
+										<code class="highlight"><span class="gdscript-annotation">@extend</span></code>
+										it in your scripts for custom functionality.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1302,7 +1320,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#gdscript-is-not-operator">
-										<code><span class="keyword">is not</span></code> operator
+										<code class="highlight"><span class="keyword">is not</span></code> operator
 									</a>
 								</h4>
 								<div class="c-content">
@@ -1329,8 +1347,8 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 										This rather small change should help keep your code readable,
 										by being closer to the natural language equivalent of what you
 										are attempting to do: the test checks whether my_node
-										<code><span class="keyword">is not</span></code> of the type
-										Node3D.
+										<code class="highlight"><span class="keyword">is not</span></code>
+										of the type Node3D.
 									</p>
 								</div>
 								<div class="c-link"
@@ -1349,7 +1367,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 								<h4 class="c-title">
 									<a href="#gdscript-built-in-functions-usable-as-callable">
 										Built-in functions are now usable as
-										<code>
+										<code class="highlight">
 											<span class="basetype">Callable</span>
 										</code>
 									</a>
@@ -1385,7 +1403,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#gdscript-export-storage-property-hint">
-										<code>
+										<code class="highlight">
 											<span class="gdscript-annotation">@export_storage</span>
 										</code>
 										property annotation
@@ -1423,7 +1441,7 @@ authors_list: "0x0ACB,7,7|0xafbf,1,1|20kdc,2,2|2nafish117,1,1|31,3,3|398utubzyt,
 							<div class="release-card-content-container">
 								<h4 class="c-title">
 									<a href="#gdscript-export-custom-property-hint">
-										<code>
+										<code class="highlight">
 											<span class="gdscript-annotation">@export_custom</span>
 										</code>
 										property annotation
