@@ -1,0 +1,803 @@
+---
+---
+
+// Fixes the parsing of the unusual front matter / SCSS file.
+*{};
+
+//
+// Reset
+//
+ul {
+	line-height: unset;
+	padding-left: unset;
+}
+
+//
+// Variables
+//
+$mobile-max-width: 700px;
+$mobile-sm-max-width: 450px;
+$gap: 1.25rem;
+$border-radius: 15px;
+
+$element-meta-planning-bar-width: 15%;
+$element-meta-ongoing-bar-width: 50%;
+
+$color-background-light: #FFFFFF;
+$color-background-dark: rgb(51, 54, 57);
+$color-red: #f35774;
+
+//
+// Functions
+//
+
+
+//
+// Mixins
+//
+@mixin is-dark() {
+	@media screen and (prefers-color-scheme: dark) {
+		@content;
+	}
+}
+
+@mixin is-light() {
+	@media screen and (prefers-color-scheme: light) {
+		@content;
+	}
+}
+
+@mixin is-mobile() {
+	@media screen and (max-width: #{$mobile-max-width}) {
+		@content;
+	}
+}
+
+@mixin is-mobile-sm() {
+	@media screen and (max-width: #{$mobile-sm-max-width}) {
+		@content;
+	}
+}
+
+@mixin is-retina() {
+	@media screen and (min-resolution: 2x) {
+		@content;
+	}
+}
+
+//
+// General
+//
+html {
+	scroll-behavior: smooth;
+	@media (prefers-reduced-motion) {
+		scroll-behavior: auto;
+	}
+	scroll-padding-top: $gap;
+}
+
+// Priorities container.
+.priorities-container {
+	font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background-color: var(--card-background-color);
+	overflow: visible;
+	position: relative;
+
+	> .banner {
+		@mixin set-background($color, $url) {
+			$color-with-alpha: change-color($color, $alpha: 0.866667);
+			background:
+				linear-gradient(to right, $color-with-alpha, $color-with-alpha),
+				linear-gradient(to bottom, rgba(0,0,0,0) 85%, $color 100%),
+				url($url);
+			background-color: black;
+			background-size: cover, cover, cover;
+			background-repeat: repeat, repeat, repeat;
+		}
+
+		@mixin setup-background($color) {
+			@include set-background($color, "/storage/priorities/images/page/map2-2048.webp");
+			@include is-retina() {
+				@include set-background($color, "/storage/priorities/images/page/map2-4096.webp");
+			}
+		}
+
+		@include setup-background($color-background-light);
+		@include is-dark() {
+			@include setup-background($color-background-dark);
+		}
+
+		.container {
+			padding-top: 7rem;
+			padding-bottom: 7rem;
+
+			.banner-last-updated {
+				display: flex;
+				flex-direction: row;
+
+				.label {
+					.recently-updated {
+						font-weight: 600;
+						color: $color-red;
+					}
+
+					&::after {
+						content: " ";
+					}
+				}
+				.date {
+
+				}
+			}
+		}
+	}
+
+	> .intro {
+		.wishlist-btns {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"donate howto contact";
+			gap: $gap;
+
+			margin: (3 * $gap) 0;
+			font-weight: 600;
+
+			@include is-mobile() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-areas:
+					"donate donate"
+					"howto contact";
+			}
+
+			@include is-mobile-sm() {
+				grid-template-columns: repeat(1, 1fr);
+				grid-template-areas:
+					"donate"
+					"howto"
+					"contact";
+			}
+
+			.donate {
+				grid-area: donate;
+			}
+
+			.howto {
+				grid-area: howto;
+			}
+
+			.contact {
+				grid-area: contact;
+			}
+
+			.wishlist-btn-anchor {
+				color: $color-red;
+
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			.wishlist-btn-text {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+
+	> .navigation {
+		top: 0px;
+		z-index: 1000;
+		background-color: $color-background-light;
+		@include is-dark() {
+			background-color: $color-background-dark;
+		}
+
+		margin: $gap 0;
+		user-select: none;
+
+		li {
+			list-style: none;
+			margin-bottom: 0;
+		}
+
+		.navigation-list-container {
+			position: relative;
+
+			.navigation-list {
+				margin: 0;
+
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				gap: $gap;
+
+				@include is-mobile() {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+				}
+
+				@include is-mobile-sm() {
+					grid-template-columns: 1fr;
+				}
+
+				> li {
+					list-style: none;
+					flex-grow: 1;
+					width: 100%;
+					margin: 0;
+
+					> details[name="priorities-navigation"] {
+						> summary {
+							display: flex;
+							flex-direction: row;
+
+							background-color: var(--background-color);
+							&:hover {
+								background-color: var(--base-color);
+							}
+
+							border-radius: $border-radius;
+							width: calc(100% - #{$gap * 2});
+							height: 100%;
+							padding: $gap $gap;
+							cursor: pointer;
+
+							&::-webkit-details-marker {
+								display: none;
+							}
+
+							.label {
+								width: 100%;
+								flex-grow: 1;
+							}
+
+							.toggle {
+								flex-grow: 0;
+
+								.more {
+									display: block;
+								}
+								.less {
+									display: none;
+								}
+
+								@at-root #{selector-replace(&, "details[name='priorities-navigation']", "details[name='priorities-navigation'][open]")} {
+									.more {
+										display: none;
+									}
+									.less {
+										display: block;
+									}
+								}
+							}
+						}
+
+						.navigation-sublist {
+							display: flex;
+							flex-direction: column;
+							gap: $gap / 4;
+
+							margin-top: $gap / 2;
+							margin-left: $gap;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// i.e. "core", "rendering", or "physics"
+	> .priorities {
+		display: flex;
+		flex-direction: column;
+		gap: $gap * 2;
+
+		.category {
+			> .container {
+				> .category-details {
+					> .category-summary {
+						display: grid;
+						grid-template-areas:
+							"anchor title . icon";
+						grid-template-columns:
+							min-content auto 1fr min-content;
+						gap: $gap;
+						align-items: baseline;
+
+						border-radius: $border-radius;
+						padding: 1rem 2rem;
+						letter-spacing: -2px;
+						font-weight: 600;
+						color: white;
+						cursor: pointer;
+						line-height: 3rem;
+
+						list-style: none;
+						&::-webkit-details-marker {
+							display: none;
+						}
+
+						// .category.level-1
+						@at-root #{selector-replace(&, ".category", ".category.level-1")} {
+							background-color: var(--primary-color);
+							font-size: 3rem;
+						}
+						// .category.level-2
+						@at-root #{selector-replace(&, ".category", ".category.level-2")} {
+							background-color: var(--background-color);
+							font-size: 2.125rem;
+						}
+
+						.category-anchor {
+							grid-area: anchor;
+
+							text-decoration: none;
+							color: white;
+							opacity: 0;
+
+							// On .category-title:hover
+							@at-root #{selector-replace(&, ".category-title", ".category-title:hover")}, &:focus {
+								opacity: 1;
+							}
+						}
+
+						.category-title {
+							grid-area: title;
+
+							position: relative;
+							margin-bottom: 0;
+
+							.category-title-text {
+								flex-grow: 1;
+								width: 100%;
+								color: white;
+
+								> p {
+									margin: 0;
+								}
+							}
+
+							.recent-icon {
+								display: block;
+								position: absolute;
+								$size: 0.75rem;
+								width: $size;
+								height: $size;
+								border-radius: $size;
+								top: ($size / 4);
+								left: -(($size / 4) * 3);
+								background-color: $color-red;
+							}
+						}
+
+						.category-accordion-toggle {
+							grid-area: icon;
+
+							.more {
+								display: block;
+							}
+							.less {
+								display: none;
+							}
+							@at-root #{selector-replace(&, ".category-details", ".category-details[open]")} {
+								.more {
+									display: none;
+								}
+								.less {
+									display: block;
+								}
+							}
+						}
+					}
+				}
+
+				.category-content {
+					.element-list {
+						display: flex;
+						flex-direction: column;
+
+						padding-left: 0;
+						margin-bottom: 0;
+
+						> .element-list-item {
+							list-style: none;
+							margin-bottom: 0;
+
+							border-top: 2px solid var(--primary-color);
+							&:last-of-type {
+								border-bottom: 2px solid var(--primary-color);
+							}
+
+							> .element {
+								display: grid;
+								grid-template-areas:
+									"meta main";
+								grid-template-columns: minmax(10vw, 15%) auto;
+								grid-template-rows: auto;
+								gap: $gap;
+
+								padding: 1.25rem 0;
+
+								@include is-mobile() {
+									grid-template-areas:
+										"meta"
+										"main";
+									grid-template-columns: auto;
+									grid-template-rows: auto;
+								}
+
+								.element-meta {
+									grid-area: meta;
+
+									display: grid;
+									grid-template-areas:
+										"stage"
+										"last-updated"
+										"created";
+									grid-template-rows:
+										repeat(3, min-content);
+									gap: $gap / 4;
+
+									font-weight: 200;
+
+									.element-stage {
+										grid-area: stage;
+
+										display: flex;
+										flex-direction: column;
+										align-items: center;
+
+										.preview-bar {
+											contain: paint;
+											height: 1rem;
+											width: 100%;
+											border-radius: 999999px;
+											background-color: var(--background-color);
+
+											.progress {
+												position: absolute;
+												top: 0;
+												left: 0;
+												height: 100%;
+
+												background-color: var(--primary-color);
+												border-top-right-radius: 9999px;
+												border-bottom-right-radius: 9999px;
+
+												// Planning.
+												@at-root #{selector-replace(&, ".element-stage", ".element-stage.planning")} {
+													width: $element-meta-planning-bar-width;
+												}
+
+												// Ongoing.
+												@at-root #{selector-replace(&, ".element-stage", ".element-stage.ongoing")} {
+													width: $element-meta-ongoing-bar-width;
+												}
+
+												// Done.
+												@at-root #{selector-replace(&, ".element-stage", ".element-stage.done")} {
+													width: 100%;
+													border-top-right-radius: 0;
+													border-bottom-right-radius: 0;
+												}
+											}
+										}
+
+										.current-stage {
+											font-size: 1rem;
+											font-weight: 200;
+											font-variant-caps: all-small-caps;
+										}
+									}
+
+									.element-last-updated {
+										grid-area: last-updated;
+
+										display: flex;
+										flex-direction: row;
+										align-items: center;
+										justify-content: center;
+
+										font-size: 0.75rem;
+										font-style: italic;
+
+										&.recent {
+											flex-direction: column;
+										}
+
+										> .label {
+											// Default state.
+											.last-updated {
+												display: block;
+
+												&::after {
+													content: " ";
+												}
+											}
+											.recently-updated {
+												display: none;
+												font-weight: 600;
+												color: $color-red;
+
+												font-size: 1rem;
+												font-style: normal;
+											}
+
+											// If update is recent.
+											@at-root #{selector-replace(&, ".element-last-updated", ".element-last-updated.recent")} {
+												.last-updated {
+													display: none;
+												}
+												.recently-updated {
+													display: block;
+												}
+											}
+										}
+
+										> .value {
+
+										}
+									}
+
+									.element-created {
+										grid-area: created;
+
+										display: flex;
+										flex-direction: row;
+										align-items: center;
+										justify-content: center;
+
+										font-size: 0.75rem;
+										font-style: italic;
+
+										> .label {
+											&::after {
+												content: " ";
+											}
+										}
+									}
+								}
+
+								.element-main {
+									grid-area: main;
+
+									height: 100%;
+
+									.element-title {
+										display: flex;
+										flex-direction: row;
+										align-items: stretch;
+										gap: $gap;
+
+										cursor: pointer;
+										border-radius: $border-radius;
+
+										margin-top: -$gap;
+										padding: $gap;
+
+										&:hover {
+											background-color: var(--background-color);
+										}
+
+										// Gross hack to make the element title height consistent when toggled.
+										height: 100%;
+										@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
+											// padding-bottom: $gap * 2;
+											// margin-bottom: -$gap;
+											height: auto;
+										}
+
+										list-style: none;
+										&::-webkit-details-marker {
+											display: none;
+										}
+
+										.element-title-anchor {
+											flex-grow: 0;
+
+											display: flex;
+											flex-direction: row;
+											align-items: center;
+
+											text-decoration: none;
+										}
+
+										.element-title-text {
+											flex-grow: 1;
+											width: 100%;
+
+											display: flex;
+											flex-direction: row;
+											align-items: center;
+
+											font-weight: 700;
+
+											> p {
+												margin: 0;
+											}
+										}
+
+										.element-accordion-toggle {
+											flex-grow: 0;
+
+											display: flex;
+											flex-direction: row;
+											align-items: center;
+
+											.less {
+												display: none;
+											}
+											.more {
+												display: block;
+											}
+
+											@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
+												.less {
+													display: block;
+												}
+												.more {
+													display: none;
+												}
+											}
+										}
+									}
+
+									.element-content {
+										padding: 0 $gap;
+
+										.element-description {
+											font-size: 1rem;
+										}
+
+										.element-details {
+											display: flex;
+											flex-direction: column;
+											gap: $gap;
+
+											font-size: 0.9rem;
+
+											.detail-block {
+												padding: 1rem 0 1rem 2rem;
+												border-left: 2px solid;
+
+												p {
+													&:first-child {
+														margin-top: 0;
+													}
+													&:last-child {
+														margin-bottom: 0;
+													}
+												}
+
+												ul {
+													padding-left: 1.5rem;
+
+													li {
+														margin-bottom: 0.45rem;
+													}
+
+													&:last-child {
+														li:last-child {
+															margin-bottom: 0;
+														}
+													}
+												}
+
+												> ul {
+													// Force reset the style for the first list.
+													list-style-type: disc;
+												}
+
+												> ol {
+													// Force reset the style for the first list.
+													counter-reset: element-details-list-counter;
+												}
+
+												.detail-block-header {
+													display: flex;
+													flex-direction: row;
+													align-items: center;
+													gap: $gap / 2;
+													margin-bottom: $gap / 2;
+
+													.icon {
+														@mixin parent-is($type) {
+															@at-root #{selector-replace(&, ".detail-block", ".detail-block.#{$type}")} {
+																@content;
+															}
+														}
+
+														@mixin octicon($icon-url) {
+															display: inline-block;
+															width: 24px;
+															height: 24px;
+															mask-size: 24px;
+															mask-position: center;
+															mask-image: url($icon-url);
+															background-color: currentColor;
+														}
+
+														@include parent-is("note") {
+															// Google icon "info"
+														}
+
+														@include parent-is("warning") {
+															// Google icon "warning"
+														}
+
+														@include parent-is("prs") {
+															@include octicon("/assets/icons/octicons/git-pull-request-24.svg");
+														}
+
+														@include parent-is("issues") {
+															@include octicon("/assets/icons/octicons/bug-24.svg");
+														}
+
+														@include parent-is("proposals") {
+															@include octicon("/assets/icons/octicons/zap-24.svg");
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#scroll-to-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none;
+
+	--card-padding: $gap;
+	@include is-mobile() {
+		--card-padding: $gap / 2;
+	}
+
+	.link {
+		pointer-events: all;
+		position: fixed;
+		bottom: $gap;
+		right: $gap;
+		width: 50px;
+		height: 50px;
+		margin: var(--card-padding);
+		text-decoration: none;
+		background-color: white;
+		border-radius: $border-radius;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: rgba(0,0,0,25%) 1px 1px 5px;
+
+		color: black;
+		font-size: 1.5em;
+
+		&:hover {
+			span {
+				font-size: 35px;
+			}
+		}
+
+		span {
+			transition: font-size 0.2s ease-in-out;
+			transform:
+				translateY(-3px);
+		}
+	}
+}

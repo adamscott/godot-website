@@ -1,0 +1,125 @@
+{% assign now = "now" | date: "%s" | plus: 0 %}
+{% assign last_updated_duration = include.last_updated_duration | default: 0 %}
+{% assign enable_recent_update = include.enable_recent_update %}
+
+{% assign element = include.element %}
+
+{% assign element_last_updated_classes = "element-last-updated" | split: "," %}
+{% if element.last_updated != "" %}
+	{% assign last_updated = element.last_updated | date: "%s" | plus: 0 %}
+	{% if last_updated > (now | minus: last_updated_duration) %}
+		{% if enable_recent_update %}
+			{% assign element_last_updated_classes = element_last_updated_classes | push: "recent" %}
+		{% endif %}
+	{% endif %}
+{% endif %}
+{% assign element_last_updated_class = element_last_updated_classes | join: " " %}
+
+{% assign element_stage_classes = "element-stage" | split: "," %}
+{% assign current_stage = "" %}
+{% if element.stage.done != "" %}
+	{% assign element_stage_classes = element_stage_classes | push: "done" %}
+	{% assign current_stage = "Done" %}
+{% elsif element.stage.ongoing != "" %}
+	{% assign element_stage_classes = element_stage_classes | push: "ongoing" %}
+	{% assign current_stage = "Ongoing" %}
+{% elsif element.stage.planning != "" %}
+	{% assign element_stage_classes = element_stage_classes | push: "planning" %}
+	{% assign current_stage = "Planning" %}
+{% else %}
+	{% assign element_stage_classes = element_stage_classes | push: "todo" %}
+	{% assign current_stage = "To do" %}
+{% endif %}
+{% assign element_stage_class = element_stage_classes | join: " " %}
+
+<div id="{{ element.anchor }}" class="element">
+	<div class="element-meta">
+		<div class="{{ element_stage_class }}">
+			<div class="preview-bar">
+				<div class="progress"></div>
+			</div>
+			<div class="current-stage">
+				<span>{{ current_stage }}</span>
+			</div>
+		</div>
+		<div class="element-created">
+			<div class="label">
+				<span>Created</span>
+			</div>
+			<div class="value">
+				<time datetime="{{ element.created }}">{{ element.created }}</time>
+			</div>
+		</div>
+		<div class="{{ element_last_updated_class }}">
+			<div class="label">
+				<span class="last-updated">Last updated</span>
+				<span class="recently-updated">Recently updated!</span>
+			</div>
+			<div class="value">
+				<time datetime="{{ element.last_updated }}">{{ element.last_updated }}</time>
+			</div>
+		</div>
+	</div>
+	<details class="element-main">
+		<summary class="element-title">
+			<a class="element-title-anchor" href="#{{ element.anchor }}">
+				<span class="material-symbols-outlined">link</span>
+			</a>
+			<div class="element-title-text">{{ element.title | markdownify }}</div>
+			<div class="element-accordion-toggle">
+				<span class="material-symbols-outlined more">unfold_more</span>
+				<span class="material-symbols-outlined less">unfold_less</span>
+			</div>
+		</summary>
+		<div class="element-content">
+			<div class="element-description">
+				{% if element.description == "" %}
+					<em>...</em>
+				{% else %}
+					{{ element.description | markdownify }}
+				{% endif %}
+			</div>
+			<div class="element-details">
+				{% for detail in element.details %}
+					<div class="detail-block {{ detail.type }}">
+						<div class="detail-block-header">
+							<div class="icon">
+								{% if detail.type == "note" %}
+									<span class="material-symbols-outlined info">info</span>
+								{% elsif detail.type == "warning" %}
+									<span class="material-symbols-outlined warning">warning</span>
+								{% elsif detail.type == "links" %}
+									<span class="material-symbols-outlined links">file_export</span>
+								{% elsif detail.type == "prs" %}
+									<!-- /assets/icons/octicons/git-pull-request-24.svg -->
+								{% elsif detail.type == "issues" %}
+									<!-- /assets/icons/octicons/bug-24.svg -->
+								{% elsif detail.type == "proposals" %}
+									<!-- /assets/icons/octicons/zap-24.svg -->
+								{% endif %}
+							</div>
+							<div class="label">
+								{% if detail.type == "note" %}
+									<span>Note</span>
+								{% elsif detail.type == "warning" %}
+									<span>Warning</span>
+								{% elsif detail.type == "links" %}
+									<span>Links</span>
+								{% elsif detail.type == "prs" %}
+									<span>Pull requests</span>
+								{% elsif detail.type == "issues" %}
+									<span>Issues</span>
+								{% elsif detail.type == "proposals" %}
+									<span>Proposals</span>
+								{% endif %}
+							</div>
+						</div>
+						<div class="detail-block-content">
+							{{ detail.content | markdownify }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</details>
+</div>
