@@ -1,3 +1,63 @@
 ---
 ---
 
+.priorities-container {
+	background-color: var(--card-background-color);
+
+	.banner {
+		.container {
+			padding-top: 7rem;
+			padding-bottom: 7rem;
+
+			.last-updated {
+				display: flex;
+				flex-direction: row;
+
+				.label {
+
+				}
+				.date {
+
+				}
+			}
+		}
+	}
+
+	.intro {
+		.wishlist-btns {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+	}
+
+	.navigation {
+
+	}
+
+	.priorities {
+		.category {
+			& > .container {
+				.category-title {
+
+				}
+
+				.category-content {
+					.element-list {
+						padding-left: 0;
+						margin-bottom: 0;
+
+						.element {
+							.element-title {
+
+							}
+							.element-content {
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
