@@ -1,0 +1,113 @@
+---
+permalink: /priorities
+title: "Priorities"
+description: "Godot Priorities"
+layout: default
+---
+
+{% include header.html %}
+
+<link rel="stylesheet" href="/assets/css/priorities.css" />
+
+<div class="priorities-container">
+	<div class="banner">
+		<div class="container">
+			<h1>Priorities</h1>
+			<div class="last-updated">
+				<div class="label">Last updated:</div>
+				<div class="date">
+					<time datetime="2024-11-30">2024-11-30</time>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="intro">
+		<div class="container">
+			<p class="wishlist-par">
+				This page can be understood as a <strong>wishlist</strong>:
+				it details the software improvements that we deem necessary to make the Godot Engine a better tool for its users.
+				The bullet points were created by talking to the volunteer maintainers for each area about the current state of things,
+				their personal goals, and what kind of contributions they are looking for.
+			</p>
+			<p class="wishlist-par">
+				Please understand that as with any wishlist, these points are an idealized version of what is to come in the project’s future.
+				To realize them, we will need the support from you, whether you are a representative for a company looking to invest into Godot
+				or a game developer eager to contribute to the codebase directly. The Godot Engine has always been a <strong>community effort</strong> -
+				there is only so much ground we can cover with Godot Foundation contractors at the moment.
+			</p>
+			<p class="wishlist-par">
+				We hope that by publishing this list, we can align our communal efforts more easily: by showcasing which areas need to see
+				improvements the most and what the concrete next steps would be for anyone taking action. Let this list be an indicator of…
+			</p>
+			<ol class="wishlist-list">
+				<li>what kind of contractors we would like to hire if donations increase,</li>
+				<li>what areas are ripe with good first issues for new contributors, and</li>
+				<li>where corporate partners could lend a helping hand</li>
+			</ol>
+			<div class="wishlist-btns">
+				<a href="https://fund.godotengine.org/">
+					<div class="wishlist-btn-text">Donate to the Fund</div>
+				</a>
+				<a href="https://docs.godotengine.org/en/stable/contributing/how_to_contribute.html">
+					<div class="wishlist-btn-text">How to contribute</div>
+				</a>
+				<a href="mailto:contact@godot.foundation">
+					<div class="wishlist-btn-text">Contact the Foundation</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="navigation">
+
+	</div>
+
+	<div class="priorities">
+		{%
+			include_relative _includes/category.html
+			level="1"
+			id="core"
+			name="Core"
+			elements="
+				_includes/01-core/overhaul-addon-startup.html
+				_includes/01-core/reliable-headless-command-line-export.html
+				_includes/01-core/improve-performance-of-scene-multithreading.html
+				_includes/01-core/teach-users-on-profiling.html
+				_includes/01-core/create-more-benchmarks.html
+			"
+		%}
+
+		{%
+			include_relative _includes/category.html
+			level="2"
+			id="physics"
+			name="Physics"
+			elements="
+				_includes/02-physics/integrating-jolt.html
+				_includes/02-physics/adapt-the-way-godot-exposes-physics-to-mirror-jolt.html
+			"
+		%}
+
+		{%
+			include_relative _includes/category.html
+			level="2"
+			id="rendering"
+			name="Rendering"
+			elements="
+				_includes/03-rendering/overhaul-sdfgi.html
+				_includes/03-rendering/significantly-improve-post-processing-effects.html
+				_includes/03-rendering/add-a-rendering-compositor.html
+				_includes/03-rendering/enhanced-graphics-debugging.html
+				_includes/03-rendering/shader-templates.html
+				_includes/03-rendering/texture-and-mesh-streaming.html
+				_includes/03-rendering/deferred-renderer.html
+				_includes/03-rendering/overhaul-lightmapgi.html
+				_includes/03-rendering/override-the-entire-renderer-using-a-gdextension.html
+				_includes/03-rendering/webgpu-backend-for-web-exports.html
+			"
+		%}
+	</div>
+</div>
+
+{% include footer.html %}
