@@ -8,9 +8,10 @@
 		<div class="category-content">
 			<ul class="element-list">
 				{% assign elements = include.elements | strip | split: " " %}
-
 				{% for element in elements %}
-				{% include_relative {{ element }} %}
+				{% assign element_file_name = element | split: "/" | last %}
+				{% assign element_id = element_file_name | split: ".html" | first %}
+				{% include_relative {{ element }} id=element_id %}
 				{% endfor %}
 			</ul>
 		</div>
