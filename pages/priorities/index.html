@@ -64,49 +64,9 @@ layout: default
 	</div>
 
 	<div class="priorities">
-		{%
-			include_relative _includes/category.html
-			level="1"
-			id="core"
-			name="Core"
-			elements="
-				_includes/01-core/overhaul-addon-startup.html
-				_includes/01-core/reliable-headless-command-line-export.html
-				_includes/01-core/improve-performance-of-scene-multithreading.html
-				_includes/01-core/teach-users-on-profiling.html
-				_includes/01-core/create-more-benchmarks.html
-			"
-		%}
-
-		{%
-			include_relative _includes/category.html
-			level="2"
-			id="physics"
-			name="Physics"
-			elements="
-				_includes/02-physics/integrating-jolt.html
-				_includes/02-physics/adapt-the-way-godot-exposes-physics-to-mirror-jolt.html
-			"
-		%}
-
-		{%
-			include_relative _includes/category.html
-			level="2"
-			id="rendering"
-			name="Rendering"
-			elements="
-				_includes/03-rendering/overhaul-sdfgi.html
-				_includes/03-rendering/significantly-improve-post-processing-effects.html
-				_includes/03-rendering/add-a-rendering-compositor.html
-				_includes/03-rendering/enhanced-graphics-debugging.html
-				_includes/03-rendering/shader-templates.html
-				_includes/03-rendering/texture-and-mesh-streaming.html
-				_includes/03-rendering/deferred-renderer.html
-				_includes/03-rendering/overhaul-lightmapgi.html
-				_includes/03-rendering/override-the-entire-renderer-using-a-gdextension.html
-				_includes/03-rendering/webgpu-backend-for-web-exports.html
-			"
-		%}
+		{% for priority in site.priorities %}
+			<h2>{{ priority.category }}</h2>
+		{% endfor %}
 	</div>
 </div>
 
