@@ -4,7 +4,7 @@ rank: 7
 done: ""
 last_updated: "2024-11-30"
 title: "Overhaul LightmapGI to improve baking workflow, performance, and features"
-id: "overhaul-lightmapgi"
+anchor: "overhaul-lightmapgi"
 description: |
 
 ---
