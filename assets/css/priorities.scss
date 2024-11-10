@@ -3,6 +3,7 @@
 
 .priorities-container {
 	background-color: var(--card-background-color);
+	overflow: hidden;
 
 	.banner {
 		.container {
@@ -46,6 +47,10 @@
 					.element-list {
 						padding-left: 0;
 						margin-bottom: 0;
+
+						> li {
+							list-style: none;
+						}
 
 						.element {
 							.element-title {
