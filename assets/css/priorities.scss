@@ -123,11 +123,29 @@ html {
 						}
 
 						.element {
-							.element-title {
+							display: grid;
+							grid-template-areas:
+								"meta main";
+							grid-template-columns: 25% auto;
 
+							.element-meta {
+								grid-area: meta;
 							}
-							.element-content {
 
+							.element-main {
+								grid-area: main;
+
+								.element-title {
+
+								}
+								.element-content {
+									.element-description {
+
+									}
+									.element-details {
+
+									}
+								}
 							}
 						}
 					}
