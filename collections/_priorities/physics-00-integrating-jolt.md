@@ -5,4 +5,6 @@ done: ""
 last_updated: "2024-11-30"
 title: "Integrating Jolt"
 id: "integrating-jolt"
+description: |
+
 ---
