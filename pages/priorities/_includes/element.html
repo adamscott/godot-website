@@ -1,4 +1,16 @@
 {% assign element = include.element %}
-<div id="{{ element.anchor }}">
-	{{ element.title }}
+
+{% assign element-done-classes = "element-done" | split: "," %}
+{% if element.done != "" %}
+{% assign element-done-classes = element-done-classes | push: "is-done" %}
+{% endif %}
+{% assign element-done-class = element-done-classes | join: " " %}
+
+<div id="{{ element.anchor }}" class="element">
+	<div class="{{ element-done-class }}"></div>
+	<div class="element-title">{{ element.title | markdownify }}</div>
+	<div class="element-content">
+		<div class="element-description">{{ element.description | markdownify }}</div>
+		<div class="element-content">{{ element.content | markdownify }}</div>
+	</div>
 </div>
