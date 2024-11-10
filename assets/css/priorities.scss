@@ -69,7 +69,9 @@ html {
 				flex-direction: row;
 
 				.label {
-
+					&::after {
+						content: " ";
+					}
 				}
 				.date {
 
