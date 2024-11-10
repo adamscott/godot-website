@@ -16,7 +16,9 @@ layout: default
 			<div class="last-updated">
 				<div class="label">Last updated:</div>
 				<div class="date">
-					<time datetime="2024-11-30">2024-11-30</time>
+					{% assign last_item_updated = site.priorities | sort: "last_updated" | last %}
+					{% assign last_updated = last_item_updated.last_updated %}
+					<time datetime="{{ last_updated }}">{{ last_updated }}</time>
 				</div>
 			</div>
 		</div>
@@ -59,11 +61,47 @@ layout: default
 		</div>
 	</div>
 
-	<div class="navigation">
-
-	</div>
+	<nav class="navigation">
+		<div class="container">
+			<ul class="navigation-list">
+				<li>
+					<div><a href="#core">Core</a></div>
+					<ul class="navigation-sublist">
+						<li><a href="#physics">Physics</a></li>
+						<li><a href="#rendering">Rendering</a></li>
+						<li><a href="#animation">Animation</a></li>
+					</ul>
+				</li>
+				<li>
+					<div><a href="#editor">Editor</a></div>
+					<ul class="navigation-sublist">
+						<li><a href="#assetio">Asset import & export</a></li>
+					</ul>
+				</li>
+				<li>
+					<div><a href="#platforms">Platforms</a></div>
+					<ul class="navigation-sublist">
+						<li><a href="#android">Android</a></li>
+						<li><a href="#linuxbsd">Linux/BSDs</a></li>
+						<li><a href="#macos">macOS</a></li>
+						<li><a href="#web">Web</a></li>
+						<li><a href="#xr">XR</a></li>
+					</ul>
+				</li>
+				<li>
+					<div><a href="#scripting">Scripting</a></div>
+					<ul class="navigation-sublist">
+						<li><a href="#gdscript">GDScript</a></li>
+						<li><a href="#dotnet">.NET</a></li>
+						<li><a href="#gdextension">GDExtension</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
 	<div class="priorities">
+		<!-- Core -->
 		{% assign core_priorities = site.priorities | where: "category", "core" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -73,6 +111,7 @@ layout: default
 			elements=core_priorities
 		%}
 
+		<!-- :: Physics -->
 		{% assign physics_priorities = site.priorities | where: "category", "physics" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -82,6 +121,7 @@ layout: default
 			elements=physics_priorities
 		%}
 
+		<!-- :: Rendering -->
 		{% assign rendering_priorities = site.priorities | where: "category", "rendering" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -91,6 +131,7 @@ layout: default
 			elements=rendering_priorities
 		%}
 
+		<!-- :: Animation -->
 		{% assign animation_priorities = site.priorities | where: "category", "animation" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -100,6 +141,7 @@ layout: default
 			elements=animation_priorities
 		%}
 
+		<!-- Editor -->
 		{% assign editor_priorities = site.priorities | where: "category", "editor" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -109,15 +151,17 @@ layout: default
 			elements=editor_priorities
 		%}
 
+		<!-- :: Asset import & export -->
 		{% assign assetio_priorities = site.priorities | where: "category", "assetio" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
 			id="assetio"
-			name="Asset IO"
+			name="Asset import &amp; export"
 			elements=assetio_priorities
 		%}
 
+		<!-- Platforms -->
 		{% assign platforms_priorities = site.priorities | where: "category", "platforms" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -127,15 +171,7 @@ layout: default
 			elements=platforms_priorities
 		%}
 
-		{% assign web_priorities = site.priorities | where: "category", "web" | sort: "rank" %}
-		{%
-			include_relative _includes/category.html
-			level="2"
-			id="web"
-			name="Web"
-			elements=web_priorities
-		%}
-
+		<!-- :: Android -->
 		{% assign android_priorities = site.priorities | where: "category", "android" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -145,15 +181,7 @@ layout: default
 			elements=android_priorities
 		%}
 
-		{% assign macos_priorities = site.priorities | where: "category", "macos" | sort: "rank" %}
-		{%
-			include_relative _includes/category.html
-			level="2"
-			id="macos"
-			name="macOS"
-			elements=macos_priorities
-		%}
-
+		<!-- :: Linux/BSDs -->
 		{% assign linuxbsd_priorities = site.priorities | where: "category", "linuxbsd" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -163,6 +191,27 @@ layout: default
 			elements=linuxbsd_priorities
 		%}
 
+		<!-- :: macOS -->
+		{% assign macos_priorities = site.priorities | where: "category", "macos" | sort: "rank" %}
+		{%
+			include_relative _includes/category.html
+			level="2"
+			id="macos"
+			name="macOS"
+			elements=macos_priorities
+		%}
+
+		<!-- :: Web -->
+		{% assign web_priorities = site.priorities | where: "category", "web" | sort: "rank" %}
+		{%
+			include_relative _includes/category.html
+			level="2"
+			id="web"
+			name="Web"
+			elements=web_priorities
+		%}
+
+		<!-- :: XR -->
 		{% assign xr_priorities = site.priorities | where: "category", "xr" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -172,6 +221,7 @@ layout: default
 			elements=xr_priorities
 		%}
 
+		<!-- Scripting -->
 		{% assign scripting_priorities = site.priorities | where: "category", "scripting" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -181,6 +231,7 @@ layout: default
 			elements=scripting_priorities
 		%}
 
+		<!-- :: GDScript -->
 		{% assign gdscript_priorities = site.priorities | where: "category", "gdscript" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -190,6 +241,7 @@ layout: default
 			elements=gdscript_priorities
 		%}
 
+		<!-- :: .NET -->
 		{% assign dotnet_priorities = site.priorities | where: "category", "dotnet" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
@@ -199,6 +251,7 @@ layout: default
 			elements=dotnet_priorities
 		%}
 
+		<!-- :: GDExtension -->
 		{% assign gdextension_priorities = site.priorities | where: "category", "gdextension" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html

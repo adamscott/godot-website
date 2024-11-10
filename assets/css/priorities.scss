@@ -1,6 +1,59 @@
 ---
 ---
 
+// Reset
+nav {
+	width: unset;
+	display: unset;
+	justify-content: unset;
+	align-items: unset;
+	padding-right: unset;
+
+	a {
+		text-decoration: unset;
+		font-size: unset;
+		font-weight: unset;
+		color: unset;
+		padding: unset;
+		font-family: unset;
+		font-weight: unset;
+		color: unset;
+		margin-top: unset;
+
+		&:hover {
+			background-color: unset;
+		}
+	}
+
+	ul {
+		li {
+			padding: unset;
+			padding-top: unset;
+			width: unset;
+		}
+
+		a {
+			width: unset;
+			display: unset;
+			padding-top: unset;
+			padding-bottom: unset;
+			padding-left: unset;
+			padding-right: unset;
+			margin-top: unset;
+			margin-bottom: unset;
+		}
+	}
+}
+
+// General
+html {
+	scroll-behavior: smooth;
+	@media (prefers-reduced-motion) {
+		scroll-behavior: auto;
+	}
+}
+
+// Priorities container.
 .priorities-container {
 	background-color: var(--card-background-color);
 	overflow: hidden;
@@ -33,7 +86,23 @@
 	}
 
 	.navigation {
+		li {
+			margin-bottom: 0;
+		}
 
+		.navigation-list {
+			padding-left: 0;
+			margin-bottom: 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 1.5rem;
+
+			> li {
+				flex-grow: 1;
+				width: 100%;
+			}
+		}
 	}
 
 	.priorities {
