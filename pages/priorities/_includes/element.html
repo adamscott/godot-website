@@ -43,7 +43,13 @@
 			</div>
 		</summary>
 		<div class="element-content">
-			<div class="element-description">{{ element.description | markdownify }}</div>
+			<div class="element-description">
+				{% if element.description == "" %}
+					<em>...</em>
+				{% else %}
+					{{ element.description | markdownify }}
+				{% endif %}
+			</div>
 			<div class="element-details">{{ element.details | markdownify }}</div>
 		</div>
 	</details>
