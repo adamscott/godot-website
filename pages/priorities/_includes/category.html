@@ -1,12 +1,13 @@
 <div id="{{ include.id }}" class="category level-{{ include.level }}">
 	<div class="container">
-		<div class="category-title">
-			{% assign header_number = include.level | to_i | plus: 1 %}
-			{% assign header_tag = "h" | append: header_number %}
-			<{{ header_tag }} class="category-title-h">
-				<a class="category-title-anchor" href="#{{ include.id }}">{{ include.name }}</a>
-			</{{ header_tag }}>
-		</div>
+		{% assign header_number = include.level | to_i | plus: 1 %}
+		{% assign header_tag = "h" | append: header_number %}
+		<{{ header_tag }} class="category-title">
+			<div class="category-title-text">{{ include.name }}</div>
+			<a class="category-title-anchor" href="#{{ include.id }}">
+				<span class="material-symbols-outlined">link</span>
+			</a>
+		</{{ header_tag }}>
 		<div class="category-content">
 			<ul class="element-list">
 				{% for element in include.elements %}

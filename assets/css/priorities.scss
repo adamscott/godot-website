@@ -1,51 +1,50 @@
 ---
 ---
 
+// Fixes the parsing of the unusual front matter / SCSS file.
+*{};
+
+//
 // Reset
-nav {
-	width: unset;
-	display: unset;
-	justify-content: unset;
-	align-items: unset;
-	padding-right: unset;
+//
+ul {
+	line-height: unset;
+	padding-left: unset;
+}
 
-	a {
-		text-decoration: unset;
-		font-size: unset;
-		font-weight: unset;
-		color: unset;
-		padding: unset;
-		font-family: unset;
-		font-weight: unset;
-		color: unset;
-		margin-top: unset;
+//
+// Variables
+//
+$mobile-max-width: 700px;
+$gap: 1.25rem;
 
-		&:hover {
-			background-color: unset;
-		}
-	}
-
-	ul {
-		li {
-			padding: unset;
-			padding-top: unset;
-			width: unset;
-		}
-
-		a {
-			width: unset;
-			display: unset;
-			padding-top: unset;
-			padding-bottom: unset;
-			padding-left: unset;
-			padding-right: unset;
-			margin-top: unset;
-			margin-bottom: unset;
-		}
+//
+// Functions
+//
+@mixin is-mobile() {
+	@media screen and (max-width: #{$mobile-max-width}) {
+		@content;
 	}
 }
 
+//
+// Mixins
+//
+@mixin is-dark() {
+	@media screen and (prefers-color-scheme: dark) {
+		@content;
+	}
+}
+
+@mixin is-light() {
+	@media screen and (prefers-color-scheme: light) {
+		@content;
+	}
+}
+
+//
 // General
+//
 html {
 	scroll-behavior: smooth;
 	@media (prefers-reduced-motion) {
@@ -90,6 +89,7 @@ html {
 
 	.navigation {
 		li {
+			list-style: none;
 			margin-bottom: 0;
 		}
 
@@ -99,9 +99,10 @@ html {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
-			gap: 1.5rem;
+			gap: $gap;
 
 			> li {
+				list-style: none;
 				flex-grow: 1;
 				width: 100%;
 			}
@@ -109,10 +110,55 @@ html {
 	}
 
 	.priorities {
+		// i.e. "core", "rendering", or "physics"
 		.category {
 			& > .container {
 				.category-title {
+					display: flex;
+					flex-direction: row;
+					gap: $gap;
 
+					border-radius: 15px;
+					padding: 1rem 2rem;
+					letter-spacing: -2px;
+					font-weight: 600;
+
+					// .category.level-1
+					@at-root #{selector-replace(&, ".category", ".category.level-1")} {
+						background-color: var(--primary-color);
+						font-size: 3rem;
+					}
+					// .category.level-2
+					@at-root #{selector-replace(&, ".category", ".category.level-2")} {
+						background-color: var(--background-color);
+						font-size: 2.125rem;
+					}
+
+					.category-title-text {
+						flex-grow: 1;
+						width: 100%;
+						color: white;
+
+						> p {
+							margin: 0;
+						}
+					}
+
+					.category-title-anchor {
+						flex-grow: 0;
+						text-decoration: none;
+						visibility: hidden;
+						color: white;
+
+						&:focus {
+							outline: none;
+						}
+
+						// On .category-title:hover
+						@at-root #{selector-replace(&, ".category-title", ".category-title:hover")} {
+							visibility: visible;
+						}
+					}
 				}
 
 				.category-content {
@@ -122,6 +168,7 @@ html {
 
 						> li {
 							list-style: none;
+							margin-bottom: 0;
 						}
 
 						.element {
@@ -129,23 +176,144 @@ html {
 							grid-template-areas:
 								"meta main";
 							grid-template-columns: 25% auto;
+							grid-template-rows: auto;
+							gap: $gap;
+
+							border-top: 2px solid var(--primary-color);
+							padding: 1.25rem 0;
+
+							@include is-mobile() {
+								grid-template-areas:
+									"meta"
+									"main";
+								grid-template-columns: auto;
+								grid-template-rows: auto;
+							}
 
 							.element-meta {
 								grid-area: meta;
+
+								.element-last-updated {
+									.label {
+										// Default state.
+										.last-updated {
+											display: inline;
+										}
+										.recently-updated {
+											display: none;
+											font-weight: 600;
+										}
+
+										// If update is recent.
+										@at-root #{selector-replace(&, ".element-last-updated", ".element-last-updated.recent")} {
+											.last-updated {
+												display: none;
+											}
+											.recently-updated {
+												display: inline;
+											}
+										}
+									}
+
+									.value {
+
+									}
+								}
 							}
 
 							.element-main {
 								grid-area: main;
 
-								.element-title {
+								height: 100%;
 
+								.element-title {
+									display: flex;
+									flex-direction: row;
+									align-items: stretch;
+									gap: $gap;
+
+									list-style: none;
+									cursor: pointer;
+
+									margin-top: -$gap;
+									padding: $gap 0;
+
+									&:focus {
+										outline: none;
+									}
+
+									// Gross hack to make the element title height consistent when toggled.
+									height: 100%;
+									@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
+										padding-bottom: $gap * 2;
+										margin-bottom: -$gap;
+										height: auto;
+									}
+
+									.element-title-anchor {
+										flex-grow: 0;
+
+										&:focus {
+											outline: none;
+										}
+									}
+
+									.element-title-text {
+										flex-grow: 1;
+										width: 100%;
+										font-weight: 700;
+
+										> p {
+											margin: 0;
+										}
+									}
+
+									.element-accordion-toggle {
+										flex-grow: 0;
+
+										.less {
+											display: none;
+										}
+										.more {
+											display: block;
+										}
+
+										@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
+											.less {
+												display: block;
+											}
+											.more {
+												display: none;
+											}
+										}
+									}
 								}
+
 								.element-content {
 									.element-description {
-
+										font-size: 1rem;
 									}
-									.element-details {
 
+									.element-details {
+										font-size: 0.9rem;
+
+										ul {
+											padding-left: 1.5rem;
+
+											li {
+												margin-bottom: 0.45rem;
+											}
+										}
+
+										> ul {
+											// Force reset the style for the first list.
+											list-style-type: disc;
+										}
+
+										> ol {
+											// Force reset the style for the first list.
+											counter-reset: element-details-list-counter;
+										}
 									}
 								}
 							}
