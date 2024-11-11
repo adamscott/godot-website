@@ -18,6 +18,9 @@ ul {
 $mobile-max-width: 700px;
 $gap: 1.25rem;
 
+$element-meta-planning-bar-width: 15%;
+$element-meta-ongoing-bar-width: 50%;
+
 //
 // Functions
 //
@@ -193,6 +196,48 @@ html {
 							.element-meta {
 								grid-area: meta;
 
+								.element-stage {
+									display: flex;
+									flex-direction: column;
+									align-items: center;
+
+									.preview-bar {
+										contain: paint;
+										height: 1rem;
+										width: 100%;
+										border-radius: 999999px;
+										background-color: var(--background-color);
+
+										.progress {
+											position: absolute;
+											top: 0;
+											left: 0;
+											height: 100%;
+
+											background-color: var(--primary-color);
+											border-top-right-radius: 9999px;
+											border-bottom-right-radius: 9999px;
+
+											// Planning.
+											@at-root #{selector-replace(&, ".element-stage", ".element-stage.planning")} {
+												width: $element-meta-planning-bar-width;
+											}
+
+											// On going.
+											@at-root #{selector-replace(&, ".element-stage", ".element-stage.ongoing")} {
+												width: $element-meta-ongoing-bar-width;
+											}
+
+											// Done.
+											@at-root #{selector-replace(&, ".element-stage", ".element-stage.done")} {
+												width: 100%;
+												border-top-right-radius: 0;
+												border-bottom-right-radius: 0;
+											}
+										}
+									}
+								}
+
 								.element-last-updated {
 									.label {
 										// Default state.
@@ -234,24 +279,35 @@ html {
 
 									list-style: none;
 									cursor: pointer;
+									border-radius: 15px;
 
 									margin-top: -$gap;
-									padding: $gap 0;
+									padding: $gap;
 
 									&:focus {
 										outline: none;
 									}
 
+									&:hover {
+										background-color: var(--background-color);
+									}
+
 									// Gross hack to make the element title height consistent when toggled.
 									height: 100%;
 									@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
-										padding-bottom: $gap * 2;
-										margin-bottom: -$gap;
+										// padding-bottom: $gap * 2;
+										// margin-bottom: -$gap;
 										height: auto;
 									}
 
 									.element-title-anchor {
 										flex-grow: 0;
+
+										display: flex;
+										flex-direction: row;
+										align-items: center;
+
+										text-decoration: none;
 
 										&:focus {
 											outline: none;
@@ -261,6 +317,11 @@ html {
 									.element-title-text {
 										flex-grow: 1;
 										width: 100%;
+
+										display: flex;
+										flex-direction: row;
+										align-items: center;
+
 										font-weight: 700;
 
 										> p {
@@ -270,6 +331,10 @@ html {
 
 									.element-accordion-toggle {
 										flex-grow: 0;
+
+										display: flex;
+										flex-direction: row;
+										align-items: center;
 
 										.less {
 											display: none;
