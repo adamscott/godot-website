@@ -112,8 +112,12 @@ html {
 		}
 	}
 
+	// i.e. "core", "rendering", or "physics"
 	.priorities {
-		// i.e. "core", "rendering", or "physics"
+		display: flex;
+		flex-direction: column;
+		gap: 6rem;
+
 		.category {
 			& > .container {
 				.category-title {
@@ -166,6 +170,9 @@ html {
 
 				.category-content {
 					.element-list {
+						display: flex;
+						flex-direction: column;
+
 						padding-left: 0;
 						margin-bottom: 0;
 
