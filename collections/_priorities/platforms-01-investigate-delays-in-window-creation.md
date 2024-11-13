@@ -13,7 +13,7 @@ title: "Investigate delays in Window creation"
 description: |
   It is known that compared to Godot 3.x, there’s some delays while creating new `Window`, especially on Windows.
 details: |
-  <div class="issues" markdown=1>
+  <div class="detail-block issues" markdown=1>
     - [Godot 4 editor UI (menus) significantly slower then 3.x #71795](https://github.com/godotengine/godot/issues/71795)
   </div>
 ---

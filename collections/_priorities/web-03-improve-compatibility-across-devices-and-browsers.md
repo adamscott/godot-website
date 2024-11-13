@@ -12,7 +12,7 @@ anchor: "improve-compatibility-across-devices-and-browsers"
 title: "Continue to improve compatibility across devices and browsers"
 description: |
 details: |
-  <div class="comment" markdown=1>
+  <div class="detail-block comment" markdown=1>
     Especially on macOS and iOS.
   </div>
 ---

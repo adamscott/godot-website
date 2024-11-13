@@ -13,10 +13,10 @@ title: "Move Khronos loader support from our vendor plugin to the core of the Go
 description: |
   The end goal is the ability to deploy Godot XR applications made with the executable downloaded from the website on any Android OpenXR conformant device.
 details: |
-  <div class="comment" markdown=1>
+  <div class="detail-block comment" markdown=1>
     The Vendor plugin should only be required to use vendor specific features.
   </div>
-  <div class="note" markdown=1>
+  <div class="detail-block note" markdown=1>
     As part of this we will add support for Android to use the Khronos loader.
   </div>
 ---

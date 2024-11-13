@@ -12,7 +12,7 @@ anchor: "making-action-map-system-available-to-webxr"
 title: "Making action map system available to WebXR"
 description: |
 details: |
-  <div class="note" markdown=1>
+  <div class="detail-block note" markdown=1>
     And eventually other platforms.
   </div>
 ---
