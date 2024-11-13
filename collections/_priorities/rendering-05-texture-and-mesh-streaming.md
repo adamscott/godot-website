@@ -13,7 +13,7 @@ title: "Texture and mesh streaming"
 description: |
   This feature would enable the streaming of assets to progressively load scenes, textures, and models in order to boost performance and loading times.
 details: |
-  <div class="proposals" markdown=1>
+  <div class="detail-block proposals" markdown=1>
     - [Implement Mesh streaming #6109](https://github.com/godotengine/godot-proposals/issues/6109)
   </div>
 ---
