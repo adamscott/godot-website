@@ -59,9 +59,10 @@ html {
 .priorities-container {
 	font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	background-color: var(--card-background-color);
-	overflow: hidden;
+	overflow: visible;
+	position: relative;
 
-	.banner {
+	> .banner {
 		.container {
 			padding-top: 7rem;
 			padding-bottom: 7rem;
@@ -82,7 +83,7 @@ html {
 		}
 	}
 
-	.intro {
+	> .intro {
 		.wishlist-btns {
 			display: flex;
 			flex-direction: row;
@@ -90,7 +91,14 @@ html {
 		}
 	}
 
-	.navigation {
+	> .navigation {
+		position: sticky;
+		top: 0px;
+		background-color: var(--card-background-color);
+		z-index: 1000;
+
+		padding: $gap 0;
+
 		li {
 			list-style: none;
 			margin-bottom: 0;
@@ -98,7 +106,7 @@ html {
 
 		.navigation-list {
 			padding-left: 0;
-			margin-bottom: 0;
+			margin: 0;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
@@ -108,12 +116,18 @@ html {
 				list-style: none;
 				flex-grow: 1;
 				width: 100%;
+
+				> details {
+					> summary {
+						height: 100%;
+					}
+				}
 			}
 		}
 	}
 
 	// i.e. "core", "rendering", or "physics"
-	.priorities {
+	> .priorities {
 		display: flex;
 		flex-direction: column;
 		gap: 6rem;
