@@ -76,7 +76,9 @@
 					{{ element.description | markdownify }}
 				{% endif %}
 			</div>
-			<div class="element-details">{{ element.details | markdownify }}</div>
+			{% unless element.details == "" %}
+				<div class="element-details">{{ element.details | markdownify }}</div>
+			{% endunless %}
 		</div>
 	</details>
 </div>
