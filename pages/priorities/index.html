@@ -17,8 +17,14 @@ google_font_icons:
 
 {% include header.html %}
 
-<!-- Page stylesheet. -->
-<link rel="stylesheet" href="/assets/css/priorities.css" />
+<!-- Priorities stylesheet. -->
+<link rel="stylesheet" href="/assets/css/priorities/base.css" />
+<noscript>
+	<link rel="stylesheet" href="/assets/css/priorities/noscript.css" />
+</noscript>
+
+<!-- Priorities script. -->
+<script type="module" src="/assets/js/priorities.mjs"></script>
 
 <!-- Google icons. -->
 {% assign google_font_icons = page.google_font_icons | sort | join: "," %}
