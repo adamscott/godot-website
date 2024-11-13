@@ -17,6 +17,7 @@ ul {
 //
 $mobile-max-width: 700px;
 $gap: 1.25rem;
+$border-radius: 15px;
 
 $element-meta-planning-bar-width: 15%;
 $element-meta-ongoing-bar-width: 50%;
@@ -53,6 +54,7 @@ html {
 	@media (prefers-reduced-motion) {
 		scroll-behavior: auto;
 	}
+	scroll-padding-top: 25vh;
 }
 
 // Priorities container.
@@ -97,32 +99,108 @@ html {
 		background-color: var(--card-background-color);
 		z-index: 1000;
 
-		padding: $gap 0;
+		margin: $gap 0;
+		border-bottom: 2px solid var(--primary-color);
 
 		li {
 			list-style: none;
 			margin-bottom: 0;
 		}
 
-		.navigation-list {
-			min-width: 500px;
-			overflow-x: auto;
+		.navigation-list-container {
+			position: relative;
+			overflow: auto;
+			@include is-mobile() {
+				margin: 0 -16px;
+				background:
+					// Shadow cover left.
+					linear-gradient(to right, white 30%, rgba(255, 255, 255, 0)) left center,
+					// Shadow cover right
+					linear-gradient(to left, white 30%, rgba(255, 255, 255, 0)) right center,
+					// Shadow left.
+					radial-gradient(farthest-side at left center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)) left center,
+					// Shadow right.
+					radial-gradient(farthest-side at right center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)) right center;
+				background-repeat: no-repeat;
+				background-size:
+					20px 100%,
+					20px 100%,
+					8px 100%,
+					8px 100%;
+				background-attachment:
+					local,
+					local,
+					scroll,
+					scroll;
+			}
 
-			padding-left: 0;
-			margin: 0;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			gap: $gap;
+			.navigation-list {
+				min-width: $mobile-max-width - (16px * 2);
+				@include is-mobile() {
+					overflow-x: auto;
+					padding: 0 16px;
+					position: relative;
+					z-index: -1;
+				}
 
-			> li {
-				list-style: none;
-				flex-grow: 1;
-				width: 100%;
+				margin: 0;
 
-				> details {
-					> summary {
-						height: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				gap: $gap;
+
+				> li {
+					list-style: none;
+					flex-grow: 1;
+					width: 100%;
+					margin: $gap 0;
+
+					> details[name="priorities-navigation"] {
+						> summary {
+							display: flex;
+							flex-direction: row;
+
+							background-color: var(--background-color);
+							&:hover {
+								background-color: var(--base-color);
+							}
+
+							border-radius: $border-radius;
+							width: calc(100% - #{$gap * 2});
+							height: 100%;
+							padding: $gap $gap;
+							cursor: pointer;
+
+							.label {
+								width: 100%;
+								flex-grow: 1;
+							}
+
+							.toggle {
+								flex-grow: 0;
+
+								.more {
+									display: block;
+								}
+								.less {
+									display: none;
+								}
+
+								@at-root #{selector-replace(&, "details[name='priorities-navigation']", "details[name='priorities-navigation'][open]")} {
+									.more {
+										display: none;
+									}
+									.less {
+										display: block;
+									}
+								}
+							}
+
+							&:focus {
+								outline: none;
+							}
+						}
 					}
 				}
 			}
@@ -142,7 +220,7 @@ html {
 					flex-direction: row;
 					gap: $gap;
 
-					border-radius: 15px;
+					border-radius: $border-radius;
 					padding: 1rem 2rem;
 					letter-spacing: -2px;
 					font-weight: 600;
@@ -303,7 +381,7 @@ html {
 
 									list-style: none;
 									cursor: pointer;
-									border-radius: 15px;
+									border-radius: $border-radius;
 
 									margin-top: -$gap;
 									padding: $gap;
