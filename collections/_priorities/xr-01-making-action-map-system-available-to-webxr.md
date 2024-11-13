@@ -1,6 +1,6 @@
 ---
 category: xr
-rank: 5
+rank: 1
 stage:
   # Must be dates (YYYY-MM-DD), empty if not there yet.
   planning: ""
@@ -8,8 +8,11 @@ stage:
   done: ""
 created: "2024-11-30"
 last_updated: "2024-11-30"
-anchor: "move-khronos-loader-from-vendor-to-core"
-title: "Move Khronos loader support from our vendor plugin to the core of the Godot"
+anchor: "making-action-map-system-available-to-webxr"
+title: "Making action map system available to WebXR"
 description: |
 details: |
+  <div class="note" markdown=1>
+    And eventually other platforms.
+  </div>
 ---
