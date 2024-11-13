@@ -15,5 +15,5 @@ description: |
 details:
   - type: issues
     content: |
-      - [Godot 4 editor UI (menus) significantly slower then 3.x #71795](https://github.com/godotengine/godot/issues/71795)
+      - [Godot 4 editor UI (menus) significantly slower than 3.x #71795](https://github.com/godotengine/godot/issues/71795)
 ---
