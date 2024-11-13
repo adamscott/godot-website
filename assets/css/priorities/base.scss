@@ -525,7 +525,10 @@ html {
 														display: inline-block;
 														width: 24px;
 														height: 24px;
-														background-image: url($icon-url);
+														mask-size: 24px;
+														mask-position: center;
+														mask-image: url($icon-url);
+														background-color: currentColor;
 													}
 
 													@include parent-is("note") {
