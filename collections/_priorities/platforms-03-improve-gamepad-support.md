@@ -13,7 +13,7 @@ title: "Improve gamepad support"
 description: |
   We often receive issue reports about gamepad support, as the numbers of gamepads never cease to increase. As we wish to support as many input devices as possible, we want to work towards better support.
 details:
-  - type: comment
+  - type: note
     content: |
       We need to investigate how we can do this. One way would be to incorporate more code from SDL, or to integrate SDLInput directly in the engine.
 ---

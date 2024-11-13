@@ -12,7 +12,7 @@ anchor: "improve-compatibility-across-devices-and-browsers"
 title: "Continue to improve compatibility across devices and browsers"
 description: |
 details:
-  - type: comment
+  - type: note
     content: |
       Especially on macOS and iOS.
 ---

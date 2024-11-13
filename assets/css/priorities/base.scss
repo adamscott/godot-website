@@ -369,46 +369,90 @@ html {
 									}
 
 									.element-details {
+										display: flex;
+										flex-direction: column;
+										gap: $gap;
+
 										font-size: 0.9rem;
 
-										ul {
-											padding-left: 1.5rem;
-
-											li {
-												margin-bottom: 0.45rem;
-											}
-										}
-
-										> ul {
-											// Force reset the style for the first list.
-											list-style-type: disc;
-										}
-
-										> ol {
-											// Force reset the style for the first list.
-											counter-reset: element-details-list-counter;
-										}
-
 										.detail-block {
-											padding-left: 2rem;
+											padding: 1rem 0 1rem 2rem;
 											border-left: 2px solid;
 
-											&.comment {
+											p {
+												&:first-child {
+													margin-top: 0;
+												}
+												&:last-child {
+													margin-bottom: 0;
+												}
 											}
 
-											&.note {
+											ul {
+												padding-left: 1.5rem;
+
+												li {
+													margin-bottom: 0.45rem;
+												}
+
+												&:last-child {
+													li:last-child {
+														margin-bottom: 0;
+													}
+												}
 											}
 
-											&.warning {
+											> ul {
+												// Force reset the style for the first list.
+												list-style-type: disc;
 											}
 
-											&.prs {
+											> ol {
+												// Force reset the style for the first list.
+												counter-reset: element-details-list-counter;
 											}
 
-											&.issues {
-											}
+											.detail-block-header {
+												display: flex;
+												flex-direction: row;
+												align-items: center;
+												gap: $gap / 2;
+												margin-bottom: $gap / 2;
 
-											&.proposals {
+												.icon {
+													@mixin parent-is($type) {
+														@at-root #{selector-replace(&, ".detail-block", ".detail-block.#{$type}")} {
+															@content;
+														}
+													}
+
+													@mixin octicon($icon-url) {
+														display: inline-block;
+														width: 24px;
+														height: 24px;
+														background-image: url($icon-url);
+													}
+
+													@include parent-is("note") {
+														// Google icon "info"
+													}
+
+													@include parent-is("warning") {
+														// Google icon "warning"
+													}
+
+													@include parent-is("prs") {
+														@include octicon("/assets/icons/octicons/git-pull-request-24.svg");
+													}
+
+													@include parent-is("issues") {
+														@include octicon("/assets/icons/octicons/bug-24.svg");
+													}
+
+													@include parent-is("proposals") {
+														@include octicon("/assets/icons/octicons/zap-24.svg");
+													}
+												}
 											}
 										}
 									}

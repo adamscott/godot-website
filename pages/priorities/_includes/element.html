@@ -80,11 +80,21 @@
 				{% for detail in element.details %}
 					<div class="detail-block {{ detail.type }}">
 						<div class="detail-block-header">
-							<div class="icon"></div>
+							<div class="icon">
+								{% if detail.type == "note" %}
+									<span class="material-symbols-outlined info">info</span>
+								{% elsif detail.type == "warning" %}
+									<span class="material-symbols-outlined warning">warning</span>
+								{% elsif detail.type == "prs" %}
+									<!-- /assets/icons/octicons/git-pull-request-24.svg -->
+								{% elsif detail.type == "issues" %}
+									<!-- /assets/icons/octicons/bug-24.svg -->
+								{% elsif detail.type == "proposals" %}
+									<!-- /assets/icons/octicons/zap-24.svg -->
+								{% endif %}
+							</div>
 							<div class="label">
-								{% if detail.type == "comment" %}
-									<span>Comment</span>
-								{% elsif detail.type == "note" %}
+								{% if detail.type == "note" %}
 									<span>Note</span>
 								{% elsif detail.type == "warning" %}
 									<span>Warning</span>
