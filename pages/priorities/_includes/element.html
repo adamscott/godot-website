@@ -76,9 +76,33 @@
 					{{ element.description | markdownify }}
 				{% endif %}
 			</div>
-			{% unless element.details == "" %}
-				<div class="element-details">{{ element.details | markdownify }}</div>
-			{% endunless %}
+			<div class="element-details">
+				{% for detail in element.details %}
+					<div class="detail-block {{ detail.type }}">
+						<div class="detail-block-header">
+							<div class="icon"></div>
+							<div class="label">
+								{% if detail.type == "comment" %}
+									<span>Comment</span>
+								{% elsif detail.type == "note" %}
+									<span>Note</span>
+								{% elsif detail.type == "warning" %}
+									<span>Warning</span>
+								{% elsif detail.type == "prs" %}
+									<span>Pull requests</span>
+								{% elsif detail.type == "issues" %}
+									<span>Issues</span>
+								{% elsif detail.type == "proposals" %}
+									<span>Proposals</span>
+								{% endif %}
+							</div>
+						</div>
+						<div class="detail-block-content">
+							{{ detail.content | markdownify }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 	</details>
 </div>

@@ -388,6 +388,29 @@ html {
 											// Force reset the style for the first list.
 											counter-reset: element-details-list-counter;
 										}
+
+										.detail-block {
+											padding-left: 2rem;
+											border-left: 2px solid;
+
+											&.comment {
+											}
+
+											&.note {
+											}
+
+											&.warning {
+											}
+
+											&.prs {
+											}
+
+											&.issues {
+											}
+
+											&.proposals {
+											}
+										}
 									}
 								}
 							}
