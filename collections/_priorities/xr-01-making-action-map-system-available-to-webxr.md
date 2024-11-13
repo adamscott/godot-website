@@ -12,7 +12,7 @@ anchor: "making-action-map-system-available-to-webxr"
 title: "Making action map system available to WebXR"
 description: |
 details:
-  - type: comment
+  - type: note
     content: |
       And eventually other platforms.
 ---

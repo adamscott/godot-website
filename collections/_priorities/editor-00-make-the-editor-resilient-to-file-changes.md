@@ -13,7 +13,7 @@ title: "Make the editor resilient to files changed/added externally"
 description: |
   Godot doesn’t know how to handle project file changes that happen on non-imported files, such as scripts, when it happens outside of the editor. This can be a common occurrence for users that use an external code editor. This can lead to numerous errors and inconveniences, such as scenes refusing to load. We intend to make this a relic of the past.
 details:
-  - type: comment
+  - type: note
     content: |
       The idea would be to introduce UIDs to non-imported files, such as scripts.
 ---

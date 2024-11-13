@@ -13,7 +13,7 @@ title: "Support for external textures for AR Core"
 description: |
   It's for displaying anything that can be rendered on the Android side over in Godot.
 details:
-  - type: comment
+  - type: note
     content: |
       Link for the [AR Core plugin for Android](https://github.com/godotvr/godot_arcore).
   - type: prs
