@@ -326,7 +326,7 @@ html {
 												width: $element-meta-planning-bar-width;
 											}
 
-											// On going.
+											// Ongoing.
 											@at-root #{selector-replace(&, ".element-stage", ".element-stage.ongoing")} {
 												width: $element-meta-ongoing-bar-width;
 											}

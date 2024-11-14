@@ -19,7 +19,7 @@
 	{% assign current_stage = "Done" %}
 {% elsif element.stage.ongoing != "" %}
 	{% assign element_stage_classes = element_stage_classes | push: "ongoing" %}
-	{% assign current_stage = "On going" %}
+	{% assign current_stage = "Ongoing" %}
 {% elsif element.stage.planning != "" %}
 	{% assign element_stage_classes = element_stage_classes | push: "planning" %}
 	{% assign current_stage = "Planning" %}
