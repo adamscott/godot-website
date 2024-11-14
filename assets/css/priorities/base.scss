@@ -54,6 +54,7 @@ html {
 	@media (prefers-reduced-motion) {
 		scroll-behavior: auto;
 	}
+	scroll-padding-top: $gap;
 }
 
 // Priorities container.
