@@ -199,6 +199,10 @@ html {
 							padding: $gap $gap;
 							cursor: pointer;
 
+							&::-webkit-details-marker {
+								display: none;
+							}
+
 							.label {
 								width: 100%;
 								flex-grow: 1;
@@ -427,6 +431,10 @@ html {
 										// padding-bottom: $gap * 2;
 										// margin-bottom: -$gap;
 										height: auto;
+									}
+
+									&::-webkit-details-marker {
+										display: none;
 									}
 
 									.element-title-anchor {
