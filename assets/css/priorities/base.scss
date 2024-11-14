@@ -54,7 +54,6 @@ html {
 	@media (prefers-reduced-motion) {
 		scroll-behavior: auto;
 	}
-	scroll-padding-top: 25vh;
 }
 
 // Priorities container.
@@ -94,13 +93,11 @@ html {
 	}
 
 	> .navigation {
-		position: sticky;
 		top: 0px;
 		background-color: var(--card-background-color);
 		z-index: 1000;
 
 		margin: $gap 0;
-		border-bottom: 2px solid var(--primary-color);
 		user-select: none;
 
 		li {
@@ -561,6 +558,54 @@ html {
 					}
 				}
 			}
+		}
+	}
+}
+
+#scroll-to-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none;
+
+	--card-padding: $gap;
+	@include is-mobile() {
+		--card-padding: $gap / 2;
+	}
+
+	.link {
+		pointer-events: all;
+		position: fixed;
+		bottom: $gap;
+		right: $gap;
+		width: 50px;
+		height: 50px;
+		margin: var(--card-padding);
+		text-decoration: none;
+		background-color: white;
+		border-radius: $border-radius;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: rgba(0,0,0,25%) 1px 1px 5px;
+
+		color: black;
+		font-size: 1.5em;
+
+		&:hover {
+			span {
+				font-size: 35px;
+			}
+		}
+
+		span {
+			transition: font-size 0.2s ease-in-out;
+			transform:
+				translateY(-3px);
 		}
 	}
 }
