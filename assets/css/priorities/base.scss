@@ -64,6 +64,21 @@ html {
 	position: relative;
 
 	> .banner {
+		background:
+			linear-gradient(to right, #FFFFFFDD, #FFFFFFDD),
+			linear-gradient(to bottom, tranparent 85%, #FFFFFF 100%),
+			url("/storage/priorities/images/page/map2-2048.webp");
+		@media screen and (min-resolution: 2x) {
+			background:
+				linear-gradient(to right, #FFFFFFDD, #FFFFFFDD),
+				linear-gradient(to bottom, transparent 85%, #FFFFFF 100%),
+				url("/storage/priorities/images/page/map2-4096.webp");
+			background-size: cover, cover, cover;
+			background-repeat: repeat, repeat, repeat;
+		}
+		background-size: cover, cover, cover;
+		background-repeat: repeat, repeat, repeat;
+
 		.container {
 			padding-top: 7rem;
 			padding-bottom: 7rem;
