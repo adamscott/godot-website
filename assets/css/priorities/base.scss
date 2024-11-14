@@ -101,6 +101,7 @@ html {
 
 		margin: $gap 0;
 		border-bottom: 2px solid var(--primary-color);
+		user-select: none;
 
 		li {
 			list-style: none;
