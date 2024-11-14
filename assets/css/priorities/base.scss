@@ -16,6 +16,7 @@ ul {
 // Variables
 //
 $mobile-max-width: 700px;
+$mobile-sm-max-width: 450px;
 $gap: 1.25rem;
 $border-radius: 15px;
 
@@ -27,6 +28,12 @@ $element-meta-ongoing-bar-width: 50%;
 //
 @mixin is-mobile() {
 	@media screen and (max-width: #{$mobile-max-width}) {
+		@content;
+	}
+}
+
+@mixin is-mobile-sm() {
+	@media screen and (max-width: #{$mobile-sm-max-width}) {
 		@content;
 	}
 }
@@ -102,9 +109,38 @@ html {
 
 	> .intro {
 		.wishlist-btns {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-areas:
+				"donate howto contact";
+			gap: $gap;
+
+			@include is-mobile() {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-areas:
+					"donate donate"
+					"howto contact";
+			}
+
+			@include is-mobile-sm() {
+				grid-template-columns: repeat(1, 1fr);
+				grid-template-areas:
+					"donate"
+					"howto"
+					"contact";
+			}
+
+			.donate {
+				grid-area: donate;
+			}
+
+			.howto {
+				grid-area: howto;
+			}
+
+			.contact {
+				grid-area: contact;
+			}
 		}
 	}
 
@@ -123,40 +159,8 @@ html {
 
 		.navigation-list-container {
 			position: relative;
-			overflow: auto;
-			@include is-mobile() {
-				margin: 0 -16px;
-				background:
-					// Shadow cover left.
-					linear-gradient(to right, white 30%, rgba(255, 255, 255, 0)) left center,
-					// Shadow cover right
-					linear-gradient(to left, white 30%, rgba(255, 255, 255, 0)) right center,
-					// Shadow left.
-					radial-gradient(farthest-side at left center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)) left center,
-					// Shadow right.
-					radial-gradient(farthest-side at right center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)) right center;
-				background-repeat: no-repeat;
-				background-size:
-					20px 100%,
-					20px 100%,
-					8px 100%,
-					8px 100%;
-				background-attachment:
-					local,
-					local,
-					scroll,
-					scroll;
-			}
 
 			.navigation-list {
-				min-width: $mobile-max-width - (16px * 2);
-				@include is-mobile() {
-					overflow-x: auto;
-					padding: 0 16px;
-					position: relative;
-					z-index: -1;
-				}
-
 				margin: 0;
 
 				display: flex;
@@ -164,11 +168,20 @@ html {
 				justify-content: space-between;
 				gap: $gap;
 
+				@include is-mobile() {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+				}
+
+				@include is-mobile-sm() {
+					grid-template-columns: 1fr;
+				}
+
 				> li {
 					list-style: none;
 					flex-grow: 1;
 					width: 100%;
-					margin: $gap 0;
+					margin: 0;
 
 					> details[name="priorities-navigation"] {
 						> summary {
