@@ -118,6 +118,7 @@ html {
 			gap: $gap;
 
 			margin: (3 * $gap) 0;
+			font-weight: 600;
 
 			@include is-mobile() {
 				grid-template-columns: repeat(2, 1fr);
@@ -147,8 +148,12 @@ html {
 			}
 
 			.wishlist-btn-anchor {
-				text-decoration: none;
 				color: $color-red;
+
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 
 			.wishlist-btn-text {
