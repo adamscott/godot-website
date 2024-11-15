@@ -410,7 +410,6 @@ html {
 									align-items: stretch;
 									gap: $gap;
 
-									list-style: none;
 									cursor: pointer;
 									border-radius: $border-radius;
 
@@ -433,6 +432,7 @@ html {
 										height: auto;
 									}
 
+									list-style: none;
 									&::-webkit-details-marker {
 										display: none;
 									}
