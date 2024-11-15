@@ -23,6 +23,8 @@ $border-radius: 15px;
 $element-meta-planning-bar-width: 15%;
 $element-meta-ongoing-bar-width: 50%;
 
+$color-red: #f35774;
+
 //
 // Functions
 //
@@ -140,6 +142,17 @@ html {
 
 			.contact {
 				grid-area: contact;
+			}
+
+			.wishlist-btn-anchor {
+				text-decoration: none;
+				color: $color-red;
+			}
+
+			.wishlist-btn-text {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 		}
 	}
