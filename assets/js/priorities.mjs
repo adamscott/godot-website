@@ -64,7 +64,6 @@ function setupScrollToTop() {
 			hideScrollToTop();
 		} else {
 			const rect = navElement.getBoundingClientRect();
-			console.log(rect);
 			if (rect.y > window.innerHeight) {
 				hideScrollToTop();
 			} else {
