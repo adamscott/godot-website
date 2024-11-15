@@ -247,10 +247,6 @@ html {
 									}
 								}
 							}
-
-							&:focus {
-								outline: none;
-							}
 						}
 					}
 				}
@@ -302,10 +298,6 @@ html {
 						text-decoration: none;
 						visibility: hidden;
 						color: white;
-
-						&:focus {
-							outline: none;
-						}
 
 						// On .category-title:hover
 						@at-root #{selector-replace(&, ".category-title", ".category-title:hover")} {
@@ -436,10 +428,6 @@ html {
 									margin-top: -$gap;
 									padding: $gap;
 
-									&:focus {
-										outline: none;
-									}
-
 									&:hover {
 										background-color: var(--background-color);
 									}
@@ -465,10 +453,6 @@ html {
 										align-items: center;
 
 										text-decoration: none;
-
-										&:focus {
-											outline: none;
-										}
 									}
 
 									.element-title-text {
