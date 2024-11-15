@@ -438,30 +438,32 @@ header {
     overflow: initial;
   }
 
-  .fund {
-    margin-right: 0px;
-    &.desktop {
-      @media (max-width: 1200px) {
-        display: none;
-      }
-    }
-    &.mobile {
-      top: -2px;
-      position: relative;
-      @media (min-width: 1200px) {
-        display: none;
-      }
-    }
-    a {
-      text-decoration: none;
-      color: var(--fund-color);
-      color: white;
-      background-color: var(--fund-color) !important; // avoid hover overwrite
-      border-radius: var(--button-border-radius);
-      box-shadow: inset 0 0 0 2px var(--fund-color);
-      padding: 13px;
-    }
-  }
+	#nav, #nav_head {
+		.fund {
+			margin-right: 0px;
+			&.desktop {
+				@media (max-width: 1200px) {
+					display: none;
+				}
+			}
+			&.mobile {
+				top: -2px;
+				position: relative;
+				@media (min-width: 1200px) {
+					display: none;
+				}
+			}
+			a {
+				text-decoration: none;
+				color: var(--fund-color);
+				color: white;
+				background-color: var(--fund-color) !important; // avoid hover overwrite
+				border-radius: var(--button-border-radius);
+				box-shadow: inset 0 0 0 2px var(--fund-color);
+				padding: 13px;
+			}
+		}
+	}
   #logo-link {
     /* Make the logo's clickable area as tall as for other navigation links. */
     padding: 0.2rem 0.5rem;
