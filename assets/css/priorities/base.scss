@@ -117,6 +117,8 @@ html {
 				"donate howto contact";
 			gap: $gap;
 
+			margin: (3 * $gap) 0;
+
 			@include is-mobile() {
 				grid-template-columns: repeat(2, 1fr);
 				grid-template-areas:
