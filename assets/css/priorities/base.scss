@@ -296,12 +296,12 @@ html {
 					.category-title-anchor {
 						flex-grow: 0;
 						text-decoration: none;
-						visibility: hidden;
 						color: white;
+						opacity: 0;
 
 						// On .category-title:hover
-						@at-root #{selector-replace(&, ".category-title", ".category-title:hover")} {
-							visibility: visible;
+						@at-root #{selector-replace(&, ".category-title", ".category-title:hover")}, &:focus {
+							opacity: 1;
 						}
 					}
 				}
