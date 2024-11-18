@@ -1,0 +1,18 @@
+<a href="#{{ include.anchor }}">
+	<span>{{ include.title }}</span>
+
+	{% assign is_recent = false %}
+	{% for element in include.priorities %}
+		{% if element.last_updated != "" %}
+			{% assign last_updated = element.last_updated | date: "%s" | plus: 0 %}
+			{% assign last_updated_time = include.now | minus: include.last_updated_duration %}
+			{% if last_updated > last_updated_time %}
+				{% assign is_recent = true %}
+				{% break %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	{% if is_recent %}
+		<div class="recent-icon"></div>
+	{% endif %}
+</a>

@@ -29,6 +29,23 @@ google_font_icons:
 {% assign last_updated_duration = _days_duration | plus: _weeks_duration | plus: _months_duration %}
 {% assign now = "now" | date: "%s" | plus: 0 %}
 
+{% assign core_priorities = site.priorities | where: "category", "core" | sort: "rank" %}
+{% assign physics_priorities = site.priorities | where: "category", "physics" | sort: "rank" %}
+{% assign rendering_priorities = site.priorities | where: "category", "rendering" | sort: "rank" %}
+{% assign animation_priorities = site.priorities | where: "category", "animation" | sort: "rank" %}
+{% assign editor_priorities = site.priorities | where: "category", "editor" | sort: "rank" %}
+{% assign assetio_priorities = site.priorities | where: "category", "assetio" | sort: "rank" %}
+{% assign platforms_priorities = site.priorities | where: "category", "platforms" | sort: "rank" %}
+{% assign android_priorities = site.priorities | where: "category", "android" | sort: "rank" %}
+{% assign linuxbsd_priorities = site.priorities | where: "category", "linuxbsd" | sort: "rank" %}
+{% assign macos_priorities = site.priorities | where: "category", "macos" | sort: "rank" %}
+{% assign web_priorities = site.priorities | where: "category", "web" | sort: "rank" %}
+{% assign xr_priorities = site.priorities | where: "category", "xr" | sort: "rank" %}
+{% assign scripting_priorities = site.priorities | where: "category", "scripting" | sort: "rank" %}
+{% assign gdscript_priorities = site.priorities | where: "category", "gdscript" | sort: "rank" %}
+{% assign dotnet_priorities = site.priorities | where: "category", "dotnet" | sort: "rank" %}
+{% assign gdextension_priorities = site.priorities | where: "category", "gdextension" | sort: "rank" %}
+
 {% include header.html %}
 
 <!-- Priorities stylesheet. -->
@@ -130,7 +147,14 @@ google_font_icons:
 						<details name="priorities-navigation">
 							<summary>
 								<div class="label">
-									<a href="#core">Core</a>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="core"
+										title="Core"
+										priorities=core_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
 								</div>
 								<div class="toggle">
 									<span class="material-symbols-outlined more">unfold_more</span>
@@ -138,9 +162,36 @@ google_font_icons:
 								</div>
 							</summary>
 							<ul class="navigation-sublist">
-								<li><a href="#physics">Physics</a></li>
-								<li><a href="#rendering">Rendering</a></li>
-								<li><a href="#animation">Animation</a></li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="physics"
+										title="Physics"
+										priorities=physics_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="rendering"
+										title="Rendering"
+										priorities=rendering_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="animation"
+										title="Animation"
+										priorities=animation_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
 							</ul>
 						</details>
 					</li>
@@ -148,7 +199,14 @@ google_font_icons:
 						<details name="priorities-navigation">
 							<summary>
 								<div class="label">
-									<a href="#editor">Editor</a>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="editor"
+										title="Editor"
+										priorities=editor_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
 								</div>
 								<div class="toggle">
 									<span class="material-symbols-outlined more">unfold_more</span>
@@ -156,7 +214,16 @@ google_font_icons:
 								</div>
 							</summary>
 							<ul class="navigation-sublist">
-								<li><a href="#assetio">Asset import & export</a></li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="assetio"
+										title="Asset import & export"
+										priorities=assetio_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
 							</ul>
 						</details>
 					</li>
@@ -164,7 +231,14 @@ google_font_icons:
 						<details name="priorities-navigation">
 							<summary>
 								<div class="label">
-									<a href="#platforms">Platforms</a>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="platforms"
+										title="Platforms"
+										priorities=platforms_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
 								</div>
 								<div class="toggle">
 									<span class="material-symbols-outlined more">unfold_more</span>
@@ -172,11 +246,55 @@ google_font_icons:
 								</div>
 							</summary>
 							<ul class="navigation-sublist">
-								<li><a href="#android">Android</a></li>
-								<li><a href="#linuxbsd">Linux/BSDs</a></li>
-								<li><a href="#macos">macOS</a></li>
-								<li><a href="#web">Web</a></li>
-								<li><a href="#xr">XR</a></li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="android"
+										title="Android"
+										priorities=android_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="linuxbsd"
+										title="Linux/BSDs"
+										priorities=linuxbsd_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="macos"
+										title="macOS"
+										priorities=macos_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="web"
+										title="Web"
+										priorities=web_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="xr"
+										title="XR"
+										priorities=xr_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
 							</ul>
 						</details>
 					</li>
@@ -184,7 +302,14 @@ google_font_icons:
 						<details name="priorities-navigation">
 							<summary>
 								<div class="label">
-									<a href="#scripting">Scripting</a>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="scripting"
+										title="Scripting"
+										priorities=scripting_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
 								</div>
 								<div class="toggle">
 									<span class="material-symbols-outlined more">unfold_more</span>
@@ -192,9 +317,36 @@ google_font_icons:
 								</div>
 							</summary>
 							<ul class="navigation-sublist">
-								<li><a href="#gdscript">GDScript</a></li>
-								<li><a href="#dotnet">.NET</a></li>
-								<li><a href="#gdextension">GDExtension</a></li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="gdscript"
+										title="GDScript"
+										priorities=gdscript_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="dotnet"
+										title=".NET"
+										priorities=dotnet_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
+								<li>
+									{%
+										include_relative _includes/nav_link.html
+										anchor="gdextension"
+										title="GDExtension"
+										priorities=gdextension_priorities
+										last_updated_duration=last_updated_duration
+										now=now
+									%}
+								</li>
 							</ul>
 						</details>
 					</li>
@@ -205,7 +357,6 @@ google_font_icons:
 
 	<div class="priorities">
 		<!-- Core -->
-		{% assign core_priorities = site.priorities | where: "category", "core" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="1"
@@ -217,7 +368,6 @@ google_font_icons:
 		%}
 
 		<!-- :: Physics -->
-		{% assign physics_priorities = site.priorities | where: "category", "physics" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -229,7 +379,6 @@ google_font_icons:
 		%}
 
 		<!-- :: Rendering -->
-		{% assign rendering_priorities = site.priorities | where: "category", "rendering" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -241,7 +390,6 @@ google_font_icons:
 		%}
 
 		<!-- :: Animation -->
-		{% assign animation_priorities = site.priorities | where: "category", "animation" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -253,7 +401,6 @@ google_font_icons:
 		%}
 
 		<!-- Editor -->
-		{% assign editor_priorities = site.priorities | where: "category", "editor" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="1"
@@ -265,7 +412,6 @@ google_font_icons:
 		%}
 
 		<!-- :: Asset import & export -->
-		{% assign assetio_priorities = site.priorities | where: "category", "assetio" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -277,7 +423,6 @@ google_font_icons:
 		%}
 
 		<!-- Platforms -->
-		{% assign platforms_priorities = site.priorities | where: "category", "platforms" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="1"
@@ -289,7 +434,6 @@ google_font_icons:
 		%}
 
 		<!-- :: Android -->
-		{% assign android_priorities = site.priorities | where: "category", "android" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -301,7 +445,6 @@ google_font_icons:
 		%}
 
 		<!-- :: Linux/BSDs -->
-		{% assign linuxbsd_priorities = site.priorities | where: "category", "linuxbsd" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -313,7 +456,6 @@ google_font_icons:
 		%}
 
 		<!-- :: macOS -->
-		{% assign macos_priorities = site.priorities | where: "category", "macos" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -325,7 +467,6 @@ google_font_icons:
 		%}
 
 		<!-- :: Web -->
-		{% assign web_priorities = site.priorities | where: "category", "web" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -337,7 +478,6 @@ google_font_icons:
 		%}
 
 		<!-- :: XR -->
-		{% assign xr_priorities = site.priorities | where: "category", "xr" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -349,7 +489,6 @@ google_font_icons:
 		%}
 
 		<!-- Scripting -->
-		{% assign scripting_priorities = site.priorities | where: "category", "scripting" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="1"
@@ -361,7 +500,6 @@ google_font_icons:
 		%}
 
 		<!-- :: GDScript -->
-		{% assign gdscript_priorities = site.priorities | where: "category", "gdscript" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -373,7 +511,6 @@ google_font_icons:
 		%}
 
 		<!-- :: .NET -->
-		{% assign dotnet_priorities = site.priorities | where: "category", "dotnet" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
@@ -385,7 +522,6 @@ google_font_icons:
 		%}
 
 		<!-- :: GDExtension -->
-		{% assign gdextension_priorities = site.priorities | where: "category", "gdextension" | sort: "rank" %}
 		{%
 			include_relative _includes/category.html
 			level="2"
