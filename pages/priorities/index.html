@@ -4,6 +4,11 @@ title: "Priorities"
 description: "Godot Priorities"
 layout: default
 
+last_updated_duration:
+  days: 0
+  weeks: 2
+  months: 0
+
 google_font_icons:
   - file_export
   - info
@@ -14,6 +19,15 @@ google_font_icons:
   - unfold_less
   - warning
 ---
+
+{% assign _one_day_time = 60 | times: 60 | times: 24 %}
+{% assign _one_week_time = one_day_time | times: 7 %}
+{% assign _one_month_time = one_day_time | times: 30 %}
+{% assign _days_duration = _one_day_time | times: page.last_updated_duration.days %}
+{% assign _weeks_duration = _one_week_time | times: page.last_updated_duration.weeks %}
+{% assign _months_duration = _one_month_time | times: page.last_updated_duration.months %}
+{% assign last_updated_duration = _days_duration | plus: _weeks_duration | plus: _months_duration %}
+{% assign now = "now" | date: "%s" | plus: 0 %}
 
 {% include header.html %}
 
@@ -198,6 +212,8 @@ google_font_icons:
 			id="core"
 			name="Core"
 			elements=core_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: Physics -->
@@ -208,6 +224,8 @@ google_font_icons:
 			id="physics"
 			name="Physics"
 			elements=physics_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: Rendering -->
@@ -218,6 +236,8 @@ google_font_icons:
 			id="rendering"
 			name="Rendering"
 			elements=rendering_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: Animation -->
@@ -228,6 +248,8 @@ google_font_icons:
 			id="animation"
 			name="Animation"
 			elements=animation_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- Editor -->
@@ -238,6 +260,8 @@ google_font_icons:
 			id="editor"
 			name="Editor"
 			elements=editor_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: Asset import & export -->
@@ -248,6 +272,8 @@ google_font_icons:
 			id="assetio"
 			name="Asset import &amp; export"
 			elements=assetio_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- Platforms -->
@@ -258,6 +284,8 @@ google_font_icons:
 			id="platforms"
 			name="Platforms"
 			elements=platforms_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: Android -->
@@ -268,6 +296,8 @@ google_font_icons:
 			id="android"
 			name="Android"
 			elements=android_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: Linux/BSDs -->
@@ -278,6 +308,8 @@ google_font_icons:
 			id="linuxbsd"
 			name="Linux/BSDs"
 			elements=linuxbsd_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: macOS -->
@@ -288,6 +320,8 @@ google_font_icons:
 			id="macos"
 			name="macOS"
 			elements=macos_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: Web -->
@@ -298,6 +332,8 @@ google_font_icons:
 			id="web"
 			name="Web"
 			elements=web_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: XR -->
@@ -308,6 +344,8 @@ google_font_icons:
 			id="xr"
 			name="XR"
 			elements=xr_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- Scripting -->
@@ -318,6 +356,8 @@ google_font_icons:
 			id="scripting"
 			name="Scripting"
 			elements=scripting_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: GDScript -->
@@ -328,6 +368,8 @@ google_font_icons:
 			id="gdscript"
 			name="GDScript"
 			elements=gdscript_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: .NET -->
@@ -338,6 +380,8 @@ google_font_icons:
 			id="dotnet"
 			name=".NET"
 			elements=dotnet_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 
 		<!-- :: GDExtension -->
@@ -348,6 +392,8 @@ google_font_icons:
 			id="gdextension"
 			name="GDExtension"
 			elements=gdextension_priorities
+			last_updated_duration=last_updated_duration
+			now=now
 		%}
 	</div>
 

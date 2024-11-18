@@ -266,9 +266,9 @@ html {
 					> .category-summary {
 						display: grid;
 						grid-template-areas:
-							"link title icon";
+							"anchor title . icon";
 						grid-template-columns:
-							min-content 1fr min-content;
+							min-content auto 1fr min-content;
 						gap: $gap;
 						align-items: baseline;
 
@@ -297,6 +297,8 @@ html {
 						}
 
 						.category-anchor {
+							grid-area: anchor;
+
 							text-decoration: none;
 							color: white;
 							opacity: 0;
@@ -309,6 +311,8 @@ html {
 
 						.category-title {
 							grid-area: title;
+
+							position: relative;
 							margin-bottom: 0;
 
 							.category-title-text {
@@ -320,9 +324,23 @@ html {
 									margin: 0;
 								}
 							}
+
+							.recent-icon {
+								display: block;
+								position: absolute;
+								$size: 0.75rem;
+								width: $size;
+								height: $size;
+								border-radius: $size;
+								top: ($size / 4);
+								left: -(($size / 4) * 3);
+								background-color: $color-red;
+							}
 						}
 
 						.category-accordion-toggle {
+							grid-area: icon;
+
 							.more {
 								display: block;
 							}

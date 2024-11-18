@@ -9,6 +9,19 @@
 				{% assign header_tag = "h" | append: header_number %}
 				<{{ header_tag }} class="category-title">
 					<div class="category-title-text">{{ include.name }}</div>
+					{% assign is_recent = false %}
+					{% for element in include.elements %}
+						{% if element.last_updated != "" %}
+							{% assign last_updated = element.last_updated | date: "%s" | plus: 0 %}
+							{% if last_updated > (include.now | minus: include.last_updated_duration) %}
+								{% assign is_recent = true %}
+								{% break %}
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+					{% if is_recent %}
+						<div class="recent-icon"></div>
+					{% endif %}
 				</{{ header_tag }}>
 				<div class="category-accordion-toggle">
 					<span class="material-symbols-outlined more">unfold_more</span>
@@ -18,12 +31,14 @@
 			<div class="category-content">
 				<ul class="element-list">
 					{% for element in include.elements %}
-					<li class="element-list-item">
-						{%
-							include_relative _includes/element.html
-							element=element
-						%}
-					</li>
+						<li class="element-list-item">
+							{%
+								include_relative _includes/element.html
+								element=element
+								last_updated_duration=include.last_updated_duration
+								now=include.now
+							%}
+						</li>
 					{% endfor %}
 				</ul>
 			</div>

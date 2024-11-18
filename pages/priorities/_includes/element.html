@@ -2,11 +2,8 @@
 
 {% assign element_last_updated_classes = "element-last-updated" | split: "," %}
 {% if element.last_updated != "" %}
-	{% assign one_month = 60 | times: 60 | times: 24 | times: 30 %}
-	{% assign now = "now" | date: "%s" | plus: 0 %}
-	{% assign one_month_ago = now | minus: one_month %}
 	{% assign last_updated = element.last_updated | date: "%s" | plus: 0 %}
-	{% if last_updated > one_month_ago %}
+	{% if last_updated > (include.now | minus: include.last_updated_duration) %}
 		{% assign element_last_updated_classes = element_last_updated_classes | push: "recent" %}
 	{% endif %}
 {% endif %}
