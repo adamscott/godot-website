@@ -1,4 +1,7 @@
-import { gsap } from "./modules/gsap@3.12.5.min.mjs"
+import { gsap } from "./modules/gsap@3.12.5.min.mjs";
+
+// If we need to add a search bar, use this next line:
+// import Fuse from "./modules/fuse.js@7.0.0.min.mjs";
 
 // =====================
 // Blank target to links
