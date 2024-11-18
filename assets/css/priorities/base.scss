@@ -23,22 +23,14 @@ $border-radius: 15px;
 $element-meta-planning-bar-width: 15%;
 $element-meta-ongoing-bar-width: 50%;
 
+$color-background-light: #FFFFFF;
+$color-background-dark: rgb(51, 54, 57);
 $color-red: #f35774;
 
 //
 // Functions
 //
-@mixin is-mobile() {
-	@media screen and (max-width: #{$mobile-max-width}) {
-		@content;
-	}
-}
 
-@mixin is-mobile-sm() {
-	@media screen and (max-width: #{$mobile-sm-max-width}) {
-		@content;
-	}
-}
 
 //
 // Mixins
@@ -51,6 +43,24 @@ $color-red: #f35774;
 
 @mixin is-light() {
 	@media screen and (prefers-color-scheme: light) {
+		@content;
+	}
+}
+
+@mixin is-mobile() {
+	@media screen and (max-width: #{$mobile-max-width}) {
+		@content;
+	}
+}
+
+@mixin is-mobile-sm() {
+	@media screen and (max-width: #{$mobile-sm-max-width}) {
+		@content;
+	}
+}
+
+@mixin is-retina() {
+	@media screen and (min-resolution: 2x) {
 		@content;
 	}
 }
@@ -74,20 +84,27 @@ html {
 	position: relative;
 
 	> .banner {
-		background:
-			linear-gradient(to right, #FFFFFFDD, #FFFFFFDD),
-			linear-gradient(to bottom, tranparent 85%, #FFFFFF 100%),
-			url("/storage/priorities/images/page/map2-2048.webp");
-		@media screen and (min-resolution: 2x) {
+		@mixin set-background($color, $url) {
+			$color-with-alpha: change-color($color, $alpha: 0.866667);
 			background:
-				linear-gradient(to right, #FFFFFFDD, #FFFFFFDD),
-				linear-gradient(to bottom, transparent 85%, #FFFFFF 100%),
-				url("/storage/priorities/images/page/map2-4096.webp");
+				linear-gradient(to right, $color-with-alpha, $color-with-alpha),
+				linear-gradient(to bottom, rgba(0,0,0,0) 85%, $color 100%),
+				url($url);
 			background-size: cover, cover, cover;
 			background-repeat: repeat, repeat, repeat;
 		}
-		background-size: cover, cover, cover;
-		background-repeat: repeat, repeat, repeat;
+
+		@mixin setup-background($color) {
+			@include set-background($color, "/storage/priorities/images/page/map2-2048.webp");
+			@include is-retina() {
+				@include set-background($color, "/storage/priorities/images/page/map2-4096.webp");
+			}
+		}
+
+		@include setup-background($color-background-light);
+		@include is-dark() {
+			@include setup-background($color-background-dark);
+		}
 
 		.container {
 			padding-top: 7rem;
@@ -166,8 +183,11 @@ html {
 
 	> .navigation {
 		top: 0px;
-		background-color: var(--card-background-color);
 		z-index: 1000;
+		background-color: $color-background-light;
+		@include is-dark() {
+			background-color: $color-background-dark;
+		}
 
 		margin: $gap 0;
 		user-select: none;
