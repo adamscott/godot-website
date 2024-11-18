@@ -341,7 +341,18 @@ html {
 							.element-meta {
 								grid-area: meta;
 
+								display: grid;
+								grid-template-areas:
+									"stage"
+									"last-updated"
+									"created";
+								grid-template-rows:
+									repeat(3, min-content);
+								gap: $gap;
+
 								.element-stage {
+									grid-area: stage;
+
 									display: flex;
 									flex-direction: column;
 									align-items: center;
@@ -381,17 +392,32 @@ html {
 											}
 										}
 									}
+
+									.current-stage {
+										font-size: 1rem;
+										font-weight: 200;
+										font-variant-caps: all-small-caps;
+									}
 								}
 
 								.element-last-updated {
-									.label {
+									grid-area: last-updated;
+
+									display: flex;
+									flex-direction: column;
+									align-items: center;
+
+									font-size: 1rem;
+
+									> .label {
 										// Default state.
 										.last-updated {
-											display: inline;
+											display: block;
 										}
 										.recently-updated {
 											display: none;
 											font-weight: 600;
+											color: $color-red;
 										}
 
 										// If update is recent.
@@ -400,13 +426,30 @@ html {
 												display: none;
 											}
 											.recently-updated {
-												display: inline;
+												display: block;
 											}
 										}
 									}
 
-									.value {
+									> .value {
 
+									}
+								}
+
+								.element-created {
+									grid-area: created;
+
+									display: flex;
+									flex-direction: row;
+									justify-content: center;
+
+									font-size: 0.75rem;
+									font-style: italic;
+
+									> .label {
+										&::after {
+											content: " ";
+										}
 									}
 								}
 							}
