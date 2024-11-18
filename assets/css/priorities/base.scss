@@ -314,323 +314,327 @@ html {
 						padding-left: 0;
 						margin-bottom: 0;
 
-						> li {
+						> .element-list-item {
 							list-style: none;
 							margin-bottom: 0;
-						}
-
-						.element {
-							display: grid;
-							grid-template-areas:
-								"meta main";
-							grid-template-columns: minmax(10vw, 15%) auto;
-							grid-template-rows: auto;
-							gap: $gap;
 
 							border-top: 2px solid var(--primary-color);
-							padding: 1.25rem 0;
-
-							@include is-mobile() {
-								grid-template-areas:
-									"meta"
-									"main";
-								grid-template-columns: auto;
-								grid-template-rows: auto;
+							&:last-of-type {
+								border-bottom: 2px solid var(--primary-color);
 							}
 
-							.element-meta {
-								grid-area: meta;
-
+							> .element {
 								display: grid;
 								grid-template-areas:
-									"stage"
-									"last-updated"
-									"created";
-								grid-template-rows:
-									repeat(3, min-content);
+									"meta main";
+								grid-template-columns: minmax(10vw, 15%) auto;
+								grid-template-rows: auto;
 								gap: $gap;
 
-								.element-stage {
-									grid-area: stage;
+								padding: 1.25rem 0;
 
-									display: flex;
-									flex-direction: column;
-									align-items: center;
-
-									.preview-bar {
-										contain: paint;
-										height: 1rem;
-										width: 100%;
-										border-radius: 999999px;
-										background-color: var(--background-color);
-
-										.progress {
-											position: absolute;
-											top: 0;
-											left: 0;
-											height: 100%;
-
-											background-color: var(--primary-color);
-											border-top-right-radius: 9999px;
-											border-bottom-right-radius: 9999px;
-
-											// Planning.
-											@at-root #{selector-replace(&, ".element-stage", ".element-stage.planning")} {
-												width: $element-meta-planning-bar-width;
-											}
-
-											// Ongoing.
-											@at-root #{selector-replace(&, ".element-stage", ".element-stage.ongoing")} {
-												width: $element-meta-ongoing-bar-width;
-											}
-
-											// Done.
-											@at-root #{selector-replace(&, ".element-stage", ".element-stage.done")} {
-												width: 100%;
-												border-top-right-radius: 0;
-												border-bottom-right-radius: 0;
-											}
-										}
-									}
-
-									.current-stage {
-										font-size: 1rem;
-										font-weight: 200;
-										font-variant-caps: all-small-caps;
-									}
+								@include is-mobile() {
+									grid-template-areas:
+										"meta"
+										"main";
+									grid-template-columns: auto;
+									grid-template-rows: auto;
 								}
 
-								.element-last-updated {
-									grid-area: last-updated;
+								.element-meta {
+									grid-area: meta;
 
-									display: flex;
-									flex-direction: column;
-									align-items: center;
-
-									font-size: 1rem;
-
-									> .label {
-										// Default state.
-										.last-updated {
-											display: block;
-										}
-										.recently-updated {
-											display: none;
-											font-weight: 600;
-											color: $color-red;
-										}
-
-										// If update is recent.
-										@at-root #{selector-replace(&, ".element-last-updated", ".element-last-updated.recent")} {
-											.last-updated {
-												display: none;
-											}
-											.recently-updated {
-												display: block;
-											}
-										}
-									}
-
-									> .value {
-
-									}
-								}
-
-								.element-created {
-									grid-area: created;
-
-									display: flex;
-									flex-direction: row;
-									justify-content: center;
-
-									font-size: 0.75rem;
-									font-style: italic;
-
-									> .label {
-										&::after {
-											content: " ";
-										}
-									}
-								}
-							}
-
-							.element-main {
-								grid-area: main;
-
-								height: 100%;
-
-								.element-title {
-									display: flex;
-									flex-direction: row;
-									align-items: stretch;
+									display: grid;
+									grid-template-areas:
+										"stage"
+										"last-updated"
+										"created";
+									grid-template-rows:
+										repeat(3, min-content);
 									gap: $gap;
 
-									cursor: pointer;
-									border-radius: $border-radius;
-
-									margin-top: -$gap;
-									padding: $gap;
-
-									&:hover {
-										background-color: var(--background-color);
-									}
-
-									// Gross hack to make the element title height consistent when toggled.
-									height: 100%;
-									@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
-										// padding-bottom: $gap * 2;
-										// margin-bottom: -$gap;
-										height: auto;
-									}
-
-									list-style: none;
-									&::-webkit-details-marker {
-										display: none;
-									}
-
-									.element-title-anchor {
-										flex-grow: 0;
+									.element-stage {
+										grid-area: stage;
 
 										display: flex;
-										flex-direction: row;
+										flex-direction: column;
 										align-items: center;
 
-										text-decoration: none;
-									}
+										.preview-bar {
+											contain: paint;
+											height: 1rem;
+											width: 100%;
+											border-radius: 999999px;
+											background-color: var(--background-color);
 
-									.element-title-text {
-										flex-grow: 1;
-										width: 100%;
+											.progress {
+												position: absolute;
+												top: 0;
+												left: 0;
+												height: 100%;
 
-										display: flex;
-										flex-direction: row;
-										align-items: center;
+												background-color: var(--primary-color);
+												border-top-right-radius: 9999px;
+												border-bottom-right-radius: 9999px;
 
-										font-weight: 700;
+												// Planning.
+												@at-root #{selector-replace(&, ".element-stage", ".element-stage.planning")} {
+													width: $element-meta-planning-bar-width;
+												}
 
-										> p {
-											margin: 0;
+												// Ongoing.
+												@at-root #{selector-replace(&, ".element-stage", ".element-stage.ongoing")} {
+													width: $element-meta-ongoing-bar-width;
+												}
+
+												// Done.
+												@at-root #{selector-replace(&, ".element-stage", ".element-stage.done")} {
+													width: 100%;
+													border-top-right-radius: 0;
+													border-bottom-right-radius: 0;
+												}
+											}
+										}
+
+										.current-stage {
+											font-size: 1rem;
+											font-weight: 200;
+											font-variant-caps: all-small-caps;
 										}
 									}
 
-									.element-accordion-toggle {
-										flex-grow: 0;
+									.element-last-updated {
+										grid-area: last-updated;
 
 										display: flex;
-										flex-direction: row;
+										flex-direction: column;
 										align-items: center;
 
-										.less {
-											display: none;
-										}
-										.more {
-											display: block;
-										}
+										font-size: 1rem;
 
-										@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
-											.less {
+										> .label {
+											// Default state.
+											.last-updated {
 												display: block;
 											}
-											.more {
+											.recently-updated {
 												display: none;
+												font-weight: 600;
+												color: $color-red;
+											}
+
+											// If update is recent.
+											@at-root #{selector-replace(&, ".element-last-updated", ".element-last-updated.recent")} {
+												.last-updated {
+													display: none;
+												}
+												.recently-updated {
+													display: block;
+												}
+											}
+										}
+
+										> .value {
+
+										}
+									}
+
+									.element-created {
+										grid-area: created;
+
+										display: flex;
+										flex-direction: row;
+										justify-content: center;
+
+										font-size: 0.75rem;
+										font-style: italic;
+
+										> .label {
+											&::after {
+												content: " ";
 											}
 										}
 									}
 								}
 
-								.element-content {
-									padding: 0 $gap;
+								.element-main {
+									grid-area: main;
 
-									.element-description {
-										font-size: 1rem;
-									}
+									height: 100%;
 
-									.element-details {
+									.element-title {
 										display: flex;
-										flex-direction: column;
+										flex-direction: row;
+										align-items: stretch;
 										gap: $gap;
 
-										font-size: 0.9rem;
+										cursor: pointer;
+										border-radius: $border-radius;
 
-										.detail-block {
-											padding: 1rem 0 1rem 2rem;
-											border-left: 2px solid;
+										margin-top: -$gap;
+										padding: $gap;
 
-											p {
-												&:first-child {
-													margin-top: 0;
-												}
-												&:last-child {
-													margin-bottom: 0;
-												}
+										&:hover {
+											background-color: var(--background-color);
+										}
+
+										// Gross hack to make the element title height consistent when toggled.
+										height: 100%;
+										@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
+											// padding-bottom: $gap * 2;
+											// margin-bottom: -$gap;
+											height: auto;
+										}
+
+										list-style: none;
+										&::-webkit-details-marker {
+											display: none;
+										}
+
+										.element-title-anchor {
+											flex-grow: 0;
+
+											display: flex;
+											flex-direction: row;
+											align-items: center;
+
+											text-decoration: none;
+										}
+
+										.element-title-text {
+											flex-grow: 1;
+											width: 100%;
+
+											display: flex;
+											flex-direction: row;
+											align-items: center;
+
+											font-weight: 700;
+
+											> p {
+												margin: 0;
+											}
+										}
+
+										.element-accordion-toggle {
+											flex-grow: 0;
+
+											display: flex;
+											flex-direction: row;
+											align-items: center;
+
+											.less {
+												display: none;
+											}
+											.more {
+												display: block;
 											}
 
-											ul {
-												padding-left: 1.5rem;
-
-												li {
-													margin-bottom: 0.45rem;
+											@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
+												.less {
+													display: block;
 												}
+												.more {
+													display: none;
+												}
+											}
+										}
+									}
 
-												&:last-child {
-													li:last-child {
+									.element-content {
+										padding: 0 $gap;
+
+										.element-description {
+											font-size: 1rem;
+										}
+
+										.element-details {
+											display: flex;
+											flex-direction: column;
+											gap: $gap;
+
+											font-size: 0.9rem;
+
+											.detail-block {
+												padding: 1rem 0 1rem 2rem;
+												border-left: 2px solid;
+
+												p {
+													&:first-child {
+														margin-top: 0;
+													}
+													&:last-child {
 														margin-bottom: 0;
 													}
 												}
-											}
 
-											> ul {
-												// Force reset the style for the first list.
-												list-style-type: disc;
-											}
+												ul {
+													padding-left: 1.5rem;
 
-											> ol {
-												// Force reset the style for the first list.
-												counter-reset: element-details-list-counter;
-											}
+													li {
+														margin-bottom: 0.45rem;
+													}
 
-											.detail-block-header {
-												display: flex;
-												flex-direction: row;
-												align-items: center;
-												gap: $gap / 2;
-												margin-bottom: $gap / 2;
-
-												.icon {
-													@mixin parent-is($type) {
-														@at-root #{selector-replace(&, ".detail-block", ".detail-block.#{$type}")} {
-															@content;
+													&:last-child {
+														li:last-child {
+															margin-bottom: 0;
 														}
 													}
+												}
 
-													@mixin octicon($icon-url) {
-														display: inline-block;
-														width: 24px;
-														height: 24px;
-														mask-size: 24px;
-														mask-position: center;
-														mask-image: url($icon-url);
-														background-color: currentColor;
-													}
+												> ul {
+													// Force reset the style for the first list.
+													list-style-type: disc;
+												}
 
-													@include parent-is("note") {
-														// Google icon "info"
-													}
+												> ol {
+													// Force reset the style for the first list.
+													counter-reset: element-details-list-counter;
+												}
 
-													@include parent-is("warning") {
-														// Google icon "warning"
-													}
+												.detail-block-header {
+													display: flex;
+													flex-direction: row;
+													align-items: center;
+													gap: $gap / 2;
+													margin-bottom: $gap / 2;
 
-													@include parent-is("prs") {
-														@include octicon("/assets/icons/octicons/git-pull-request-24.svg");
-													}
+													.icon {
+														@mixin parent-is($type) {
+															@at-root #{selector-replace(&, ".detail-block", ".detail-block.#{$type}")} {
+																@content;
+															}
+														}
 
-													@include parent-is("issues") {
-														@include octicon("/assets/icons/octicons/bug-24.svg");
-													}
+														@mixin octicon($icon-url) {
+															display: inline-block;
+															width: 24px;
+															height: 24px;
+															mask-size: 24px;
+															mask-position: center;
+															mask-image: url($icon-url);
+															background-color: currentColor;
+														}
 
-													@include parent-is("proposals") {
-														@include octicon("/assets/icons/octicons/zap-24.svg");
+														@include parent-is("note") {
+															// Google icon "info"
+														}
+
+														@include parent-is("warning") {
+															// Google icon "warning"
+														}
+
+														@include parent-is("prs") {
+															@include octicon("/assets/icons/octicons/git-pull-request-24.svg");
+														}
+
+														@include parent-is("issues") {
+															@include octicon("/assets/icons/octicons/bug-24.svg");
+														}
+
+														@include parent-is("proposals") {
+															@include octicon("/assets/icons/octicons/zap-24.svg");
+														}
 													}
 												}
 											}
