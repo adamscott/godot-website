@@ -424,7 +424,7 @@ html {
 										"created";
 									grid-template-rows:
 										repeat(3, min-content);
-									gap: $gap;
+									gap: $gap / 3;
 
 									.element-stage {
 										grid-area: stage;
