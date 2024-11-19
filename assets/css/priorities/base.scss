@@ -90,6 +90,7 @@ html {
 				linear-gradient(to right, $color-with-alpha, $color-with-alpha),
 				linear-gradient(to bottom, rgba(0,0,0,0) 85%, $color 100%),
 				url($url);
+			background-color: black;
 			background-size: cover, cover, cover;
 			background-repeat: repeat, repeat, repeat;
 		}
