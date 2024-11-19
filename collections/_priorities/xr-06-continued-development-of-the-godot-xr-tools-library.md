@@ -11,6 +11,6 @@ stage:
 anchor: "continued-development-of-the-godot-xr-tools-library"
 title: "Continued development of the Godot XR Tools library"
 description: |
-  It offers out of the box locomotion and interaction solutions build on top of Godots core functionality.
+  It offers out of the box locomotion and interaction solutions built on top of Godots core functionality.
 details:
 ---
