@@ -8,8 +8,8 @@ stage:
   planning: ""
   ongoing: ""
   done: ""
-anchor: "traits"
-title: "Traits"
+anchor: "add-traits-to-gdscript"
+title: "Add traits to GDScript"
 description: |
   The main way to reuse code when writing code in GDScript is to use inheritance. While it works well for the most part, it leaves developers to rewrite a lot of code when that method cannot be used. So traits is the path we’re going forward to solve that issue.
 details:

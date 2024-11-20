@@ -8,10 +8,10 @@ stage:
   planning: "2024-09-31"
   ongoing: "2024-09-31"
   done: ""
-anchor: "support-for-external-textures-for-ar-core"
-title: "Support for external textures for AR Core"
+anchor: "add-support-for-external-textures-for-ar-core"
+title: "Add support for external textures for AR Core"
 description: |
-  It's for displaying anything that can be rendered on the Android side over in Godot.
+  External textures are textures where their data comes from an external source. For AR, it means getting the camera feed (or anything that can be rendered) from the host operating system and displaying it over in Godot.
 details:
   - type: note
     content: |
