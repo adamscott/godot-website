@@ -75,10 +75,22 @@ google_font_icons:
 		<div class="container">
 			<h1>Priorities</h1>
 			<div class="banner-last-updated">
+				{% assign is_recent = false %}
 				{% assign last_item_updated = site.priorities | sort: "last_updated" | last %}
 				{% assign last_updated = last_item_updated.last_updated %}
+				{% if last_updated != "" %}
+					{% assign last_updated_time = last_updated | date: "%s" | plus: 0 %}
+					{% assign last_updated_target = now | minus: last_updated_duration %}
+					{% if last_updated_time > last_updated_target %}
+						{% assign is_recent = true %}
+					{% endif %}
+				{% endif %}
 				<div class="label">
-					<span class="last-updated">Last updated</span>
+					{% if is_recent %}
+						<span class="recently-updated">Recently updated!</span>
+					{% else %}
+						<span class="last-updated">Last updated</span>
+					{% endif %}
 				</div>
 				<div class="date">
 					<time datetime="{{ last_updated }}">{{ last_updated }}</time>

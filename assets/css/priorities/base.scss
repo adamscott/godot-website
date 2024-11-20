@@ -116,6 +116,11 @@ html {
 				flex-direction: row;
 
 				.label {
+					.recently-updated {
+						font-weight: 600;
+						color: $color-red;
+					}
+
 					&::after {
 						content: " ";
 					}
