@@ -15,5 +15,5 @@ description: |
 details:
   - type: note
     content: |
-      We’re currently investigating whether to compile GDScript, or to use <abbr title=”ahead-of-time”>AOT</abbr> or <abbr title=”just-in-time”>JIT</abbr> techniques.
+      We’re currently investigating whether to compile GDScript, or to use [AOT (ahead-of-time)](https://en.wikipedia.org/wiki/Ahead-of-time_compilation) or [JIT (just-in-time)](https://en.wikipedia.org/wiki/Just-in-time_compilation) compilation techniques.
 ---
