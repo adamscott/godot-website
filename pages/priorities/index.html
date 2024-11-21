@@ -4,6 +4,7 @@ title: "Priorities"
 description: "Godot Priorities"
 layout: default
 
+enable_recent_update: false
 last_updated_duration:
   days: 0
   weeks: 2
@@ -19,6 +20,8 @@ google_font_icons:
   - unfold_less
   - warning
 ---
+
+{% assign enable_recent_update = page.enable_recent_update %}
 
 {% assign _one_day_time = 60 | times: 60 | times: 24 %}
 {% assign _one_week_time = one_day_time | times: 7 %}
@@ -86,7 +89,7 @@ google_font_icons:
 					{% endif %}
 				{% endif %}
 				<div class="label">
-					{% if is_recent %}
+					{% if is_recent and enable_recent_update %}
 						<span class="recently-updated">Recently updated!</span>
 					{% else %}
 						<span class="last-updated">Last updated</span>
@@ -165,7 +168,7 @@ google_font_icons:
 										title="Core"
 										priorities=core_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -181,7 +184,7 @@ google_font_icons:
 										title="Physics"
 										priorities=physics_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 								<li>
@@ -191,7 +194,7 @@ google_font_icons:
 										title="Rendering"
 										priorities=rendering_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 								<li>
@@ -201,7 +204,7 @@ google_font_icons:
 										title="Animation"
 										priorities=animation_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 							</ul>
@@ -217,7 +220,7 @@ google_font_icons:
 										title="Editor"
 										priorities=editor_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -233,7 +236,7 @@ google_font_icons:
 										title="Asset import & export"
 										priorities=assetio_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 							</ul>
@@ -249,7 +252,7 @@ google_font_icons:
 										title="Platforms"
 										priorities=platforms_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -265,7 +268,7 @@ google_font_icons:
 										title="Android"
 										priorities=android_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 								<li>
@@ -275,7 +278,7 @@ google_font_icons:
 										title="Linux/BSDs"
 										priorities=linuxbsd_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								<li>
 									{%
@@ -284,7 +287,7 @@ google_font_icons:
 										title="macOS"
 										priorities=macos_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 								<li>
@@ -294,7 +297,7 @@ google_font_icons:
 										title="Web"
 										priorities=web_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 								<li>
@@ -304,7 +307,7 @@ google_font_icons:
 										title="XR"
 										priorities=xr_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 							</ul>
@@ -320,7 +323,7 @@ google_font_icons:
 										title="Scripting"
 										priorities=scripting_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -336,7 +339,7 @@ google_font_icons:
 										title="GDScript"
 										priorities=gdscript_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 								<li>
@@ -346,7 +349,7 @@ google_font_icons:
 										title=".NET"
 										priorities=dotnet_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 								<li>
@@ -356,7 +359,7 @@ google_font_icons:
 										title="GDExtension"
 										priorities=gdextension_priorities
 										last_updated_duration=last_updated_duration
-										now=now
+										enable_recent_update=enable_recent_update
 									%}
 								</li>
 							</ul>
@@ -376,7 +379,7 @@ google_font_icons:
 			name="Core"
 			elements=core_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: Physics -->
@@ -387,7 +390,7 @@ google_font_icons:
 			name="Physics"
 			elements=physics_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: Rendering -->
@@ -398,7 +401,7 @@ google_font_icons:
 			name="Rendering"
 			elements=rendering_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: Animation -->
@@ -409,7 +412,7 @@ google_font_icons:
 			name="Animation"
 			elements=animation_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- Editor -->
@@ -420,7 +423,7 @@ google_font_icons:
 			name="Editor"
 			elements=editor_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: Asset import & export -->
@@ -431,7 +434,7 @@ google_font_icons:
 			name="Asset import &amp; export"
 			elements=assetio_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- Platforms -->
@@ -442,7 +445,7 @@ google_font_icons:
 			name="Platforms"
 			elements=platforms_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: Android -->
@@ -453,7 +456,7 @@ google_font_icons:
 			name="Android"
 			elements=android_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: Linux/BSDs -->
@@ -464,7 +467,7 @@ google_font_icons:
 			name="Linux/BSDs"
 			elements=linuxbsd_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: macOS -->
@@ -475,7 +478,7 @@ google_font_icons:
 			name="macOS"
 			elements=macos_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: Web -->
@@ -486,7 +489,7 @@ google_font_icons:
 			name="Web"
 			elements=web_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: XR -->
@@ -497,7 +500,7 @@ google_font_icons:
 			name="XR"
 			elements=xr_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- Scripting -->
@@ -508,7 +511,7 @@ google_font_icons:
 			name="Scripting"
 			elements=scripting_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: GDScript -->
@@ -519,7 +522,7 @@ google_font_icons:
 			name="GDScript"
 			elements=gdscript_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: .NET -->
@@ -530,7 +533,7 @@ google_font_icons:
 			name=".NET"
 			elements=dotnet_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 
 		<!-- :: GDExtension -->
@@ -541,7 +544,7 @@ google_font_icons:
 			name="GDExtension"
 			elements=gdextension_priorities
 			last_updated_duration=last_updated_duration
-			now=now
+			enable_recent_update=enable_recent_update
 		%}
 	</div>
 

@@ -1,10 +1,16 @@
+{% assign now = "now" | date: "%s" | plus: 0 %}
+{% assign last_updated_duration = include.last_updated_duration | default: 0 %}
+{% assign enable_recent_update = include.enable_recent_update %}
+
 {% assign element = include.element %}
 
 {% assign element_last_updated_classes = "element-last-updated" | split: "," %}
 {% if element.last_updated != "" %}
 	{% assign last_updated = element.last_updated | date: "%s" | plus: 0 %}
-	{% if last_updated > (include.now | minus: include.last_updated_duration) %}
-		{% assign element_last_updated_classes = element_last_updated_classes | push: "recent" %}
+	{% if last_updated > (now | minus: last_updated_duration) %}
+		{% if enable_recent_update %}
+			{% assign element_last_updated_classes = element_last_updated_classes | push: "recent" %}
+		{% endif %}
 	{% endif %}
 {% endif %}
 {% assign element_last_updated_class = element_last_updated_classes | join: " " %}
