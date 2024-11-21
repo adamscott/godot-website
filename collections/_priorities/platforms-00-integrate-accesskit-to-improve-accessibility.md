@@ -8,8 +8,8 @@ stage:
   planning: ""
   ongoing: ""
   done: ""
-anchor: "accesskit-integration"
-title: "AccessKit integration"
+anchor: "integrate-accesskit-to-improve-accessibility"
+title: "Integrate AccessKit to improve accessibility"
 description: |
   [AccessKit](https://github.com/AccessKit/accesskit) offers a cross-platform way to implement accessibility features for UI toolkits, such as Godot. It would offer us and game developers opportunities to make more accessible products, such as the Godot Editor itself or games made with Godot.
 details:

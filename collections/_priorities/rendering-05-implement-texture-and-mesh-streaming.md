@@ -8,8 +8,8 @@ stage:
   planning: ""
   ongoing: ""
   done: ""
-anchor: "texture-and-mesh-streaming"
-title: "Texture and mesh streaming"
+anchor: "implement-texture-and-mesh-streaming"
+title: "Implement texture and mesh streaming"
 description: |
   This feature would enable the streaming of assets to progressively load scenes, textures, and models in order to boost performance and loading times.
 details:

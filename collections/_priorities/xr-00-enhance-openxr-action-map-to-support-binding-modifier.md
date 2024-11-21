@@ -8,8 +8,8 @@ stage:
   planning: ""
   ongoing: ""
   done: ""
-anchor: "openxr-action-map-to-support-binding-modifier"
-title: "Enhancements to OpenXR action map to support binding modifier"
+anchor: "enhance-openxr-action-map-to-support-binding-modifier"
+title: "Enhance OpenXR action map to support binding modifier"
 description: |
 details:
   - type: prs

@@ -8,8 +8,8 @@ stage:
   planning: ""
   ongoing: ""
   done: ""
-anchor: "making-action-map-system-available-to-webxr"
-title: "Making action map system available to WebXR"
+anchor: "make-action-map-system-available-to-webxr"
+title: "Make action map system available to WebXR"
 description: |
 details:
   - type: note
