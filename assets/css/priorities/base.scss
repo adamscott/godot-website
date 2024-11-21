@@ -274,6 +274,15 @@ html {
 								}
 							}
 						}
+
+						.navigation-sublist {
+							display: flex;
+							flex-direction: column;
+							gap: $gap / 4;
+
+							margin-top: $gap / 2;
+							margin-left: $gap;
+						}
 					}
 				}
 			}
