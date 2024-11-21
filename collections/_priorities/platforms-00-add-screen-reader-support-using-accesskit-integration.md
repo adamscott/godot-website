@@ -5,11 +5,11 @@ rank: 0
 created: "2024-11-30"
 stage:
   # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: ""
-  ongoing: ""
+  planning: "2024-11-30"
+  ongoing: "2024-11-30"
   done: ""
-anchor: "integrate-accesskit-to-improve-accessibility"
-title: "Integrate AccessKit to improve accessibility"
+anchor: "add-screen-reader-support-using-accesskit-integration"
+title: "Add screen reader support using AccessKit integration"
 description: |
   [AccessKit](https://github.com/AccessKit/accesskit) offers a cross-platform way to implement accessibility features for UI toolkits, such as Godot. It would offer us and game developers opportunities to make more accessible products, such as the Godot Editor itself or games made with Godot.
 details:

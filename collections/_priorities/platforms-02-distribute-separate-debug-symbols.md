@@ -16,4 +16,7 @@ details:
   - type: note
     content: |
       For all platforms that support separated debug symbols.
+  - type: proposals
+    content: |
+      - [Distribute official builds with full debugging symbols #1342](https://github.com/godotengine/godot-proposals/issues/1342)
 ---

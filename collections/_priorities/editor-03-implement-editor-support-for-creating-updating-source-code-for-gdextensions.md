@@ -13,4 +13,7 @@ title: "Implement editor support for creating/updating source code for GDExtensi
 description: |
   Right now the editor is not able to open or edit GDExtension classes. It effectively treats them like binary blobs. We want to make opening and editing GDExtension classes easier to do from within the engine and provide some of the comforts from regular scripting to GDExtension.
 details:
+  - type: proposals
+    content: |
+      - [Allow creating GDExtension plugins from inside the Godot editor #9097](https://github.com/godotengine/godot/pull/90979)
 ---

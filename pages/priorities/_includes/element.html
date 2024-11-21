@@ -90,6 +90,8 @@
 									<span class="material-symbols-outlined warning">warning</span>
 								{% elsif detail.type == "links" %}
 									<span class="material-symbols-outlined links">file_export</span>
+								{% elsif detail.type == "trackers" %}
+									<span class="material-symbols-outlined list_alt_check">list_alt_check</span>
 								{% elsif detail.type == "prs" %}
 									<!-- /assets/icons/octicons/git-pull-request-24.svg -->
 								{% elsif detail.type == "issues" %}
@@ -105,6 +107,8 @@
 									<span>Warning</span>
 								{% elsif detail.type == "links" %}
 									<span>Links</span>
+								{% elsif detail.type == "trackers" %}
+									<span>Trackers</span>
 								{% elsif detail.type == "prs" %}
 									<span>Pull requests</span>
 								{% elsif detail.type == "issues" %}

@@ -16,6 +16,7 @@ google_font_icons:
   - input_circle
   - lightbulb_circle
   - link
+  - list_alt_check
   - unfold_more
   - unfold_less
   - warning
@@ -36,18 +37,22 @@ google_font_icons:
 {% assign physics_priorities = site.priorities | where: "category", "physics" | sort: "rank" %}
 {% assign rendering_priorities = site.priorities | where: "category", "rendering" | sort: "rank" %}
 {% assign animation_priorities = site.priorities | where: "category", "animation" | sort: "rank" %}
+{% assign navigation_priorities = site.priorities | where: "category", "navigation" | sort: "rank" %}
 {% assign editor_priorities = site.priorities | where: "category", "editor" | sort: "rank" %}
 {% assign assetio_priorities = site.priorities | where: "category", "assetio" | sort: "rank" %}
 {% assign platforms_priorities = site.priorities | where: "category", "platforms" | sort: "rank" %}
 {% assign android_priorities = site.priorities | where: "category", "android" | sort: "rank" %}
+{% assign ios_priorities = site.priorities | where: "category", "ios" | sort: "rank" %}
 {% assign linuxbsd_priorities = site.priorities | where: "category", "linuxbsd" | sort: "rank" %}
 {% assign macos_priorities = site.priorities | where: "category", "macos" | sort: "rank" %}
+{% assign windows_priorities = site.priorities | where: "category", "windows" | sort: "rank" %}
 {% assign web_priorities = site.priorities | where: "category", "web" | sort: "rank" %}
 {% assign xr_priorities = site.priorities | where: "category", "xr" | sort: "rank" %}
 {% assign scripting_priorities = site.priorities | where: "category", "scripting" | sort: "rank" %}
 {% assign gdscript_priorities = site.priorities | where: "category", "gdscript" | sort: "rank" %}
 {% assign dotnet_priorities = site.priorities | where: "category", "dotnet" | sort: "rank" %}
 {% assign gdextension_priorities = site.priorities | where: "category", "gdextension" | sort: "rank" %}
+{% assign documentation_priorities = site.priorities | where: "category", "documentation" | sort: "rank" %}
 
 {% include header.html %}
 
@@ -158,6 +163,7 @@ google_font_icons:
 		<div class="container">
 			<div class="navigation-list-container">
 				<ul class="navigation-list">
+					<!-- Core -->
 					<li>
 						<details name="priorities-navigation">
 							<summary>
@@ -167,6 +173,7 @@ google_font_icons:
 										anchor="core"
 										title="Core"
 										priorities=core_priorities
+										is_list_item=false
 										last_updated_duration=last_updated_duration
 										enable_recent_update=enable_recent_update
 									%}
@@ -177,39 +184,47 @@ google_font_icons:
 								</div>
 							</summary>
 							<ul class="navigation-sublist">
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="physics"
-										title="Physics"
-										priorities=physics_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="rendering"
-										title="Rendering"
-										priorities=rendering_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="animation"
-										title="Animation"
-										priorities=animation_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
+								{%
+									include_relative _includes/nav_link.html
+									anchor="physics"
+									title="Physics"
+									priorities=physics_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="rendering"
+									title="Rendering"
+									priorities=rendering_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="animation"
+									title="Animation"
+									priorities=animation_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="navigation"
+									title="Navigation"
+									priorities=navigation_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
 							</ul>
 						</details>
 					</li>
+
+					<!-- Editor -->
 					<li>
 						<details name="priorities-navigation">
 							<summary>
@@ -219,6 +234,7 @@ google_font_icons:
 										anchor="editor"
 										title="Editor"
 										priorities=editor_priorities
+										is_list_item=false
 										last_updated_duration=last_updated_duration
 										enable_recent_update=enable_recent_update
 									%}
@@ -229,19 +245,20 @@ google_font_icons:
 								</div>
 							</summary>
 							<ul class="navigation-sublist">
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="assetio"
-										title="Asset import & export"
-										priorities=assetio_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
+								{%
+									include_relative _includes/nav_link.html
+									anchor="assetio"
+									title="Asset import & export"
+									priorities=assetio_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
 							</ul>
 						</details>
 					</li>
+
+					<!-- Platforms -->
 					<li>
 						<details name="priorities-navigation">
 							<summary>
@@ -251,6 +268,7 @@ google_font_icons:
 										anchor="platforms"
 										title="Platforms"
 										priorities=platforms_priorities
+										is_list_item=false
 										last_updated_duration=last_updated_duration
 										enable_recent_update=enable_recent_update
 									%}
@@ -261,58 +279,74 @@ google_font_icons:
 								</div>
 							</summary>
 							<ul class="navigation-sublist">
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="android"
-										title="Android"
-										priorities=android_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="linuxbsd"
-										title="Linux/BSDs"
-										priorities=linuxbsd_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="macos"
-										title="macOS"
-										priorities=macos_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="web"
-										title="Web"
-										priorities=web_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="xr"
-										title="XR"
-										priorities=xr_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
+								{%
+									include_relative _includes/nav_link.html
+									anchor="android"
+									title="Android"
+									priorities=android_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="ios"
+									title="iOS"
+									priorities=ios_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="linuxbsd"
+									title="Linux/BSDs"
+									priorities=linuxbsd_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="macos"
+									title="macOS"
+									priorities=macos_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="windows"
+									title="Windows"
+									priorities=windows_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="web"
+									title="Web"
+									priorities=web_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="xr"
+									title="XR"
+									priorities=xr_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
 							</ul>
 						</details>
 					</li>
+
+					<!-- Scripting -->
 					<li>
 						<details name="priorities-navigation">
 							<summary>
@@ -322,6 +356,7 @@ google_font_icons:
 										anchor="scripting"
 										title="Scripting"
 										priorities=scripting_priorities
+										is_list_item=false
 										last_updated_duration=last_updated_duration
 										enable_recent_update=enable_recent_update
 									%}
@@ -332,39 +367,64 @@ google_font_icons:
 								</div>
 							</summary>
 							<ul class="navigation-sublist">
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="gdscript"
-										title="GDScript"
-										priorities=gdscript_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="dotnet"
-										title=".NET"
-										priorities=dotnet_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
-								<li>
-									{%
-										include_relative _includes/nav_link.html
-										anchor="gdextension"
-										title="GDExtension"
-										priorities=gdextension_priorities
-										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
-									%}
-								</li>
+								{%
+									include_relative _includes/nav_link.html
+									anchor="gdscript"
+									title="GDScript"
+									priorities=gdscript_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="dotnet"
+									title=".NET"
+									priorities=dotnet_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
+								{%
+									include_relative _includes/nav_link.html
+									anchor="gdextension"
+									title="GDExtension"
+									priorities=gdextension_priorities
+									is_list_item=true
+									last_updated_duration=last_updated_duration
+									enable_recent_update=enable_recent_update
+								%}
 							</ul>
 						</details>
 					</li>
+
+					<!-- Documentation -->
+					{% assign nb_of_documentation_priorities = documentation_priorities | size %}
+					{% if nb_of_documentation_priorities > 0 %}
+					<li>
+						<details name="priorities-navigation">
+							<summary>
+								<div class="label">
+									{%
+										include_relative _includes/nav_link.html
+										anchor="documentation"
+										title="Documentation"
+										priorities=documentation_priorities
+										is_list_item=false
+										last_updated_duration=last_updated_duration
+										enable_recent_update=enable_recent_update
+									%}
+								</div>
+								<div class="toggle">
+									<span class="material-symbols-outlined more">unfold_more</span>
+									<span class="material-symbols-outlined less">unfold_less</span>
+								</div>
+							</summary>
+							<ul class="navigation-sublist">
+							</ul>
+						</details>
+					</li>
+					{% endif %}
 				</ul>
 			</div>
 		</div>
@@ -415,6 +475,17 @@ google_font_icons:
 			enable_recent_update=enable_recent_update
 		%}
 
+		<!-- :: Navigation -->
+		{%
+			include_relative _includes/category.html
+			level="2"
+			id="navigation"
+			name="Navigation"
+			elements=navigation_priorities
+			last_updated_duration=last_updated_duration
+			enable_recent_update=enable_recent_update
+		%}
+
 		<!-- Editor -->
 		{%
 			include_relative _includes/category.html
@@ -459,6 +530,17 @@ google_font_icons:
 			enable_recent_update=enable_recent_update
 		%}
 
+		<!-- :: iOS -->
+		{%
+			include_relative _includes/category.html
+			level="2"
+			id="ios"
+			name="iOS"
+			elements=ios_priorities
+			last_updated_duration=last_updated_duration
+			enable_recent_update=enable_recent_update
+		%}
+
 		<!-- :: Linux/BSDs -->
 		{%
 			include_relative _includes/category.html
@@ -477,6 +559,17 @@ google_font_icons:
 			id="macos"
 			name="macOS"
 			elements=macos_priorities
+			last_updated_duration=last_updated_duration
+			enable_recent_update=enable_recent_update
+		%}
+
+		<!-- :: Windows -->
+		{%
+			include_relative _includes/category.html
+			level="2"
+			id="windows"
+			name="Windows"
+			elements=windows_priorities
 			last_updated_duration=last_updated_duration
 			enable_recent_update=enable_recent_update
 		%}
@@ -543,6 +636,17 @@ google_font_icons:
 			id="gdextension"
 			name="GDExtension"
 			elements=gdextension_priorities
+			last_updated_duration=last_updated_duration
+			enable_recent_update=enable_recent_update
+		%}
+
+		<!-- Documentation -->
+		{%
+			include_relative _includes/category.html
+			level="1"
+			id="documentation"
+			name="Documentation"
+			elements=documentation_priorities
 			last_updated_duration=last_updated_duration
 			enable_recent_update=enable_recent_update
 		%}
