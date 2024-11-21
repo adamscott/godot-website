@@ -430,7 +430,9 @@ html {
 										"created";
 									grid-template-rows:
 										repeat(3, min-content);
-									gap: $gap / 3;
+									gap: $gap / 4;
+
+									font-weight: 200;
 
 									.element-stage {
 										grid-area: stage;
@@ -486,20 +488,33 @@ html {
 										grid-area: last-updated;
 
 										display: flex;
-										flex-direction: column;
+										flex-direction: row;
 										align-items: center;
+										justify-content: center;
 
-										font-size: 1rem;
+										font-size: 0.75rem;
+										font-style: italic;
+
+										&.recent {
+											flex-direction: column;
+										}
 
 										> .label {
 											// Default state.
 											.last-updated {
 												display: block;
+
+												&::after {
+													content: " ";
+												}
 											}
 											.recently-updated {
 												display: none;
 												font-weight: 600;
 												color: $color-red;
+
+												font-size: 1rem;
+												font-style: normal;
 											}
 
 											// If update is recent.
@@ -523,6 +538,7 @@ html {
 
 										display: flex;
 										flex-direction: row;
+										align-items: center;
 										justify-content: center;
 
 										font-size: 0.75rem;
