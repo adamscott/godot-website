@@ -144,6 +144,89 @@ function handleHashChangeEvent() {
 	});
 }
 
+// ========================================
+// Convert absolute dates to relative dates
+// ========================================
+function convertAbsoluteDatesToRelativeDates() {
+	const relativeTimeFormat = new Intl.RelativeTimeFormat('en', { style: 'long' });
+	/** @type {Record<String, Date>} */
+	const dates = {
+		now: new Date()
+	};
+	dates["yesterday"] = new Date(dates.now).setDate(dates.now.getDate() - 1);
+	dates["oneWeekAgo"] = new Date(dates.now).setDate(dates.now.getDate() - 7);
+	dates["oneMonthAgo"] = new Date(dates.now).setMonth(dates.now.getMonth() - 1);
+	dates["oneYearAgo"] = new Date(dates.now).setFullYear(dates.now.getFullYear() - 1);
+
+	/** @type {Record<String, Number>} */
+	const durations = {
+		day: 1000 /* milliseconds in one second */ * 60 /* seconds in one minute */ * 60 /* minutes in one hour */ * 24 /* hours in one day */,
+	};
+	durations["week"] = durations["day"] * 7;
+	durations["month"] = durations["day"] * 30;
+	durations["year"] = durations["day"] * 365;
+
+	/** @type {Record<String, Number>} */
+	const timeDiffs = {
+		oneDayAgo: dates["now"] - dates["yesterday"],
+		oneWeekAgo: dates["now"] - dates["oneWeekAgo"],
+		oneMonthAgo: dates["now"] - dates["oneMonthAgo"],
+		oneYearAgo: dates["now"] - dates["oneYearAgo"],
+	};
+
+	const timeElements = Array.from(document.querySelectorAll("time"));
+	for (const timeElement of timeElements) {
+		if (timeElement.dateTime === "") {
+			return;
+		}
+
+		const timeDate = new Date(timeElement.dateTime);
+		const diff = dates["now"] - timeDate;
+
+		if (diff > timeDiffs["oneYearAgo"]) {
+			const years = diff / durations["year"];
+			const value = -Math.max(Math.floor(years), 1);
+			if (value === -1) {
+				timeElement.textContent = "last year";
+			} else {
+				timeElement.textContent = relativeTimeFormat.format(value, "years");
+			}
+		} else if (diff > timeDiffs["oneMonthAgo"]) {
+			const months = diff / durations["month"];
+			const value = -Math.max(Math.floor(months), 1);
+			if (value === -1) {
+				timeElement.textContent = "last month";
+			} else {
+				timeElement.textContent = relativeTimeFormat.format(value, "months");
+			}
+		} else if (diff > timeDiffs["oneWeekAgo"]) {
+			const weeks = diff / durations["week"];
+			const value = -Math.max(Math.floor(weeks), 1);
+			if (value === -1) {
+				timeElement.textContent = "last week";
+			} else {
+				timeElement.textContent = relativeTimeFormat.format(value, "weeks");
+			}
+		} else if (diff > timeDiffs["oneDayAgo"]) {
+			const days = diff / durations["day"];
+			const value = -Math.max(Math.floor(days), 1);
+			if (value === -1) {
+				timeElement.textContent = "yesterday";
+			} else {
+				console.log(diff, durations["day"], days, value);
+				timeElement.textContent = relativeTimeFormat.format(value, "days");
+			}
+		} else {
+			timeElement.textContent = "today";
+		}
+
+		// Add non-breaking space in between the number and the rest.
+		timeElement.textContent = timeElement.textContent.replace(/^(\d+?) (.+)$/, "$1 $2");
+
+		timeElement.title = timeElement.dateTime;
+	}
+}
+
 // ====
 // Main
 // ====
@@ -156,5 +239,6 @@ function main() {
 	setupScrollToTop();
 	openDetailsSelectedInUrl();
 	handleNavigateEvent();
+	convertAbsoluteDatesToRelativeDates();
 }
 main();
