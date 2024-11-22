@@ -5,18 +5,24 @@ rank: 0
 created: "2024-11-30"
 stage:
   # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: ""
-  ongoing: ""
+  planning: "2024-11-30"
+  ongoing: "2024-11-30"
   done: ""
 anchor: "improve-and-polish-new-skeletonmodifier3d"
 title: "Improve and polish new SkeletonModifier3D"
 description: |
-  The `SkeletonModifier3D` abstract node [introduced in 4.3](https://godotengine.org/releases/4.3/#animation-skeletonmodifier3d-node) helps users to modify and add new functionality to bones via script. We want to build upon that new structure to add new features to it. We intend to improve IK with proper limits and add spring bone support.
+  The `SkeletonModifier3D` abstract node [introduced in 4.3](https://godotengine.org/releases/4.3/#animation-skeletonmodifier3d-node) helps users to modify and add new functionality to bones via script. We want to build upon that new structure to add new features to it.
 details:
   - type: note
     content: |
-      We identified three features that we wish to add
+      We identified at least two features that we wish to add
       - Add a bone constraint (based on the Blender spec)
       - Add spring bones (based on the VRM1 spec)
-      - Add a bone expander (to be able to change the local scale)
+  - type: proposals
+    content: |
+      - [Implement Skeleton re-targeting node #3379](https://github.com/godotengine/godot-proposals/issues/3379)
+  - type: prs
+    content: |
+      - [Add RetargetModifier3D for realtime retarget to keep original rest #97824](https://github.com/godotengine/godot/pull/97824)
+      - [Implement LookAtModifier3D #98446](https://github.com/godotengine/godot/pull/98446)
 ---
