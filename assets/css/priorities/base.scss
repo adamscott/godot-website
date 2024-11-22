@@ -113,9 +113,22 @@ html {
 
 			.banner-last-updated {
 				.label {
+					.last-updated {
+						display: inline;
+					}
 					.recently-updated {
+						display: none;
 						font-weight: 600;
 						color: $color-red;
+					}
+
+					@at-root #{selector-replace(&, ".banner-last-updated", ".banner-last-updated.recent")} {
+						.last-updated {
+							display: none;
+						}
+						.recently-updated {
+							display: inline;
+						}
 					}
 				}
 			}

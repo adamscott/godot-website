@@ -4,7 +4,10 @@ title: "Priorities"
 description: "Godot Priorities"
 layout: default
 
-enable_recent_update: false
+# The next lines will ignore "recently updated" for the specified "last updated" dates.
+ignore_recent_update:
+  - "2024-11-30"
+
 last_updated_duration:
   days: 0
   weeks: 2
@@ -22,8 +25,12 @@ google_font_icons:
   - warning
 ---
 
-{% assign enable_recent_update = page.enable_recent_update %}
+{% assign ignore_recent_update = page.ignore_recent_update %}
+{% if ignore_recent_update == "" %}
+	{% assign ignore_recent_update = "" | split: "," %}
+{% endif %}
 
+{% assign now = "now" | date: "%s" | plus: 0 %}
 {% assign _one_day_time = 60 | times: 60 | times: 24 %}
 {% assign _one_week_time = one_day_time | times: 7 %}
 {% assign _one_month_time = one_day_time | times: 30 %}
@@ -31,7 +38,6 @@ google_font_icons:
 {% assign _weeks_duration = _one_week_time | times: page.last_updated_duration.weeks %}
 {% assign _months_duration = _one_month_time | times: page.last_updated_duration.months %}
 {% assign last_updated_duration = _days_duration | plus: _weeks_duration | plus: _months_duration %}
-{% assign now = "now" | date: "%s" | plus: 0 %}
 
 {% assign core_priorities = site.priorities | where: "category", "core" | sort: "rank" %}
 {% assign physics_priorities = site.priorities | where: "category", "physics" | sort: "rank" %}
@@ -79,26 +85,32 @@ google_font_icons:
 </style>
 
 <div class="priorities-container">
+	<!-- BANNER -->
 	<div class="banner">
 		<div class="container">
 			<h1>Priorities</h1>
-			<div class="banner-last-updated">
-				{% assign is_recent = false %}
-				{% assign last_item_updated = site.priorities | sort: "last_updated" | last %}
-				{% assign last_updated = last_item_updated.last_updated %}
-				{% if last_updated != "" %}
+			{% assign is_recent = false %}
+			{% assign last_item_updated = site.priorities | sort: "last_updated" | last %}
+			{% assign last_updated = last_item_updated.last_updated %}
+			{% if last_updated != "" %}
+				{% unless ignore_recent_update contains last_updated %}
 					{% assign last_updated_time = last_updated | date: "%s" | plus: 0 %}
 					{% assign last_updated_target = now | minus: last_updated_duration %}
 					{% if last_updated_time > last_updated_target %}
 						{% assign is_recent = true %}
 					{% endif %}
-				{% endif %}
+				{% endunless %}
+			{% endif %}
+
+			{% assign banner_last_updated_classes = "banner-last-updated" | split: " " %}
+			{% if is_recent %}
+				{% assign banner_last_updated_classes = banner_last_updated_classes | push: "recent" %}
+			{% endif %}
+			{% assign banner_last_updated_class = banner_last_updated_classes | join: " " %}
+			<div class="{{banner_last_updated_class}}">
 				<span class="label">
-					{% if is_recent and enable_recent_update %}
-						<span class="recently-updated">Recently updated!</span>
-					{% else %}
-						<span class="last-updated">Last updated</span>
-					{% endif %}
+					<span class="recently-updated">Recently updated!</span>
+					<span class="last-updated">Last updated</span>
 				</span> <span class="date">
 					<time datetime="{{ last_updated }}">{{ last_updated }}</time>
 				</span>
@@ -106,6 +118,7 @@ google_font_icons:
 		</div>
 	</div>
 
+	<!-- INTRO -->
 	<div class="intro">
 		<div class="container">
 			<p class="wishlist-par">
@@ -158,6 +171,7 @@ google_font_icons:
 		</div>
 	</div>
 
+	<!-- NAVIGATION -->
 	<nav id="priorities-navigation" class="navigation">
 		<div class="container">
 			<div class="navigation-list-container">
@@ -174,7 +188,7 @@ google_font_icons:
 										priorities=core_priorities
 										is_list_item=false
 										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
+										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -190,7 +204,7 @@ google_font_icons:
 									priorities=physics_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -199,7 +213,7 @@ google_font_icons:
 									priorities=rendering_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -208,7 +222,7 @@ google_font_icons:
 									priorities=animation_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -217,7 +231,7 @@ google_font_icons:
 									priorities=navigation_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 							</ul>
 						</details>
@@ -235,7 +249,7 @@ google_font_icons:
 										priorities=editor_priorities
 										is_list_item=false
 										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
+										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -251,7 +265,7 @@ google_font_icons:
 									priorities=assetio_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 							</ul>
 						</details>
@@ -269,7 +283,7 @@ google_font_icons:
 										priorities=platforms_priorities
 										is_list_item=false
 										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
+										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -285,7 +299,7 @@ google_font_icons:
 									priorities=android_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -294,7 +308,7 @@ google_font_icons:
 									priorities=ios_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -303,7 +317,7 @@ google_font_icons:
 									priorities=linuxbsd_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -312,7 +326,7 @@ google_font_icons:
 									priorities=macos_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -321,7 +335,7 @@ google_font_icons:
 									priorities=windows_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -330,7 +344,7 @@ google_font_icons:
 									priorities=web_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -339,7 +353,7 @@ google_font_icons:
 									priorities=xr_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 							</ul>
 						</details>
@@ -357,7 +371,7 @@ google_font_icons:
 										priorities=scripting_priorities
 										is_list_item=false
 										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
+										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -373,7 +387,7 @@ google_font_icons:
 									priorities=gdscript_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -382,7 +396,7 @@ google_font_icons:
 									priorities=dotnet_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 								{%
 									include_relative _includes/nav_link.html
@@ -391,7 +405,7 @@ google_font_icons:
 									priorities=gdextension_priorities
 									is_list_item=true
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 							</ul>
 						</details>
@@ -411,7 +425,7 @@ google_font_icons:
 										priorities=documentation_priorities
 										is_list_item=false
 										last_updated_duration=last_updated_duration
-										enable_recent_update=enable_recent_update
+										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -438,7 +452,7 @@ google_font_icons:
 			name="Core"
 			elements=core_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Physics -->
@@ -449,7 +463,7 @@ google_font_icons:
 			name="Physics"
 			elements=physics_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Rendering -->
@@ -460,7 +474,7 @@ google_font_icons:
 			name="Rendering"
 			elements=rendering_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Animation -->
@@ -471,7 +485,7 @@ google_font_icons:
 			name="Animation"
 			elements=animation_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Navigation -->
@@ -482,7 +496,7 @@ google_font_icons:
 			name="Navigation"
 			elements=navigation_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- Editor -->
@@ -493,7 +507,7 @@ google_font_icons:
 			name="Editor"
 			elements=editor_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Asset import & export -->
@@ -504,7 +518,7 @@ google_font_icons:
 			name="Asset import &amp; export"
 			elements=assetio_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- Platforms -->
@@ -515,7 +529,7 @@ google_font_icons:
 			name="Platforms"
 			elements=platforms_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Android -->
@@ -526,7 +540,7 @@ google_font_icons:
 			name="Android"
 			elements=android_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: iOS -->
@@ -537,7 +551,7 @@ google_font_icons:
 			name="iOS"
 			elements=ios_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Linux/BSDs -->
@@ -548,7 +562,7 @@ google_font_icons:
 			name="Linux/BSDs"
 			elements=linuxbsd_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: macOS -->
@@ -559,7 +573,7 @@ google_font_icons:
 			name="macOS"
 			elements=macos_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Windows -->
@@ -570,7 +584,7 @@ google_font_icons:
 			name="Windows"
 			elements=windows_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Web -->
@@ -581,7 +595,7 @@ google_font_icons:
 			name="Web"
 			elements=web_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: XR -->
@@ -592,7 +606,7 @@ google_font_icons:
 			name="XR"
 			elements=xr_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- Scripting -->
@@ -603,7 +617,7 @@ google_font_icons:
 			name="Scripting"
 			elements=scripting_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: GDScript -->
@@ -614,7 +628,7 @@ google_font_icons:
 			name="GDScript"
 			elements=gdscript_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: .NET -->
@@ -625,7 +639,7 @@ google_font_icons:
 			name=".NET"
 			elements=dotnet_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: GDExtension -->
@@ -636,7 +650,7 @@ google_font_icons:
 			name="GDExtension"
 			elements=gdextension_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- Documentation -->
@@ -647,12 +661,27 @@ google_font_icons:
 			name="Documentation"
 			elements=documentation_priorities
 			last_updated_duration=last_updated_duration
-			enable_recent_update=enable_recent_update
+			ignore_recent_update=ignore_recent_update
 		%}
 	</div>
 
+	<!-- SCROLL TO TOP -->
 	<div id="scroll-to-top">
 		<a class="link" href="#priorities-navigation"><span>⬆</span></a>
+	</div>
+
+	<!-- FOUNDATION -->
+	<div class="foundation">
+		<div class="container">
+
+		</div>
+	</div>
+
+	<!-- CREDITS -->
+	<div class="credits">
+		<div class="container">
+
+		</div>
 	</div>
 </div>
 

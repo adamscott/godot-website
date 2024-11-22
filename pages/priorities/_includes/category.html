@@ -1,6 +1,6 @@
 {% assign now = "now" | date: "%s" | plus: 0 %}
 {% assign last_updated_duration = include.last_updated_duration | default: 0 %}
-{% assign enable_recent_update = include.enable_recent_update %}
+{% assign ignore_recent_update = include.ignore_recent_update %}
 {% assign nb_of_priorities = include.elements | size %}
 
 {% if nb_of_priorities > 0 %}
@@ -18,14 +18,16 @@
 						{% assign is_recent = false %}
 						{% for element in include.elements %}
 							{% if element.last_updated != "" %}
-								{% assign last_updated = element.last_updated | date: "%s" | plus: 0 %}
-								{% if last_updated > (now | minus: last_updated_duration) %}
-									{% assign is_recent = true %}
-									{% break %}
-								{% endif %}
+								{% unless ignore_recent_update contains element.last_updated %}
+									{% assign last_updated = element.last_updated | date: "%s" | plus: 0 %}
+									{% if last_updated > (now | minus: last_updated_duration) %}
+										{% assign is_recent = true %}
+										{% break %}
+									{% endif %}
+								{% endunless %}
 							{% endif %}
 						{% endfor %}
-						{% if is_recent and enable_recent_update %}
+						{% if is_recent %}
 							<div class="recent-icon"></div>
 						{% endif %}
 					</{{ header_tag }}>
@@ -42,7 +44,7 @@
 									include_relative _includes/element.html
 									element=element
 									last_updated_duration=last_updated_duration
-									enable_recent_update=enable_recent_update
+									ignore_recent_update=ignore_recent_update
 								%}
 							</li>
 						{% endfor %}
