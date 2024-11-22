@@ -93,16 +93,15 @@ google_font_icons:
 						{% assign is_recent = true %}
 					{% endif %}
 				{% endif %}
-				<div class="label">
+				<span class="label">
 					{% if is_recent and enable_recent_update %}
 						<span class="recently-updated">Recently updated!</span>
 					{% else %}
 						<span class="last-updated">Last updated</span>
 					{% endif %}
-				</div>
-				<div class="date">
+				</span> <span class="date">
 					<time datetime="{{ last_updated }}">{{ last_updated }}</time>
-				</div>
+				</span>
 			</div>
 		</div>
 	</div>

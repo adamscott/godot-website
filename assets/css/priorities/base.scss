@@ -112,21 +112,11 @@ html {
 			padding-bottom: 7rem;
 
 			.banner-last-updated {
-				display: flex;
-				flex-direction: row;
-
 				.label {
 					.recently-updated {
 						font-weight: 600;
 						color: $color-red;
 					}
-
-					&::after {
-						content: " ";
-					}
-				}
-				.date {
-
 				}
 			}
 		}
@@ -496,11 +486,7 @@ html {
 									.element-last-updated {
 										grid-area: last-updated;
 
-										display: flex;
-										flex-direction: row;
-										align-items: center;
-										justify-content: center;
-
+										text-align: center;
 										font-size: 0.75rem;
 										font-style: italic;
 
@@ -512,10 +498,6 @@ html {
 											// Default state.
 											.last-updated {
 												display: block;
-
-												&::after {
-													content: " ";
-												}
 											}
 											.recently-updated {
 												display: none;
@@ -545,19 +527,9 @@ html {
 									.element-created {
 										grid-area: created;
 
-										display: flex;
-										flex-direction: row;
-										align-items: center;
-										justify-content: center;
-
+										text-align: center;
 										font-size: 0.75rem;
 										font-style: italic;
-
-										> .label {
-											&::after {
-												content: " ";
-											}
-										}
 									}
 								}
 
