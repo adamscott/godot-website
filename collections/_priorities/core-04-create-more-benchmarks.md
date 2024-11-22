@@ -11,7 +11,7 @@ stage:
 anchor: "create-more-benchmarks"
 title: "Create more benchmarks"
 description: |
-  In order to make the best decisions, we need to rely on hard facts. In order to be able to do this, we need to create more benchmarks. It gives the added benefit over time that we can spot regressions more easily, together with unit tests, as we started lately to track performance of nightly builds.
+  In order to make the best decisions, we need to rely on mesurable data. In order to be able to do this, we need to create more benchmarks. It gives the added benefit over time that we can spot regressions more easily, together with unit tests, as we started lately to track performance of nightly builds.
 details:
   - type: note
     content: |
