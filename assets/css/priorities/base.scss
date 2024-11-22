@@ -418,7 +418,7 @@ html {
 								display: grid;
 								grid-template-areas:
 									"meta main";
-								grid-template-columns: minmax(10vw, 15%) auto;
+								grid-template-columns: minmax(5vw, 8%) auto;
 								grid-template-rows: auto;
 								gap: $gap;
 
@@ -437,77 +437,23 @@ html {
 
 									display: grid;
 									grid-template-areas:
-										"stage"
 										"last-updated"
 										"created";
 									grid-template-rows:
 										repeat(3, min-content);
-									gap: $gap / 4;
+									gap: $gap / 2;
 
-									font-weight: 200;
-
-									.element-stage {
-										grid-area: stage;
-
-										display: flex;
-										flex-direction: column;
-										align-items: center;
-
-										.preview-bar {
-											contain: paint;
-											height: 1rem;
-											width: 100%;
-											border-radius: 999999px;
-											background-color: var(--background-color);
-
-											.progress {
-												position: absolute;
-												top: 0;
-												left: 0;
-												height: 100%;
-
-												background-color: var(--primary-color);
-												border-top-right-radius: 9999px;
-												border-bottom-right-radius: 9999px;
-
-												// Planning.
-												@at-root #{selector-replace(&, ".element-stage", ".element-stage.planning")} {
-													width: $element-meta-planning-bar-width;
-												}
-
-												// Ongoing.
-												@at-root #{selector-replace(&, ".element-stage", ".element-stage.ongoing")} {
-													width: $element-meta-ongoing-bar-width;
-												}
-
-												// Done.
-												@at-root #{selector-replace(&, ".element-stage", ".element-stage.done")} {
-													width: 100%;
-													border-top-right-radius: 0;
-													border-bottom-right-radius: 0;
-												}
-											}
-										}
-
-										.current-stage {
-											font-size: 1rem;
-											font-weight: 200;
-											font-variant-caps: all-small-caps;
-										}
-									}
+									font-size: 0.75rem;
+									font-weight: 400;
 
 									.element-last-updated {
 										grid-area: last-updated;
 
-										text-align: center;
-										font-size: 0.75rem;
-										font-style: italic;
-
-										&.recent {
-											flex-direction: column;
-										}
+										text-align: left;
 
 										> .label {
+											font-weight: 500;
+
 											// Default state.
 											.last-updated {
 												display: block;
@@ -540,9 +486,11 @@ html {
 									.element-created {
 										grid-area: created;
 
-										text-align: center;
-										font-size: 0.75rem;
-										font-style: italic;
+										text-align: left;
+
+										> .label {
+											font-weight: 500;
+										}
 									}
 								}
 

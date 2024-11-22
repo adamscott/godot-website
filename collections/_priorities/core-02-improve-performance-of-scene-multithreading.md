@@ -3,11 +3,6 @@ last_updated: "2024-11-30"
 category: core
 rank: 2
 created: "2024-11-30"
-stage:
-  # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: "2024-11-30"
-  ongoing: "2024-11-30"
-  done: ""
 anchor: "improve-performance-of-scene-multithreading"
 title: "Improve performance of scene multithreading"
 description: |

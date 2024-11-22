@@ -3,11 +3,6 @@ last_updated: "2024-11-30"
 category: editor
 rank: 3
 created: "2024-11-30"
-stage:
-  # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: ""
-  ongoing: ""
-  done: ""
 anchor: "implement-editor-support-for-creating-updating-source-code-for-gdextensions"
 title: "Implement editor support for creating/updating source code for GDExtensions"
 description: |

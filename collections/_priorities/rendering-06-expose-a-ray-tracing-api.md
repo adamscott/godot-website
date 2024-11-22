@@ -3,11 +3,6 @@ last_updated: "2024-11-30"
 category: rendering
 rank: 6
 created: "2024-11-30"
-stage:
-  # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: ""
-  ongoing: ""
-  done: ""
 anchor: "expose-a-ray-tracing-api"
 title: "Expose a ray tracing API and eventually use it for built in effects"
 description: |

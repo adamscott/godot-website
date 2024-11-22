@@ -3,11 +3,6 @@ last_updated: "2024-11-30"
 category: platforms
 rank: 1
 created: "2024-11-30"
-stage:
-  # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: ""
-  ongoing: ""
-  done: ""
 anchor: "investigate-delays-in-window-creation"
 title: "Investigate delays in Window creation"
 description: |

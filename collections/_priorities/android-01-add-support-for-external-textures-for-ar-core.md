@@ -3,11 +3,6 @@ last_updated: "2024-11-30"
 category: android
 rank: 1
 created: "2024-11-30"
-stage:
-  # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: "2024-09-31"
-  ongoing: "2024-09-31"
-  done: ""
 anchor: "add-support-for-external-textures-for-ar-core"
 title: "Add support for external textures for AR Core"
 description: |

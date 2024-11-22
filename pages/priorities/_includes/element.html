@@ -15,33 +15,8 @@
 {% endif %}
 {% assign element_last_updated_class = element_last_updated_classes | join: " " %}
 
-{% assign element_stage_classes = "element-stage" | split: "," %}
-{% assign current_stage = "" %}
-{% if element.stage.done != "" %}
-	{% assign element_stage_classes = element_stage_classes | push: "done" %}
-	{% assign current_stage = "Done" %}
-{% elsif element.stage.ongoing != "" %}
-	{% assign element_stage_classes = element_stage_classes | push: "ongoing" %}
-	{% assign current_stage = "Ongoing" %}
-{% elsif element.stage.planning != "" %}
-	{% assign element_stage_classes = element_stage_classes | push: "planning" %}
-	{% assign current_stage = "Planning" %}
-{% else %}
-	{% assign element_stage_classes = element_stage_classes | push: "todo" %}
-	{% assign current_stage = "To do" %}
-{% endif %}
-{% assign element_stage_class = element_stage_classes | join: " " %}
-
 <div id="{{ element.anchor }}" class="element">
 	<div class="element-meta">
-		<div class="{{ element_stage_class }}">
-			<div class="preview-bar">
-				<div class="progress"></div>
-			</div>
-			<div class="current-stage">
-				<span>{{ current_stage }}</span>
-			</div>
-		</div>
 		<div class="element-created">
 			<div class="label">
 				<span>Created</span>
@@ -51,12 +26,13 @@
 			</div>
 		</div>
 		<div class="{{ element_last_updated_class }}">
-			<span class="label">
+			<div class="label">
 				<span class="last-updated">Last updated</span>
 				<span class="recently-updated">Recently updated!</span>
-			</span> <span class="value">
+			</div>
+			<div class="value">
 				<time datetime="{{ element.last_updated }}">{{ element.last_updated }}</time>
-			</span>
+			</div>
 		</div>
 	</div>
 	<details class="element-main">
