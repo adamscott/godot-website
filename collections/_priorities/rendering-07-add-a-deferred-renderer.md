@@ -5,7 +5,7 @@ rank: 7
 created: "2024-11-30"
 stage:
   # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: ""
+  planning: "2024-11-30"
   ongoing: ""
   done: ""
 anchor: "add-a-deferred-renderer"
