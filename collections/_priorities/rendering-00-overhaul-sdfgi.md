@@ -5,8 +5,8 @@ rank: 0
 created: "2024-11-30"
 stage:
   # Must be dates (YYYY-MM-DD), empty if not there yet.
-  planning: ""
-  ongoing: ""
+  planning: "2024-11-30"
+  ongoing: "2024-11-30"
   done: ""
 anchor: "overhaul-sdfgi"
 title: "Overhaul SDFGI to improve performance and quality"
