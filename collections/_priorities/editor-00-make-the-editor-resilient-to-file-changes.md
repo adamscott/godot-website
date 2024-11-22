@@ -15,5 +15,8 @@ description: |
 details:
   - type: note
     content: |
-      The idea would be to introduce UIDs to non-imported files, such as scripts.
+      We introduced recently UIDs to non-imported files, such as scripts, in Godot 4.4.dev5. We need testing though to fully make sure that it solves our issues.
+  - type: prs
+    content: |
+      - [Universalize UID support in all resource types #97352](https://github.com/godotengine/godot/pull/97352)
 ---
