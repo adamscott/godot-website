@@ -74,6 +74,26 @@ $outline: .125rem solid #4080ff;
 	}
 }
 
+// ---
+
+@mixin anchor-icon($icon-color) {
+	.anchor-icon {
+		display: inline-block;
+
+		$size: 0.8rem;
+		$min-size: 24px;
+		mask-image: url(/assets/icons/link.svg);
+		mask-size: 100% 100%;
+		mask-repeat: no-repeat;
+		height: $size;
+		width: $size;
+		min-height: $min-size;
+		min-width: $min-size;
+
+		background-color: $icon-color;
+	}
+}
+
 //
 // General
 //
@@ -85,7 +105,9 @@ html {
 	scroll-padding-top: $gap;
 }
 
-// Priorities container.
+//
+// Main content.
+//
 .priorities-container {
 	font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	background-color: var(--card-background-color);
@@ -251,7 +273,10 @@ html {
 
 							background-color: var(--background-color);
 							&:hover {
-								background-color: var(--base-color);
+								filter: brightness(117.5%);
+								@include is-light() {
+									filter: brightness(105%);
+								}
 							}
 
 							border-radius: $border-radius;
@@ -337,43 +362,46 @@ html {
 
 						// .category.level-1
 						@at-root #{selector-replace(&, ".category", ".category.level-1")} {
-							background-color: var(--primary-color);
 							font-size: 3rem;
+							background-color: var(--primary-color);
 						}
 						// .category.level-2
 						@at-root #{selector-replace(&, ".category", ".category.level-2")} {
-							background-color: var(--background-color);
 							font-size: 2.125rem;
+							background-color: var(--background-color);
+							@include is-light() {
+								&:hover {
+									filter: brightness(105%);
+								}
+							}
+						}
+
+						&:hover {
+							filter: brightness(117.5%);
 						}
 
 						> .category-anchor-container {
 							grid-area: anchor;
 
-							&:focus-within {
-								outline: $outline;
-							}
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: center;
 
 							> .category-anchor {
 								display: block;
+								position: relative;
 								text-decoration: none;
 								color: white;
 
-								$size: 0.8rem;
-								$min-size: 24px;
-								mask-image: url(/assets/icons/link.svg);
-								mask-size: 100% 100%;
-								mask-repeat: no-repeat;
-								height: $size;
-								width: $size;
-								min-height: $min-size;
-								min-width: $min-size;
-
 								opacity: 0;
-								background-color: white;
-
-								@at-root #{selector-replace(&, ".category-summary", ".category-summary:hover")}, &:focus {
+								@at-root #{selector-replace(&, ".category-summary", ".category-summary:hover")},
+								&:focus {
 									opacity: 1;
 								}
+
+								$anchor-icon-color: white;
+								@include anchor-icon($icon-color: white);
 							}
 						}
 
@@ -486,12 +514,17 @@ html {
 
 										cursor: pointer;
 										border-radius: $border-radius;
+										color: var(--base-color-text);
 
 										margin-top: -$gap;
 										padding: $gap;
 
 										&:hover {
 											background-color: var(--background-color);
+											filter: brightness(117.5%);
+											@include is-light() {
+												filter: brightness(105%);
+											}
 										}
 
 										list-style: none;
@@ -512,9 +545,10 @@ html {
 											display: inline-block;
 											height: 100%;
 
-											&:focus-within {
-												outline: $outline;
-											}
+											display: flex;
+											flex-direction: column;
+											align-items: center;
+											justify-content: center;
 
 											.element-title-anchor {
 												flex-grow: 0;
@@ -525,22 +559,13 @@ html {
 
 												text-decoration: none;
 
-												$size: 0.8rem;
-												$min-size: 24px;
-												mask-image: url(/assets/icons/link.svg);
-												mask-size: 100% 100%;
-												mask-repeat: no-repeat;
-												height: $size;
-												width: $size;
-												min-height: $min-size;
-												min-width: $min-size;
-
 												opacity: 0;
-												background-color: var(--base-color-text);
-
-												@at-root #{selector-replace(&, ".element-title", ".element-title:hover")}, &:focus {
+												@at-root #{selector-replace(&, ".element-title", ".element-title:hover")},
+												&:focus {
 													opacity: 1;
 												}
+
+												@include anchor-icon($icon-color: var(--base-color-text));
 											}
 
 											.element-title-text {
@@ -690,6 +715,33 @@ html {
 						}
 					}
 				}
+			}
+		}
+	}
+
+	details {
+		@keyframes opening {
+			from {
+				transform:
+					translateY(-50px);
+				opacity: 0;
+			}
+
+			to {
+				transform:
+					translateY(0);
+				opacity: 1;
+			}
+		}
+
+		> summary {
+			z-index: 100;
+		}
+
+		&.opening {
+			> *:not(summary) {
+				animation:
+					opening 0.4s ease 1 normal;
 			}
 		}
 	}

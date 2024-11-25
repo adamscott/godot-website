@@ -227,6 +227,49 @@ function convertAbsoluteDatesToRelativeDates() {
 	}
 }
 
+// =================
+// Animate <details>
+// =================
+function animateDetailsTag() {
+	const prioritiesContainer = document.querySelector(".priorities-container");
+	if (!(prioritiesContainer instanceof HTMLElement)) {
+		throw new Error("Couldn't find .priorities-container");
+	}
+
+	/**
+	 * Triggered on opening animation end.
+	 * @param {AnimationEvent} event
+	 */
+	const onAnimationEnd = (event) => {
+		const target = event.target;
+		if (!(target instanceof HTMLDetailsElement)) {
+			return;
+		}
+		target.classList.remove("opening");
+	};
+
+	const mutationObserver = new MutationObserver((mutationList, _) => {
+		for (const mutation of mutationList) {
+			const target = mutation.target;
+			if (!(target instanceof HTMLDetailsElement)) {
+				continue;
+			}
+			if (mutation.attributeName === "open") {
+				target.removeEventListener("animationend", onAnimationEnd);
+
+				if (target.open) {
+					// Just opened.
+					target.classList.add("opening");
+					target.addEventListener("animationend", onAnimationEnd);
+				} else {
+					target.classList.remove("opening");
+				}
+			}
+		}
+	});
+	mutationObserver.observe(prioritiesContainer, { attributes: true, subtree: true });
+}
+
 // ====
 // Main
 // ====
@@ -240,5 +283,6 @@ function main() {
 	openDetailsSelectedInUrl();
 	handleNavigateEvent();
 	convertAbsoluteDatesToRelativeDates();
+	animateDetailsTag();
 }
 main();
