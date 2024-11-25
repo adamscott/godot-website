@@ -3,10 +3,16 @@
 <div id="{{ element.anchor }}" class="element">
 	<details class="element-main">
 		<summary class="element-title">
-			<a class="element-title-anchor" href="#{{ element.anchor }}">
-				<span class="material-symbols-outlined">link</span>
-			</a>
-			<div class="element-title-text">{{ element.title | markdownify }}</div>
+			<div class="text">
+				<div class="element-title-container element-title-container-title-text">
+					<div class="element-title-text">{{ element.title | markdownify }}</div>
+				</div>
+				<div class="element-title-container element-title-container-anchor">
+					<a class="element-title-anchor" href="#{{ element.anchor }}">
+						<!-- Anchor icon. -->
+					</a>
+				</div>
+			</div>
 			<div class="element-accordion-toggle">
 				<span class="material-symbols-outlined more">unfold_more</span>
 				<span class="material-symbols-outlined less">unfold_less</span>

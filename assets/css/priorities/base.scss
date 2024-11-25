@@ -15,6 +15,7 @@ ul {
 //
 // Variables
 //
+$large-min-width: 1200px;
 $mobile-max-width: 700px;
 $mobile-sm-max-width: 450px;
 $gap: 1.25rem;
@@ -43,6 +44,12 @@ $color-red: #f35774;
 
 @mixin is-light() {
 	@media screen and (prefers-color-scheme: light) {
+		@content;
+	}
+}
+
+@mixin is-large() {
+	@media screen and (min-width: #{$large-min-width}) {
 		@content;
 	}
 }
@@ -307,7 +314,7 @@ html {
 					> .category-summary {
 						display: grid;
 						grid-template-areas:
-							"anchor title . icon";
+							"title anchor . icon";
 						grid-template-columns:
 							min-content auto 1fr min-content;
 						gap: $gap;
@@ -402,9 +409,12 @@ html {
 
 				.category-content {
 					.element-list {
-						display: flex;
-						flex-direction: column;
-
+						display: grid;
+						grid-template-columns: 1fr;
+						@include is-large() {
+							grid-template-columns: 1fr 1fr;
+							gap: $gap;
+						}
 						padding-left: 0;
 						margin-bottom: 0;
 
@@ -420,8 +430,8 @@ html {
 							> .element {
 								display: grid;
 								grid-template-areas:
-									"meta main";
-								grid-template-columns: minmax(5vw, 8%) auto;
+									"main";
+								grid-template-columns: auto;
 								grid-template-rows: auto;
 								gap: $gap;
 
@@ -429,72 +439,9 @@ html {
 
 								@include is-mobile() {
 									grid-template-areas:
-										"meta"
 										"main";
 									grid-template-columns: auto;
 									grid-template-rows: auto;
-								}
-
-								.element-meta {
-									grid-area: meta;
-
-									display: grid;
-									grid-template-areas:
-										"last-updated"
-										"created";
-									grid-template-rows:
-										repeat(3, min-content);
-									gap: $gap / 2;
-
-									font-size: 0.75rem;
-									font-weight: 400;
-
-									.element-last-updated {
-										grid-area: last-updated;
-
-										text-align: left;
-
-										> .label {
-											font-weight: 500;
-
-											// Default state.
-											.last-updated {
-												display: block;
-											}
-											.recently-updated {
-												display: none;
-												font-weight: 600;
-												color: $color-red;
-
-												font-size: 1rem;
-												font-style: normal;
-											}
-
-											// If update is recent.
-											@at-root #{selector-replace(&, ".element-last-updated", ".element-last-updated.recent")} {
-												.last-updated {
-													display: none;
-												}
-												.recently-updated {
-													display: block;
-												}
-											}
-										}
-
-										> .value {
-
-										}
-									}
-
-									.element-created {
-										grid-area: created;
-
-										text-align: left;
-
-										> .label {
-											font-weight: 500;
-										}
-									}
 								}
 
 								.element-main {
@@ -503,8 +450,11 @@ html {
 									height: 100%;
 
 									.element-title {
-										display: flex;
-										flex-direction: row;
+										display: grid;
+										grid-template-areas:
+											"text . toggle";
+										grid-template-columns:
+											auto 1fr min-content;
 										align-items: stretch;
 										gap: $gap;
 
@@ -518,45 +468,72 @@ html {
 											background-color: var(--background-color);
 										}
 
-										// Gross hack to make the element title height consistent when toggled.
-										height: 100%;
-										@at-root #{selector-replace(&, ".element-main", ".element-main[open]")} {
-											// padding-bottom: $gap * 2;
-											// margin-bottom: -$gap;
-											height: auto;
-										}
-
 										list-style: none;
 										&::-webkit-details-marker {
 											display: none;
 										}
 
-										.element-title-anchor {
-											flex-grow: 0;
+										.text {
+											grid-area: text;
 
 											display: flex;
 											flex-direction: row;
 											align-items: center;
-
-											text-decoration: none;
+											gap: 0.5rem;
 										}
 
-										.element-title-text {
-											flex-grow: 1;
-											width: 100%;
+										.element-title-container {
+											display: inline-block;
+											height: 100%;
 
-											display: flex;
-											flex-direction: row;
-											align-items: center;
+											&:focus-within {
+												outline: .125rem solid #4080ff;
+											}
 
-											font-weight: 700;
+											.element-title-anchor {
+												flex-grow: 0;
 
-											> p {
-												margin: 0;
+												display: flex;
+												flex-direction: row;
+												align-items: center;
+
+												text-decoration: none;
+
+												$size: 0.8rem;
+												$min-size: 24px;
+												mask-image: url(/assets/icons/link.svg);
+												mask-size: 100% 100%;
+												mask-repeat: no-repeat;
+												height: $size;
+												width: $size;
+												min-height: $min-size;
+												min-width: $min-size;
+												background-color: transparent;
+
+												@at-root #{selector-replace(&, ".element-title", ".element-title:hover")}, &:focus {
+													background-color: var(--base-color-text);
+												}
+											}
+
+											.element-title-text {
+												flex-grow: 1;
+												width: 100%;
+
+												display: flex;
+												flex-direction: row;
+												align-items: center;
+
+												font-weight: 700;
+
+												> p {
+													margin: 0;
+												}
 											}
 										}
 
 										.element-accordion-toggle {
+											grid-area: toggle;
+
 											flex-grow: 0;
 
 											display: flex;
