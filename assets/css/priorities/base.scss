@@ -28,6 +28,8 @@ $color-background-light: #FFFFFF;
 $color-background-dark: rgb(51, 54, 57);
 $color-red: #f35774;
 
+$outline: .125rem solid #4080ff;
+
 //
 // Functions
 //
@@ -316,7 +318,7 @@ html {
 						grid-template-areas:
 							"title anchor . icon";
 						grid-template-columns:
-							min-content auto 1fr min-content;
+							auto min-content 1fr min-content;
 						gap: $gap;
 						align-items: baseline;
 
@@ -344,16 +346,34 @@ html {
 							font-size: 2.125rem;
 						}
 
-						.category-anchor {
+						> .category-anchor-container {
 							grid-area: anchor;
 
-							text-decoration: none;
-							color: white;
-							opacity: 0;
+							&:focus-within {
+								outline: $outline;
+							}
 
-							// On .category-title:hover
-							@at-root #{selector-replace(&, ".category-title", ".category-title:hover")}, &:focus {
-								opacity: 1;
+							> .category-anchor {
+								display: block;
+								text-decoration: none;
+								color: white;
+
+								$size: 0.8rem;
+								$min-size: 24px;
+								mask-image: url(/assets/icons/link.svg);
+								mask-size: 100% 100%;
+								mask-repeat: no-repeat;
+								height: $size;
+								width: $size;
+								min-height: $min-size;
+								min-width: $min-size;
+
+								opacity: 0;
+								background-color: white;
+
+								@at-root #{selector-replace(&, ".category-summary", ".category-summary:hover")}, &:focus {
+									opacity: 1;
+								}
 							}
 						}
 
@@ -423,8 +443,14 @@ html {
 							margin-bottom: 0;
 
 							border-top: 2px solid var(--primary-color);
-							&:last-of-type {
-								border-bottom: 2px solid var(--primary-color);
+							&:nth-of-type(1) {
+								border-top: 0;
+							}
+							@include is-large() {
+								// Remove top border from the second column.
+								&:nth-of-type(2) {
+									border-top: 0;
+								}
 							}
 
 							> .element {
@@ -487,7 +513,7 @@ html {
 											height: 100%;
 
 											&:focus-within {
-												outline: .125rem solid #4080ff;
+												outline: $outline;
 											}
 
 											.element-title-anchor {
@@ -508,10 +534,12 @@ html {
 												width: $size;
 												min-height: $min-size;
 												min-width: $min-size;
-												background-color: transparent;
+
+												opacity: 0;
+												background-color: var(--base-color-text);
 
 												@at-root #{selector-replace(&, ".element-title", ".element-title:hover")}, &:focus {
-													background-color: var(--base-color-text);
+													opacity: 1;
 												}
 											}
 

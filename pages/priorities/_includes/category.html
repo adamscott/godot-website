@@ -5,9 +5,11 @@
 		<div class="container">
 			<details class="category-details" open>
 				<summary class="category-summary">
-					<a class="category-anchor" href="#{{ include.id }}">
-						<span class="material-symbols-outlined">link</span>
-					</a>
+					<div class="category-anchor-container">
+						<a class="category-anchor" href="#{{ include.id }}">
+							<!-- Anchor link. -->
+						</a>
+					</div>
 					{% assign header_number = include.level | to_i | plus: 1 %}
 					{% assign header_tag = "h" | append: header_number %}
 					<{{ header_tag }} class="category-title">
