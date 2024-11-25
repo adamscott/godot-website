@@ -4,15 +4,6 @@ title: "Priorities"
 description: "Godot Priorities"
 layout: default
 
-# The next lines will ignore "recently updated" for the specified "last updated" dates.
-ignore_recent_update:
-  - "2024-11-30"
-
-last_updated_duration:
-  days: 0
-  weeks: 2
-  months: 0
-
 google_font_icons:
   - file_export
   - info
@@ -24,20 +15,6 @@ google_font_icons:
   - unfold_less
   - warning
 ---
-
-{% assign ignore_recent_update = page.ignore_recent_update %}
-{% if ignore_recent_update == "" %}
-	{% assign ignore_recent_update = "" | split: "," %}
-{% endif %}
-
-{% assign now = "now" | date: "%s" | plus: 0 %}
-{% assign _one_day_time = 60 | times: 60 | times: 24 %}
-{% assign _one_week_time = one_day_time | times: 7 %}
-{% assign _one_month_time = one_day_time | times: 30 %}
-{% assign _days_duration = _one_day_time | times: page.last_updated_duration.days %}
-{% assign _weeks_duration = _one_week_time | times: page.last_updated_duration.weeks %}
-{% assign _months_duration = _one_month_time | times: page.last_updated_duration.months %}
-{% assign last_updated_duration = _days_duration | plus: _weeks_duration | plus: _months_duration %}
 
 {% assign core_priorities = site.priorities | where: "category", "core" | sort: "rank" %}
 {% assign physics_priorities = site.priorities | where: "category", "physics" | sort: "rank" %}
@@ -85,88 +62,64 @@ google_font_icons:
 </style>
 
 <div class="priorities-container">
-	<!-- BANNER -->
-	<div class="banner">
-		<div class="container">
-			<h1>Priorities</h1>
-			{% assign is_recent = false %}
-			{% assign last_item_updated = site.priorities | sort: "last_updated" | last %}
-			{% assign last_updated = last_item_updated.last_updated %}
-			{% if last_updated != "" %}
-				{% unless ignore_recent_update contains last_updated %}
-					{% assign last_updated_time = last_updated | date: "%s" | plus: 0 %}
-					{% assign last_updated_target = now | minus: last_updated_duration %}
-					{% if last_updated_time > last_updated_target %}
-						{% assign is_recent = true %}
-					{% endif %}
-				{% endunless %}
-			{% endif %}
-
-			{% assign banner_last_updated_classes = "banner-last-updated" | split: " " %}
-			{% if is_recent %}
-				{% assign banner_last_updated_classes = banner_last_updated_classes | push: "recent" %}
-			{% endif %}
-			{% assign banner_last_updated_class = banner_last_updated_classes | join: " " %}
-			<div class="{{banner_last_updated_class}}">
-				<span class="label">
-					<span class="recently-updated">Recently updated!</span>
-					<span class="last-updated">Last updated</span>
-				</span> <span class="date">
-					<time datetime="{{ last_updated }}">{{ last_updated }}</time>
-				</span>
+	<div class="priorities-intro">
+		<!-- BANNER -->
+		<div class="banner">
+			<div class="container">
+				<h1>Priorities</h1>
 			</div>
 		</div>
-	</div>
 
-	<!-- INTRO -->
-	<div class="intro">
-		<div class="container">
-			<p class="wishlist-par">
-				This page can be understood as a <strong>wishlist</strong>:
-				it details the software improvements that we consider most important to make the Godot Engine a better tool for its users.
-				The bullet points were created by talking to the volunteer maintainers for each area about the current state of things,
-				their personal goals, and what kind of contributions they are looking for.
-			</p>
-			<p class="wishlist-par">
-				Please understand that as with any wishlist, these points are an idealized version of what is to come in the project’s future.
-				To realize them, we will need the support from you, whether you are a representative for a company looking to invest into Godot
-				or a game developer eager to contribute to the codebase directly. The Godot Engine has always been a <strong>community effort</strong> —
-				there is only so much ground we can cover with Godot Foundation contractors at the moment.
-			</p>
-			<p class="wishlist-par">
-				We hope that by publishing this list, we can align our communal efforts more easily: by showcasing which areas need to see
-				improvements the most and what the concrete next steps would be for anyone taking action. Let this list be an indicator of…
-			</p>
-			<ol class="wishlist-list">
-				<li>what kind of contractors we would like to hire if donations increase,</li>
-				<li>what areas are ripe with good first issues for new contributors, and</li>
-				<li>where corporate partners could lend a helping hand</li>
-			</ol>
-			<div class="wishlist-btns">
-				<a class="wishlist-btn-anchor donate" href="https://fund.godotengine.org/" target="_blank">
-					<div class="wishlist-btn-text">
-						<span>Donate to the Fund</span>
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
-						</svg>
-					</div>
-				</a>
-				<a class="wishlist-btn-anchor howto" href="https://docs.godotengine.org/en/stable/contributing/how_to_contribute.html" target="_blank">
-					<div class="wishlist-btn-text">
-						<span>How to contribute</span>
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
-						</svg>
-					</div>
-				</a>
-				<a class="wishlist-btn-anchor contact" href="mailto:contact@godot.foundation" target="_blank">
-					<div class="wishlist-btn-text">
-						<span>Contact the Foundation</span>
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
-						</svg>
-					</div>
-				</a>
+		<!-- INTRO -->
+		<div class="intro">
+			<div class="container">
+				<p class="wishlist-par">
+					This page can be understood as a <strong>wishlist</strong>:
+					it details the software improvements that we consider most important to make the Godot Engine a better tool for its users.
+					The bullet points were created by talking to the volunteer maintainers for each area about the current state of things,
+					their personal goals, and what kind of contributions they are looking for.
+				</p>
+				<p class="wishlist-par">
+					Please understand that as with any wishlist, these points are an idealized version of what is to come in the project’s future.
+					To realize them, we will need the support from you, whether you are a representative for a company looking to invest into Godot
+					or a game developer eager to contribute to the codebase directly. The Godot Engine has always been a <strong>community effort</strong> —
+					there is only so much ground we can cover with Godot Foundation contractors at the moment.
+				</p>
+				<p class="wishlist-par">
+					We hope that by publishing this list, we can align our communal efforts more easily: by showcasing which areas need to see
+					improvements the most and what the concrete next steps would be for anyone taking action. Let this list be an indicator of…
+				</p>
+				<ol class="wishlist-list">
+					<li>what kind of contractors we would like to hire if donations increase,</li>
+					<li>what areas are ripe with good first issues for new contributors, and</li>
+					<li>where corporate partners could lend a helping hand</li>
+				</ol>
+				<div class="wishlist-btns">
+					<a class="wishlist-btn-anchor donate" href="https://fund.godotengine.org/" target="_blank">
+						<div class="wishlist-btn-text">
+							<span>Donate to the Fund</span>
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
+							</svg>
+						</div>
+					</a>
+					<a class="wishlist-btn-anchor howto" href="https://docs.godotengine.org/en/stable/contributing/how_to_contribute.html" target="_blank">
+						<div class="wishlist-btn-text">
+							<span>How to contribute</span>
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
+							</svg>
+						</div>
+					</a>
+					<a class="wishlist-btn-anchor contact" href="mailto:contact@godot.foundation" target="_blank">
+						<div class="wishlist-btn-text">
+							<span>Contact the Foundation</span>
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
+							</svg>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -187,8 +140,6 @@ google_font_icons:
 										title="Core"
 										priorities=core_priorities
 										is_list_item=false
-										last_updated_duration=last_updated_duration
-										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -248,8 +199,6 @@ google_font_icons:
 										title="Editor"
 										priorities=editor_priorities
 										is_list_item=false
-										last_updated_duration=last_updated_duration
-										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -282,8 +231,6 @@ google_font_icons:
 										title="Platforms"
 										priorities=platforms_priorities
 										is_list_item=false
-										last_updated_duration=last_updated_duration
-										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -370,8 +317,6 @@ google_font_icons:
 										title="Scripting"
 										priorities=scripting_priorities
 										is_list_item=false
-										last_updated_duration=last_updated_duration
-										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -424,8 +369,6 @@ google_font_icons:
 										title="Documentation"
 										priorities=documentation_priorities
 										is_list_item=false
-										last_updated_duration=last_updated_duration
-										ignore_recent_update=ignore_recent_update
 									%}
 								</div>
 								<div class="toggle">
@@ -451,8 +394,6 @@ google_font_icons:
 			id="core"
 			name="Core"
 			elements=core_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Physics -->
@@ -462,8 +403,6 @@ google_font_icons:
 			id="physics"
 			name="Physics"
 			elements=physics_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Rendering -->
@@ -473,8 +412,6 @@ google_font_icons:
 			id="rendering"
 			name="Rendering"
 			elements=rendering_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Animation -->
@@ -484,8 +421,6 @@ google_font_icons:
 			id="animation"
 			name="Animation"
 			elements=animation_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Navigation -->
@@ -495,8 +430,6 @@ google_font_icons:
 			id="navigation"
 			name="Navigation"
 			elements=navigation_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- Editor -->
@@ -506,8 +439,6 @@ google_font_icons:
 			id="editor"
 			name="Editor"
 			elements=editor_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Asset import & export -->
@@ -517,8 +448,6 @@ google_font_icons:
 			id="assetio"
 			name="Asset import &amp; export"
 			elements=assetio_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- Platforms -->
@@ -528,8 +457,6 @@ google_font_icons:
 			id="platforms"
 			name="Platforms"
 			elements=platforms_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Android -->
@@ -539,8 +466,6 @@ google_font_icons:
 			id="android"
 			name="Android"
 			elements=android_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: iOS -->
@@ -550,8 +475,6 @@ google_font_icons:
 			id="ios"
 			name="iOS"
 			elements=ios_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Linux/BSDs -->
@@ -561,8 +484,6 @@ google_font_icons:
 			id="linuxbsd"
 			name="Linux/BSDs"
 			elements=linuxbsd_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: macOS -->
@@ -572,8 +493,6 @@ google_font_icons:
 			id="macos"
 			name="macOS"
 			elements=macos_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Windows -->
@@ -583,8 +502,6 @@ google_font_icons:
 			id="windows"
 			name="Windows"
 			elements=windows_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: Web -->
@@ -594,8 +511,6 @@ google_font_icons:
 			id="web"
 			name="Web"
 			elements=web_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: XR -->
@@ -605,8 +520,6 @@ google_font_icons:
 			id="xr"
 			name="XR"
 			elements=xr_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- Scripting -->
@@ -616,8 +529,6 @@ google_font_icons:
 			id="scripting"
 			name="Scripting"
 			elements=scripting_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: GDScript -->
@@ -627,8 +538,6 @@ google_font_icons:
 			id="gdscript"
 			name="GDScript"
 			elements=gdscript_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: .NET -->
@@ -638,8 +547,6 @@ google_font_icons:
 			id="dotnet"
 			name=".NET"
 			elements=dotnet_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- :: GDExtension -->
@@ -649,8 +556,6 @@ google_font_icons:
 			id="gdextension"
 			name="GDExtension"
 			elements=gdextension_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 
 		<!-- Documentation -->
@@ -660,8 +565,6 @@ google_font_icons:
 			id="documentation"
 			name="Documentation"
 			elements=documentation_priorities
-			last_updated_duration=last_updated_duration
-			ignore_recent_update=ignore_recent_update
 		%}
 	</div>
 
