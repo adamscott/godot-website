@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: web
 rank: 1
-created: "2024-11-30"
 anchor: "improve-loading-time-for-web-builds"
 title: "Improve loading time for web builds"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: note
     content: |
       We need to investigate ways to solve the issue. We think a custom asynchronous filesystem could fix the issue, downloading files individually when needed.
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

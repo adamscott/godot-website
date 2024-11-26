@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: animation
 rank: 0
-created: "2024-11-30"
 anchor: "improve-and-polish-new-skeletonmodifier3d"
 title: "Improve and polish new SkeletonModifier3D"
 description: |
@@ -20,4 +18,8 @@ details:
     content: |
       - [Add RetargetModifier3D for realtime retarget to keep original rest #97824](https://github.com/godotengine/godot/pull/97824)
       - [Implement LookAtModifier3D #98446](https://github.com/godotengine/godot/pull/98446)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

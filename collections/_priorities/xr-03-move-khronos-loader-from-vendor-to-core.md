@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: xr
 rank: 3
-created: "2024-11-30"
 anchor: "move-khronos-loader-from-vendor-to-core"
 title: "Move Khronos loader support from our vendor plugin to the core of the Godot"
 description: |
@@ -14,4 +12,8 @@ details:
   - type: note
     content: |
       As part of this we will add support for Android to use the Khronos loader.
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

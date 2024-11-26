@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: xr
 rank: 2
-created: "2024-11-30"
 anchor: "add-openxr-support-for-d3d12-and-metal"
 title: "Add OpenXR support for DirectX12 and Metal"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: prs
     content: |
       - [Openxr KHR metal enable #98872](https://github.com/godotengine/godot/pull/98872)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: xr
 rank: 1
-created: "2024-11-30"
 anchor: "make-action-map-system-available-to-webxr"
 title: "Make action map system available to WebXR"
 description: |
@@ -14,4 +12,8 @@ details:
   - type: proposals
     content: |
       - [Implement generalized XR action map system for use outside OpenXR #6548](https://github.com/godotengine/godot-proposals/issues/6548)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: core
 rank: 0
-created: "2024-11-30"
 anchor: "overhaul-addon-startup"
 title: "Overhaul addon startup"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: note
     content: |
       Some research and optimization is needed for the editor file system access. We need to optimize all file access extensions. Ultimately, we need to rethink the current system in order to overhaul it.
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

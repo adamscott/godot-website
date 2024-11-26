@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: platforms
 rank: 0
-created: "2024-11-30"
 anchor: "add-screen-reader-support-using-accesskit-integration"
 title: "Add screen reader support using AccessKit integration"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: prs
     content: |
       - [Implement screen reader support using AccessKit library. #76829](https://github.com/godotengine/godot/pull/76829)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

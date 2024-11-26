@@ -105,6 +105,17 @@ $outline: .125rem solid #4080ff;
 	}
 }
 
+@mixin remove-markdown-margins() {
+	> p {
+		&:first-child {
+			margin-top: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
 //
 // General
 //
@@ -432,9 +443,7 @@ $outline: .125rem solid #4080ff;
 								width: 100%;
 								color: white;
 
-								> p {
-									margin: 0;
-								}
+								@include remove-markdown-margins();
 							}
 
 							.recent-icon {
@@ -588,9 +597,7 @@ $outline: .125rem solid #4080ff;
 
 												font-weight: 700;
 
-												> p {
-													margin: 0;
-												}
+												@include remove-markdown-margins();
 											}
 										}
 
@@ -622,21 +629,16 @@ $outline: .125rem solid #4080ff;
 									}
 
 									.element-content {
+										display: flex;
+										flex-direction: column;
+										gap: $gap;
+
 										padding: 0 $gap;
 										padding-top: $gap;
 
 										.element-description {
 											font-size: 1rem;
-
-											> p {
-												&:first-child {
-													margin-top: 0;
-												}
-												@at-root #{selector-replace(&, ".element-description", ".element-description:has(+.element-details:empty)")} {
-													// Selects this <p> if the parent .element-description has an empty .element-details immediate sibling.
-													margin-bottom: 0;
-												}
-											}
+											@include remove-markdown-margins();
 										}
 
 										.element-details {
@@ -731,6 +733,36 @@ $outline: .125rem solid #4080ff;
 															@include octicon("/assets/icons/octicons/zap-24.svg");
 														}
 													}
+												}
+											}
+										}
+									}
+
+									.element-edit {
+										&:empty {
+											display: none;
+										}
+
+										font-size: 0.75rem;
+										font-style: italic;
+
+										.element-edit-title {
+											font-weight: 500;
+										}
+
+										.element-edit-entries {
+											font-style: normal;
+											border-collapse: collapse;
+
+											.element-edit-entry {
+												vertical-align: baseline;
+
+												.element-edit-entry-time {
+													margin-right: 1rem;
+												}
+
+												.element-edit-entry-content {
+													@include remove-markdown-margins();
 												}
 											}
 										}

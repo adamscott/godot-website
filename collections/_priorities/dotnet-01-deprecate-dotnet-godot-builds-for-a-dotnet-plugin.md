@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: dotnet
 rank: 1
-created: "2024-11-30"
 anchor: "deprecate-dotnet-godot-builds-for-a-dotnet-plugin"
 title: "Deprecate .NET Godot builds for a .NET plugin"
 description: |
@@ -10,4 +8,8 @@ description: |
 
   Everyone wins, as users won’t have to choose a special version to run C#. It reduces the number of builds on our side by half. Also, it will simplify .NET maintenance.
 details:
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

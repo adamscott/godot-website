@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: platforms
 rank: 4
-created: "2024-11-30"
 anchor: "improve-behavior-of-multiple-monitors-with-different-resolutions-and-dpi-scaling-factors"
 title: "Improve behavior of multiple monitors with different resolutions and DPI scaling factors"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: prs
     content: |
       - [[WIP] Implement native DPI scaling. #86022](https://github.com/godotengine/godot/pull/86022)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: editor
 rank: 1
-created: "2024-11-30"
 anchor: "provide-some-way-to-access-internal-subresources-of-imported-scenes"
 title: "Provide some way to access internal subresources of imported scenes"
 description: |
@@ -13,4 +11,8 @@ details:
   - type: proposals
     content: |
       - [Add ability to reference subresources and inspect them in filesystem #8750](https://github.com/godotengine/godot-proposals/issues/8750)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

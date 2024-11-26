@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: platforms
 rank: 1
-created: "2024-11-30"
 anchor: "investigate-delays-in-window-creation"
 title: "Investigate delays in Window creation"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: issues
     content: |
       - [Godot 4 editor UI (menus) significantly slower than 3.x #71795](https://github.com/godotengine/godot/issues/71795)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

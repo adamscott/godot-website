@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: gdscript
 rank: 1
-created: "2024-11-30"
 anchor: "attain-full-coverage-of-static-type-hints"
 title: "Attain full coverage of static type hints"
 description: |
@@ -13,4 +11,8 @@ details:
   - type: prs
       content: |
         - [Implement typed dictionaries #78656](https://github.com/godotengine/godot/pull/78656)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

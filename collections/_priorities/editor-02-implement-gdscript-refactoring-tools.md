@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: editor
 rank: 2
-created: "2024-11-30"
 anchor: "implement-gdscript-refactoring-tools"
 title: "Implement GDScript refactoring tools"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: proposals
     content: |
       - [Add "refactor" tooling to rename symbols in the script editor #899](https://github.com/godotengine/godot-proposals/issues/899)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: editor
 rank: 0
-created: "2024-11-30"
 anchor: "make-the-editor-resilient-to-file-changes"
 title: "Make the editor resilient to files changed/added externally"
 description: |
@@ -14,4 +12,8 @@ details:
   - type: prs
     content: |
       - [Universalize UID support in all resource types #97352](https://github.com/godotengine/godot/pull/97352)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

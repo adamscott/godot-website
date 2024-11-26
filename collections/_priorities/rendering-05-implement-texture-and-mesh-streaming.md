@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: rendering
 rank: 5
-created: "2024-11-30"
 anchor: "implement-texture-and-mesh-streaming"
 title: "Implement texture and mesh streaming"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: proposals
     content: |
       - [Implement Mesh streaming #6109](https://github.com/godotengine/godot-proposals/issues/6109)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

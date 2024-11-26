@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: rendering
 rank: 9
-created: "2024-11-30"
 anchor: "implement-webgpu-backend-for-web-exports"
 title: "Implement WebGPU backend for web exports"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: proposals
     content: |
       - [Add WebGPU support #6646](https://github.com/godotengine/godot-proposals/issues/6646)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

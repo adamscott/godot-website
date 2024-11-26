@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: gdextension
 rank: 0
-created: "2024-11-30"
 anchor: "allow-compiling-godot-as-a-library"
 title: "Allow compiling Godot as a library that can be loaded and used by other applications"
 description: |
@@ -14,4 +12,8 @@ details:
   - type: prs
     content: |
       - [Migeran LibGodot Feature #90510](https://github.com/godotengine/godot/pull/90510)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

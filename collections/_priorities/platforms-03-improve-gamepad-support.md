@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: platforms
 rank: 3
-created: "2024-11-30"
 anchor: "improve-gamepad-support"
 title: "Improve gamepad support"
 description: |
@@ -14,4 +12,8 @@ details:
   - type: prs
     content: |
       - [Use SDL for joypad input on Linux #87925](https://github.com/godotengine/godot/pull/87925)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

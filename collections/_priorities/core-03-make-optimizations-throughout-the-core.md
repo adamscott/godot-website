@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: core
 rank: 3
-created: "2024-11-30"
 anchor: "make-optimizations-throughout-the-core"
 title: "Make optimizations throughout the core"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: note
     content: |
       To aid in this, we want to create more educational materials on profiling performance issues (both for CPU and GPU workloads).
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

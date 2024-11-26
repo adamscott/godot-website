@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: scripting
 rank: 0
-created: "2024-11-30"
 anchor: "implement-namespaces-for-scripting-languages"
 title: "Implement namespaces for scripting languages"
 description: |
@@ -12,4 +10,8 @@ description: |
 
   With namespaces, plugin developers could use their own class names without worrying about clashing with users' internal ones.
 details:
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

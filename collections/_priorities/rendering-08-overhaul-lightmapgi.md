@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: rendering
 rank: 8
-created: "2024-11-30"
 anchor: "overhaul-lightmapgi"
 title: "Overhaul `LightmapGI` to improve baking workflow, performance, and features"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: trackers
     content: |
       - [[TRACKER] LightmapGI (GPU lightmapper) issues #56033](https://github.com/godotengine/godot/issues/56033)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: rendering
 rank: 4
-created: "2024-11-30"
 anchor: "add-shader-templates"
 title: "Add shader templates to allow overriding the built-in shaders"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: prs
     content: |
       - [Custom shader templates #94427](https://github.com/godotengine/godot/pull/94427)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

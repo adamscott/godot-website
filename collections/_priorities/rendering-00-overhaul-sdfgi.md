@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: rendering
 rank: 0
-created: "2024-11-30"
 anchor: "overhaul-sdfgi"
 title: "Overhaul SDFGI to improve performance and quality"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: prs
     content: |
       - [Upgrade SDFGI to HDDAGI #86267](https://github.com/godotengine/godot/pull/86267)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

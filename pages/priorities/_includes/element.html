@@ -71,6 +71,28 @@
 					</div>
 				{% endfor %}
 			</div>
+			<div class="element-edit">
+				{% unless element.edits == null %}
+				<div class="element-edit-title">Edits</div>
+				<table class="element-edit-entries">
+					<tbody>
+						{% assign edit_elements = element.edits | sort: "date" | reverse %}
+						{% for edit_element in edit_elements %}
+							<tr class="element-edit-entry">
+								{% assign date = edit_element["date"] %}
+								{% assign content = edit_element["content"] %}
+								<td>
+									<time datetime="{{date}}" class="element-edit-entry-time">{{date}}</time>
+								</td>
+								<td class="element-edit-entry-content">
+									{{ content | markdownify }}
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				{% endunless %}
+			</div>
 		</div>
 	</details>
 </div>

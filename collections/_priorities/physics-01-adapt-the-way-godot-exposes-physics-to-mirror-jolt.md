@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: physics
 rank: 1
-created: "2024-11-30"
 anchor: "adapt-the-way-godot-exposes-physics-to-mirror-jolt"
 title: "Adapt the way Godot exposes physics to mirror Jolt"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: warning
     content:
       We do expect it will create some compatibility issues.
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

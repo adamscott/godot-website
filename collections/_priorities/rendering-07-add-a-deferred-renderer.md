@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: rendering
 rank: 7
-created: "2024-11-30"
 anchor: "add-a-deferred-renderer"
 title: "Add a deferred renderer"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: proposals
     content: |
       - [Add a project setting to enable deferred rendering #8295](https://github.com/godotengine/godot-proposals/issues/8295)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

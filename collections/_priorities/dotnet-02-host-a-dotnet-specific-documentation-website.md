@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: dotnet
 rank: 2
-created: "2024-11-30"
 anchor: "host-a-dotnet-specific-documentation-website"
 title: "Host a .NET-specific documentation website"
 description: |
@@ -10,4 +8,8 @@ description: |
 
   We intend to host a new website that will host an API documentation oriented for .NET users.
 details:
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

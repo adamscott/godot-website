@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: android
 rank: 1
-created: "2024-11-30"
 anchor: "add-support-for-external-textures-for-ar-core"
 title: "Add support for external textures for AR Core"
 description: |
@@ -15,4 +13,8 @@ details:
     content: |
       - [Add external texture support (GLES3) #96982](https://github.com/godotengine/godot/pull/96982)
       - [Add external texture support (Vulkan) #97163](https://github.com/godotengine/godot/pull/97163)
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: assetio
 rank: 4
-created: "2024-11-30"
 anchor: "fix-scene-inheritance"
 title: "Fix scene inheritance"
 description: |
@@ -11,4 +9,8 @@ details:
   - type: note
     content: |
       One idea is to give nodes unique IDs.
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---

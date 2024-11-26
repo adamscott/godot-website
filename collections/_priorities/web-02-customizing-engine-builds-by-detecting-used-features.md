@@ -1,8 +1,6 @@
 ---
-last_updated: "2024-11-30"
 category: web
 rank: 2
-created: "2024-11-30"
 anchor: "customizing-engine-builds-by-detecting-used-features"
 title: "Customizing engine builds by detecting used features from a project"
 description: |
@@ -16,4 +14,8 @@ details:
         - investigating the gains possible by customizing the engine builds
         - documenting the “Edit Compilation Configuration Profile” tool offered in the Editor
         - finding a way to offer more official Web exports
+edits:
+  - date: "2024-11-30"
+    content: |
+      Priority added.
 ---
