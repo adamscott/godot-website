@@ -73,7 +73,7 @@
 			--></div>
 			<div class="element-edit"><!-- Remove unnecessary whitespace that prevents CSS :empty.
 				-->{% unless element.edits == null %}
-				<div class="element-edit-title">Edits</div>
+				<div class="element-edit-title">Edit history</div>
 				<table class="element-edit-entries">
 					<tbody>
 						{% assign edit_elements = element.edits | sort: "date" | reverse %}
