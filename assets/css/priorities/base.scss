@@ -48,7 +48,6 @@ $outline: .125rem solid #4080ff;
 // Functions
 //
 
-
 //
 // Mixins
 //
@@ -162,7 +161,6 @@ $outline: .125rem solid #4080ff;
 		@include is-dark() {
 			@include setup-background($color-background-dark);
 		}
-
 
 		> .banner {
 			.container {
