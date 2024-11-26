@@ -346,6 +346,8 @@ $outline: .125rem solid #4080ff;
 		flex-direction: column;
 		gap: $gap * 2;
 
+		padding: ($gap * 2) 0;
+
 		.category {
 			> .container {
 				> .category-details {
