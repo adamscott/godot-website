@@ -515,9 +515,9 @@ $outline: .125rem solid #4080ff;
 									.element-title {
 										display: grid;
 										grid-template-areas:
-											"text . toggle";
+											"text toggle";
 										grid-template-columns:
-											auto 1fr min-content;
+											1fr min-content;
 										align-items: stretch;
 										gap: $gap;
 
