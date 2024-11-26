@@ -36,6 +36,9 @@ $color-category-level-1: hsl(206, 58%, 52%);
 $color-category-level-2-light: #d5daea;
 $color-category-level-2-dark: #202325;
 
+$color-text-light: #4a5365;
+$color-text-dark: rgba(255, 255, 255, 0.9);
+
 $color-element-background-light: adjust-color($color-category-level-2-light, $lightness: +7.5%);
 $color-element-background-dark: adjust-color($color-category-level-2-dark, $lightness: +2.5%);
 
@@ -532,7 +535,10 @@ $outline: .125rem solid #4080ff;
 
 										cursor: pointer;
 										border-radius: $border-radius;
-										color: var(--base-color-text);
+										color: $color-text-light;
+										@include is-dark() {
+											color: $color-text-dark;
+										}
 
 										margin-top: -$gap;
 										margin-bottom: -$gap;
@@ -584,7 +590,10 @@ $outline: .125rem solid #4080ff;
 													opacity: 1;
 												}
 
-												@include anchor-icon($icon-color: var(--base-color-text));
+												@include anchor-icon($icon-color: $color-text-light);
+												@include is-dark() {
+													@include anchor-icon($icon-color: $color-text-dark);
+												}
 											}
 
 											.element-title-text {
@@ -745,6 +754,10 @@ $outline: .125rem solid #4080ff;
 
 										font-size: 0.75rem;
 										font-style: italic;
+										color: adjust-color($color-text-light, $alpha: -0.33);
+										@include is-dark() {
+											color: adjust-color($color-text-dark, $alpha: -0.33);
+										}
 
 										.element-edit-title {
 											font-weight: 500;

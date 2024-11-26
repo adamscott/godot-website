@@ -26,8 +26,8 @@
 					{{ element.description | markdownify }}
 				{% endif %}
 			</div>
-			<div class="element-details">
-				{% for detail in element.details %}
+			<div class="element-details"><!-- Remove unnecessary whitespace that prevents CSS :empty.
+				-->{% for detail in element.details %}
 					<div class="detail-block {{ detail.type }}">
 						<div class="detail-block-header">
 							<div class="icon">
@@ -69,10 +69,10 @@
 							{{ detail.content | markdownify }}
 						</div>
 					</div>
-				{% endfor %}
-			</div>
-			<div class="element-edit">
-				{% unless element.edits == null %}
+				{% endfor %}<!--
+			--></div>
+			<div class="element-edit"><!-- Remove unnecessary whitespace that prevents CSS :empty.
+				-->{% unless element.edits == null %}
 				<div class="element-edit-title">Edits</div>
 				<table class="element-edit-entries">
 					<tbody>
@@ -91,8 +91,8 @@
 						{% endfor %}
 					</tbody>
 				</table>
-				{% endunless %}
-			</div>
+				{% endunless %}<!--
+			--></div>
 		</div>
 	</details>
 </div>
