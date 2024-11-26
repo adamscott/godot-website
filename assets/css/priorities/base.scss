@@ -32,6 +32,13 @@ $color-background-light: #FFFFFF;
 $color-background-dark: rgb(51, 54, 57);
 $color-red: #f35774;
 
+$color-category-level-1: hsl(206, 58%, 52%);
+$color-category-level-2-light: #d5daea;
+$color-category-level-2-dark: #202325;
+
+$color-element-background-light: adjust-color($color-category-level-2-light, $lightness: +7.5%);
+$color-element-background-dark: adjust-color($color-category-level-2-dark, $lightness: +2.5%);
+
 $outline: .125rem solid #4080ff;
 
 //
@@ -367,12 +374,15 @@ $outline: .125rem solid #4080ff;
 						// .category.level-1
 						@at-root #{selector-replace(&, ".category", ".category.level-1")} {
 							font-size: 3rem;
-							background-color: var(--primary-color);
+							background-color: $color-category-level-1;
 						}
 						// .category.level-2
 						@at-root #{selector-replace(&, ".category", ".category.level-2")} {
 							font-size: 2.125rem;
-							background-color: var(--background-color);
+							background-color: $color-category-level-2-light;
+							@include is-dark() {
+								background-color: $color-category-level-2-dark;
+							}
 							@include is-light() {
 								&:hover {
 									filter: brightness(105%);
@@ -463,9 +473,9 @@ $outline: .125rem solid #4080ff;
 					.element-list {
 						display: grid;
 						grid-template-columns: 1fr;
+						gap: $gap;
 						@include is-large() {
 							grid-template-columns: 1fr 1fr;
-							gap: $gap;
 						}
 						padding-left: 0;
 						margin-bottom: 0;
@@ -474,17 +484,6 @@ $outline: .125rem solid #4080ff;
 							list-style: none;
 							margin-bottom: 0;
 
-							border-top: 2px solid var(--primary-color);
-							&:nth-of-type(1) {
-								border-top: 0;
-							}
-							@include is-large() {
-								// Remove top border from the second column.
-								&:nth-of-type(2) {
-									border-top: 0;
-								}
-							}
-
 							> .element {
 								display: grid;
 								grid-template-areas:
@@ -492,6 +491,12 @@ $outline: .125rem solid #4080ff;
 								grid-template-columns: auto;
 								grid-template-rows: auto;
 								gap: $gap;
+
+								border-radius: $border-radius;
+								background-color: $color-element-background-light;
+								@include is-dark() {
+									background-color: $color-element-background-dark;
+								}
 
 								padding: 1.25rem 0;
 
@@ -504,8 +509,6 @@ $outline: .125rem solid #4080ff;
 
 								.element-main {
 									grid-area: main;
-
-									height: 100%;
 
 									.element-title {
 										display: grid;
@@ -521,6 +524,7 @@ $outline: .125rem solid #4080ff;
 										color: var(--base-color-text);
 
 										margin-top: -$gap;
+										margin-bottom: -$gap;
 										padding: $gap;
 
 										&:hover {
@@ -617,15 +621,30 @@ $outline: .125rem solid #4080ff;
 
 									.element-content {
 										padding: 0 $gap;
+										padding-top: $gap;
 
 										.element-description {
 											font-size: 1rem;
+
+											> p {
+												&:first-child {
+													margin-top: 0;
+												}
+												@at-root #{selector-replace(&, ".element-description", ".element-description:has(+.element-details:empty)")} {
+													// Selects this <p> if the parent .element-description has an empty .element-details immediate sibling.
+													margin-bottom: 0;
+												}
+											}
 										}
 
 										.element-details {
 											display: flex;
 											flex-direction: column;
 											gap: $gap;
+
+											&:empty {
+												display: none;
+											}
 
 											font-size: 0.9rem;
 
