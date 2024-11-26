@@ -1,6 +1,5 @@
 ---
 ---
-
 // Fixes the parsing of the unusual front matter / SCSS file.
 *{};
 
@@ -11,6 +10,11 @@ ul {
 	line-height: unset;
 	padding-left: unset;
 }
+
+//
+// Imports
+//
+@import "./details.css";
 
 //
 // Variables
@@ -97,7 +101,7 @@ $outline: .125rem solid #4080ff;
 //
 // General
 //
-html {
+:root {
 	scroll-behavior: smooth;
 	@media (prefers-reduced-motion) {
 		scroll-behavior: auto;
@@ -266,7 +270,7 @@ html {
 					width: 100%;
 					margin: 0;
 
-					> details[name="priorities-navigation"] {
+					> details[name=priorities-navigation] {
 						> summary {
 							display: flex;
 							flex-direction: row;
@@ -715,33 +719,6 @@ html {
 						}
 					}
 				}
-			}
-		}
-	}
-
-	details {
-		@keyframes opening {
-			from {
-				transform:
-					translateY(-50px);
-				opacity: 0;
-			}
-
-			to {
-				transform:
-					translateY(0);
-				opacity: 1;
-			}
-		}
-
-		> summary {
-			z-index: 100;
-		}
-
-		&.opening {
-			> *:not(summary) {
-				animation:
-					opening 0.4s ease 1 normal;
 			}
 		}
 	}
