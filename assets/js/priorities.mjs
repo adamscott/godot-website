@@ -158,9 +158,15 @@ function animateDetailsTag() {
 	 * @param {AnimationEvent} event
 	 */
 	const onAnimationEnd = (event) => {
-		const target = event.target;
-		if (!(target instanceof HTMLDetailsElement)) {
-			return;
+		let target = event.target;
+		while (true) {
+			if (!(target instanceof HTMLElement)) {
+				return;
+			}
+			if (target instanceof HTMLDetailsElement) {
+				break;
+			}
+			target = target.parentElement;
 		}
 		target.classList.remove("opening");
 	};
