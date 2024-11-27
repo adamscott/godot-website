@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 8
+state: "active"
 anchor: "overhaul-lightmapgi"
 title: "Overhaul `LightmapGI` to improve baking workflow, performance, and features"
 description: |

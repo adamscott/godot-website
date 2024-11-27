@@ -1,6 +1,7 @@
 ---
 category: animation
 rank: 0
+state: "active"
 anchor: "improve-and-polish-new-skeletonmodifier3d"
 title: "Improve and polish new SkeletonModifier3D"
 description: |

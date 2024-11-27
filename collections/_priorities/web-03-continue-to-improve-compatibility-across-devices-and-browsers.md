@@ -1,6 +1,7 @@
 ---
 category: web
 rank: 3
+state: "active"
 anchor: "continue-to-improve-compatibility-across-devices-and-browsers"
 title: "Continue to improve compatibility across devices and browsers"
 description: |

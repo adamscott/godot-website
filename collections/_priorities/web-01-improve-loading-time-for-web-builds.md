@@ -1,6 +1,7 @@
 ---
 category: web
 rank: 1
+state: "active"
 anchor: "improve-loading-time-for-web-builds"
 title: "Improve loading time for web builds"
 description: |

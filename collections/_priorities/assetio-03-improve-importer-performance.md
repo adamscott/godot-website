@@ -1,6 +1,7 @@
 ---
 category: assetio
 rank: 3
+state: "active"
 anchor: "improve-importer-performance"
 title: "Improve importer performance"
 description: |

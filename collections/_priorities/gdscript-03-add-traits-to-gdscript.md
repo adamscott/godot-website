@@ -1,6 +1,7 @@
 ---
 category: gdscript
 rank: 3
+state: "active"
 anchor: "add-traits-to-gdscript"
 title: "Add traits to GDScript"
 description: |

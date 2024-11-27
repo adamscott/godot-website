@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 9
+state: "active"
 anchor: "implement-webgpu-backend-for-web-exports"
 title: "Implement WebGPU backend for web exports"
 description: |

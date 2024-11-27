@@ -1,6 +1,7 @@
 ---
 category: assetio
 rank: 0
+state: "active"
 anchor: "improve-compatibility-with-blender"
 title: "Improve compatibility with Blender"
 description: |

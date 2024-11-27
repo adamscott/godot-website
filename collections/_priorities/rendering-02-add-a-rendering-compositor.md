@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 2
+state: "active"
 anchor: "add-a-rendering-compositor"
 title: "Add a rendering compositor to allow controlling render pass order"
 description: |

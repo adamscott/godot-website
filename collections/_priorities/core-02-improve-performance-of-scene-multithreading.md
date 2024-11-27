@@ -1,6 +1,7 @@
 ---
 category: core
 rank: 2
+state: "active"
 anchor: "improve-performance-of-scene-multithreading"
 title: "Improve performance of scene multithreading"
 description: |

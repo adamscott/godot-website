@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 7
+state: "active"
 anchor: "add-a-deferred-renderer"
 title: "Add a deferred renderer"
 description: |

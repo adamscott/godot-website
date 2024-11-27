@@ -1,6 +1,7 @@
 ---
 category: platforms
 rank: 4
+state: "active"
 anchor: "improve-behavior-of-multiple-monitors-with-different-resolutions-and-dpi-scaling-factors"
 title: "Improve behavior of multiple monitors with different resolutions and DPI scaling factors"
 description: |

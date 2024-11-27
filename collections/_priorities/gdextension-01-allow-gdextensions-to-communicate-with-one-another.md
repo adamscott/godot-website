@@ -1,6 +1,7 @@
 ---
 category: gdextension
 rank: 1
+state: "active"
 anchor: "allow-gdextensions-to-communicate-with-one-another"
 title: "Allow GDExtensions to communicate with one another"
 description: |

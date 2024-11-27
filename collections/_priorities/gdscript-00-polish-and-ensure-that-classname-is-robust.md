@@ -1,6 +1,7 @@
 ---
 category: gdscript
 rank: 0
+state: "active"
 anchor: "polish-and-ensure-that-classname-is-robust"
 title: "Polish and ensure that `class_name` is robust and works in all cases"
 description: |

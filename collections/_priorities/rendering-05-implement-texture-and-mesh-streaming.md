@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 5
+state: "active"
 anchor: "implement-texture-and-mesh-streaming"
 title: "Implement texture and mesh streaming"
 description: |

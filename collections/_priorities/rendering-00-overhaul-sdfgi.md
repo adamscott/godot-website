@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 0
+state: "active"
 anchor: "overhaul-sdfgi"
 title: "Overhaul SDFGI to improve performance and quality"
 description: |

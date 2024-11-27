@@ -1,6 +1,7 @@
 ---
 category: web
 rank: 0
+state: "active"
 anchor: "improve-web-export-size"
 title: "Improve Web export size"
 description: |

@@ -1,6 +1,7 @@
 ---
 category: editor
 rank: 0
+state: "active"
 anchor: "make-the-editor-resilient-to-file-changes"
 title: "Make the editor resilient to files changed/added externally"
 description: |

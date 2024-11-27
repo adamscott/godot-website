@@ -1,6 +1,7 @@
 ---
 category: gdextension
 rank: 0
+state: "active"
 anchor: "allow-compiling-godot-as-a-library"
 title: "Allow compiling Godot as a library that can be loaded and used by other applications"
 description: |

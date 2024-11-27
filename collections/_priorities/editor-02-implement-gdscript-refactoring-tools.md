@@ -1,6 +1,7 @@
 ---
 category: editor
 rank: 2
+state: "active"
 anchor: "implement-gdscript-refactoring-tools"
 title: "Implement GDScript refactoring tools"
 description: |

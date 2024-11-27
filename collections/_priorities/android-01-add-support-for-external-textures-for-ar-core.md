@@ -1,6 +1,7 @@
 ---
 category: android
 rank: 1
+state: "active"
 anchor: "add-support-for-external-textures-for-ar-core"
 title: "Add support for external textures for AR Core"
 description: |

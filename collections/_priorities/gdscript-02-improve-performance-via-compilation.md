@@ -1,6 +1,7 @@
 ---
 category: gdscript
 rank: 2
+state: "active"
 anchor: "improve-performance-via-compilation"
 title: "Improve performance via compilation"
 description: |

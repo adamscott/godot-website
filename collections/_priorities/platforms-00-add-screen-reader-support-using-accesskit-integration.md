@@ -1,6 +1,7 @@
 ---
 category: platforms
 rank: 0
+state: "active"
 anchor: "add-screen-reader-support-using-accesskit-integration"
 title: "Add screen reader support using AccessKit integration"
 description: |

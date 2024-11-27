@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 6
+state: "active"
 anchor: "expose-a-ray-tracing-api"
 title: "Expose a ray tracing API and eventually use it for built in effects"
 description: |

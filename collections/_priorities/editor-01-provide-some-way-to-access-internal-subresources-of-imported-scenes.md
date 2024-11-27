@@ -1,6 +1,7 @@
 ---
 category: editor
 rank: 1
+state: "active"
 anchor: "provide-some-way-to-access-internal-subresources-of-imported-scenes"
 title: "Provide some way to access internal subresources of imported scenes"
 description: |

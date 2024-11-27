@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 4
+state: "active"
 anchor: "add-shader-templates"
 title: "Add shader templates to allow overriding the built-in shaders"
 description: |

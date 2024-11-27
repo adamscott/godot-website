@@ -1,6 +1,7 @@
 ---
 category: core
 rank: 4
+state: "active"
 anchor: "create-more-benchmarks"
 title: "Create more benchmarks"
 description: |

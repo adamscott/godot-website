@@ -1,6 +1,7 @@
 ---
 category: web
 rank: 2
+state: "active"
 anchor: "customizing-engine-builds-by-detecting-used-features"
 title: "Customizing engine builds by detecting used features from a project"
 description: |

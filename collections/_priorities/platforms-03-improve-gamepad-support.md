@@ -1,6 +1,7 @@
 ---
 category: platforms
 rank: 3
+state: "active"
 anchor: "improve-gamepad-support"
 title: "Improve gamepad support"
 description: |

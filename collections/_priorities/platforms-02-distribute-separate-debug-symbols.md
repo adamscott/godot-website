@@ -1,6 +1,7 @@
 ---
 category: platforms
 rank: 2
+state: "active"
 anchor: "distribute-separate-debug-symbols"
 title: "Distribute separate debug symbols"
 description: |

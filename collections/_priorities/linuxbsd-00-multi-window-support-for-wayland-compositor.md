@@ -1,6 +1,7 @@
 ---
 category: linuxbsd
 rank: 0
+state: "active"
 anchor: "multi-window-support-for-wayland-compositor"
 title: "Multi window support for Wayland compositor"
 description: |

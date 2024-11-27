@@ -1,6 +1,7 @@
 ---
 category: physics
 rank: 0
+state: "active"
 anchor: "integrate-jolt-as-the-default-3d-physics-engine"
 title: "Integrate Jolt as the default 3D physics engine"
 description: |

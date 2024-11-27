@@ -1,6 +1,7 @@
 ---
 category: assetio
 rank: 2
+state: "active"
 anchor: "add-preview-icons-on-imported-scenes"
 title: "Add preview icons on imported scenes"
 description: |

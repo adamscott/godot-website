@@ -1,6 +1,7 @@
 ---
 category: gdextension
 rank: 2
+state: "active"
 anchor: "add-the-ability-to-enable-disable-gdextensions-in-project-settings"
 title: "Add the ability to enable/disable GDExtensions in project settings"
 description: |

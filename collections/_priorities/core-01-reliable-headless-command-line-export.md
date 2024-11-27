@@ -1,6 +1,7 @@
 ---
 category: core
 rank: 1
+state: "active"
 anchor: "reliable-headless-command-line-export"
 title: "Reliable headless command line export"
 description: |

@@ -1,6 +1,7 @@
 ---
 category: scripting
 rank: 0
+state: "active"
 anchor: "implement-namespaces-for-scripting-languages"
 title: "Implement namespaces for scripting languages"
 description: |

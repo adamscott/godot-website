@@ -1,6 +1,7 @@
 ---
 category: gdscript
 rank: 1
+state: "active"
 anchor: "attain-full-coverage-of-static-type-hints"
 title: "Attain full coverage of static type hints"
 description: |

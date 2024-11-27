@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 1
+state: "active"
 anchor: "significantly-improve-post-processing-effects"
 title: "Significantly improve post processing effects and add common effects"
 description: |

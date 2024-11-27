@@ -1,6 +1,7 @@
 ---
 category: dotnet
 rank: 2
+state: "active"
 anchor: "host-a-dotnet-specific-documentation-website"
 title: "Host a .NET-specific documentation website"
 description: |

@@ -1,6 +1,7 @@
 ---
 category: animation
 rank: 1
+state: "active"
 anchor: "overhaul-skeleton2d-animation"
 title: "Overhaul `Skeleton2D` animation"
 description: |

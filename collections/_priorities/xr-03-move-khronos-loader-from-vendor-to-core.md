@@ -1,6 +1,7 @@
 ---
 category: xr
 rank: 3
+state: "active"
 anchor: "move-khronos-loader-from-vendor-to-core"
 title: "Move Khronos loader support from our vendor plugin to the core of the Godot"
 description: |

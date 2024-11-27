@@ -1,6 +1,7 @@
 ---
 category: assetio
 rank: 4
+state: "active"
 anchor: "fix-scene-inheritance"
 title: "Fix scene inheritance"
 description: |

@@ -1,6 +1,7 @@
 ---
 category: core
 rank: 0
+state: "active"
 anchor: "overhaul-addon-startup"
 title: "Overhaul addon startup"
 description: |

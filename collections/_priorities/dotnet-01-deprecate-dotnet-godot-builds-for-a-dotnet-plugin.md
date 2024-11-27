@@ -1,6 +1,7 @@
 ---
 category: dotnet
 rank: 1
+state: "active"
 anchor: "deprecate-dotnet-godot-builds-for-a-dotnet-plugin"
 title: "Deprecate .NET Godot builds for a .NET plugin"
 description: |

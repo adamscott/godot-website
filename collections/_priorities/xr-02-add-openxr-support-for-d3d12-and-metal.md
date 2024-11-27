@@ -1,6 +1,7 @@
 ---
 category: xr
 rank: 2
+state: "active"
 anchor: "add-openxr-support-for-d3d12-and-metal"
 title: "Add OpenXR support for DirectX12 and Metal"
 description: |

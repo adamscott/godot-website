@@ -1,6 +1,7 @@
 ---
 category: xr
 rank: 0
+state: "active"
 anchor: "enhance-openxr-action-map-to-support-binding-modifier"
 title: "Enhance OpenXR action map to support binding modifier"
 description: |

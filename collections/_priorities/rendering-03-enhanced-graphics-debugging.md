@@ -1,6 +1,7 @@
 ---
 category: rendering
 rank: 3
+state: "active"
 anchor: "enhance-graphics-debugging"
 title: "Enhance graphics debugging including VRAM debugging and better information from the current profiler"
 description: |
