@@ -119,6 +119,18 @@ $outline: .125rem solid #4080ff;
 	}
 }
 
+@mixin reset-lists() {
+	> ul {
+		// Force reset the style for the first list.
+		list-style-type: disc;
+	}
+
+	> ol {
+		// Force reset the style for the first list.
+		counter-reset: element-details-list-counter;
+	}
+}
+
 //
 // General
 //
@@ -704,15 +716,7 @@ $outline: .125rem solid #4080ff;
 													}
 												}
 
-												> ul {
-													// Force reset the style for the first list.
-													list-style-type: disc;
-												}
-
-												> ol {
-													// Force reset the style for the first list.
-													counter-reset: element-details-list-counter;
-												}
+												@include reset-lists();
 
 												.detail-block-header {
 													display: flex;
@@ -758,6 +762,10 @@ $outline: .125rem solid #4080ff;
 															@include octicon("/assets/icons/octicons/zap-24.svg");
 														}
 													}
+												}
+
+												.detail-block-content {
+													@include reset-lists();
 												}
 											}
 										}
