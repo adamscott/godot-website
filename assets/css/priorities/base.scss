@@ -33,14 +33,15 @@ $color-background-dark: rgb(51, 54, 57);
 $color-red: #f35774;
 
 $color-category-level-1: hsl(206, 58%, 52%);
-$color-category-level-2-light: #d5daea;
+$color-category-level-2-light: rgb(165, 173, 200);
 $color-category-level-2-dark: #202325;
 
 $color-text-light: #4a5365;
 $color-text-dark: rgba(255, 255, 255, 0.9);
 
-$color-element-background-light: adjust-color($color-category-level-2-light, $lightness: +7.5%);
-$color-element-background-dark: adjust-color($color-category-level-2-dark, $lightness: +2.5%);
+$color-element-background-light:
+	adjust-color(#d5daea, $lightness: +7.5%);
+$color-element-background-dark: adjust-color(#202325, $lightness: +2.5%);
 
 $outline: .125rem solid #4080ff;
 
@@ -151,15 +152,21 @@ $outline: .125rem solid #4080ff;
 		}
 
 		@mixin setup-background($color) {
-			@include set-background($color, "/storage/priorities/images/page/map2-2048.webp");
+			@include set-background(
+				$color: $color,
+				$url: "/storage/priorities/images/page/map2-2048.webp"
+			);
 			@include is-retina() {
-				@include set-background($color, "/storage/priorities/images/page/map2-4096.webp");
+				@include set-background(
+					$color: $color,
+					$url: "/storage/priorities/images/page/map2-4096.webp"
+				);
 			}
 		}
 
-		@include setup-background($color-background-light);
+		@include setup-background($color: $color-background-light);
 		@include is-dark() {
-			@include setup-background($color-background-dark);
+			@include setup-background($color: $color-background-dark);
 		}
 
 		> .banner {
@@ -298,11 +305,15 @@ $outline: .125rem solid #4080ff;
 							display: flex;
 							flex-direction: row;
 
-							background-color: var(--background-color);
+							background-color: $color-element-background-light;
+							@include is-dark() {
+								background-color: $color-element-background-dark;
+							}
+
 							&:hover {
 								filter: brightness(117.5%);
 								@include is-light() {
-									filter: brightness(105%);
+									filter: brightness(102%);
 								}
 							}
 
@@ -541,16 +552,19 @@ $outline: .125rem solid #4080ff;
 										@include is-dark() {
 											color: $color-text-dark;
 										}
+										background-color: $color-element-background-light;
+										@include is-dark() {
+											background-color: $color-element-background-dark;
+										}
 
 										margin-top: -$gap;
 										margin-bottom: -$gap;
 										padding: $gap;
 
 										&:hover {
-											background-color: var(--background-color);
 											filter: brightness(117.5%);
 											@include is-light() {
-												filter: brightness(105%);
+												filter: brightness(102%);
 											}
 										}
 
