@@ -7,7 +7,7 @@ title: "Improve compatibility with Blender"
 description: |
   As [Blender](https://blender.org/) is both a FOSS and a very popular 3D editor choice by the majority of our users, it makes sense to improve compatibility with it. You can already import `.blend` files, but it’s limited to models, textures, lights, and cameras.
 
-  Godot imports `.blend` files by calling into Blender and asking Blender to export a `.gltf` file, which Godot then imports. Therefore, everything we want to export from Blender needs to be exported to the glTF data, including glTF extensions, and then Godot needs to import those, all in order for that data to make it way to Godot.
+  Godot imports `.blend` files by calling into Blender and asking Blender to export a `.gltf` file, which Godot then imports. Therefore, everything we want to export from Blender needs to be exported to the glTF data, including glTF extensions, and then Godot needs to import those, all in order for that data to make its way to Godot.
 details:
   - type: note
     content: |
