@@ -10,8 +10,4 @@ details:
   - type: note
     content: |
       One idea is to give nodes unique IDs. See [KhronosGroup/glTF#2337](https://github.com/KhronosGroup/glTF/issues/2337).
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

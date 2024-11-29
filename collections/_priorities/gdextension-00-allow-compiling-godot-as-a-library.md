@@ -13,8 +13,4 @@ details:
   - type: prs
     content: |
       - [Migeran LibGodot Feature #90510](https://github.com/godotengine/godot/pull/90510)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

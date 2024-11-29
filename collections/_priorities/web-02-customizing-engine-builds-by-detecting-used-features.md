@@ -15,8 +15,4 @@ details:
         - investigating the gains possible by customizing the engine builds
         - documenting the “Edit Compilation Configuration Profile” tool offered in the Editor
         - finding a way to offer more official Web exports
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

@@ -10,8 +10,4 @@ details:
   - type: proposals
     content: |
       - [Implement a Rendering Compositor #7916](https://github.com/godotengine/godot-proposals/issues/7916)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

@@ -10,8 +10,4 @@ details:
   - type: prs
     content: |
       - [Custom shader templates #94427](https://github.com/godotengine/godot/pull/94427)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

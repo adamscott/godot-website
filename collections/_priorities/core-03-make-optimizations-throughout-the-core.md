@@ -10,8 +10,4 @@ details:
   - type: note
     content: |
       To aid in this, we want to create more educational materials on profiling performance issues (both for CPU and GPU workloads).
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

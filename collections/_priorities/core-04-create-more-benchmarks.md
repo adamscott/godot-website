@@ -12,8 +12,4 @@ details:
       We do have a public benchmark page! You can follow Godot's main branch performance on the following website:
 
       [https://benchmarks.godotengine.org/](https://benchmarks.godotengine.org/)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

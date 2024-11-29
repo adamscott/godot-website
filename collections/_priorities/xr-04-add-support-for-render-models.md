@@ -7,8 +7,4 @@ title: "Add support for render models (i.e. displaying the correct controllers a
 description: |
   This feature is already supported for the Meta vendor solution. Once a core API is becoming available in OpenXR, we intend to adopt this feature quickly.
 details:
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

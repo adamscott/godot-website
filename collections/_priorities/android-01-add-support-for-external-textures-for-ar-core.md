@@ -14,8 +14,4 @@ details:
     content: |
       - [Add external texture support (GLES3) #96982](https://github.com/godotengine/godot/pull/96982)
       - [Add external texture support (Vulkan) #97163](https://github.com/godotengine/godot/pull/97163)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

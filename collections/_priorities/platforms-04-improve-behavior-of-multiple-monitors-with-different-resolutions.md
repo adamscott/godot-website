@@ -10,8 +10,4 @@ details:
   - type: prs
     content: |
       - [[WIP] Implement native DPI scaling. #86022](https://github.com/godotengine/godot/pull/86022)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

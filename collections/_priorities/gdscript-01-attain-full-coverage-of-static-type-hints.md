@@ -12,8 +12,4 @@ details:
   - type: prs
       content: |
         - [Implement typed dictionaries #78656](https://github.com/godotengine/godot/pull/78656)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

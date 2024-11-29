@@ -15,8 +15,4 @@ details:
   - type: note
     content: |
       For constraints, VRM has a series of glTF extensions that add feature to glTF, including [`VRMC_node_constraint`](https://github.com/vrm-c/vrm-specification/tree/master/specification/VRMC_node_constraint-1.0) which adds aim, roll, and rotation constraints. However, note that Khronos and VRM recently announced a collaboration, so some of this functionality may end up being replaced by Khronos extensions. Also, users do not have to wait if they want this feature - [a GDScript implementation of VRM](https://github.com/V-Sekai/godot-vrm) is available thanks to [@lyuma](https://github.com/lyuma).
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

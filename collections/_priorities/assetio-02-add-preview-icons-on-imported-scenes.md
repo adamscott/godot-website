@@ -10,8 +10,4 @@ details:
   - type: prs
     content: |
       - [Generate thumbnails on imported scenes. #96544](https://github.com/godotengine/godot/pull/96544)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

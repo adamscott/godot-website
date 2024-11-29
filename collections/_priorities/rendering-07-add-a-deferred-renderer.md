@@ -10,8 +10,4 @@ details:
   - type: proposals
     content: |
       - [Add a project setting to enable deferred rendering #8295](https://github.com/godotengine/godot-proposals/issues/8295)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

@@ -10,8 +10,4 @@ details:
   - type: prs
     content: |
       - [Upgrade SDFGI to HDDAGI #86267](https://github.com/godotengine/godot/pull/86267)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

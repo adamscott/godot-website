@@ -10,8 +10,4 @@ details:
   - type: proposals
     content: |
       - [Allow creating GDExtension plugins from inside the Godot editor #90979](https://github.com/godotengine/godot/pull/90979)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

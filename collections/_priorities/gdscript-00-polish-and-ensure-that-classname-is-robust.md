@@ -12,8 +12,4 @@ details:
   - type: trackers
     content: |
       - [[TRACKER] GDScript `class_name` #99766](https://github.com/godotengine/godot/issues/99766)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

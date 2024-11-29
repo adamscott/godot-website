@@ -10,8 +10,4 @@ details:
   - type: note
     content: |
       As part of this work we need to create high quality tests and benchmarks. Both to ensure that we do not break anything, but also to validate the performance improvements.
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

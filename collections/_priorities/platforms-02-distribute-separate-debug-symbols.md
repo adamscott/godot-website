@@ -13,8 +13,4 @@ details:
   - type: proposals
     content: |
       - [Distribute official builds with full debugging symbols #1342](https://github.com/godotengine/godot-proposals/issues/1342)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

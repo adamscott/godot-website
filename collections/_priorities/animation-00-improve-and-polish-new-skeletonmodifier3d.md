@@ -19,8 +19,4 @@ details:
     content: |
       - [Add RetargetModifier3D for realtime retarget to keep original rest #97824](https://github.com/godotengine/godot/pull/97824)
       - [Implement LookAtModifier3D #98446](https://github.com/godotengine/godot/pull/98446)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

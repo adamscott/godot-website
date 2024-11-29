@@ -10,8 +10,4 @@ details:
   - type: proposals
     content: |
       - [Add WebGPU support #6646](https://github.com/godotengine/godot-proposals/issues/6646)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

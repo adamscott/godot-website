@@ -14,8 +14,4 @@ details:
     content: |
       - [Add per-shape collision filtering to the 3D physics system #7400](https://github.com/godotengine/godot-proposals/issues/7400)
       - [Add per-shape physics materials to the 3D physics system #7401](https://github.com/godotengine/godot-proposals/issues/7401)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

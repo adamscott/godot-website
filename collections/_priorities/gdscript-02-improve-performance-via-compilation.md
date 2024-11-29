@@ -10,8 +10,4 @@ details:
   - type: note
     content: |
       We’re currently investigating whether to compile GDScript, or to use [AOT (ahead-of-time)](https://en.wikipedia.org/wiki/Ahead-of-time_compilation) or [JIT (just-in-time)](https://en.wikipedia.org/wiki/Just-in-time_compilation) compilation techniques.
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

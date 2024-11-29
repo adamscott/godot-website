@@ -10,8 +10,4 @@ details:
   - type: proposals
     content: |
       - [Add a Trait system for GDScript #6416](https://github.com/godotengine/godot-proposals/issues/6416)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

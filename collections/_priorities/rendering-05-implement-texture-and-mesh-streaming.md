@@ -10,8 +10,4 @@ details:
   - type: proposals
     content: |
       - [Implement Mesh streaming #6109](https://github.com/godotengine/godot-proposals/issues/6109)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

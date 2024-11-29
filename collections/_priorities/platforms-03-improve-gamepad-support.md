@@ -13,8 +13,4 @@ details:
   - type: prs
     content: |
       - [Use SDL for joypad input on Linux #87925](https://github.com/godotengine/godot/pull/87925)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

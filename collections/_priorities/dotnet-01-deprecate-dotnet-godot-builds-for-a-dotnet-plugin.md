@@ -9,8 +9,4 @@ description: |
 
   Everyone wins, as users won’t have to choose a special version to run C#. It reduces the number of builds on our side by half. Also, it will simplify .NET maintenance.
 details:
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

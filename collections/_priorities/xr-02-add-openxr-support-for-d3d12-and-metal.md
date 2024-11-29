@@ -10,8 +10,4 @@ details:
   - type: prs
     content: |
       - [Openxr KHR metal enable #98872](https://github.com/godotengine/godot/pull/98872)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

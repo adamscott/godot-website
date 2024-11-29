@@ -13,8 +13,4 @@ details:
   - type: prs
     content: |
       - [Universalize UID support in all resource types #97352](https://github.com/godotengine/godot/pull/97352)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

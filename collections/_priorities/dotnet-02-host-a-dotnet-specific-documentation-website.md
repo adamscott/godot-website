@@ -9,8 +9,4 @@ description: |
 
   We intend to host a new website that will host an API documentation oriented for .NET users.
 details:
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

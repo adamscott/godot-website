@@ -10,8 +10,4 @@ details:
   - type: prs
     content: |
       - [OpenXR: Add support for binding modifiers #97140](https://github.com/godotengine/godot/pull/97140)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

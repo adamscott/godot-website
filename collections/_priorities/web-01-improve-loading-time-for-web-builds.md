@@ -10,8 +10,4 @@ details:
   - type: note
     content: |
       We need to investigate ways to solve the issue. We think a custom asynchronous filesystem could fix the issue, downloading files individually when needed.
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

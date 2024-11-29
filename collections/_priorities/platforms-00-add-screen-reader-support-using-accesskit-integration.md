@@ -10,8 +10,4 @@ details:
   - type: prs
     content: |
       - [Implement screen reader support using AccessKit library. #76829](https://github.com/godotengine/godot/pull/76829)
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

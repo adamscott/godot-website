@@ -11,8 +11,4 @@ description: |
 
   With namespaces, plugin developers could use their own class names without worrying about clashing with users' internal ones.
 details:
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---

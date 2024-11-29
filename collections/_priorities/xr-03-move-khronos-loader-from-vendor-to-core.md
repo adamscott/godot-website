@@ -13,8 +13,4 @@ details:
   - type: note
     content: |
       As part of this we will add support for Android to use the Khronos loader.
-edits:
-  - date: "2024-11-30"
-    content: |
-      Priority added.
 ---
