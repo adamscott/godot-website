@@ -461,9 +461,10 @@ $outline: .125rem solid #4080ff;
 								color: white;
 
 								opacity: 0;
+								transition: opacity 0.2s ease-in-out;
 								@at-root #{selector-replace(&, ".category-summary", ".category-summary:hover")},
 								&:focus {
-									opacity: 1;
+									opacity: 0.6;
 								}
 
 								$anchor-icon-color: white;
@@ -624,9 +625,10 @@ $outline: .125rem solid #4080ff;
 												text-decoration: none;
 
 												opacity: 0;
+												transition: opacity 0.2s ease-in-out;
 												@at-root #{selector-replace(&, ".element-title", ".element-title:hover")},
 												&:focus {
-													opacity: 1;
+													opacity: 0.6;
 												}
 
 												@include anchor-icon($icon-color: $color-text-light);
