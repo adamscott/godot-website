@@ -43,7 +43,12 @@ $color-element-background-light:
 	adjust-color(#d5daea, $lightness: +7.5%);
 $color-element-background-dark: adjust-color(#202325, $lightness: +2.5%);
 
-$outline: .125rem solid #4080ff;
+@function create-outline-rule($outline-color) {
+	@return 0.125rem solid $outline-color;
+}
+$outline-color: #4080ff;
+$outline: create-outline-rule($outline-color: $outline-color);
+$outline-inverted: create-outline-rule($outline-color: adjust-color($color: invert($outline-color), $lightness: +10%));
 
 //
 // Functions
@@ -94,9 +99,11 @@ $outline: .125rem solid #4080ff;
 	.anchor-icon {
 		display: inline-block;
 
+		opacity: 0;
+		transition: opacity 0.2s ease-out;
+
 		$size: 0.8rem;
 		$min-size: 19px;
-		opacity: 0.6;
 		mask-image: url(/assets/icons/link.svg);
 		mask-size: 100% 100%;
 		mask-repeat: no-repeat;
@@ -290,6 +297,7 @@ $outline: .125rem solid #4080ff;
 		}
 
 		margin: $gap 0;
+		-webkit-user-select: none;
 		user-select: none;
 
 		li {
@@ -323,10 +331,15 @@ $outline: .125rem solid #4080ff;
 					width: 100%;
 					margin: 0;
 
-					> .priorities-navigation {
-						> summary {
+					.navigation-list-details {
+						.navigation-list-summary {
 							display: flex;
 							flex-direction: row;
+
+							// Disable toggling.
+							pointer-events: none;
+							-webkit-user-select: none;
+							user-select: none;
 
 							background-color: $color-element-background-light;
 							@include is-dark() {
@@ -337,6 +350,10 @@ $outline: .125rem solid #4080ff;
 								filter: brightness(117.5%);
 								@include is-light() {
 									filter: brightness(102%);
+								}
+
+								&:has(.label a:hover) {
+									filter: none;
 								}
 							}
 
@@ -353,9 +370,16 @@ $outline: .125rem solid #4080ff;
 							.label {
 								width: 100%;
 								flex-grow: 1;
+
+								a {
+									pointer-events: all;
+								}
 							}
 
 							.toggle {
+								// As we disabled the <details> tag, we remove the toggle icon visually.
+								display: none;
+
 								flex-grow: 0;
 
 								.more {
@@ -365,7 +389,7 @@ $outline: .125rem solid #4080ff;
 									display: none;
 								}
 
-								@at-root #{selector-replace(&, "details[name='priorities-navigation']", "details[name='priorities-navigation'][open]")} {
+								@at-root #{selector-replace(&, ".navigation-list-details", ".navigation-list-details[open]")} {
 									.more {
 										display: none;
 									}
@@ -423,6 +447,10 @@ $outline: .125rem solid #4080ff;
 							display: none;
 						}
 
+						&:focus {
+							outline: none;
+						}
+
 						// .category.level-1
 						@at-root #{selector-replace(&, ".category", ".category.level-1")} {
 							font-size: 3rem;
@@ -460,11 +488,13 @@ $outline: .125rem solid #4080ff;
 								text-decoration: none;
 								color: white;
 
-								opacity: 0;
-								transition: opacity 0.2s ease-in-out;
 								@at-root #{selector-replace(&, ".category-summary", ".category-summary:hover")},
 								&:focus {
-									opacity: 0.6;
+									outline: $outline-inverted;
+
+									.anchor-icon {
+										opacity: 0.6;
+									}
 								}
 
 								$anchor-icon-color: white;
@@ -477,6 +507,10 @@ $outline: .125rem solid #4080ff;
 
 							position: relative;
 							margin-bottom: 0;
+
+							@at-root #{selector-replace(&, ".category-summary", ".category-summary:focus")} {
+								outline: $outline-inverted;
+							}
 
 							.category-title-text {
 								flex-grow: 1;
@@ -585,6 +619,10 @@ $outline: .125rem solid #4080ff;
 										margin-bottom: -$gap;
 										padding: $gap;
 
+										&:focus {
+											outline: none;
+										}
+
 										&:hover {
 											filter: brightness(117.5%);
 											@include is-light() {
@@ -624,16 +662,16 @@ $outline: .125rem solid #4080ff;
 
 												text-decoration: none;
 
-												opacity: 0;
-												transition: opacity 0.2s ease-in-out;
-												@at-root #{selector-replace(&, ".element-title", ".element-title:hover")},
-												&:focus {
-													opacity: 0.6;
-												}
-
 												@include anchor-icon($icon-color: $color-text-light);
 												@include is-dark() {
 													@include anchor-icon($icon-color: $color-text-dark);
+												}
+
+												@at-root #{selector-replace(&, ".element-title", ".element-title:hover")},
+												&:focus {
+													.anchor-icon {
+														opacity: 0.6;
+													}
 												}
 											}
 
@@ -648,6 +686,10 @@ $outline: .125rem solid #4080ff;
 												font-weight: 700;
 
 												@include remove-markdown-margins();
+
+												@at-root #{selector-replace(&, ".element-title", ".element-title:focus")} {
+													outline: $outline;
+												}
 											}
 										}
 
@@ -868,7 +910,7 @@ $outline: .125rem solid #4080ff;
 		}
 
 		span {
-			transition: font-size 0.2s ease-in-out;
+			transition: font-size 0.2s ease-out;
 			transform:
 				translateY(-3px);
 		}

@@ -141,8 +141,9 @@ layout: default
 				<ul class="navigation-list">
 					<!-- Core -->
 					<li>
-						<details class="priorities-navigation" open>
-							<summary>
+						<details class="navigation-list-details" open>
+							<!-- `tabindex="-1"` to disable details keyboard selection (as we disabled the functionality). -->
+							<summary class="navigation-list-summary" tabindex="-1">
 								<div class="label">
 									{%
 										include_relative _includes/nav_link.html
@@ -200,8 +201,8 @@ layout: default
 
 					<!-- Editor -->
 					<li>
-						<details class="priorities-navigation" open>
-							<summary>
+						<details class="navigation-list-details" open>
+							<summary class="navigation-list-summary" tabindex="-1">
 								<div class="label">
 									{%
 										include_relative _includes/nav_link.html
@@ -232,8 +233,8 @@ layout: default
 
 					<!-- Platforms -->
 					<li>
-						<details class="priorities-navigation" open>
-							<summary>
+						<details class="navigation-list-details" open>
+							<summary class="navigation-list-summary" tabindex="-1">
 								<div class="label">
 									{%
 										include_relative _includes/nav_link.html
@@ -318,8 +319,8 @@ layout: default
 
 					<!-- Scripting -->
 					<li>
-						<details class="priorities-navigation" open>
-							<summary>
+						<details class="navigation-list-details" open>
+							<summary class="navigation-list-summary" tabindex="-1">
 								<div class="label">
 									{%
 										include_relative _includes/nav_link.html
@@ -370,8 +371,8 @@ layout: default
 					{% assign nb_of_documentation_priorities = documentation_priorities | size %}
 					{% if nb_of_documentation_priorities > 0 %}
 					<li>
-						<details class="priorities-navigation" open>
-							<summary>
+						<details class="navigation-list-details" open>
+							<summary class="navigation-list-summary" tabindex="-1">
 								<div class="label">
 									{%
 										include_relative _includes/nav_link.html
