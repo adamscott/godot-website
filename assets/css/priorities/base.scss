@@ -223,6 +223,7 @@ $outline: .125rem solid #4080ff;
 				margin-bottom: (3 * $gap);
 				@include is-mobile() {
 					grid-template-columns: 1fr;
+					gap: 0;
 				}
 			}
 			.wishlist-btns {
