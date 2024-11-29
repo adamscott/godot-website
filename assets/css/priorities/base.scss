@@ -51,13 +51,13 @@ $outline: create-outline-rule($outline-color: $outline-color);
 $outline-inverted: create-outline-rule($outline-color: adjust-color($color: invert($outline-color), $lightness: +10%));
 
 $detail-color: (
-	note: (rgb(26, 127, 55), rgb(35, 134, 54)),
-	warning: (rgb(154, 103, 0), rgb(158, 106, 3)),
-	links: (rgb(9, 105, 218), rgb(31, 111, 235)),
-	trackers: (rgb(19, 136, 140), rgb(31, 222, 235)),
-	prs: (rgb(130, 80, 223), rgb(137, 87, 229)),
-	issues: (rgb(207, 34, 46), rgb(218, 54, 51)),
-	proposals: (rgb(207, 106, 34), rgb(218, 104, 51)),
+	note: (rgb(26, 127, 55), rgb(45, 175, 71)),
+	warning: (rgb(154, 103, 0), rgb(201, 135, 4)),
+	links: (rgb(9, 105, 218), rgb(34, 119, 247)),
+	trackers: (rgb(19, 136, 140), rgb(34, 240, 254)),
+	prs: (rgb(130, 80, 223), rgb(148, 94, 249)),
+	issues: (rgb(207, 34, 46), rgb(249, 62, 58)),
+	proposals: (rgb(207, 106, 34), rgb(246, 118, 58)),
 );
 
 //
