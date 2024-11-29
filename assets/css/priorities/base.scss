@@ -95,7 +95,8 @@ $outline: .125rem solid #4080ff;
 		display: inline-block;
 
 		$size: 0.8rem;
-		$min-size: 24px;
+		$min-size: 19px;
+		opacity: 0.6;
 		mask-image: url(/assets/icons/link.svg);
 		mask-size: 100% 100%;
 		mask-repeat: no-repeat;
@@ -184,7 +185,7 @@ $outline: .125rem solid #4080ff;
 		> .banner {
 			.container {
 				padding-top: 7rem;
-				padding-bottom: 7rem;
+				// padding-bottom: 7rem;
 
 				h1 {
 					margin-bottom: 0;
@@ -215,9 +216,18 @@ $outline: .125rem solid #4080ff;
 		}
 
 		> .intro {
+			.intro-text {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: $gap;
+				margin-bottom: (3 * $gap);
+				@include is-mobile() {
+					grid-template-columns: 1fr;
+				}
+			}
 			.wishlist-btns {
 				display: grid;
-				grid-template-columns: repeat(3, 1fr);
+				grid-template-columns: repeat(2, 1fr);
 				grid-template-areas:
 					"donate howto contact";
 				gap: $gap;
