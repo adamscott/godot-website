@@ -50,6 +50,16 @@ $outline-color: #4080ff;
 $outline: create-outline-rule($outline-color: $outline-color);
 $outline-inverted: create-outline-rule($outline-color: adjust-color($color: invert($outline-color), $lightness: +10%));
 
+$detail-color: (
+	note: (rgb(26, 127, 55), rgb(35, 134, 54)),
+	warning: (rgb(154, 103, 0), rgb(158, 106, 3)),
+	links: (rgb(9, 105, 218), rgb(31, 111, 235)),
+	trackers: (rgb(19, 136, 140), rgb(31, 222, 235)),
+	prs: (rgb(130, 80, 223), rgb(137, 87, 229)),
+	issues: (rgb(207, 34, 46), rgb(218, 54, 51)),
+	proposals: (rgb(207, 106, 34), rgb(218, 104, 51)),
+);
+
 //
 // Functions
 //
@@ -488,13 +498,17 @@ $outline-inverted: create-outline-rule($outline-color: adjust-color($color: inve
 								text-decoration: none;
 								color: white;
 
-								@at-root #{selector-replace(&, ".category-summary", ".category-summary:hover")},
-								&:focus {
-									outline: $outline-inverted;
-
-									.anchor-icon {
+								.anchor-icon {
+									@at-root #{selector-replace(&, ".category-summary", ".category-summary:hover")} {
 										opacity: 0.6;
 									}
+
+									@at-root #{selector-replace(&, ".category-anchor", ".category-anchor:focus")} {
+										opacity: 0.6;
+									}
+								}
+								&:focus {
+									outline: $outline-inverted;
 								}
 
 								$anchor-icon-color: white;
@@ -745,8 +759,15 @@ $outline-inverted: create-outline-rule($outline-color: adjust-color($color: inve
 											font-size: 0.9rem;
 
 											.detail-block {
+												@mixin parent-is-type($current-selector, $type) {
+													@at-root #{selector-replace($current-selector, ".detail-block", ".detail-block.#{$type}")} {
+														@content;
+													}
+												}
+
 												padding: 1rem 0 1rem 2rem;
 												border-left: 2px solid;
+												border-left-color: var(--detail-color);
 
 												p {
 													&:first-child {
@@ -762,6 +783,14 @@ $outline-inverted: create-outline-rule($outline-color: adjust-color($color: inve
 
 													li {
 														margin-bottom: 0.45rem;
+
+														&::marker {
+															@each $type in ("links", "trackers", "prs", "issues", "proposals") {
+																@include parent-is-type($current-selector: &, $type: $type) {
+																	color: var(--detail-color);
+																}
+															}
+														}
 													}
 
 													&:last-child {
@@ -771,7 +800,22 @@ $outline-inverted: create-outline-rule($outline-color: adjust-color($color: inve
 													}
 												}
 
+												a {
+													color: var(--detail-color);
+													text-decoration-color: var(--detail-color);
+												}
+
 												@include reset-lists();
+
+												// Detail types.
+												@each $type in ("note", "warning", "links", "trackers", "prs", "issues", "proposals") {
+													&.#{$type} {
+														--detail-color: #{nth(map-get($detail-color, $type), 1)};
+														@include is-dark() {
+															--detail-color: #{nth(map-get($detail-color, $type), 2)};
+														}
+													}
+												}
 
 												.detail-block-header {
 													display: flex;
@@ -779,14 +823,11 @@ $outline-inverted: create-outline-rule($outline-color: adjust-color($color: inve
 													align-items: center;
 													gap: $gap / 2;
 													margin-bottom: $gap / 2;
+													font-weight: bolder;
+
+													color: var(--detail-color);
 
 													.icon {
-														@mixin parent-is($type) {
-															@at-root #{selector-replace(&, ".detail-block", ".detail-block.#{$type}")} {
-																@content;
-															}
-														}
-
 														@mixin octicon($icon-url) {
 															display: inline-block;
 															width: 24px;
@@ -795,26 +836,6 @@ $outline-inverted: create-outline-rule($outline-color: adjust-color($color: inve
 															mask-position: center;
 															mask-image: url($icon-url);
 															background-color: currentColor;
-														}
-
-														@include parent-is("note") {
-															// Google icon "info"
-														}
-
-														@include parent-is("warning") {
-															// Google icon "warning"
-														}
-
-														@include parent-is("prs") {
-															// @include octicon("/assets/icons/octicons/git-pull-request-24.svg");
-														}
-
-														@include parent-is("issues") {
-															// @include octicon("/assets/icons/octicons/bug-24.svg");
-														}
-
-														@include parent-is("proposals") {
-															// @include octicon("/assets/icons/octicons/zap-24.svg");
 														}
 
 														span[class^="godot-icon-"], span[class*=" godot-icon-"] {
