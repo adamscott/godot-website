@@ -783,14 +783,6 @@ $detail-color: (
 
 													li {
 														margin-bottom: 0.45rem;
-
-														&::marker {
-															@each $type in ("links", "trackers", "prs", "issues", "proposals") {
-																@include parent-is-type($current-selector: &, $type: $type) {
-																	color: var(--detail-color);
-																}
-															}
-														}
 													}
 
 													&:last-child {
@@ -801,8 +793,12 @@ $detail-color: (
 												}
 
 												a {
-													color: var(--detail-color);
-													text-decoration-color: var(--detail-color);
+													color: $color-text-light;
+													text-decoration-color: $color-text-light;
+													@include is-dark() {
+														color: $color-text-dark;
+														text-decoration-color: $color-text-dark;
+													}
 												}
 
 												@include reset-lists();
