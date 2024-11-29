@@ -43,7 +43,7 @@ layout: default
 	font-family: 'Material Symbols Outlined';
 	font-style: normal;
 	font-weight: 400;
-	src: url(/storage/priorities/fonts/google-icons/font.woff2) format('woff');
+	src: url(/storage/priorities/fonts/google-icons.woff2) format('woff');
 }
 
 .material-symbols-outlined {
@@ -70,6 +70,54 @@ layout: default
 		'GRAD' 0,
 		'opsz' 24;
 }
+</style>
+
+<!-- Octicons icons. -->
+<style>
+/* Icon made with https://fontello.com/ based on icons found in /assets/icons/octicons. */
+@font-face {
+	font-family: "octicons";
+	src: url(/storage/priorities/fonts/octicons.woff2);
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="godot-icon-"]:before, [class*=" godot-icon-"]:before {
+  font-family: "octicons";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.godot-icon-bug:before { content: '\e004'; } /* '' */
+.godot-icon-git-pull-request:before { content: '\e005'; } /* '' */
+.godot-icon-zap:before { content: '\e006'; } /* '' */
 </style>
 
 <div class="priorities-container">

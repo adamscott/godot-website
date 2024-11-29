@@ -806,15 +806,19 @@ $outline-inverted: create-outline-rule($outline-color: adjust-color($color: inve
 														}
 
 														@include parent-is("prs") {
-															@include octicon("/assets/icons/octicons/git-pull-request-24.svg");
+															// @include octicon("/assets/icons/octicons/git-pull-request-24.svg");
 														}
 
 														@include parent-is("issues") {
-															@include octicon("/assets/icons/octicons/bug-24.svg");
+															// @include octicon("/assets/icons/octicons/bug-24.svg");
 														}
 
 														@include parent-is("proposals") {
-															@include octicon("/assets/icons/octicons/zap-24.svg");
+															// @include octicon("/assets/icons/octicons/zap-24.svg");
+														}
+
+														span[class^="godot-icon-"], span[class*=" godot-icon-"] {
+															font-size: 150%;
 														}
 													}
 												}
