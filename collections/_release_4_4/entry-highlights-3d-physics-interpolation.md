@@ -7,7 +7,7 @@ anchor: _3D-physics-interpolation
 title: 3D physics interpolation
 blockquote: Do you get the jitters?
 text: |
-  With Godot 4.3, we introduced physics interpolation for your 2D projects. In this release, the long-awaited 3D counterpart has been merged as well!
+  With Godot 4.3, we introduced physics interpolation for your 2D projects. In this release, the long-awaited 3D counterpart has been merged as well! Make sure to enable it in your project settings.
 
   By decoupling physics ticks and display frame rates, physics interpolation creates additional frames between the last physics position and the current one. This reduces jitter and creates a smoother appearance, especially on displays with a high refresh rate.
 
