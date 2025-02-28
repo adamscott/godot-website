@@ -8,7 +8,7 @@ anchor: dotnet-support-for-android
 title: .NET support for Android
 blockquote: Work in progress
 text: |
-  C# projects now support all Android ABIs and [BCL](https://en.wikipedia.org/wiki/Standard_Libraries_(CLI)#Base_Class_Library) APIs (formely only 64-bit architectures).
+  C# projects now support all Android ABIs and [BCL](https://en.wikipedia.org/wiki/Standard_Libraries_(CLI)#Base_Class_Library) APIs (formerly only 64-bit architectures).
 contributors:
   - name: Raul Santos
     github: raulsntos
