@@ -10,7 +10,7 @@ blockquote: Let's get ready to <span class="highlights">rumble</span>!
 text: |
   We overhauled how game controllers work on macOS and iOS, to unify the code across those two platforms some more. Plenty of bugs were fixed along the way.
 
-  You will notice improvements in the reliabilty of controller discovery and manipulating the rumble motors.
+  You will notice improvements in the reliability of controller discovery and manipulating the rumble motors.
 contributors:
   - name: Stuart Carnie
     github: stuartcarnie
