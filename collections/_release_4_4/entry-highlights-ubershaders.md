@@ -5,7 +5,7 @@ rank: 4
 importance: 2
 anchor: ubershaders
 title: Ubershaders to reduce stutter
-blockquote: <span class="highlight">uber</span>-exciting!
+blockquote: <span class="highlight">Uber</span>-exciting!
 text: |
   Ubershaders are at load time pre-compiled versions of each shader with all their features.
 
