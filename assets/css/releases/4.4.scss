@@ -455,6 +455,20 @@ $donate-robot-size: 500px;
 	}
 }
 
+#special-thanks-credits {
+	p:has(+ .c-content-assets) {
+		margin-bottom: 0;
+	}
+
+	.c-content-assets {
+		margin: 0;
+
+		li {
+			margin-bottom: 0;
+		}
+	}
+}
+
 #highlights {
 	margin-top: var(--release-section-margin-bottom);
 }
