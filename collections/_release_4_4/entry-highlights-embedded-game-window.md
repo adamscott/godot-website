@@ -15,7 +15,7 @@ text: |
 
   Thanks to some window management tricks, it is now possible to embed the game seemlessly and interact with the rest of the editor, while still keeping the processes seperate in the background.
 
-  Note that this only works on Linux, Windows, and Android for now. Support for macOS and iOS will require a different approach for technical reasons.
+  Note that this only works on Linux, Windows, and Android for now. Support for macOS will require a different approach for technical reasons.
 contributors:
   - name: Hilderin
     github: Hilderin
