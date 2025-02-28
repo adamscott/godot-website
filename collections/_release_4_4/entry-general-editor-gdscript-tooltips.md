@@ -8,9 +8,9 @@ anchor: "gdscript-tooltips"
 title: "GDScript tooltips"
 blockquote: "Did you know..."
 text: |
-  Hovering over functions, variables, classes, etc. in the GDScript editor will now greet you with a tooltip pop-up containing further information from the integrated documentation.
-
-  This includes any notes you have written yourself using the new documentation system.
+  Hovering over functions, variables, classes, etc. in the GDScript editor will now greet you with a tooltip pop-up containing further information from the integrated documentation. This includes any notes you have written yourself using the new documentation system. 
+  
+  UIDs will show a human-readable path on hover. 
 contributors:
   - name: Danil Alexeev
     github: dalexeev
