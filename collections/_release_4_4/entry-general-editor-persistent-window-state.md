@@ -10,7 +10,7 @@ blockquote: Continue where you left off
 text: |
   This is a quality of life improvement for anyone using big monitors or multi-monitor setups.
 
-  The Godot editor now keeps track of its window state: whether it is in fullscreen or windowed mode, the screen it is on, as well as its size and position.
+  The Godot editor now keeps track of its window state: whether it is in fullscreen or windowed mode, which screen it is on, as well as its size and position.
 
   These settings are then automatically restored when you open the program again.
 contributors:
