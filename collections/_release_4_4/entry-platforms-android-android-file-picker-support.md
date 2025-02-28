@@ -8,7 +8,7 @@ anchor: androidfilepicker-support
 title: <span class="code-highlight basetype">AndroidFilePicker</span> support
 blockquote: New functionality
 text: |
-  The default file dialog is unavailable when working on Android devices. This implementation switches to the platform-native picker and brings back this missing functionality to the mobile Godot Editor.
+  You can now utilize Android’s native file picker in your games and apps. This creates a more seamless experience on mobile.
 contributors:
   - name: Anish Mishra
     github: syntaxerror247
