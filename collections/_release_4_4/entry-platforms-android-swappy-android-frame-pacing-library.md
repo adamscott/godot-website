@@ -2,7 +2,7 @@
 type: entry
 section: platforms
 subsection: android
-rank: 4
+rank: 3
 importance: 3
 anchor: swappy-android-frame-pacing-library
 title: Swappy – Android Frame Pacing library
