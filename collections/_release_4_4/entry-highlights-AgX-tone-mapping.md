@@ -11,7 +11,7 @@ text: |
 
   The Godot implementation resembles theirs closely, but is purposely simplified to be more suitable for real time use cases.
 
-  AgX gives a movie-esque quality to renders and is capapble of handling very bright scenes better than our other available options.
+  AgX gives a movie-esque quality to renders and is capable of handling very bright scenes better than our other available options.
 contributors:
   - name: Hugo Locurcio
     github: Calinou
