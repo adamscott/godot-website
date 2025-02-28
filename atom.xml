@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Godot Engine Official</title><link href="https://godotengine.org/atom.xml" rel="self"/><link href="https://godotengine.org/"/><updated>2025-02-28T14:59:33+00:00</updated><id>https://godotengine.org/</id><entry><title>Release candidate: Godot 4.4 RC 2</title><link href="https://godotengine.org/article/release-candidate-godot-4-4-rc-2/"/><updated>2025-02-26T12:00:00+00:00</updated><id>https://godotengine.org/article/release-candidate-godot-4-4-rc-2/</id><summary>With a stable release imminent, join us for one final round of testing.</summary><content type="html">&lt;p>Last week, we released the first of our &lt;a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#Release_candidate">Release Candidate&lt;/a> builds, a state suitable for production settings. This is the second entry, and already shaping up to be our last, as all relevant release blockers have been dealt with! While we prepare for the stable release—no more than a week’s time from now—let’s enjoy one last roundup of changes.&lt;/p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Godot Engine Official</title><link href="https://godotengine.org/atom.xml" rel="self"/><link href="https://godotengine.org/"/><updated>2025-02-28T15:04:44+00:00</updated><id>https://godotengine.org/</id><entry><title>[Title placeholder]</title><link href="https://godotengine.org/article/godot-4-4/"/><updated>2025-02-28T11:00:00+00:00</updated><id>https://godotengine.org/article/godot-4-4/</id><summary>[Excerpt placeholder]</summary><content type="html"/><author><name>Godot contributors</name></author><category term="Release"/></entry><entry><title>Release candidate: Godot 4.4 RC 2</title><link href="https://godotengine.org/article/release-candidate-godot-4-4-rc-2/"/><updated>2025-02-26T12:00:00+00:00</updated><id>https://godotengine.org/article/release-candidate-godot-4-4-rc-2/</id><summary>With a stable release imminent, join us for one final round of testing.</summary><content type="html">&lt;p>Last week, we released the first of our &lt;a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#Release_candidate">Release Candidate&lt;/a> builds, a state suitable for production settings. This is the second entry, and already shaping up to be our last, as all relevant release blockers have been dealt with! While we prepare for the stable release—no more than a week’s time from now—let’s enjoy one last roundup of changes.&lt;/p>
 &lt;p>Please, consider &lt;a href="#support">supporting the project financially&lt;/a>, if you are able. Godot is maintained by the efforts of volunteers and a small team of paid contributors. Your donations go towards sponsoring their work and ensuring they can dedicate their undivided attention to the needs of the project.&lt;/p>
 &lt;p>&lt;a href="#downloads">Jump to the &lt;strong>Downloads&lt;/strong> section&lt;/a>, and give it a spin right now, or continue reading to learn more about improvements in this release. You can also &lt;a href="https://editor.godotengine.org/releases/4.4.rc2/">try the &lt;strong>Web editor&lt;/strong>&lt;/a> or the &lt;strong>Android editor&lt;/strong> for this release. If you are interested in the latter, please request to join &lt;a href="https://groups.google.com/g/godot-testers">our testing group&lt;/a> to get access to pre-release builds.&lt;/p>
 &lt;hr />
@@ -207,7 +207,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -499,7 +499,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -771,7 +771,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -1053,7 +1053,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -1330,7 +1330,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -2172,7 +2172,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -2622,7 +2622,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -3058,7 +3058,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -3533,7 +3533,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -3992,7 +3992,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -4369,7 +4369,7 @@ thankYouBackButton.addEventListener('click', () => {
 thankYouWrapper.style.display = 'none';
 });
 // Open from the main download buttons.
-const downloadButtons = document.querySelectorAll('.btn-download');
+const downloadButtons = document.querySelectorAll('.btn-download, .download-button');
 downloadButtons.forEach((it) => {
 it.addEventListener('click', () => {
 thankYouWrapper.style.display = '';
@@ -4490,31 +4490,4 @@ When available enabling MSAA 2x or 4x has a very low cost while providing worth 
 Support was merged into master recently and this device will be supported in the upcoming Godot 4.4 release.
 We’re looking into supporting this in a future 4.3 patch release.&lt;/p>
 &lt;h2 id="whats-next">What’s next&lt;/h2>
-&lt;p>Stay tuned for further blog posts focusing on XR as we start looking ahead and as new features become available.&lt;/p></content><author><name>Bastiaan Olij</name></author><category term="Progress Report"/></entry><entry><title>Godot SDK Integrations</title><link href="https://godotengine.org/article/godot-sdk-integrations/"/><updated>2024-09-24T14:30:00+00:00</updated><id>https://godotengine.org/article/godot-sdk-integrations/</id><summary>A new GitHub organization to centralize the community efforts to provide support for third-party SDKs for Godot.</summary><content type="html">&lt;h3 id="third-party-services-sdks-and-their-circumstances">Third party services SDKs and their circumstances&lt;/h3>
-&lt;p>Developing and publishing games often involves relying on third-party services, middleware, or platforms. Numerous vendors offer commercial products like advertising networks, backend services, sound engines, user authentication, and more. These tools simplify the process of monetization, expanding player reach, storing data on servers, and performing other functions beyond what a game engine typically provides.&lt;/p>
-&lt;p>To facilitate integration, these vendors often supply SDKs tailored for specific game engines, allowing developers to easily install them and interact with their products.&lt;/p>
-&lt;p>Godot, while rapidly growing in popularity, is still relatively a newcomer. As such, while some vendors are beginning to support the engine, many others have not yet invested on it, given the necessary development and maintenance costs.&lt;/p>
-&lt;p>For some, this is due to the significant resources required (finding the right developers to hire to make the SDKs), while for others, it’s simply a matter of being unaware of Godot’s growing market or dealing with internal bureaucracy that slows down the process of supporting the engine.&lt;/p>
-&lt;p>As the Godot Foundation is committed to using donations solely for creating &lt;abbr title="Free and Open Source Software">FOSS&lt;/abbr> and prioritizing open standards, it does not allocate resources from the general pool of donations to integrate proprietary SDKs into the engine.&lt;/p>
-&lt;p>While officially incorporating monetization SDKs into Godot might not align with the project’s goals, for example, there is still a widely recognized need within the community for such support to help developers make a living. As there is a need for many other SDKs.&lt;/p>
-&lt;h3 id="community-to-the-rescue">Community to the rescue&lt;/h3>
-&lt;p>To tackle this challenge, many in the Godot community have taken matters into their own hands, developing proper integrations for third-party services. Talented developers have done an incredible job to bring the most popular services into Godot, enabling the community to publish games on their desired platforms using the necessary third-party tools.&lt;/p>
-&lt;p>However, this approach still presents several issues for the community:&lt;/p>
-&lt;ul>
-&lt;li>Not everyone is committed to creating and maintaining a full SDK integration. Often, developers only implement the features they need for their specific game.&lt;/li>
-&lt;li>Developers may not have the time or inclination to support other users’ issues as long as their integration works for their project. Likewise, they may not continue developing the integration after their project has been published.&lt;/li>
-&lt;li>As a result this means that, over time, multiple forks of the same integration can be found on GitHub, maintained by different individuals who needed it at different times, leading to fragmentation.&lt;/li>
-&lt;/ul>
-&lt;p>Adding to this, some vendors who provide SDKs for other game engines have expressed interested in supporting Godot but are not ready to allocate internal resources to develop an integration due to costs or other constraints. They might be willing to donate their integration (or donate the money to do an integration) to the Godot Foundation and collaborate with the community.&lt;/p>
-&lt;p>While this is amazing, the Foundation doesn’t want to become responsible for maintaining such integrations using general funds once the specific donation runs out.&lt;/p>
-&lt;h3 id="the-godot-engine-community-sdk-integrations-github-organization">The Godot Engine Community SDK Integrations GitHub organization&lt;/h3>
-&lt;p>After extensive discussions with the community and various vendors, the Godot Foundation has decided to maintain its stance on not directly developing SDKs. However, recognizing the need for a more organized approach, the Foundation has established an official centralized GitHub organization for hosting SDK integrations, thereby encouraging community contributions.&lt;/p>
-&lt;p>This organization eases the burden on developers who create their own SDK bindings, as they will now be able to accept contributions without bearing the sole responsibility for maintaining the integration. It also provides a clear and official platform for companies that wish to donate their SDK integrations, offering a centralized location for these contributions.&lt;/p>
-&lt;p>The new &lt;a href="https://github.com/godot-sdk-integrations">&lt;strong>Godot SDK Integrations&lt;/strong>&lt;/a> organization has its own GitHub page already. Developers who have been working on SDK integrations are invited to move their work here, if they desire so. You can join the new &lt;a href="https://chat.godotengine.org/channel/sdk-integrations">&lt;code class="language-plaintext highlighter-rouge">sdk-integrations&lt;/code> channel&lt;/a> to discuss this transfer.&lt;/p>
-&lt;p>Likewise, vendors interested in donating integrations for their first-party SDKs are also welcome to move them to this new organization, if they deem it preferable to hosting SDKs themselves. Please contact the &lt;a href="https://godot.foundation/">Godot Foundation&lt;/a> in order to make arrangements. Likewise, if you would like to finance the development of Godot integrations for your SDKs, the Godot Foundation can help facilitate contacts with trusted community maintainers or companies who can take on such work.&lt;/p>
-&lt;p>Please note that this organization is a public space for centralizing SDK integration efforts and collecting repositories. The Foundation will not manage or update the integrations, so ongoing development will depend on the community and vendor contributions. This initiative is intended to be a collective effort.&lt;/p>
-&lt;h3 id="contributing-to-the-godot-sdk-integrations-organization">Contributing to the Godot SDK Integrations organization&lt;/h3>
-&lt;p>As we mentioned, the Godot Foundation is hosting this new space, but doesn’t intend to spend its resources on maintaining it.&lt;/p>
-&lt;p>We are therefore calling for motivated community members to get in touch and help organize the structure of this new organization, and help support developers and vendors who want to provide new SDK integrations for Godot.&lt;/p>
-&lt;p>Aside from the actual work of developing and maintaining SDK integrations, we foresee the need for contributors with a production profile who can help write common contribution guidelines, instructions on how to “recruit” new maintainers, or generally ensure some quality and fitness for purpose of the various SDKs offered by and to the community.&lt;/p>
-&lt;p>For the time being, we are going to discuss and organize the work of this community organization on the &lt;a href="https://chat.godotengine.org/channel/sdk-integrations">&lt;code class="language-plaintext highlighter-rouge">#sdk-integrations&lt;/code> channel&lt;/a> of the &lt;a href="https://chat.godotengine.org/">Godot Contributors Chat&lt;/a>. See you there!&lt;/p></content><author><name>Godot Foundation</name></author><category term="News"/></entry></feed>
+&lt;p>Stay tuned for further blog posts focusing on XR as we start looking ahead and as new features become available.&lt;/p></content><author><name>Bastiaan Olij</name></author><category term="Progress Report"/></entry></feed>
