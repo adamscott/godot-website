@@ -33,9 +33,13 @@ $mobile-max-width: 700px;
 $anchor-offset: 75px;
 
 $header-background-color: #25282b;
-$header-background-image: url("/storage/releases/4.4/images/release-header-background.svg");
-$header-background-position: 0;
+$header-background-image: image-set(
+	url("/storage/releases/4.4/images/outskirts_background.webp") 1x,
+	url("/storage/releases/4.4/images/outskirts_background_2x.webp") 2x
+);
+$header-background-position: top center;
 $header-background-repeat: no-repeat;
+$header-background-size: cover;
 $header-logo-image: url("/storage/releases/4.4/images/release-logo.svg");
 $header-logo-position: center;
 $header-logo-repeat: no-repeat;
@@ -461,6 +465,7 @@ $donate-robot-size: 500px;
 }
 
 .release-container {
+	position: relative;
 	width: 100%;
 	height: 100%;
 	background-color: #25282b;
@@ -626,18 +631,35 @@ $donate-robot-size: 500px;
 	}
 
 	.release-header {
-		background-image: $header-background-image;
-		background-position: $header-background-position;
-		background-repeat: $header-background-repeat;
+		position: relative;
 
-		background-color: #121315;
-		@include is-light() {
-			background-color: #25282b;
+		perspective: 1px;
+		transform-style: preserve-3d;
+		overflow: hidden;
+
+		.release-header-background {
+			content: "";
+			position: absolute;
+			top: -25%;
+			left: -25%;
+			width: 150%;
+			height: 150%;
+			background-image: $header-background-image;
+			background-position: $header-background-position;
+			background-repeat: $header-background-repeat;
+			background-size: $header-background-size;
+			transform: translateZ(-1px) scale(2);
 		}
 
 		.release-header-content {
+			position: relative;
+			z-index: 1;
 			padding-top: $header-gap-top;
 			padding-bottom: $header-gap-bottom * 2;
+
+			.container {
+				overflow: visible;
+			}
 
 			.header-main-title {
 				background-image: $header-logo-image;
@@ -654,6 +676,20 @@ $donate-robot-size: 500px;
 
 			.header-content {
 				color: $header-content-color;
+				gap: 20px;
+				padding: var(--card-padding);
+				border-radius: var(--card-padding);
+				backdrop-filter: blur(5px);
+				background-color: rgba(0, 0, 0, 0.75);
+
+				max-width: 500px;
+				@include screen-is-one-column-wide() {
+					max-width: unset;
+				}
+
+				hr {
+					border-color: white;
+				}
 
 				.header-text {
 					> .header-title {
