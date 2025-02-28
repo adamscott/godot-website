@@ -7,7 +7,7 @@ anchor: interactive-in-game-editing
 title: Interactive in-game editing
 blockquote: Step into your projects
 text: |
-  You can now modify your game from within the editor while it is running or paused. This includes clicking on elements within the scene, allowing you to explore your game worlds in ways not possible before.
+  Modifying your game from within the editor while it is running or paused has never been easier. This release lets you click on elements within the scene and move the camera, allowing you to explore your game worlds in ways not possible before.
 contributors:
   - name: Michael Alexsander
     github: YeldhamDev
