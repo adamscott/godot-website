@@ -74,7 +74,6 @@ $download-font-size: r-desktop-mobile(18px, 12px);
 $section-hue-offset: 10;
 $sections: r-generate-sections(
 	$sections: (
-		"download",
 		"foundation",
 		"links",
 		"highlights",
@@ -87,6 +86,13 @@ $sections: r-generate-sections(
 	$base-category: "foundation",
 	$base-color: $color-godot-blue,
 	$offset: $section-hue-offset,
+);
+// Add "download" to be a copy of "foundation", and make it on top order-wise.
+$sections: map-merge(
+	(
+		"download": map-get($sections, "foundation"),
+	),
+	$sections
 );
 
 $donate-robot-size: 500px;
