@@ -357,6 +357,7 @@ for (const releaseCardMedia of releaseCardMediaElements) {
 		updateComparisonRangeIndicator();
 	});
 	updateMaskWidth();
+	updateComparisonRangeIndicator();
 }
 
 // target="_blank"
