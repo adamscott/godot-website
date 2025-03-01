@@ -12,8 +12,6 @@ text: |
 contributors:
   - name: Anish Mishra
     github: syntaxerror247
-  - name: Rémi Verschelde
-    github: akien-mga
 read_more: https://github.com/godotengine/godot/issues?q=is%3Apr%20state%3Amerged%2097517%2099378
 video_poster: /storage/releases/4.4/video/godot_themable_icons.webp
 video_src: /storage/releases/4.4/video/godot_themable_icons.webm
