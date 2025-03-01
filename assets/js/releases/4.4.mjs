@@ -366,6 +366,9 @@ const anchors = Array.from(
 	document.querySelector("main .release-container").querySelectorAll("a"),
 );
 for (const anchor of anchors) {
+	if (anchor.classList.contains("download-button")) {
+		continue;
+	}
 	try {
 		const anchorUrl = new URL(anchor.href);
 		const isInternalLink =
