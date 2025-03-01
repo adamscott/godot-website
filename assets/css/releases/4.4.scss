@@ -696,10 +696,7 @@ $donate-robot-size: 500px;
 				backdrop-filter: blur(5px);
 				background-color: rgba(0, 0, 0, 0.75);
 
-				max-width: $column-max-width;
-				@include screen-is-one-column-wide() {
-					max-width: unset;
-				}
+				margin-top: 30vh;
 
 				hr {
 					border-color: white;
