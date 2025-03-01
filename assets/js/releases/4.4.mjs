@@ -21,9 +21,14 @@ gsap.to(releaseHeaderBackground, {
 				translateZ(-1px)
 				scale(2)
 			`;
+			releaseHeaderBackground.style.filter = `blur(${easeInCirc(progress) * 5}px)`;
 		},
 	},
 });
+// https://easings.net/#easeInCirc
+function easeInCirc(x) {
+	return 1 - Math.sqrt(1 - Math.pow(x, 2));
+}
 
 // Add a scrolling effect to each card and title.
 const windowHeight = window.innerHeight;
