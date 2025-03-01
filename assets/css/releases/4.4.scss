@@ -726,13 +726,25 @@ $donate-robot-size: 500px;
 					}
 				}
 
+				p:first-child {
+					margin-top: 0;
+				}
+				p:last-child {
+					margin-bottom: 0;
+				}
+
 				&.header-content-note {
-					font-size: 75%;
+					$factor: 0.75;
+					font-size: $factor * 100%;
+					p {
+						line-height: $factor * 100%;
+					}
 
 					.header-note-title {
 						font-style: italic;
 						font-weight: 800;
 						font-size: 125%;
+						line-height: (1 / $factor) * 100%;
 					}
 				}
 
