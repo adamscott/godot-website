@@ -130,6 +130,19 @@ $donate-robot-size: 500px;
 	}
 }
 
+:root {
+	--card-padding: #{r-get-desktop($card-padding)};
+	@include is-mobile() {
+		--card-padding: #{r-get-mobile($card-padding)};
+	}
+
+	scroll-behavior: smooth;
+	@media (prefers-reduced-motion) {
+		scroll-behavior: auto;
+	}
+	scroll-padding-top: var(--card-padding);
+}
+
 #scroll-to-top {
 	position: fixed;
 	top: 0;
@@ -138,11 +151,6 @@ $donate-robot-size: 500px;
 	height: 100%;
 	z-index: 1;
 	pointer-events: none;
-
-	--card-padding: #{r-get-desktop($card-padding)};
-	@include is-mobile() {
-		--card-padding: #{r-get-mobile($card-padding)};
-	}
 
 	.link {
 		pointer-events: all;
