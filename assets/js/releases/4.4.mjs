@@ -324,6 +324,14 @@ for (const releaseCardMedia of releaseCardMediaElements) {
 	if (comparisonRange == null) {
 		continue;
 	}
+	/** @type {HTMLDivElement | null} */
+	const comparisonRangeIndicator = releaseCardMedia.querySelector(
+		".comparison-range-indicator",
+	);
+	if (comparisonRangeIndicator == null) {
+		continue;
+	}
+	/** @type {HTMLDivElement | null} */
 	const comparisonB = releaseCardMedia.querySelector(
 		".image-comparison-b, .video-comparison-b",
 	);
@@ -333,15 +341,20 @@ for (const releaseCardMedia of releaseCardMediaElements) {
 	const updateMaskWidth = () => {
 		comparisonB.style = `--mask-width: ${comparisonRange.valueAsNumber}%;`;
 	};
+	const updateComparisonRangeIndicator = () => {
+		comparisonRangeIndicator.style = `left: calc(${comparisonRange.valueAsNumber}% - (0.25em / 2))`;
+	};
 	comparisonRange.addEventListener("mousemove", (event) => {
 		const bounds = comparisonRange.getBoundingClientRect();
 		const x = event.clientX - bounds.left;
 		const width = bounds.width;
 		comparisonRange.valueAsNumber = (x / width) * 100;
 		updateMaskWidth();
+		updateComparisonRangeIndicator();
 	});
 	comparisonRange.addEventListener("change", (_event) => {
 		updateMaskWidth();
+		updateComparisonRangeIndicator();
 	});
 	updateMaskWidth();
 }
