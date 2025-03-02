@@ -727,11 +727,15 @@ $donate-robot-size: 500px;
 					}
 				}
 
-				p:first-child {
-					margin-top: 0;
-				}
-				p:last-child {
-					margin-bottom: 0;
+				p {
+					hyphens: auto;
+
+					&:first-child {
+						margin-top: 0;
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
 				}
 
 				&.header-content-note {
@@ -1274,6 +1278,8 @@ $donate-robot-size: 500px;
 								var(--card-content-font-size-clamp-val),
 								var(--card-content-font-size-clamp-max)
 							);
+
+							hyphens: auto;
 
 							& > p {
 								&:first-of-type {
