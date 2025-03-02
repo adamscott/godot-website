@@ -1,17 +1,19 @@
 ---
-title: "[Title placeholder]"
-excerpt: "[Excerpt placeholder]"
+title: Godot 4.4, a unified experience
+excerpt: Look forward to plenty of quality of life improvements hidden within this release. Faster load speeds, reduced stutter, streamlined processes — spotting all the optimizations that have been applied in the background will take some time.
 categories: ["release"]
 author: "Godot contributors"
-image: /storage/blog/covers/godot-4-4.webp
-date: 2025-02-28 11:00:00
+image: /storage/blog/covers/godot-4-4-a-unified-experience.webp
+date: 2025-03-03 11:00:00
 redirect_to:
  - /releases/4.4/
 ---
 
-[[Intro placeholder]]
+Look forward to plenty of quality of life improvements hidden within this release. Faster load speeds, reduced stutter, streamlined processes — spotting all the optimizations that have been applied in the background will take some time.
 
-So please take a look over at the [4.4 release page](/releases/4.4/)!
+On top of that, long-awaited comfort features like embedded game windows and interactive in-game editing will feel more in line with other software on the market, making transitioning between them an even smoother experience. The editor overhaul alone takes up a big chunk of this release, after all.
+
+We invite you to take a look over at the [4.4 release page](/releases/4.4/).
 
 Or grab 4.4 here directly and get started.
 
