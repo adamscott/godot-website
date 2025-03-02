@@ -1281,13 +1281,18 @@ $donate-robot-size: 500px;
 
 							hyphens: auto;
 
-							& > p {
-								&:first-of-type {
+							& > p,
+							& > ul {
+								&:first-child {
 									margin-top: 0;
 								}
-								&:last-of-type {
+								&:last-child {
 									margin-bottom: 0;
 								}
+							}
+
+							& > ul:last-child > li:last-child {
+								margin-bottom: 0;
 							}
 
 							.links-container {
@@ -1651,6 +1656,14 @@ $donate-robot-size: 500px;
 				}
 			}
 		}
+	}
+}
+
+ul.list-style-none {
+	padding-left: 0;
+
+	& > li {
+		list-style: none;
 	}
 }
 
