@@ -284,18 +284,19 @@ for (const releaseCardMedia of releaseCardMediaElements) {
 	const updateComparisonRangeIndicator = () => {
 		comparisonRangeIndicator.style = `left: calc(${comparisonRange.valueAsNumber}% - (0.25em / 2))`;
 	};
-	comparisonRange.addEventListener("mousemove", (event) => {
+
+	/** @type {(event: MouseEvent) => void} */
+	const onMouseEvent = (event) => {
 		const bounds = comparisonRange.getBoundingClientRect();
 		const x = event.clientX - bounds.left;
 		const width = bounds.width;
 		comparisonRange.valueAsNumber = (x / width) * 100;
 		updateMaskWidth();
 		updateComparisonRangeIndicator();
-	});
-	comparisonRange.addEventListener("change", (_event) => {
-		updateMaskWidth();
-		updateComparisonRangeIndicator();
-	});
+	};
+	comparisonRange.addEventListener("mousedown", onMouseEvent);
+	comparisonRange.addEventListener("mousemove", onMouseEvent);
+
 	updateMaskWidth();
 	updateComparisonRangeIndicator();
 }
