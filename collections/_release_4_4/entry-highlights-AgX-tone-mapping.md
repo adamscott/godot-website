@@ -7,7 +7,7 @@ anchor: AgX-tone-mapping
 title: AgX tone mapping
 blockquote: The cool new kid on the block
 text: |
-  This tone mapping algorithm has gained a lot of popularity lately. Our friends at Blender even replaced their previous "filmic" tone mapper with AgX.
+  This tone mapping algorithm has gained a lot of popularity lately. Our friends at [Blender](https://blender.org) even replaced their previous "filmic" tone mapper with AgX.
 
   The Godot implementation resembles theirs closely, but is purposely simplified to be more suitable for real time use cases.
 
