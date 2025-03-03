@@ -1599,10 +1599,10 @@ $donate-robot-size: 500px;
 				margin-bottom: 0;
 				box-shadow: $card-box-shadow;
 
-				font-size: clamp(4cqw, 50px, 6cqw);
+				font-size: max(clamp(4cqw, 50px, 6cqw), 2em);
 				font-weight: 800;
 				@at-root #{selector-replace(&, ".section", ".section.subsection")} {
-					font-size: clamp(2cqw, 35px, 4cqw);
+					font-size: max(clamp(2cqw, 35px, 4cqw), 1.5em);
 					font-weight: 600;
 				}
 
