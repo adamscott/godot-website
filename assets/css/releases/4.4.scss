@@ -459,10 +459,13 @@ $donate-robot-size: 500px;
 		font-style: italic;
 
 		& > p {
-			&:first-of-type {
+			line-height: 1.5;
+			margin: 16px 0;
+
+			&:first-child {
 				margin-top: 0;
 			}
-			&:last-of-type {
+			&:last-child {
 				margin-bottom: 0;
 			}
 		}
