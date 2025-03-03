@@ -7,13 +7,13 @@ anchor: embedded-game-window
 title: Embedded game window
 blockquote: Window management <span class="highlight">magic</span>
 text: |
-  Godot runs the game as a seperate process from the editor for two reasons:
+  Godot runs the game as a separate process from the editor for two reasons:
   - avoid having to share resources as much as possible
   - in case of a game crash, keep the editor running (to avoid data loss)
 
   However, this design choice previously prevented embedding the game window into the editor. Which is something that users with limited screenspace, like on single-monitor setups or laptops, are looking for.
 
-  Thanks to some window management tricks, it is now possible to embed the game seemlessly and interact with the rest of the editor, while still keeping the processes seperate in the background.
+  Thanks to some window management tricks, it is now possible to embed the game seamlessly and interact with the rest of the editor, while still keeping the processes separate in the background.
 
   Note that this only works on Linux, Windows, and Android for now. Support for macOS will require a different approach for technical reasons.
 contributors:

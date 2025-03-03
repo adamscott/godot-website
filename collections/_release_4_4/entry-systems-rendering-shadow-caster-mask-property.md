@@ -10,7 +10,7 @@ blockquote: A new on/off switch
 text: |
   Users can now apply a mask on singular Light3D objects to select which rendering layers are considered when casting shadows.
 
-  By adding this level of control, dynamic lights can be futher optimized and shadows selectively turned on/off.
+  By adding this level of control, dynamic lights can be further optimized and shadows selectively turned on/off.
 contributors:
   - name: Hannah Crawford
     github: EMBYRDEV

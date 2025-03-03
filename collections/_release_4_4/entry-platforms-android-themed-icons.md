@@ -8,7 +8,7 @@ anchor: themed-icons
 title: Themed icons
 blockquote: Matchy-matchy
 text: |
-  To be able to match a user's system theme, you can now provide a monochrome icon for your app on export, which will then automatically be re-colored for them. This is a simple way to enchance your app's native feel.
+  To be able to match a user's system theme, you can now provide a monochrome icon for your app on export, which will then automatically be re-colored for them. This is a simple way to enhance your app's native feel.
 contributors:
   - name: Anish Mishra
     github: syntaxerror247

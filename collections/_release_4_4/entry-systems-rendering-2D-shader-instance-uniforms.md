@@ -10,7 +10,7 @@ blockquote: <span class="highlight">Variations</span> made easier
 text: |
   This release adds support for shader instance uniforms to CanvasItem shaders.
 
-  They allow you to assign a different uniform value to each instance of the item, instead of having to compile two seperate shaders to achieve this.
+  They allow you to assign a different uniform value to each instance of the item, instead of having to compile two separate shaders to achieve this.
 
   This approach is more performant than having to juggle materials, and does not break batching.
 contributors:

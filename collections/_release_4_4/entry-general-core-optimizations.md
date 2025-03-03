@@ -8,7 +8,7 @@ anchor: "optimizations"
 title: "Optimizations"
 blockquote: "Harder, Better, Faster, Stronger"
 text: |
-  Now that the core feature set of Godot 4 feels stable, our contributors have shifted their efforts towards optmizing them across the board.
+  Now that the core feature set of Godot 4 feels stable, our contributors have shifted their efforts towards optimizing them across the board.
 
   While many of the linked PRs were finished and tested before the 4.3 release, they did not make the merge deadline, resulting in a big batch for you to enjoy now.
 contributors:
