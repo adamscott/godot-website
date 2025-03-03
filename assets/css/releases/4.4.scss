@@ -847,6 +847,7 @@ $donate-robot-size: 500px;
 
 			background-color: var(--card-background-color);
 			color: var(--card-color);
+			box-shadow: 0 9px 10px -10px #0000008f;
 
 			&.transparent-card {
 				background-color: transparent;
