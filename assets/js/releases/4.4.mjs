@@ -302,6 +302,8 @@ const releaseCardMediaElements = Array.from(
 	document.querySelectorAll(".release-card-media"),
 );
 for (const releaseCardMedia of releaseCardMediaElements) {
+	/** @type {HTMLVideoElement[]} */
+	const videoElements = Array.from(releaseCardMedia.querySelectorAll("video"));
 	/** @type {HTMLInputElement | null} */
 	const comparisonRange = releaseCardMedia.querySelector(".comparison-range");
 	if (comparisonRange == null) {
@@ -329,16 +331,23 @@ for (const releaseCardMedia of releaseCardMediaElements) {
 	};
 
 	/** @type {(event: MouseEvent) => void} */
-	const onMouseEvent = (event) => {
+	const onPointerEvent = (event) => {
 		const bounds = comparisonRange.getBoundingClientRect();
 		const x = event.clientX - bounds.left;
 		const width = bounds.width;
 		comparisonRange.valueAsNumber = (x / width) * 100;
+
+		for (const videoElement of videoElements) {
+			if (videoElement.paused) {
+				videoElement.play();
+			}
+		}
+
 		updateMaskWidth();
 		updateComparisonRangeIndicator();
 	};
-	comparisonRange.addEventListener("mousedown", onMouseEvent);
-	comparisonRange.addEventListener("mousemove", onMouseEvent);
+	comparisonRange.addEventListener("pointerdown", onPointerEvent);
+	comparisonRange.addEventListener("pointermove", onPointerEvent);
 
 	updateMaskWidth();
 	updateComparisonRangeIndicator();
