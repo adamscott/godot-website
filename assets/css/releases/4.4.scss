@@ -700,6 +700,7 @@ $donate-robot-size: 500px;
 				background-size: $header-logo-size;
 				height: $header-logo-height;
 				margin-bottom: 60px;
+				filter: drop-shadow(0 0 20px #000000fc); // To give it some distinction from the background
 
 				.header-main-title-text {
 					display: none;
