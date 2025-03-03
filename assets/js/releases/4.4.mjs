@@ -32,24 +32,67 @@ function easeInCirc(x) {
 
 // Add a scrolling effect to each card and title.
 const windowHeight = window.innerHeight;
+/**
+ * @typedef {{
+ *   element: HTMLElement,
+ *   container: HTMLDivElement,
+ *   isLastOfType: boolean
+ * }} AnimatedElement
+ */
+/** @type {AnimatedElement[]} */
+const elements = [];
 /** @type {HTMLDivElement[]} */
-const elements = Array.from(
-	gsap.utils.toArray(
-		".release-cards .release-card, .release-content .section .section-title",
-	),
+const releaseCardContainers = Array.from(
+	document.querySelectorAll(".release-cards"),
 );
+for (const releaseCardContainer of releaseCardContainers) {
+	/** @type {HTMLDivElement[]} */
+	const releaseCards = Array.from(
+		releaseCardContainer.querySelectorAll(".release-card"),
+	);
+	/** @type {HTMLDivElement | null} */
+	const lastReleaseCard = releaseCardContainer.querySelector(
+		".release-card:last-of-type",
+	);
+	for (const releaseCard of releaseCards) {
+		elements.push({
+			element: releaseCard,
+			container: releaseCardContainer,
+			isLastOfType: releaseCard === lastReleaseCard,
+		});
+	}
+
+	releaseCardContainer.classList.add("overflow-y-hidden");
+}
+const sectionContainers = Array.from(
+	document.querySelectorAll(".section-title"),
+);
+for (const sectionContainer of sectionContainers) {
+	elements.push({
+		element: sectionContainer.querySelector("h3"),
+		container: sectionContainer,
+		isLastOfType: true,
+	});
+
+	sectionContainer.classList.add("overflow-y-hidden");
+}
 for (const element of elements) {
-	if (element.getBoundingClientRect().top < windowHeight) {
+	if (element.element.getBoundingClientRect().top < windowHeight) {
 		continue;
 	}
 
 	const timeline = gsap.timeline({
 		scrollTrigger: {
-			trigger: element,
+			trigger: element.element,
 			start: "top bottom",
 		},
+		onComplete: () => {
+			if (element.isLastOfType) {
+				element.container.classList.remove("overflow-y-hidden");
+			}
+		},
 	});
-	timeline.from(element, {
+	timeline.from(element.element, {
 		y: "+=50",
 		duration: 0.5,
 		opacity: 0,

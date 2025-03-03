@@ -67,6 +67,7 @@ $card-title-font-size: r-desktop-mobile(20px, 18px);
 $card-content-font-size-clamp-min: r-desktop-mobile(14px, 0.8em);
 $card-content-font-size-clamp-val: r-desktop-mobile(7cqw, 4cqw);
 $card-content-font-size-clamp-max: r-desktop-mobile(16px, 1em);
+$card-box-shadow: 0 9px 10px -10px #0000008f;
 
 $download-gap: r-desktop-mobile(8px, 4px);
 $download-font-size: r-desktop-mobile(18px, 12px);
@@ -340,6 +341,7 @@ $donate-robot-size: 500px;
 		border-radius: calc(var(--card-padding) / 2);
 		text-decoration: none;
 		color: white;
+		box-shadow: $card-box-shadow;
 
 		font-size: 1em;
 		font-weight: 800;
@@ -492,11 +494,6 @@ $donate-robot-size: 500px;
 
 #highlights {
 	margin-top: var(--release-section-margin-bottom);
-}
-
-.container {
-	// gsap issue on mobile otherwise.
-	overflow: hidden;
 }
 
 .release-container {
@@ -703,7 +700,9 @@ $donate-robot-size: 500px;
 				background-size: $header-logo-size;
 				height: $header-logo-height;
 				margin-bottom: 60px;
-				filter: drop-shadow(0 0 20px #000000fc); // To give it some distinction from the background
+				filter: drop-shadow(
+					0 0 20px #000000fc
+				); // To give it some distinction from the background
 
 				.header-main-title-text {
 					display: none;
@@ -850,10 +849,11 @@ $donate-robot-size: 500px;
 
 			background-color: var(--card-background-color);
 			color: var(--card-color);
-			box-shadow: 0 9px 10px -10px #0000008f;
+			box-shadow: $card-box-shadow;
 
 			&.transparent-card {
 				background-color: transparent;
+				box-shadow: none;
 			}
 
 			@mixin media-top() {
@@ -1597,6 +1597,7 @@ $donate-robot-size: 500px;
 				padding: calc(var(--card-padding) * 2);
 				border-radius: var(--card-padding);
 				margin-bottom: 0;
+				box-shadow: $card-box-shadow;
 
 				font-size: clamp(4cqw, 50px, 6cqw);
 				font-weight: 800;
@@ -1705,4 +1706,8 @@ ul.list-style-none {
 
 .align-right {
 	text-align: right;
+}
+
+.overflow-y-hidden {
+	overflow-y: hidden;
 }
