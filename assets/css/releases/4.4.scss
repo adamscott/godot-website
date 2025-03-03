@@ -310,6 +310,9 @@ $donate-robot-size: 500px;
 #links {
 	margin-top: 0;
 	margin-bottom: 0;
+	.release-card {
+		box-shadow: none;
+	}
 }
 
 .links-container {
