@@ -722,6 +722,7 @@ $donate-robot-size: 500px;
 				border-radius: var(--card-padding);
 				backdrop-filter: blur(5px);
 				background-color: rgba(0, 0, 0, 0.75);
+				box-shadow: $card-box-shadow;
 
 				hr {
 					border-color: white;
