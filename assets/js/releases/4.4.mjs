@@ -78,6 +78,9 @@ for (const sectionContainer of sectionContainers) {
 }
 for (const element of elements) {
 	if (element.element.getBoundingClientRect().top < windowHeight) {
+		if (element.isLastOfType) {
+			element.container.classList.remove("overflow-y-hidden");
+		}
 		continue;
 	}
 
