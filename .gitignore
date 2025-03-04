@@ -42,3 +42,6 @@ $RECYCLE.BIN/
 
 # Python
 .venv/
+
+# Node
+node_modules/

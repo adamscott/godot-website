@@ -3,7 +3,7 @@ default_language_version:
 
 exclude: |
   ^(
-
+    node_modules/.*
   )$
 
 repos:
@@ -12,3 +12,18 @@ repos:
     hooks:
       - id: codespell
         additional_dependencies: [tomli]
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: Prettier
+        description: This hook makes pretty files.
+        entry: prettier --write --ignore-unknown
+        language: node
+        "types":
+          - text
+        args: []
+        require_serial: false
+        additional_dependencies:
+          - prettier@4.0.0-alpha.11
+        minimum_pre_commit_version: "0"
