@@ -8,6 +8,7 @@ exclude:
     "build-and-serve.sh",
     "build-and-watch.sh",
     "README.md",
+    ".venv/",
   ]
 permalink: pretty
 
