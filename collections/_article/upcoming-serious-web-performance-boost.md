@@ -15,7 +15,7 @@ We got positive results.
 
 ## The need for performance on the Web
 
-The Web platform is often considered the exports' poor stepchild, because of it's less-than-ideal environment and it's percieved poor performance. And the perception is somewhat right: the Web environment has a lot of security-related quirks to take into account—the user needs to interact with a game frame before the browser allows it to play any sound[^1]. Also, due to bandwidth and compatibility-reasons, you rarely see high-fidelity games being played on a browser. Performance is better achieved when running software natively on the operating system.
+The Web platform is often overlooked as a viable target, because of it's less-than-ideal environment and it's percieved poor performance. And the perception is somewhat right: the Web environment has a lot of security-related quirks to take into account—the user needs to interact with a game frame before the browser allows it to play any sound[^1]. Also, due to bandwidth and compatibility-reasons, you rarely see high-fidelity games being played on a browser. Performance is better achieved when running software natively on the operating system.
 
 But don't underestimate the potential of the Web platform. As I explained in broad terms at the talk I gave at the last GodotCon Boston 2025, the Web has caught up a lot since the days of Flash games. Not only there's more and more people playing Web games every year, but standards and browsers improve every year in functionality and in performance too.
 
