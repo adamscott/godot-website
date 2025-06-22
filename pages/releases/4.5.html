@@ -1,0 +1,360 @@
+---
+permalink: /releases/4.5/index.html
+title: Godot 4.5, TODO
+description: TODO
+image: /storage/blog/covers/godot-4-4-a-unified-experience.webp
+layout: release
+
+todo_for_authors_list: >
+  1. Go to https://godotengine.github.io/godot-interactive-changelog/#4.5
+  2. Click on _N contributors_
+  3. Execute this script in the console:
+  ```javascript
+  await (async function () {
+    const nextFrame = () => {
+      return new Promise((resolve, _) => {
+        requestAnimationFrame(() => resolve());
+      });
+    };
+    const authors = [];
+    const changesList = document.querySelector("entry-component").shadowRoot.querySelector("gr-changes-list").shadowRoot;
+    for (const author of changesList.querySelectorAll("gr-author-item")) {
+      const shadowRoot = author.shadowRoot;
+      const showMore = shadowRoot.querySelector(".item-changes-more");
+      if (showMore != null) {
+        showMore.click();
+        await nextFrame();
+      }
+
+      const commits = Array.from(shadowRoot.querySelectorAll(".item-changes-list"))[0].querySelectorAll("li");
+      const prs = Array.from(shadowRoot.querySelectorAll(".item-changes-list"))[1].querySelectorAll("li");
+
+       authors.push({
+        handle: shadowRoot.querySelector(".item-title-name").textContent,
+        commits: commits.length,
+        prs: prs.length
+      });
+    }
+    return authors.toSorted((a, b) => a.handle.localeCompare(b.handle, "en", { ignorePunctuation: true })).map((author) => `${author.handle},${author.commits},${author.prs}`).join("|");
+  })().catch((err) => console.error(err));
+  ```
+
+authors_list: "100gold,1,1|aaronfranke,47,47|aaronjyoder,1,1|aaronp64,19,19|actually-reb,1,1|adamscott,19,19|adamwych,1,1|AdrienUfferte,1,1|AeioMuch,2,2|aganm,1,1|Aioshiro,2,2|Airyzz,1,1|a-johnston,6,6|akien-mga,55,50|Alex2782,5,5|Alex-Onceanu,1,1|allenwp,1,1|andOlga,1,1|Ansraer,1,1|anvilfolk,1,1|apples,2,1|ArchercatNEO,2,2|arkology,12,12|Arnklit,10,10|aryan-11825114,1,1|Aryombre,2,2|Asaduji,2,2|ASamBlur,1,1|AThousandShips,24,23|atlasapplications,1,1|avnotaklu,1,1|Aziroshin,2,2|basicer,3,3|BastiaanOlij,5,5|beicause,30,30|berarma,6,6|billuo,1,1|Bitlytic,1,1|bleikerja,1,1|BlueCube3310,23,23|Bromeon,1,1|BrotherShort,10,10|bruvzg,189,185|btgs-0,1,1|Calinou,53,53|Chaosus,4,4|chocola-mint,3,3|chsoen,1,1|Chubercik,20,20|cier,1,1|ckaiser,1,1|clayjohn,26,25|Cliear,1,1|ColinSORourke,0,1|CrayolaEater,1,1|CreatedBySeb,4,3|cruglet,1,1|CycloneRing,1,1|Cykyrios,1,1|dalexeev,19,19|daniel080400,3,3|DanielKinsman,3,3|DarioSamo,9,9|DarkiStar,2,1|DarkMessiah,1,1|darksylinc,9,9|Daylily-Zeleen,2,2|DeeJayLSP,9,9|Delsin-Yu,7,7|dementive,2,2|demolke,1,1|detomon,1,1|devloglogan,6,6|DevPoodle,1,1|Dominrog,1,1|Dowsley,1,1|drakeerv,1,1|dsmtE,1,1|dsnopek,33,33|dugramen,16,16|Dynamic-Pistol,1,1|elzewyr,1,1|Eole211,0,1|EricEzaM,1,1|erodozer,2,2|etherealxx,2,2|etodd,1,1|ExEago,1,1|eyalzus12,1,1|Faless,5,4|FeniXb3,2,2|FilipeAlexCosta,1,1|fire,4,4|FireCatMagic,1,1|Flarkk,2,2|fLindahl,1,1|Flynsarmy,3,3|Frozenfire92,1,1|funkysandwich,1,1|Geometror,1,1|ghost,8,8|Giganzo,6,6|GlitchedCode922,3,3|goatchurchprime,1,1|Grandro,1,1|groud,3,3|Grublady,8,8|guerro323,1,1|GustJc,3,3|hakro,1,1|harrisyu,1,1|HauntedBees,1,1|havi05,1,1|hayahane,1,1|hexog,1,1|heyitszackb,0,1|hhhapz,1,1|Hilderin,6,6|HolonProduction,19,19|Hot-key,1,1|huwpascoe,2,2|ibrahn,3,3|IphStich,1,1|ivanskorikov,0,1|Ivorforce,93,91|jamie-pate,3,3|Jan200101,1,1|jaydensipe,11,11|JekSun97,1,1|Jesusemora,1,1|JoNax97,1,1|Jordyfel,1,1|jorgekorgut,2,2|Joy-less,2,2|jrouwe,3,3|jsjtxietian,1,1|jss2a98aj,1,1|juanjp600,1,1|JulianHeuser,6,6|k1r4n8,1,1|Kaleb-Reid,1,1|KerekesDavid,1,2|KeyboardDanni,1,1|KirbyRider1337,1,1|kiroxas,8,8|kisg,1,1|kitbdev,19,19|kj-art-dev,2,2|kleonc,13,13|KoBeWi,121,120|kojurohan42,1,1|koolaidxk1d,1,1|Koyper,2,2|kroketio,1,1|L2750558108,4,4|lalitshankarch,1,1|lander-vr,3,3|larspet,1,1|lawnjelly,15,15|lazarosY,0,1|Lazy-Rabbit-2001,4,4|leandro-benedet-garcia,2,2|limbonaut,2,2|LiveTrower,2,2|lodetrick,17,18|LunaCapra,3,3|lyuma,2,2|m4gr3d,23,23|Macksaur,1,1|MajorMcDoom,3,3|marcgpuig,1,1|marcosc90,6,6|MarcusPaulsson,0,1|markdibarry,1,1|mashumafi,2,2|mason1920,0,1|matheusmdx,1,1|matmas,1,1|matorin57,1,1|maunvz,1,1|max99x,1,1|maxpiepenbrink,2,2|mbucchia,1,1|Meorge,11,11|metakunt,1,1|MewPurPur,4,4|mhilbrunner,2,2|Mickeon,18,18|mieko,2,2|mihe,26,26|mikest,1,1|MisakaRinOwO,0,2|MJacred,1,1|mobile-bungalow,1,1|Monochrome-debug,1,1|Monstrofil,2,2|monxa,1,1|mooflu,2,2|mrjustaguy,1,1|Muller-Castro,1,1|Murrent,1,1|Naming-things-is-hard-btw,1,1|Naputt1,1,1|nathanhoad,1,1|Nazarwadim,3,3|NessaTeal,1,1|NetroScript,1,1|Nick-njh,1,1|nikitalita,4,4|nklbdev,2,2|nobbele,1,1|Nolkaloid,2,2|nongvantinh,1,1|nukethebees,1,1|ogapo,2,2|OhiraKyou,1,1|Olle-Lukowski,2,2|OmarQurashi868,1,1|Onlinerocker,1,1|orange-anvil-games,1,1|OsakiTsukiko,1,1|OzelotVanilla,3,3|pafuent,5,5|passivestar,4,4|patwork,1,1|paulloz,2,2|Peelep,1,1|penninghlhd,2,2|PhairZ,2,2|PiCode9560,1,1|piiertho,1,1|pkowal1982,1,1|PrecisionRender,1,1|precup,2,2|priahoud,1,1|ProgrammerOnCoffee,9,9|r3square,1,1|Raftatul,1,1|RandomShaper,9,4|rarysson,1,1|Ratstail91,1,1|raulsntos,11,11|rbaker87,1,1|rburing,3,3|RedMser,6,6|reduz,2,2|RedworkDE,1,1|Repiteo,64,54|retrotails,2,2|RGDTAB,1,1|Rindbee,15,13|Riteo,7,7|RobProductions,1,0|ronyeh,1,1|roughbits01,9,9|rsanchezsaez,2,1|rsubtil,3,3|rt9391,1,1|Rubonnek,2,2|Rudolph-B,4,4|rune-scape,1,1|runzh-crypto,2,2|Ryan-000,4,4|ryanabx,1,1|ryevdokimov,13,13|sakubou,2,2|salianifo,1,1|SaNeOr,2,2|SaracenOne,4,4|SatLess,2,3|Scarface1809,1,1|scgm0,3,3|shahriarlabib000,3,3|shana,2,2|shiena,5,5|shoonny,1,1|smix8,41,41|smntic,1,1|sockeye-d,1,1|solidpixel,1,1|sorascode,1,1|Splizard,1,1|SpockBauru,2,2|spoxii,1,1|stuartcarnie,29,29|Summersay415,1,1|syntaxerror247,29,25|TCROC,2,2|tehKaiN,3,3|TelePete,1,1|Teschnique,1,1|the-loki,1,1|TheoLomeuBraga,1,1|TimCoraxAudio,1,1|timkrief,1,1|timoschwarzer,1,1|timothyqiu,54,54|TokageItLab,18,18|tomfull123,1,1|tomsterBG,1,1|TrueJole,1,1|ttencate,6,1|TTHHR,1,1|TV4Fun,2,1|uno1982,2,2|unvermuthet,2,2|van800,5,5|vmedea,1,1|wagnerfs,1,1|wareya,1,1|WhalesState,1,1|wheatear-dev,2,2|Wierdox,2,2|WindyDarian,1,1|WinnerWind,2,2|yahkr,1,1|yangyey,1,1|ydeltastar,3,3|YeldhamDev,22,22|Yobbolita,1,1|youngminz,2,2|yuantianle,1,1|YuriSizov,1,1|ywmaa,1,1|YYF233333,25,23|zaevi,4,4|ze2j,1,1|zeux,3,3|zlago,1,1|zmn-hamid,1,1|zodiepupper,1,1|ZoZoHatch,1,1|ztc0611,1,1|Zylann,3,3"
+---
+
+{% assign release_version_number = "4.5" %}
+{% assign release_version = release_version_number | make_release_version: "stable" %}
+
+{% assign data = site.release_4_5 %}
+
+{% assign _intro = data | where: "type", "entry" | where: "category", "intro" | sort: "rank" %}
+{% assign _sections = data | where: "type", "section" | sort: "rank" %}
+{% assign _foundation = data | where: "type", "entry" | where: "category", "foundation" | sort: "rank" %}
+{% assign _special_thanks = data | where: "type", "entry" | where: "category", "special_thanks" | sort: "rank" %}
+
+{% assign download_platforms = site.download %}
+{% assign stable_version = site.data.versions | find: "name", release_version_number %}
+
+<link rel="stylesheet" href="/assets/css/material-symbols-outlined.css" />
+<link rel="stylesheet" href="/assets/css/releases/{{release_version_number}}.css" />
+<script type="module" src="/assets/js/releases/{{release_version_number}}.mjs"></script>
+
+<noscript>
+	<link rel="stylesheet" href="/assets/css/releases/{{release_version_number}}.noscript.css" />
+</noscript>
+
+<div id="top" class="release-header">
+	<div class="release-header-background"></div>
+	<div class="release-header-content">
+		<!-- Important to separate `.release-header-content` from `.container`. -->
+		<div class="container">
+			<h1 class="header-main-title">
+				<span class="header-main-title-text">Godot {{release_version_number}} RELEASE</span>
+			</h1>
+			<div class="header-content">
+				<div class="header-text">
+					<h2 class="header-title">A unified experience</h2>
+					<p>
+						Look forward to plenty of quality of life improvements hidden within this release. Faster load speeds, reduced stutter, streamlined processes — spotting all the optimizations that have been applied in the background will take some time.
+					</p>
+					<p>
+						On top of that, long-awaited comfort features like embedded game windows and interactive in-game editing will feel more in line with other software on the market, making transitioning between them an even smoother experience. The editor overhaul alone takes up a big chunk of this release, after all.
+					</p>
+				</div>
+			</div>
+			<div class="header-content header-content-note">
+				<div class="header-text">
+					<p class="header-note-title">
+						Before you update
+					</p>
+					<p>
+						Before transitioning your existing projects to Godot {{release_version_number}}, carefully read through our <a href="https://docs.godotengine.org/en/{{release_version_number}}/tutorials/migrating/upgrading_to_godot_{{release_version_number}}.html">migration guide</a> to learn about breaking changes.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="scroll-to-top">
+	<a class="link" href="#links"><span>⬆</span></a>
+</div>
+
+<div class="release-content">
+	<div id="download" class="section section-download">
+		<div class="container">
+			<div class="release-cards">
+				<div id="download-download" class="release-card media-bottom span-3">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container">
+								<div class="c-blockquote">
+									Download and experience <span class="highlight">Godot {{release_version_number}}</span> for yourself
+								</div>
+							</div>
+						</div>
+						<div class="release-card-media">
+							{% assign download_primary = release_version | get_download_platforms: false %}
+							<div class="release-platform-container">
+								{% for download_platform in download_platforms %}
+									{% assign platform_name = download_platform.platform | downcase %}
+									<div class="release-platform release-platform-{{platform_name}}">
+										{% assign featured_downloads = download_platform.downloads | where: "featured", "true" %}
+
+										{% for featured_download in featured_downloads %}
+											{% capture download_url %}
+												{% if featured_download.custom %}
+													{{ featured_download.custom }}
+												{% else %}
+													{{ stable_version | make_download: featured_download.platform, featured_download.mono, "github_builds" }}
+												{% endif %}
+											{% endcapture %}
+
+											{% assign platform_info = site.data.download_platforms | find: "name", featured_download.platform %}
+											<div class="release-button release-button-standard">
+												{% assign download_btn_class = "download-button" %}
+												{% if featured_download.mono %}
+													{% assign download_btn_class = download_btn_class | append: " download-net-button" %}
+												{% endif %}
+
+												{% assign data_external = 'data-external="no"' %}
+												{% if featured_download.custom %}
+													{% assign data_external = 'data-external="yes"' %}
+												{% endif %}
+												<a href="{{ download_url }}" class="btn {{ download_btn_class }}" {{data_external}}>
+													<div class="download-title">
+														<img src="/assets/images/platforms/{{ platform_name | slugify }}.svg" alt="({{ platform_name }})" draggable="false" />
+														<span>Godot Engine{% if featured_download.featured_flavor %} – {{ featured_download.featured_flavor }}{% endif %}</span>
+													</div>
+													<div class="download-hint"><span>{{ stable_version.name }}</span></div>
+												</a>
+												<p class="main-download-details">
+													<strong>{% for tag in platform_info.tags %}{{ tag }} · {% endfor %}{% if featured_download.mono %}C# support · {% endif %}</strong>{{ stable_version.release_date }}
+												</p>
+											</div>
+										{% endfor %}
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- #download -->
+
+	<div id="foundation" class="section section-foundation">
+		<div class="container">
+			<div class="release-cards">
+				<div id="foundation-donate" class="release-card media-right span-3">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container">
+								<div class="c-blockquote">
+									Made possible by <span class="highlight">your donations</span>
+								</div>
+							</div>
+						</div>
+						<div class="release-card-media">
+							<a class="release-card-button release-card-button-fund"
+								href="https://fund.godotengine.org/">
+								<span class="release-card-button-text">
+									Join the Development Fund ➔
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- #foundation -->
+
+	<div id="links" class="section section-links">
+		<div class="container">
+			<div class="release-cards">
+				<div id="links-links" class="release-card transparent-card span-3">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container">
+								<div class="c-content">
+									<ul class="links-container main-list">
+										<li><a class="link link-highlights" href="#highlights"><span>Highlights</span></a></li>
+										<li><a class="link link-general" href="#general"><span>General</span></a></li>
+										<li><a class="link link-platforms" href="#platforms"><span>Platforms</span></a></li>
+										<li><a class="link link-scripting" href="#scripting"><span>Scripting</span></a></li>
+										<li><a class="link link-systems" href="#systems"><span>Systems</span></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- #links -->
+
+	{% for section in _sections %}
+		{%
+			include_relative _includes/section.html
+			section=section
+			data=data
+		%}
+	{% endfor %}
+
+	<div id="special-thanks" class="section section-special-thanks">
+		<div class="section-title">
+			<div class="container">
+				<h3>
+					<a href="#special-thanks">Special thanks</a>
+					<div class="section-robot godot-icon-godot" aria-disabled="true"></div>
+				</h3>
+			</div>
+		</div>
+		<div class="container">
+			<div class="release-cards">
+				<div id="special-thanks-release-authors" class="release-card span-3 media-bottom">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container">
+								<h4 class="c-title">
+									<a href="#special-thanks-release-authors">
+										Release authors
+									</a>
+								</h4>
+								<div class="c-blockquote">
+									<span class="highlight">Team work</span> makes the dream work
+								</div>
+								<div class="c-content">
+									<p>
+										Here you can see all the contributors with PRs merged into this release.
+										The names are ordered alphabetically, and sized accordingly to their number
+										of contributions.
+									</p>
+									<p>
+										Special thanks goes out to all the engine teams that collaborated on this release,
+										especially since commits to other related repositories (<a href="https://github.com/godotengine/godot-docs">documentation</a>, <a href="https://github.com/godotengine/godot-cpp">godot-cpp</a>,
+										etc.) do not show up in this graphic.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="release-card-media">
+							<div class="release-card-authors">
+								{% assign authors = page.authors_list | split: "|" %}
+								{% for author in authors %}
+								{% assign author_data = author | split: "," %}
+								{% assign author_handle = author_data[0] %}
+								{% assign author_commits = author_data[1] %}
+								{% assign author_prs = author_data[2] %}
+								<div class="release-card-author" data-handle="{{author_handle}}"
+									data-commits="{{author_commits}}" data-prs="{{author_prs}}">
+									<a href="https://github.com/godotengine/godot/pulls?q=author%3A{{author_handle}}+is%3Apr+milestone%3A{{release_version_number}}+is%3Aclosed+is%3Amerged+"
+										target="_blank">{{author_handle}}</a>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div> <!-- #special-thanks-release-authors -->
+
+				<div id="special-thanks-remi" class="release-card transparent-card span-3">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container force-one-column">
+								<div class="c-blockquote">
+									<p>
+										Another massive release with close to 3,000 commits (excluding merge commits),
+										with a big focus on improvements to the overall workflow and usability of the
+										editor.
+									</p>
+									<p>
+										Engine features didn't want to be left out amidst this usability focus though,
+										and this release is absolutely feature-packed in all areas.
+									</p>
+									<p>
+										More than 500 contributors were involved in this new feature release,
+										and we want to thank them all for their amazing contributions, as well
+										as all users who sponsor the Development Fund, reported bugs, opened
+										proposals, or supported each other on our community platforms.
+									</p>
+								</div>
+								<div class="c-content align-right">
+									— <a href="https://github.com/akien-mga">Rémi Verschelde</a>, project manager,
+									<a href="https://github.com/godotengine/godot/commit/4c311cbee68c0b66ff8ebb8b0defdd9979dd2a41">{{release_version_number}} release commit</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="special-thanks-credits" class="release-card span-3">
+					<div class="release-card-container">
+						<div class="release-card-content">
+							<div class="release-card-content-container">
+								<h4 class="c-title">
+									<a href="#special-thanks-credits">
+										Release page credits
+									</a>
+								</h4>
+								<div class="c-content">
+									<ul class="list-style-none">
+										<li>
+											Web development and texts by <a href="https://adamscott.studio">Adam Scott</a>.
+										</li>
+										<li>
+											Media content by <a href="https://adamscott.studio">Adam Scott</a>
+											<small>
+												using assets from
+											</small>
+											<ul class="c-content-assets">
+												<!--
+												<li>
+													<small>
+														<a href="https://github.com/gdquest-demos/godot-4-3d-third-person-controller">RoboBlast: Third-Person Shooter demo</a> by <a href="https://www.gdquest.com/">GDQuest</a>,
+													</small>
+												</li>
+												-->
+											</ul>
+										</li>
+										<li>
+											Additional media content by tagged content creators.
+										</li>
+										<li>
+											Release thumbnail by <a href="https://bsky.app/profile/heytibo.bsky.social">Tibo</a>.
+										</li>
+										<li>
+											Header background screenshot from the <a href="https://jedenjenda23.itch.io/outskirts-godot-environment-demo">Outskirts environment demo</a> by <a href="https://jedenjenda23.itch.io/">jedenjenda23</a>.
+										</li>
+										<li>
+											Design template by <a href="https://luiscarli.com/">Luis Carli</a>.
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- #special-thanks-credits -->
+			</div>
+		</div>
+	</div> <!-- #special-thanks -->
+</div>
