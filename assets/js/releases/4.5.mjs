@@ -5,6 +5,7 @@ import {
 	eases,
 } from "../modules/anime@4.0.2_esm.min.js";
 import detectPlatform from "../modules/detect-browser.mjs";
+import "../modules/dashjs@5.0.3.esm.min.js";
 
 const { outCirc, inCirc } = eases;
 
@@ -397,3 +398,9 @@ for (const anchor of anchors) {
 		console.error(newErr);
 	}
 }
+
+// Background video.
+const videoUrl = "/storage/releases/4.5/video/godot-lander-manifest.mpd";
+const mediaPlayer = dashjs.MediaPlayer().create();
+const videoElement = document.getElementById("release-header-background-video");
+mediaPlayer.initialize(videoElement, videoUrl, true);
