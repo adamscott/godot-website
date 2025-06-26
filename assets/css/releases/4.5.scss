@@ -10,8 +10,8 @@ $column-max-width: 400px;
 $column-min-width: 300px;
 $container-break: 450px;
 $grid-gap: 30px;
-$one-column-max-width: ($column-max-width * 2) - ($grid-gap * 1);
-$two-columns-max-width: ($column-max-width * 3) - ($grid-gap * 2);
+$one-column-max-width: calc($column-max-width * 2) - calc($grid-gap * 1);
+$two-columns-max-width: calc($column-max-width * 3) - calc($grid-gap * 2);
 $mobile-max-width: 700px;
 
 @mixin screen-is-two-columns-wide() {
@@ -35,10 +35,7 @@ $mobile-max-width: 700px;
 $anchor-offset: 75px;
 
 $header-background-color: #25282b;
-$header-background-image: image-set(
-	url("/storage/releases/4.4/images/outskirts_background.webp") 1x,
-	url("/storage/releases/4.4/images/outskirts_background_2x.webp") 2x
-);
+$header-background-image: none;
 $header-background-position: 55% 50%;
 $header-background-repeat: no-repeat;
 $header-background-size: cover;
@@ -151,6 +148,12 @@ $donate-robot-size: 500px;
 	@media (prefers-reduced-motion) {
 		scroll-behavior: auto;
 	}
+}
+
+#release-header-background-video {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 }
 
 #scroll-to-top {
