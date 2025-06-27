@@ -43,7 +43,8 @@ authors_list: "100gold,1,1|aaronfranke,47,47|aaronjyoder,1,1|aaronp64,19,19|actu
 ---
 
 {% assign release_version_number = "4.5" %}
-{% assign release_version = release_version_number | make_release_version: "stable" %}
+{% assign latest_patch = release_version_number | get_latest_patch %}
+{% assign release_version = latest_patch | make_release_version: "stable" %}
 
 {% assign data = site.release_4_5 %}
 
@@ -53,7 +54,7 @@ authors_list: "100gold,1,1|aaronfranke,47,47|aaronjyoder,1,1|aaronp64,19,19|actu
 {% assign _special_thanks = data | where: "type", "entry" | where: "category", "special_thanks" | sort: "rank" %}
 
 {% assign download_platforms = site.download %}
-{% assign stable_version = site.data.versions | find: "name", release_version_number %}
+{% assign stable_version = site.data.versions | find: "name", latest_patch %}
 
 <link rel="stylesheet" href="/assets/css/material-symbols-outlined.css" />
 <link rel="stylesheet" href="/assets/css/releases/{{release_version_number}}.css" />
@@ -115,7 +116,7 @@ authors_list: "100gold,1,1|aaronfranke,47,47|aaronjyoder,1,1|aaronp64,19,19|actu
 						<div class="release-card-content">
 							<div class="release-card-content-container">
 								<div class="c-blockquote">
-									Download and experience <span class="highlight">Godot {{release_version_number}}</span> for yourself
+									Download and experience <span class="highlight">Godot {{latest_patch}}</span> for yourself
 								</div>
 							</div>
 						</div>
