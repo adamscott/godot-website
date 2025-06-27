@@ -403,4 +403,33 @@ for (const anchor of anchors) {
 const videoUrl = "/storage/releases/4.5/video/godot-lander-manifest.mpd";
 const mediaPlayer = dashjs.MediaPlayer().create();
 const videoElement = document.getElementById("release-header-background-video");
+mediaPlayer.updateSettings({
+	streaming: {
+		abr: {
+			rules: {
+				throughputRule: {
+					active: true,
+				},
+				bolaRule: {
+					active: false,
+				},
+				insufficientBufferRule: {
+					active: true,
+				},
+				switchHistoryRule: {
+					active: false,
+				},
+				droppedFramesRule: {
+					active: false,
+				},
+				abandonRequestsRule: {
+					active: false,
+				},
+			},
+		},
+		buffer: {
+			fastSwitchEnabled: true,
+		},
+	},
+});
 mediaPlayer.initialize(videoElement, videoUrl, true);
