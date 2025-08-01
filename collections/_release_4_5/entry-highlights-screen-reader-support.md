@@ -1,14 +1,13 @@
 ---
 type: entry
-section: general
-subsection: core
+section: highlights
 rank: 0
-importance: 4
+importance: 2
 anchor: screen-reader-support
 title: Screen reader support
-blockquote: TODO
+blockquote: Accessibility matters
 text: |
-  TODO
+  A project two years in the making, it is finally available for everyone.
 contributors:
   - name: bruvzg
     github: bruvzg
