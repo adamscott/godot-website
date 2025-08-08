@@ -12,7 +12,7 @@ text: |
 
   Sub-window support means that Godot can now spawn new independent windows when running on Wayland natively.
 contributors:
-  - name: Riteo
-    github: Riteo
+  - name: deralmas
+    github: deralmas
 read_more: https://github.com/godotengine/godot/pull/101774
 ---
