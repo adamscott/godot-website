@@ -4,11 +4,10 @@ section: platforms
 subsection: apple
 rank: 0
 importance: 4
-anchor: embedded-window-support-on-macos
-title: Embedded window support on macOS
-blockquote: TODO
+anchor: game-embedding-support-on-macos
+title: Game embedding support on macOS
 text: |
-  TODO
+  macOS Godot users can now enjoy the embedded game window introduced for some platforms in 4.4.
 contributors:
   - name: Stuart Carnie
     github: stuartcarnie
