@@ -8,7 +8,11 @@ anchor: mute-game-toggle
 title: Mute game toggle
 blockquote: TODO
 text: |
-  TODO
+  Debugging can be tedious, especially if it exposes the developper to the same music over and over. One could turn off the speakers entirely, but it's not really practical, isn't it?
+
+  To keep everyone's sanity, we introduced the new mute game toggle, located in the Game view.
+
+  May your ears enjoy these new opportunities of quietude.
 contributors:
   - name: Malcolm Anderson
     github: Meorge
