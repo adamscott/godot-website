@@ -8,7 +8,11 @@ anchor: fragment-density-map-support
 title: Fragment density map support
 blockquote: TODO
 text: |
-  TODO
+  In order to push great visuals on a VR headset, it is OK to cheat a little. As players tend to turn their head rather than move their eyes too far from the center and as pixels around the outside of the viewport are often distorted by the lens, why should the device render these parts at full resolution?
+
+  This is exactly what the "Fragment Density Map" Vulkan extension does: it renders the outside of the viewport at a lower resolution with little noticiable decrease in quality. It makes the Mobile renderer (using the Vulkan rendering driver) more viable for VR on standalone.
+
+  It is not necessarily a new feature to Godot, as the "Fragment Rate Shading" Vulkan extension already does something similar. They differ though in terms of device compatibility. Don't worry though, as Godot will now choose the best supported method for the device. Users will only have to care about "Variable Shading Rate", which is the term that encompasses both extensions.
 contributors:
   - name: Darío
     github: DarioSamo
