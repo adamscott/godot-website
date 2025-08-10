@@ -6,7 +6,7 @@ rank: 2
 importance: 3
 anchor: resource-duplicate_deep-with-expected-results
 title: "`Resource.duplicate_deep()` with expected results"
-blockquote: As deep as you want it
+blockquote: As deep as you want
 text: |
   This feature has been requested for a long time now.
 
