@@ -9,6 +9,8 @@ title: Reintroducing batch edition of assets
 blockquote: TODO
 text: |
   We reintroduced options in the import dock for batch edition of assets. These options were available in 3.x.
+
+  TODO
 contributors:
   - name: bruvzg
     github: bruvzg
