@@ -5,7 +5,7 @@ rank: 4
 importance: 2
 anchor: internationalization-live-preview
 title: Internationalization live preview
-blockquote: Hello!
+blockquote: Hello
 text: |
   This new feature is key to our ideal of making gaming accessible for everyone.
 

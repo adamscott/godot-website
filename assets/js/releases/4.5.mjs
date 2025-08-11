@@ -3,6 +3,8 @@ import {
 	createTimeline,
 	onScroll,
 	eases,
+	text,
+	stagger,
 } from "../modules/anime@4.1.2_esm.js";
 import detectPlatform from "../modules/detect-browser.mjs";
 import "../modules/dashjs@5.0.3.esm.min.js";
@@ -433,3 +435,69 @@ mediaPlayer.updateSettings({
 	},
 });
 mediaPlayer.initialize(videoElement, videoUrl, true);
+
+// Internationalization loop.
+const intlBlockquote = document.querySelector(
+	"#internationalization-live-preview .c-blockquote",
+);
+if (intlBlockquote == null) {
+	throw new Error(
+		"`#internationalization-live-preview .c-blockquote` doesn't exist",
+	);
+}
+// Entries based on active translated languages on Weblate for the editor.
+// (https://hosted.weblate.org/projects/godot-engine/godot/)
+// Source for the translations: https://www.berlitz.com/blog/hello-different-languages
+const intlBlockquoteTextEntries = [
+	{ text: "Hello" }, // English
+	{ text: "مرحبًا", rtl: true }, // Arabic
+	{ text: "你好" }, // Chinese
+	{ text: "Hallo" }, // Dutch
+	{ text: "Bonjour" }, // French
+	{ text: "Guten tag" }, // German
+	{ text: "Halo" }, // Indonesian
+	{ text: "Dia dhuit" }, // Irish
+	{ text: "Ciao" }, // Italian
+	{ text: "こんにちは" }, // Japanese
+	{ text: "안녕하세요" }, // Korean
+	{ text: "سلام", rtl: true }, // Persan
+	{ text: "Cześć" }, // Polish
+	{ text: "Olá" }, // Portuguese
+	{ text: "Oi" }, // Portuguese (Brazil)
+	{ text: "Привет" }, // Russian
+	{ text: "Hola" }, // Spanish
+	{ text: "Hallå" }, // Swedish
+	{ text: "வணக்கம்" }, // Tamil
+	{ text: "Merhaba" }, // Turkish
+	{ text: "привіт" }, // Ukranian
+];
+
+for (const intlBlockquoteTextEntry of intlBlockquoteTextEntries) {
+	const entry = document.createElement("p");
+	entry.classList.add("entry");
+	entry.textContent = intlBlockquoteTextEntry.text;
+	entry.style.direction = intlBlockquoteTextEntry?.rtl ? "rtl" : "ltr";
+	intlBlockquote.append(entry);
+}
+
+const intlBlockquoteEntries = Array.from(
+	intlBlockquote.querySelectorAll("p.entry"),
+).toSorted((a, b) => (Math.random() > 0.5 ? 1 : -1));
+const intlBlockquoteTimeline = createTimeline({
+	loop: true,
+});
+
+for (const intlBlockquoteEntry of intlBlockquoteEntries) {
+	const { chars } = text.split(intlBlockquoteEntry, {
+		chars: { wrap: "clip" },
+	});
+	const entryAnimation = animate(chars, {
+		y: [{ to: ["100%", "0%"] }, { to: "-100%", delay: 750, ease: "in(3)" }],
+		duration: 750,
+		ease: "out(3)",
+		delay: stagger(50, { from: "random" }),
+		loop: false,
+	});
+	intlBlockquoteTimeline.sync(entryAnimation);
+}
+intlBlockquoteTimeline.init();

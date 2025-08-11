@@ -1724,3 +1724,25 @@ ul.list-style-none {
 .overflow-y-hidden {
 	overflow-y: hidden;
 }
+
+// Internationalization live preview animation.
+#internationalization-live-preview {
+	.c-blockquote {
+		position: relative;
+
+		p {
+			opacity: 0;
+			user-select: none;
+
+			&.entry {
+				opacity: 1;
+				user-select: initial;
+
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+}
