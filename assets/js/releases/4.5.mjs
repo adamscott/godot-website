@@ -11,6 +11,12 @@ import "../modules/dashjs@5.0.3.esm.min.js";
 
 const { outCirc, inCirc } = eases;
 
+// Reduced motion.
+const prefersReducedMotion = window.matchMedia(
+	"prefers-reduced-motion: reduce",
+).matches;
+const saveData = navigator?.connection?.saveData ?? false;
+
 // Parallax scrolling.
 const releaseHeaderBackground = document.querySelector(
 	".release-header-background",
@@ -402,39 +408,46 @@ for (const anchor of anchors) {
 }
 
 // Background video.
-const videoUrl = "/storage/releases/4.5/video/godot-lander-manifest.mpd";
-const mediaPlayer = dashjs.MediaPlayer().create();
-const videoElement = document.getElementById("release-header-background-video");
-mediaPlayer.updateSettings({
-	streaming: {
-		abr: {
-			rules: {
-				throughputRule: {
-					active: true,
-				},
-				bolaRule: {
-					active: false,
-				},
-				insufficientBufferRule: {
-					active: true,
-				},
-				switchHistoryRule: {
-					active: false,
-				},
-				droppedFramesRule: {
-					active: false,
-				},
-				abandonRequestsRule: {
-					active: false,
+const initBackgroundVideo = () => {
+	const videoUrl = "/storage/releases/4.5/video/godot-lander-manifest.mpd";
+	const mediaPlayer = dashjs.MediaPlayer().create();
+	const videoElement = document.getElementById(
+		"release-header-background-video",
+	);
+	mediaPlayer.updateSettings({
+		streaming: {
+			abr: {
+				rules: {
+					throughputRule: {
+						active: true,
+					},
+					bolaRule: {
+						active: false,
+					},
+					insufficientBufferRule: {
+						active: true,
+					},
+					switchHistoryRule: {
+						active: false,
+					},
+					droppedFramesRule: {
+						active: false,
+					},
+					abandonRequestsRule: {
+						active: false,
+					},
 				},
 			},
+			buffer: {
+				fastSwitchEnabled: true,
+			},
 		},
-		buffer: {
-			fastSwitchEnabled: true,
-		},
-	},
-});
-mediaPlayer.initialize(videoElement, videoUrl, true);
+	});
+	mediaPlayer.initialize(videoElement, videoUrl, true);
+};
+if (!prefersReducedMotion && !saveData) {
+	initBackgroundVideo();
+}
 
 // Internationalization loop.
 const intlBlockquote = document.querySelector(
@@ -492,10 +505,13 @@ for (const intlBlockquoteEntry of intlBlockquoteEntries) {
 		chars: { wrap: "clip" },
 	});
 	const entryAnimation = animate(chars, {
-		y: [{ to: ["100%", "0%"] }, { to: "-100%", delay: 750, ease: "in(3)" }],
+		y: [
+			{ to: ["100%", "0%"] },
+			{ to: "-100%", delay: prefersReducedMotion ? 0 : 750, ease: "in(3)" },
+		],
 		duration: 750,
 		ease: "out(3)",
-		delay: stagger(50, { from: "random" }),
+		delay: prefersReducedMotion ? 0 : stagger(50, { from: "random" }),
 		loop: false,
 	});
 	intlBlockquoteTimeline.sync(entryAnimation);
