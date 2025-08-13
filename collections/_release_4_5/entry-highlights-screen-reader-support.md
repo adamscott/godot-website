@@ -7,9 +7,19 @@ anchor: screen-reader-support
 title: Screen reader support
 blockquote: Make your game accessible to visually impaired people
 text: |
-  Screen readers are an essential tool for people who are visually impaired, illiterate, or have a learning disability[*](https://developer.mozilla.org/en-US/docs/Glossary/Screen_reader). It enables them to understand the context that is given visually.
+  Accessibility should be every developer’s top priority, full-stop. Exclude someone from an experience for factors outside of their control is an area that video games and applications have the potential to circumvent entirely.
 
-  Thanks to the new [AccessKit integration](#accesskit-integration), we added [`Control.accessibility_name`](https://docs.godotengine.org/en/4.5/classes/class_control.html#class-control-property-accessibility-name). This property contains the human-readable node name that is reported to assistive apps.
+  One important feature to support in computer software are screen readers. They are an essential tool for people who are visually impaired, illiterate, or have a learning disability.[^1] It enables them to understand the context given visually. It does, however, take a solid framework to develop such accommodations. That's because each platform have their own way to handle accessibility. It makes it obviously difficult to support every platform.
+
+  After 32,000 lines of code, hundred of comments, and countless hours of feedback and testing, we are proud to introduce the integration of [AccessKit](https://accesskit.dev/) in the engine. It is a framework that launched 2 years ago in order to offer a way to bridge most of the platforms (macOS, Windows, and Unix/Linux using [D-Bus](https://en.wikipedia.org/wiki/D-Bus)) over a common API.
+
+  Thanks to AccessKit, we added screen reader support to `Control` nodes. We also added screen reader bindings in order to customize the behavior of any type of `Node`.
+
+  As this feature is quite new, screen reader support for the Godot Editor itself is not complete yet. Support is only implemented for the Project Manager, standard UI nodes, and the inspector. We commit to extend support in future versions.
+
+  Don't hesitate to leave us some feedback!
+
+  [^1]: [MDN article on screen readers](https://developer.mozilla.org/en-US/docs/Glossary/Screen_reader).
 contributors:
   - name: bruvzg
     github: bruvzg
