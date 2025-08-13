@@ -9,11 +9,11 @@ blockquote: Hello
 text: |
   This new feature is key to our ideal of making gaming accessible for everyone.
 
-  From now on, developers will be able to preview translations directly from the editor viewport. This will ease up the burden of testing the GUI in multiple languages.
+  From now on, developers will be able to preview translations directly from the editor viewport.[^internationalization-live-preview-layout-direction] This will ease the burden of testing the GUI in multiple languages.
 
-  How does your new UI react being in French or Dutch? Or how does it look in simplified or traditional Chinese, or even in Hindi?
+  How does your new UI react to being in French or Dutch? Or how does it look in simplified or traditional Chinese, or even in Hindi?
 
-  <small>**Note:** the layout direction only follows the main locale currently, [We're working on fixing this issue.](https://github.com/godotengine/godot/pull/97918)</small>
+  [^internationalization-live-preview-layout-direction]: The layout direction only follows the main locale currently. [We're working on fixing this issue.](https://github.com/godotengine/godot/pull/97918)
 contributors:
   - name: Haoyu Qiu
     github: timothyqiu

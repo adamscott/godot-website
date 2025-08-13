@@ -10,11 +10,11 @@ blockquote: Gamepads galore!
 text: |
   Gamepads are nowadays a given in modern PC gaming. Users expect their plugged one to just work. Not only that, but in order to deliver unique experiences, some gamepads are introducing new features.
 
-  Over time, issues accumulated in our gamepad driver implementation and missing features began to creep up. We were facing an ever-growing mountain.
+  Over time, issues accumulated in our gamepad driver implementation and missing features began to crop up. We were facing an ever-growing mountain.
 
-  That's we turned our heads to the SDL project. SDL is a well established and mature cross-platform library that handles audio, keyboard, mouse, joystick, and graphics. We determined that it's now a net positive to defer the responsibility for gamepad handling to it.
+  That’s why we turned our heads to the SDL project. SDL is a well established and mature cross-platform library that handles audio, keyboard, mouse, joystick, and graphics. We determined that it’s now a net positive to defer the responsibility for gamepad handling to it.
 
-  While this change doesn't by itself bring new features, expect bugfixes and new features to come a little bit faster from now on.
+  While this change doesn’t by itself bring new features, expect bugfixes and new features to come a little bit faster from now on.
 contributors:
   - name: Nintorch
     github: Nintorch

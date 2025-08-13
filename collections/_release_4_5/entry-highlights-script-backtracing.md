@@ -9,13 +9,15 @@ blockquote: How deep the rabbit hole goes?
 text: |
   Those who launched a game using Godot can attest: it is often hard to debug why an error occurs on users devices. Is it a problem caused by the developers code or is it instead a bug from the engine itself?
 
-  That's why we're introducing custom loggers and script backtracing.
+  That’s why we’re introducing custom loggers and script backtracing.
 
-  Custom loggers permit developers to intercept log messages and errors. That enables the possibility of creating a bug reporting tool from within your game.
+  Custom loggers allow developers to intercept log messages and errors. That enables the possibility of creating a bug reporting tool from within your game.
 
-  Script backtracing, on the other hand, give developers the exact detail on where an issue happened in the code. (just make sure that the _Debug > Settings > GDScript > Always Track Call Stacks_ project setting is enabled)
+  Script backtracing, on the other hand, gives developers the exact details on where an issue happened in the code.[^script-backtracing-enable] Even in "Release" builds.
 
   Developers will now be able to report issues to the [issue tracker](https://github.com/godotengine/godot/issues) more accurately, making Godot more stable for them and their users.
+
+  [^script-backtracing-enable]: Just make sure that the _Debug > Settings > GDScript > Always Track Call Stacks_ project setting is enabled.
 contributors:
   - name: Mikael Hermansson
     github: mihe

@@ -7,11 +7,11 @@ importance: 3
 anchor: export-to-visionos
 title: Export to visionOS
 text: |
-  You can now export for Apple's XR platform, making Godot projects compatible with the Apple Vision Pro.
+  You can now export for Apple’s XR platform, making Godot projects compatible with the Apple Vision Pro.
 
-  Godot 4.5 marks the first step of visionOS' native integration. Currently, it is only possible to export a project as an "windowed app". Your game will appear as a window, floating in the 3D space of the user.
+  Godot 4.5 marks the first step of visionOS’ native integration. Currently, it is only possible to export a project as an "windowed app". Your game will appear as a window, floating in the 3D space of the user.
 
-  Fully immersive experience support is expected. We'll keep you in the loop.
+  Fully immersive experience support is expected. We’ll keep you in the loop.
 
   It goes without saying, but this is kinda a big deal: this is the first new platform supported natively by Godot since the project was open-sourced!
 contributors:

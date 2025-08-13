@@ -8,9 +8,9 @@ anchor: mute-game-toggle
 title: Mute game toggle
 blockquote: TODO
 text: |
-  Debugging can be tedious, especially if it exposes the developper to the same music over and over. One could turn off the speakers entirely, but it's not really practical, isn't it?
+  Debugging can be tedious, especially if it exposes the developer to the same music over and over. One could turn off the speakers entirely, but that’s not really practical, is it?
 
-  To keep everyone's sanity, we introduced the new mute game toggle, located in the Game view.
+  To keep everyone’s sanity, we introduced the new mute game toggle, located in the Game view.
 
   May your ears enjoy these new opportunities of quietude.
 contributors:

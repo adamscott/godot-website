@@ -7,9 +7,9 @@ anchor: shader-baker
 title: Shader baker
 blockquote: Preheat the oven
 text: |
-  Anyone that play modern games, especially on PC, necessarily had the experience of waiting for shaders compilation. Usually, it shows up in two forms: either the game makes you wait when it first launches, or it makes you wait mid game in the middle of an action.
+  Anyone that play modern games, especially on PC, necessarily had the experience of waiting for shader compilation. Usually, it shows up in two forms: either the game makes you wait when it first launches, or it makes you wait mid game in the middle of an action.
 
-  That's because shaders are small programs for your GPU on how to draw the current scene. And they need to be compiled in order to be used.
+  That’s because shaders are small programs for your GPU that draw the current scene. And they need to be compiled in order to be used.
 
   While pipeline compilation is still unavoidable and a requirement, Godot now offers a way to do everything that can be done by the editor ahead of time, reducing such wait times by a lot.
 
@@ -26,5 +26,4 @@ contributors:
   - name: Gergely Kis
     github: kisg
 read_more: https://github.com/godotengine/godot/pull/102552
-
 ---

@@ -9,10 +9,9 @@ title: Script color picker
 text: |
   Not everyone can read colors. So we added a little color preview besides every `Color` values.
 
-  We even pushed the idea further: if you click that preview icon, you can edit on the spot the value using a color picker.
+  We even pushed the idea further: if you click that preview icon, you can edit the value on the spot using a color picker.
 contributors:
   - name: Koliur Rahman
     github: dugramen
 read_more: https://github.com/godotengine/godot/pull/105724
-
 ---
