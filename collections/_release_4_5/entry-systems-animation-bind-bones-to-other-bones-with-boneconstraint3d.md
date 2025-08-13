@@ -6,9 +6,9 @@ rank: 0
 importance: 2
 anchor: bind-bones-to-other-bones-with-boneconstraint3d
 title: Bind bones to other bones with `BoneConstraint3D`
-blockquote: yo dawg, I heard you like bones
+blockquote: Yo dawg, I heard you like constraints, so I put constraints in your bones so you can pose while you pose
 text: |
-  With `BoneConstraint3D` and the new `AimModifier3D`, `CopyTransfromModifier3D`, and `ConvertTransfromModifier3D`, it is now possible to bind bones to other bones. It opens up the door for more natural movements and poses.
+  With `BoneConstraint3D` and the new `AimModifier3D`, `CopyTransformModifier3D`, and `ConvertTransformModifier3D`, it is now possible to bind bones to other bones. This opens up the door for more natural movements and poses.
 
   This feature is notably really helpful for handling virtual reality and metaverse avatars.
 contributors:

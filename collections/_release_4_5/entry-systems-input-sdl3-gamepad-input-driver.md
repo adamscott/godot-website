@@ -8,7 +8,7 @@ anchor: sdl3-gamepad-input-driver
 title: SDL3 gamepad input driver
 blockquote: Gamepads galore!
 text: |
-  Gamepads are nowadays a given in modern PC gaming. Users expect their plugged one to just work. Not only that, but in order to deliver unique experiences, some gamepads are introducing new features.
+  Gamepads are nowadays a given in modern PC gaming. Users expect their gamepad to just plug in and work. Not only that, but in order to deliver unique experiences, some gamepads are introducing new features.
 
   Over time, issues accumulated in our gamepad driver implementation and missing features began to crop up. We were facing an ever-growing mountain.
 
