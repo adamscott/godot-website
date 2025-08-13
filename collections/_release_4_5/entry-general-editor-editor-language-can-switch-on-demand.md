@@ -9,7 +9,9 @@ title: Editor language can switch on-demand
 text: |
   Changing the editor language no longer requires an editor restart.
 
-  That's now the occasion to test the editor in all the languages it supports!
+  For editor plugin developers, this feature can be quite handy in order to test your translations.
+
+  For everyone else, that's now the occasion to test the editor in all the languages it supports!
 contributors:
   - name: Tomasz Chabora
     github: KoBeWi
