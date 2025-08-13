@@ -12,7 +12,7 @@ text: |
 
   For years, in order to modify these resources, the Windows exporter needed to access an external Windows program: [`rcedit`](https://github.com/electron/rcedit). That made it really difficult to export for Windows on a non-Windows machine.
 
-  That's until now. The Windows exporter now knows how to edit the resources natively. It means you can edit Windows export metadata without an hitch, on every platform.
+  That's until now. The Windows exporter now knows how to edit the resources natively. It means you can edit Windows export metadata without a hitch, on every platform.
 contributors:
   - name: pkowal1982
     github: pkowal1982
