@@ -416,30 +416,49 @@ const initBackgroundVideo = () => {
 	);
 	mediaPlayer.updateSettings({
 		streaming: {
+			lastBitrateCachingInfo: {
+				enabled: true,
+				ttl: 360000,
+			},
+			lastMediaSettingsCachingInfo: {
+				enabled: true,
+				ttl: 360000,
+			},
 			abr: {
+				autoSwitchBitrate: {
+					audio: true,
+					video: true,
+				},
 				rules: {
 					throughputRule: {
 						active: true,
 					},
 					bolaRule: {
-						active: false,
+						active: true,
 					},
 					insufficientBufferRule: {
 						active: true,
 					},
 					switchHistoryRule: {
-						active: false,
+						active: true,
 					},
 					droppedFramesRule: {
 						active: false,
 					},
 					abandonRequestsRule: {
-						active: false,
+						active: true,
 					},
 				},
 			},
 			buffer: {
-				fastSwitchEnabled: true,
+				fastSwitchEnabled: null,
+				bufferTimeAtTopQuality: 30,
+				bufferTimeAtTopQualityLongForm: 60,
+				bufferTimeDefault: 12,
+				longFormContentDurationThreshold: 600,
+				reuseExistingSourceBuffers: true,
+				stallThreshold: 0.3,
+				lowLatencyStallThreshold: 0.3,
 			},
 		},
 	});
