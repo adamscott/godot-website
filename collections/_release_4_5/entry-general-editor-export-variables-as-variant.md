@@ -11,7 +11,7 @@ text: |
 
   Previously, a variable could only be exported as a `Variant` if it had an initialized value. Also, the editor would stick to the actual type of that said value, making it not possible to change the value to another supported `Variant` type, such as a `String` or `Color`.
 
-  Now, if the exported variable is of type `Variant`, the editor reacts accordingly, permitting the user to assign any compatible `Variant` value.
+  Now, if the exported variable is of type `Variant`, the editor reacts accordingly, permitting the user to assign any compatible `Variant` value. There's even a nifty type selector that changes the input widget accordingly.
 contributors:
   - name: Tomasz Chabora
     github: KoBeWi
