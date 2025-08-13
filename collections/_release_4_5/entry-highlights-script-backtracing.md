@@ -7,15 +7,15 @@ anchor: script-backtracing
 title: Script backtracing
 blockquote: How deep the rabbit hole goes?
 text: |
-  Using the Release build target has been a blessing and a curse for numerous developers.
-
-  It permits the game to continue running even if it encountered an unexpected error, enhancing the players' experience. But it prevents the developers to get crucial information that is sorely needed to iron out issues.
+  Those who launched a game using Godot can attest: it is often hard to debug why an error occurs on users devices. Is it a problem caused by the developers code or is it instead a bug from the engine itself?
 
   That's why we're introducing custom loggers and script backtracing.
 
   Custom loggers permit developers to intercept log messages and errors. That enables the possibility of creating a bug reporting tool from within your game.
 
-  Script backtracing, on the other hand, give developers the exact detail on where an issue happened in the code. Those are available in the Release build as well. (just make sure that the _Debug > Settings > GDScript > Always Track Call Stacks_ project setting is enabled)
+  Script backtracing, on the other hand, give developers the exact detail on where an issue happened in the code. (just make sure that the _Debug > Settings > GDScript > Always Track Call Stacks_ project setting is enabled)
+
+  Developers will now be able to report issues to the [issue tracker](https://github.com/godotengine/godot/issues) more accurately, making Godot more stable for them and their users.
 contributors:
   - name: Mikael Hermansson
     github: mihe
