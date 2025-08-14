@@ -9,7 +9,7 @@ blockquote: Make your game accessible to visually impaired people
 text: |
   Accessibility should be every developer’s top priority, full-stop. Excluding someone from an experience for factors outside of their control is an area that video games and applications have the potential to circumvent entirely.
 
-  One important feature to support in computer software are screen readers. They are an essential tool for people who are visually impaired, illiterate, or have a learning disability.[^screen-reader-support-mdn] It enables them to understand the context given visually. It does, however, take a solid framework to develop such accommodations. That’s because each platform has its own way to handle accessibility. This makes it obviously difficult to support every platform.
+  One important feature to support in computer software are screen readers. They are an essential tool for people who are visually impaired, illiterate, or have a learning disability.[^screen-reader-support-mdn] It enables them to understand the context given visually. It does, however, take a solid framework to develop such accommodations. That’s because each platform has its own way to handle accessibility. This obviously makes it difficult to support every platform.
 
   After 32,000 lines of code, hundred of comments, and countless hours of feedback and testing, we are proud to introduce the integration of [AccessKit](https://accesskit.dev/) in the engine. It is a framework that launched 2 years ago in order to offer a way to bridge most of the platforms (macOS, Windows, and Unix/Linux using [D-Bus](https://en.wikipedia.org/wiki/D-Bus)) over a common API.
 

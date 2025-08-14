@@ -8,7 +8,7 @@ anchor: drag-and-drop-resources-in-scripts-to-preload-by-uid-instead-of-by-path
 title: Drag and drop `Resource`s in scripts to preload by UID instead of by path
 blockquote: TODO
 text: |
-  With [Godot 4.4](https://godotengine.org/releases/4.4/#universal-uid-support), we extended UIDs support to resources in order to prevent broken paths.
+  With [Godot 4.4](https://godotengine.org/releases/4.4/#universal-uid-support), we extended UID support to resources in order to prevent broken paths.
 
   Scripts can now take advantage of this, as it is now possible to preload resources by their UID.
 

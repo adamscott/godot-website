@@ -15,9 +15,9 @@ text: |
 
   Where [Ubershaders](https://godotengine.org/releases/4.4/#ubershaders) were a big step towards optimizing pipeline compilation and eliminating compilation stutters, the _shader baker_ addresses the long startup times.
 
-  When enabled in the export settings, the shader baker will scan resources and scenes for shaders and pre-compile them on the right format used by the driver in the target platform.
+  When enabled in the export settings, the shader baker will scan resources and scenes for shaders and pre-compile them in the right format used by the driver in the target platform.
 
-  When targeting certain platforms (Apple devices and D3D12), we even saw a 20× decrease in load times for our TPS demo. Talk about fast!
+  When targeting Apple and Windows devices, using Metal and D3D12 respectively, we even saw a 20× decrease in load times for our [TPS demo](https://github.com/godotengine/tps-demo). Talk about fast!
 contributors:
   - name: Darío
     github: DarioSamo

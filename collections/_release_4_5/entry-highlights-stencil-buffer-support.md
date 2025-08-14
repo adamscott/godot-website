@@ -17,7 +17,7 @@ text: |
 
   That’s pretty simple to do with stencil buffers. Imagine an invisible sphere that surrounds our character. Even if geometry is not rendering itself on screen, we insert its shape into the stencil buffer. Then, we make our wall shaders to render only if the target pixel is not covered by the stencil. Voilà.
 
-  This opens up the door to much (much!) more effects as you can see in the example video, such as impossible geometry and portals.
+  This opens the door to much (much!) more effects as you can see in the example video, such as impossible geometry and portals.
 contributors:
   - name: Apples
     github: apples

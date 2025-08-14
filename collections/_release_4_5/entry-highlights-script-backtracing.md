@@ -11,7 +11,7 @@ text: |
 
   That’s why we’re introducing custom loggers and script backtracing.
 
-  Custom loggers allow developers to intercept log messages and errors. That enables the possibility of creating a bug reporting tool from within your game.
+  Custom loggers allow developers to intercept log messages and errors. That makes it possible to create a bug reporting tool from within your game.
 
   Script backtracing, on the other hand, gives developers the exact details on where an issue happened in the code.[^script-backtracing-enable] Even in "Release" builds.
 

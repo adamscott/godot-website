@@ -7,9 +7,9 @@ importance: 4
 anchor: paste-as-unique-option
 title: "\"Paste as unique\" option"
 text: |
-  When copying and then pasting a resource in an editor inspector slot, it usually pastes a reference to the copied resources. If you wanted a unique copy instead, you had to manually click afterwards on "Make Unique".
+  When copying and then pasting a resource in an editor inspector slot, it usually pastes a reference to the copied resources. If you wanted a unique copy instead, you had to manually click on "Make Unique" afterwards.
 
-  Now, the new "Paste as Unique" option available in the resource picker dropdown makes the operation way less tedious.
+  Now, the new "Paste as Unique" option, available in the resource picker dropdown, makes the operation way less tedious.
 contributors:
   - name: Hugo Locurcio
     github: Calinou

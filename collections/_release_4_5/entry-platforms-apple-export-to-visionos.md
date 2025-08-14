@@ -13,7 +13,7 @@ text: |
 
   Fully immersive experience support is expected. We’ll keep you in the loop.
 
-  It goes without saying, but this is kinda a big deal: this is the first new platform supported natively by Godot since the project was open-sourced!
+  This is kinda a big deal: this is the first new platform supported natively by Godot since the project was open-sourced!
 contributors:
   - name: Ricardo Sanchez-Saez
     github: rsanchezsaez
