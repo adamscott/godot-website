@@ -8,7 +8,7 @@ anchor: modify-metadata-without-rcedit
 title: Modify metadata without `rcedit`
 blockquote: So long, `rcedit`!
 text: |
-  Windows `.exe` files metadata (such as a custom icon, the product name, and the company information) is stored internally as "resources".
+  Windows `.exe` file metadata (such as a custom icon, the product name, and the company information) is stored internally as "resources".
 
   For years, in order to modify these resources, the Windows exporter needed to access an external Windows program: [`rcedit`](https://github.com/electron/rcedit). That made it really difficult to export for Windows on a non-Windows machine.
 

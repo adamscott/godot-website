@@ -12,7 +12,7 @@ text: |
 
   It notably enables faster startup times and has smaller memory footprints.
 
-  Thanks to the newly added linux-bionic RID export support, we’re able to bring that feature for Android devices.
+  Thanks to the newly added linux-bionic RID export support, we’re able to bring that feature to Android devices.
 contributors:
   - name: Justin Sasso
     github: atlasapplications
