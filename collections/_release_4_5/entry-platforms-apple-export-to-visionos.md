@@ -9,7 +9,7 @@ title: Export to visionOS
 text: |
   You can now export for Apple’s XR platform, visionOS, making Godot projects compatible with the Apple Vision Pro.
 
-  Godot 4.5 marks the first step of visionOS’ native integration. For this, we would like to thank Apple's visionOS engineering team for their support of the Godot Engine.
+  Godot 4.5 marks the first step of visionOS’ native integration. For this, we would like to thank Apple's visionOS engineering team for their contributions adding support for their operating system to the Godot Engine.
 
   This is kinda a big deal: this is the first new platform supported natively by Godot since the project was open-sourced!
 
