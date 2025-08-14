@@ -10,7 +10,7 @@ blockquote: Thou must…
 text: |
   When extended, some classes need some virtual methods to be overrided in order to work. But it wasn't always obvious in the documentation.
 
-  This won’t be an issue moving forward, as now the new "required" qualifier will come right after "virtual" where applicable.
+  This won’t be an issue moving forward, as now the new `required` qualifier will come right after `virtual` where applicable.
 contributors:
   - name: Haoyu Qiu
     github: timothyqiu

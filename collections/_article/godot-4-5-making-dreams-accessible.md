@@ -19,9 +19,9 @@ Or grab 4.5 here directly and get started.
 
 {% include articles/download_card.html version="4.5" release="stable" article=page %}
 
-**Standard build** includes support for GDScript and GDExtension.
+The **Standard build** includes support for GDScript and GDExtension.
 
-**.NET build** (marked as `mono`) includes support for C#, as well as GDScript and GDExtension.
+The **.NET build** (marked as `mono`) includes support for C#, as well as GDScript and GDExtension.
 - See also [C# platform support](https://docs.godotengine.org/en/latest/tutorials/scripting/c_sharp/index.html#c-platform-support).
 
 ## Support

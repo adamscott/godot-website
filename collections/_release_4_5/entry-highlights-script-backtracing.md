@@ -7,7 +7,7 @@ anchor: script-backtracing
 title: Script backtracing
 blockquote: You stay in Wonderland, and I show you how deep the rabbit hole goes
 text: |
-  Those who launched a game using Godot can attest: it is often hard to debug why an error occurs on users devices. Is it a problem caused by the developers code or is it instead a bug from the engine itself?
+  Those who launched a game using Godot can attest: it is often hard to debug why an error occurs on users’ devices. Is it a problem caused by the developers’ code, or a bug from the engine itself?
 
   That’s why we’re introducing custom loggers and script backtracing.
 

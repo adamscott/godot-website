@@ -7,7 +7,7 @@ anchor: stencil-buffer-support
 title: Stencil buffer support
 blockquote: Open your eyes for new effects
 text: |
-  This shiny new feature is one long time coming, partly because it relied on some other needed changes in the engine.
+  This shiny new feature has been a long time coming, partly because it relied on some other needed changes in the engine.
 
   A stencil buffer is a special buffer that meshes can write to for later comparison. It is similar to the existing depth buffer, except arbitrary values can be written and you have more control over what you do with comparisons.
 

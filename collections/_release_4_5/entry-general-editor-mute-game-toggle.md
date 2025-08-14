@@ -6,7 +6,7 @@ rank: 0
 importance: 4
 anchor: mute-game-toggle
 title: Mute game toggle
-blockquote: TODO
+blockquote: Test in peace
 text: |
   Debugging can be tedious, especially if it exposes the developer to the same music over and over. One could turn off the speakers entirely, but that’s not really practical, is it?
 

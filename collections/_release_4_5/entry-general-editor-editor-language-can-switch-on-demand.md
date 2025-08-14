@@ -9,7 +9,7 @@ title: Editor language can switch on-demand
 text: |
   Changing the editor language no longer requires an editor restart.
 
-  For editor plugin developers, this feature can be quite handy in order to test your translations.
+  This feature can be quite handy for editor plugin developers testing their translations.
 
   For everyone else, now you can test the editor in all the languages it supports!
 contributors:

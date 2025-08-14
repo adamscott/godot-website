@@ -5,7 +5,7 @@ rank: 1
 importance: 2
 anchor: screen-reader-support
 title: Screen reader support
-blockquote: Make your game accessible to visually impaired people
+blockquote: Show, ~~don't~~ tell
 text: |
   Accessibility should be every developer’s top priority, full-stop. Excluding someone from an experience for factors outside of their control is an area that video games and applications have the potential to circumvent entirely.
 

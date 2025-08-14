@@ -7,7 +7,7 @@ importance: 3
 anchor: cascade-content-easily-with-foldablecontainer
 title: Cascade content easily with `FoldableContainer`
 text: |
-  The new [`FoldableContainer`](https://docs.godotengine.org/en/latest/classes/class_foldablecontainer.html) node adds an easy way to display a lot of details at the discretion of the user. This feature is also known under the name of "accordion".
+  The new [`FoldableContainer`](https://docs.godotengine.org/en/latest/classes/class_foldablecontainer.html) node adds an easy way to display a lot of details at the discretion of the user, in an "accordion" view.
 
   It even supports grouping, making sure that only one foldable container is open at a time.
 contributors:
