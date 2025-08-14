@@ -6,7 +6,7 @@ rank: 1
 importance: 3
 anchor: gdscript-abstractions
 title: GDScript abstractions
-blockquote: Can't touch this
+blockquote: Can’t touch this
 text: |
   TODO
 contributors:

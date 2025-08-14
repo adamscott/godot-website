@@ -10,7 +10,7 @@ blockquote: Fluent in your device’s language
 text: |
   “NativeAOT” refers to the ability for .NET applications to compile directly to a device’s native code, bypassing the need for the .NET runtime entirely.
 
-  It notably enables faster startup times and has smaller memory footprints.
+  It notably enables faster startup times and has a smaller memory footprint.
 
   Thanks to the newly added linux-bionic RID export support, we’re able to bring that feature to Android devices.
 contributors:
