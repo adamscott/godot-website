@@ -16,5 +16,4 @@ contributors:
   - name: Anish Mishra
     github: syntaxerror247
 read_more: https://github.com/godotengine/godot/pull/100339
-
 ---
