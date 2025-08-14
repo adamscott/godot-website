@@ -14,6 +14,8 @@ text: |
   We expect to support fully immersive experiences in the future. We’ll keep you in the loop.
 
   This is kinda a big deal: this is the first new platform supported natively by Godot since the project was open-sourced!
+
+  For this, we would like to thank Apple's visionOS engineering team for their support to the Godot engine.
 contributors:
   - name: Ricardo Sanchez-Saez
     github: rsanchezsaez
