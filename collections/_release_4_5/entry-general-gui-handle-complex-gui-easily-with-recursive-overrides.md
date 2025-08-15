@@ -14,7 +14,7 @@ text: |
 
   Now, the problem is that the right view depends on the selection of an item on the left. The user shouldn’t be able to interact with the detail view until it happens.
 
-  By changing [`Control.focus_behavior_recursive`](https://docs.godotengine.org/en/latest/classes/class_control.html#class-control-property-focus-behavior-recursive) and [`Control.mouse_behavior_recursive`](https://docs.godotengine.org/en/latest/classes/class_control.html#class-control-property-mouse-behavior-recursive) of the detailed view container to their disabled value until an item selection, it now disables focus and mouse events for every children. You don’t have to resort anymore to complex messages to manage behavior of `Control` groups.
+  By changing [`Control.focus_behavior_recursive`](https://docs.godotengine.org/en/latest/classes/class_control.html#class-control-property-focus-behavior-recursive) and [`Control.mouse_behavior_recursive`](https://docs.godotengine.org/en/latest/classes/class_control.html#class-control-property-mouse-behavior-recursive) of the detailed view container to their disabled value until an item is selected, it now disables focus and mouse events for every child. You don’t have to resort to complex messages anymore to manage the behavior of `Control` groups.
 contributors:
   - name: DE YU
     github: Delsin-Yu
