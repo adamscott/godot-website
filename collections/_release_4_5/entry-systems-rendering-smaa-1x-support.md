@@ -11,7 +11,7 @@ text: |
 
   Subpixel Morphological Antialiasing (SMAA) is a modern post-processing-based anti-aliasing solution, to get rid of those pesky jaggies. It provides sharper AA than FXAA at the tradeoff of being more resource intensive.
 
-  This is one step in [our quest to improve the built in post-processing effects in Godot](https://godotengine.org/priorities/#significantly-improve-post-processing-effects)!
+  This is one step in [our quest to improve the built in post-processing effects in Godot](/priorities/#significantly-improve-post-processing-effects)!
 contributors:
   - name: Raymond DiDonato
     github: RGDTAB

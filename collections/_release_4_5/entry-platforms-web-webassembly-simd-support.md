@@ -14,5 +14,5 @@ text: |
 contributors:
   - name: Adam Scott
     github: adamscott
-read_more: https://godotengine.org/article/upcoming-serious-web-performance-boost/
+read_more: /article/upcoming-serious-web-performance-boost/
 ---

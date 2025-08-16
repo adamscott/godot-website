@@ -13,7 +13,7 @@ text: |
 
   While pipeline compilation is still unavoidable and a requirement, Godot now offers a way to do everything that can be done by the editor ahead of time, reducing such wait times by a lot.
 
-  Where [ubershaders](https://godotengine.org/releases/4.4/#ubershaders) were a big step towards optimizing pipeline compilation and eliminating compilation stutters, the _shader baker_ addresses the long startup times.
+  Where [ubershaders](/releases/4.4/#ubershaders) were a big step towards optimizing pipeline compilation and eliminating compilation stutters, the _shader baker_ addresses the long startup times.
 
   When enabled in the export settings, the shader baker will scan resources and scenes for shaders and pre-compile them in the right format used by the driver in the target platform.
 
