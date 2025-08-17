@@ -6,7 +6,6 @@ rank: 3
 importance: 4
 anchor: allow-selecting-multiple-remote-nodes-at-runtime
 title: Allow selecting multiple remote nodes at runtime
-blockquote: TODO
 text: |
   The new embedded game window [introduced in 4.4](/releases/4.4/#embedded-game-window) highlighted an issue the editor had for many years now: the remote node list didn’t support selecting more than one item.
 
