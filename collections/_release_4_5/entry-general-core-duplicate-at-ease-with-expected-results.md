@@ -12,7 +12,7 @@ text: |
 
   The new `Resource.duplicate_deep()` method give users full control [over what gets duplicated or not](https://docs.godotengine.org/en/4.5/classes/class_resource.html#enum-resource-deepduplicatemode).
 
-  This new feature is the result of an overhaul of the duplication logic for objects, arrays and dictionaries. For developers, we made sure to keep what was working and consistent intact. If you need more details, feel free to consult our new [exhaustive documenation about the duplication specification]().
+  This new feature is the result of an overhaul of the duplication logic for objects, arrays, and dictionaries. For developers, we made sure to keep what was working and consistent intact. If you need more details, feel free to consult our new exhaustive [documentation about the duplication specification]().
 contributors:
   - name: Pedro J. Estébanez
     github: RandomShaper
