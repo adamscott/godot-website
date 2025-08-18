@@ -8,9 +8,9 @@ anchor: abstract-classes-and-methods
 title: Abstract classes and methods
 blockquote: U Can’t Touch This
 text: |
-  You can now declare GDScript classes to be abstract. Declaring a class abstract means that the class is not meant to be instantiated directly. That means that you can prevent instances of, let’s say, `Animal`—that don’t mean anything itself other than to be extended by "concrete" classes like `Cat` and `Dog`.
+  You can now declare GDScript classes to be abstract. Declaring a class abstract means that the class is not meant to be instantiated directly. That means that you can prevent instances of a class, let’s say, `Animal`, that doesn’t mean anything itself other than to be extended by "concrete" classes like `Cat` and `Dog`.
 
-  Abstract classes can also have abstract methods. This declares that the method must be implemented in any class that extends it.
+  Abstract classes can also have abstract methods. This means that the method must be implemented in any class that extends it.
 
   <code class="highlight">
     <span class="comment"># 📄 animal.gd</span><br>
