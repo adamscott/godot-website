@@ -551,6 +551,7 @@ $donate-robot-size: 500px;
 	--color-code-basetype: #{colors.$code-basetype--light};
 	--color-code-enginetype: #{colors.$code-enginetype--light};
 	--color-code-usertype: #{colors.$code-usertype--light};
+	--color-code-comment: #{colors.$code-comment--light};
 	--color-code-string: #{colors.$code-string--light};
 	--color-code-background: #{colors.$code-background--light};
 	--color-code-text: #{colors.$code-text--light};
@@ -571,6 +572,7 @@ $donate-robot-size: 500px;
 		--color-code-basetype: #{colors.$code-basetype--dark};
 		--color-code-enginetype: #{colors.$code-enginetype--dark};
 		--color-code-usertype: #{colors.$code-usertype--dark};
+		--color-code-comment: #{colors.$code-comment--dark};
 		--color-code-string: #{colors.$code-string--dark};
 		--color-code-background: #{colors.$code-background--dark};
 		--color-code-text: #{colors.$code-text--dark};
@@ -655,6 +657,9 @@ $donate-robot-size: 500px;
 					keyword
 					controlflow
 					basetype
+					enginetype
+					usertype
+					comment
 					function
 					membervariable
 					gdscript-globalfunction
@@ -1529,20 +1534,12 @@ $donate-robot-size: 500px;
 						object-fit: cover;
 						overflow: hidden;
 
-						&.position-top-left {
-							object-position: top left;
-						}
-						&.position-top-center {
-							object-position: top center;
-						}
-						&.position-bottom-left {
-							object-position: bottom left;
-						}
-						&.position-bottom-center {
-							object-position: bottom center;
-						}
-						&.position-center-right {
-							object-position: center right;
+						@each $vertical in ("top", "center", "bottom") {
+							@each $horizontal in ("left", "center", "right") {
+								&.position-#{$vertical}-#{$horizontal} {
+									object-position: #{$vertical} #{$horizontal};
+								}
+							}
 						}
 					}
 
