@@ -14,7 +14,7 @@ text: |
 
   It is not necessarily a new feature to Godot, as the "Fragment Rate Shading" Vulkan extension already does something similar. But they differ in terms of device compatibility. Don’t worry though, as Godot will now choose the best supported method for the device. Users will only have to care about "Variable Shading Rate", which is the term that encompasses both extensions.
 contributors:
-  - name: Darío
-    github: DarioSamo
+- name: Darío
+  github: DarioSamo
 read_more: https://github.com/godotengine/godot/pull/99551
 ---

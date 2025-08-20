@@ -14,7 +14,7 @@ text: |
 
   Thanks to the newly added linux-bionic RID export support, we’re able to bring that feature to Android devices.
 contributors:
-  - name: Justin Sasso
-    github: atlasapplications
+- name: Justin Sasso
+  github: atlasapplications
 read_more: https://github.com/godotengine/godot/pull/97908
 ---

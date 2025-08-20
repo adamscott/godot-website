@@ -12,7 +12,7 @@ text: |
 
   Starting with 4.5, you can expect your Web games to run a bit more smoothly, without having to do anything – especially when things get chaotic for your CPU. It isn’t a silver bullet for poorly optimized games, but it will help nonetheless.
 contributors:
-  - name: Adam Scott
-    github: adamscott
+- name: Adam Scott
+  github: adamscott
 read_more: /article/upcoming-serious-web-performance-boost/
 ---

@@ -14,7 +14,7 @@ text: |
 
   May your ears enjoy these new opportunities of quietude.
 contributors:
-  - name: Malcolm Anderson
-    github: Meorge
+- name: Malcolm Anderson
+  github: Meorge
 read_more: https://github.com/godotengine/godot/pull/99555
 ---

@@ -13,7 +13,7 @@ text: |
 
   This is one step in [our quest to improve the built in post-processing effects in Godot](/priorities/#significantly-improve-post-processing-effects)!
 contributors:
-  - name: Raymond DiDonato
-    github: RGDTAB
+- name: Raymond DiDonato
+  github: RGDTAB
 read_more: https://github.com/godotengine/godot/pull/102330
 ---

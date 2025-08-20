@@ -12,7 +12,7 @@ text: |
 
   This won’t be an issue moving forward, as now the new `required` qualifier will come right after `virtual` where applicable.
 contributors:
-  - name: Haoyu Qiu
-    github: timothyqiu
+- name: Haoyu Qiu
+  github: timothyqiu
 read_more: https://github.com/godotengine/godot/pull/107130
 ---

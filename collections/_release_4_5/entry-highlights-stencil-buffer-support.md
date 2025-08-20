@@ -19,8 +19,8 @@ text: |
 
   This opens the door to many (many!) more effects as you can see in the example video, such as impossible geometry and portals.
 contributors:
-  - name: Apples
-    github: apples
+- name: Apples
+  github: apples
 read_more: https://github.com/godotengine/godot/pull/80710
 video_poster: /storage/releases/4.5/video/godot_stencil_buffer_passivestar.webp
 video_src: /storage/releases/4.5/video/godot_stencil_buffer_passivestar.webm

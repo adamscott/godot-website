@@ -16,7 +16,7 @@ text: |
 
   For existing projects where it could break the look, don’t fret. A toggle is available in the project settings.
 contributors:
-  - name: Lander
-    github: lander-vr
+- name: Lander
+  github: lander-vr
 read_more: https://github.com/godotengine/godot/pull/106145
 ---

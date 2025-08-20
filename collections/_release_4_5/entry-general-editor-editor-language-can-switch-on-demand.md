@@ -13,7 +13,7 @@ text: |
 
   For everyone else, now you can test the editor in all the languages it supports!
 contributors:
-  - name: Tomasz Chabora
-    github: KoBeWi
+- name: Tomasz Chabora
+  github: KoBeWi
 read_more: https://github.com/godotengine/godot/pull/102562
 ---

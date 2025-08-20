@@ -10,7 +10,7 @@ blockquote: TODO
 text: |
   TODO
 contributors:
-  - name: A Thousand Ships
-    github: AThousandShips
+- name: A Thousand Ships
+  github: AThousandShips
 read_more: https://github.com/godotengine/godot/pull/101504
 ---

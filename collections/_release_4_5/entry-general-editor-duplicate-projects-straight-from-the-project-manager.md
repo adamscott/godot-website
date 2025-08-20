@@ -11,7 +11,7 @@ text: |
 
   We also figured that it would be a great tool to prevent losses if you update the engine version during development. If we detect that irreversible changes would occur due to the update, we’ll ask if you want to back up your project first.
 contributors:
-  - name: David Snopek
-    github: dsnopek
+- name: David Snopek
+  github: dsnopek
 read_more: https://github.com/godotengine/godot/pull/104624
 ---

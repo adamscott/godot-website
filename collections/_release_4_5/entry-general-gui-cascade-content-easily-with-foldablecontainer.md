@@ -11,7 +11,7 @@ text: |
 
   It even supports grouping, making sure that only one foldable container is open at a time.
 contributors:
-  - name: Tomasz Chabora
-    github: KoBeWi
+- name: Tomasz Chabora
+  github: KoBeWi
 read_more: https://github.com/godotengine/godot/pull/102346
 ---

@@ -11,7 +11,7 @@ text: |
 
   Enabling async iterations asks the navigation servers to delegate the navigation process to a background thread, which can improve overall navigation performance.
 contributors:
-  - name: smix8
-    github: smix8
+- name: smix8
+  github: smix8
 read_more: https://github.com/godotengine/godot/pull/107381
 ---

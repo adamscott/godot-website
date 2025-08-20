@@ -5,7 +5,7 @@ rank: 1
 importance: 2
 anchor: screen-reader-support
 title: Screen reader support
-blockquote: Show, ~~don't~~ tell
+blockquote: Show, ~~don’t~~ tell
 text: |
   Accessibility should be every developer’s top priority, full-stop. Excluding someone from an experience for factors outside of their control is an area that video games and applications have the potential to circumvent entirely.
 
@@ -21,7 +21,7 @@ text: |
 
   [^screen-reader-support-mdn]: [MDN article on screen readers](https://developer.mozilla.org/en-US/docs/Glossary/Screen_reader).
 contributors:
-  - name: bruvzg
-    github: bruvzg
+- name: bruvzg
+  github: bruvzg
 read_more: https://github.com/godotengine/godot/pull/76829
 ---

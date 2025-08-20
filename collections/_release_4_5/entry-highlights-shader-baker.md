@@ -19,11 +19,11 @@ text: |
 
   When targeting Apple and Windows devices, using Metal and D3D12 respectively, we even saw a 20× decrease in load times for our [TPS demo](https://github.com/godotengine/tps-demo). Talk about fast!
 contributors:
-  - name: Darío
-    github: DarioSamo
-  - name: Stuart Carnie
-    github: stuartcarnie
-  - name: Gergely Kis
-    github: kisg
+- name: Darío
+  github: DarioSamo
+- name: Stuart Carnie
+  github: stuartcarnie
+- name: Gergely Kis
+  github: kisg
 read_more: https://github.com/godotengine/godot/pull/102552
 ---

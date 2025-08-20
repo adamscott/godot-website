@@ -12,8 +12,8 @@ text: |
 
   The system has been reworked from the ground up. Now, `TileMapLayer` physics merge cell shapes into bigger collision shapes whenever possible.
 contributors:
-  - name: Gilles Roudière
-    github: groud
+- name: Gilles Roudière
+  github: groud
 read_more: https://github.com/godotengine/godot/pull/102662
 video_poster: /storage/releases/4.5/video/godot_chunk_tilemap_physics.webp
 video_src: /storage/releases/4.5/video/godot_chunk_tilemap_physics.webm

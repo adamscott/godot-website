@@ -13,7 +13,7 @@ text: |
 
   Now, if the exported variable is of type `Variant`, the editor reacts accordingly, permitting the user to assign any compatible `Variant` value. There’s even a nifty type selector that changes the input widget accordingly.
 contributors:
-  - name: Tomasz Chabora
-    github: KoBeWi
+- name: Tomasz Chabora
+  github: KoBeWi
 read_more: https://github.com/godotengine/godot/pull/89324
 ---

@@ -12,7 +12,7 @@ text: |
 
   Plugin developers can use this feature in their projects using the new [`PROPERTY_HINT_GROUP_ENABLE`](https://docs.godotengine.org/en/4.5/classes/class_@globalscope.html#class-globalscope-constant-property-hint-group-enable).
 contributors:
-  - name: lodetrick
-    github: lodetrick
+- name: lodetrick
+  github: lodetrick
 read_more: https://github.com/godotengine/godot/pull/105272
 ---

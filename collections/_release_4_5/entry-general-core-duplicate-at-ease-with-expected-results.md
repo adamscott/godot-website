@@ -16,7 +16,7 @@ text: |
 
   [^duplicate-at-ease-with-expected-results]: See [`Array`](https://docs.godotengine.org/en/latest/classes/class_array.html#class-array-method-duplicate), [`Dictionary`](https://docs.godotengine.org/en/latest/classes/class_dictionary.html#class-dictionary-method-duplicate), and [`Resource`](https://docs.godotengine.org/en/latest/classes/class_resource.html#class-resource-method-duplicate) API documentation.
 contributors:
-  - name: Pedro J. Estébanez
-    github: RandomShaper
+- name: Pedro J. Estébanez
+  github: RandomShaper
 read_more: https://github.com/godotengine/godot/pull/100673
 ---

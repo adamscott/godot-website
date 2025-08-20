@@ -24,7 +24,7 @@ text: |
     &nbsp;&nbsp;<span class="function">sum</span><span class="symbol">(</span><span class="basetype">1</span><span class="symbol">,</span> <span class="basetype">2</span><span class="symbol">,</span> <span class="basetype">3</span><span class="symbol">,</span> <span class="basetype">4</span><span class="symbol">,</span> <span class="basetype">5</span><span class="symbol">)</span><wbr>&nbsp;<wbr>&nbsp;<wbr><span class="comment"># 15.0</span><br>
   </code>
 contributors:
-  - name: Danil Alexeev
-    github: dalexeev
+- name: Danil Alexeev
+  github: dalexeev
 read_more: https://github.com/godotengine/godot/pull/82808
 ---

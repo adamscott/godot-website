@@ -15,7 +15,7 @@ text: |
 
   [^internationalization-live-preview-layout-direction]: The layout direction only follows the main locale currently. [We’re working on fixing this issue.](https://github.com/godotengine/godot/pull/97918)
 contributors:
-  - name: Haoyu Qiu
-    github: timothyqiu
+- name: Haoyu Qiu
+  github: timothyqiu
 read_more: https://github.com/godotengine/godot/pull/96921
 ---

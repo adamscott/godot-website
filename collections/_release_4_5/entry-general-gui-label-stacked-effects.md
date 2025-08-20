@@ -11,7 +11,7 @@ text: |
 
   You want it outlined with complex shadows? Done.
 contributors:
-  - name: DE YU
-    github: Delsin-Yu
+- name: DE YU
+  github: Delsin-Yu
 read_more: https://github.com/godotengine/godot/pull/104731
 ---

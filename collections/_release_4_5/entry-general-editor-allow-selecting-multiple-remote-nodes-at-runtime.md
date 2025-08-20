@@ -11,7 +11,7 @@ text: |
 
   This is now a thing of the past. Developers can now select multiple nodes and even edit common properties.
 contributors:
-  - name: Michael Alexsander
-    github: YeldhamDev
+- name: Michael Alexsander
+  github: YeldhamDev
 read_more: https://github.com/godotengine/godot/pull/99680
 ---

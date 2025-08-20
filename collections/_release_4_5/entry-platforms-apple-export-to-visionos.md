@@ -15,8 +15,8 @@ text: |
 
   Currently, it is only possible to export a project as a "windowed app". Your game will appear as a window, floating in the user’s 3D space. We expect to support fully immersive experiences in the future.
 contributors:
-  - name: Ricardo Sanchez-Saez
-    github: rsanchezsaez
+- name: Ricardo Sanchez-Saez
+  github: rsanchezsaez
 read_more: https://github.com/godotengine/godot/pull/105628
 image_alt: Apple Vision Pro
 image_src: /storage/releases/4.5/images/apple-vision-pro-Kyu3a.webp

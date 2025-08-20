@@ -13,7 +13,7 @@ text: |
 
   This new feature is the result of our ongoing efforts towards bringing C#/.NET to GDExtension, as the port needed to register a `frame` callback.
 contributors:
-  - name: Raul Santos
-    github: raulsntos
+- name: Raul Santos
+  github: raulsntos
 read_more: https://github.com/godotengine/godot/pull/106030
 ---

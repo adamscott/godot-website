@@ -13,7 +13,7 @@ text: |
 
   This feature is currently Android-only, but we intend to port it to other platforms as soon as possible.
 contributors:
-  - name: Anish Mishra
-    github: syntaxerror247
+- name: Anish Mishra
+  github: syntaxerror247
 read_more: https://github.com/godotengine/godot/pull/100339
 ---

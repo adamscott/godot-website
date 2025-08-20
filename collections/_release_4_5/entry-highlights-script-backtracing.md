@@ -19,9 +19,9 @@ text: |
 
   [^script-backtracing-enable]: Just make sure that the _Debug > Settings > GDScript > Always Track Call Stacks_ project setting is enabled.
 contributors:
-  - name: Mikael Hermansson
-    github: mihe
-  - name: Juan Linietsky
-    github: reduz
+- name: Mikael Hermansson
+  github: mihe
+- name: Juan Linietsky
+  github: reduz
 read_more: https://github.com/godotengine/godot/pull/91006
 ---

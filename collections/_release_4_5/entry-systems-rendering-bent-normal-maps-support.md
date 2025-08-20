@@ -18,7 +18,7 @@ text: |
 
   This information is extremely valuable to the renderer. It is used to further enhance specular occlusion (darken areas that shouldn’t be receiving a lot of reflections) and indirect lighting (provide more accurate reflections).
 contributors:
-  - name: Capry
-    github: LunaCapra
+- name: Capry
+  github: LunaCapra
 read_more: https://github.com/godotengine/godot/pull/89988
 ---

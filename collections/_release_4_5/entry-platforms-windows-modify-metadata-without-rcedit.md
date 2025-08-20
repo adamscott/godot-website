@@ -14,7 +14,7 @@ text: |
 
   But now, the Windows exporter now knows how to handle the resources natively, so you can edit Windows export metadata without a hitch, on every platform.
 contributors:
-  - name: pkowal1982
-    github: pkowal1982
+- name: pkowal1982
+  github: pkowal1982
 read_more: https://github.com/godotengine/godot/pull/75950
 ---

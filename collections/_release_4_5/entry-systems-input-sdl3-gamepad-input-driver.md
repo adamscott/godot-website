@@ -16,12 +16,12 @@ text: |
 
   While this change doesn’t by itself bring new features, expect bugfixes and new features to come a little bit faster from now on.
 contributors:
-  - name: Nintorch
-    github: Nintorch
-  - name: Álex Román Núñez
-    github: EIREXE
-  - name: Xavier Sellier
-    github: xsellier
+- name: Nintorch
+  github: Nintorch
+- name: Álex Román Núñez
+  github: EIREXE
+- name: Xavier Sellier
+  github: xsellier
 read_more: https://github.com/godotengine/godot/pull/106218
 
 ---

@@ -16,7 +16,7 @@ text: |
 
   By changing [`Control.focus_behavior_recursive`](https://docs.godotengine.org/en/latest/classes/class_control.html#class-control-property-focus-behavior-recursive) and [`Control.mouse_behavior_recursive`](https://docs.godotengine.org/en/latest/classes/class_control.html#class-control-property-mouse-behavior-recursive) of the detailed view container to their disabled value until an item is selected, focus and mouse events will be disabled for every child. You no longer have to resort to complex messages to manage the behavior of `Control` groups.
 contributors:
-  - name: DE YU
-    github: Delsin-Yu
+- name: DE YU
+  github: Delsin-Yu
 read_more: https://github.com/godotengine/godot/pull/97495
 ---

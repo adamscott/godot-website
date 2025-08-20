@@ -13,7 +13,7 @@ text: |
 
 
 contributors:
-  - name: bruvzg
-    github: bruvzg
+- name: bruvzg
+  github: bruvzg
 read_more: https://github.com/godotengine/godot/pull/105375
 ---

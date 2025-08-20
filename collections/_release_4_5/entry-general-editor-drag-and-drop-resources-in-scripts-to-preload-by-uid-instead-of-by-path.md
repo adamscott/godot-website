@@ -13,7 +13,7 @@ text: |
 
   By using UIDs instead of paths for preloading, your scripts will be more resilient, wherever the resources you’re preloading are in your project.
 contributors:
-  - name: Tomasz Chabora
-    github: KoBeWi
+- name: Tomasz Chabora
+  github: KoBeWi
 read_more: https://github.com/godotengine/godot/pull/99094
 ---

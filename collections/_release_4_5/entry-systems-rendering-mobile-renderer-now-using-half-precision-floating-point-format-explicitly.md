@@ -4,7 +4,8 @@ section: systems
 subsection: rendering
 rank: 3
 importance: 3
-anchor: mobile-renderer-now-using-half-precision-floating-point-format-explicitly
+anchor: 
+  mobile-renderer-now-using-half-precision-floating-point-format-explicitly
 title: Mobile renderer now using half-precision floating-point format explicitly
 blockquote: Even the smallest float can change the course of the Mobile renderer
 text: |
@@ -14,7 +15,7 @@ text: |
 
   With this new update, the Mobile renderer now explicitly asks for [half-precision floating-point (F16) format](https://en.wikipedia.org/wiki/Half-precision_floating-point_format) if the hardware supports it — most devices commonly used should, especially if they are new. If so, games should now see rendering performance increase, run smoother overall (better frame pacing), and require less power usage.
 contributors:
-  - name: Darío
-    github: DarioSamo
+- name: Darío
+  github: DarioSamo
 read_more: https://github.com/godotengine/godot/pull/102330
 ---

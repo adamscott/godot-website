@@ -11,7 +11,7 @@ text: |
 
   Now, the new "Paste as Unique" option, available in the resource picker dropdown, makes the operation way less tedious.
 contributors:
-  - name: Hugo Locurcio
-    github: Calinou
+- name: Hugo Locurcio
+  github: Calinou
 read_more: https://github.com/godotengine/godot/pull/103980
 ---

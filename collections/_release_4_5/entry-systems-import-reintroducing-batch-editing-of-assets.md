@@ -12,7 +12,7 @@ text: |
 
   TODO
 contributors:
-  - name: bruvzg
-    github: bruvzg
+- name: bruvzg
+  github: bruvzg
 read_more: https://github.com/godotengine/godot/pull/107211
 ---

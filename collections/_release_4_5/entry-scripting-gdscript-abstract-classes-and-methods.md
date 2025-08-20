@@ -30,14 +30,16 @@ text: |
     &nbsp;&nbsp;<span class="function">print</span><span class="symbol">(</span><span class="string">"Meow!"</span><span class="symbol">)</span>
   </code>
 contributors:
-  - name: Aaron Franke
-    github: aaronfranke
-  - name: Danil Alexeev
-    github: dalexeev
-  - name: Ryan Brue
-    github: ryanabx
-read_more: https://github.com/godotengine/godot/pulls?q=is%3Apr+is%3Amerged+67777+106409+107717
-image_alt: "Image of the Add Node window displaying the dimmed out abstract Animal node, and its two extending classes Cat and Dog."
+- name: Aaron Franke
+  github: aaronfranke
+- name: Danil Alexeev
+  github: dalexeev
+- name: Ryan Brue
+  github: ryanabx
+read_more: 
+  https://github.com/godotengine/godot/pulls?q=is%3Apr+is%3Amerged+67777+106409+107717
+image_alt: "Image of the Add Node window displaying the dimmed out abstract Animal
+  node, and its two extending classes Cat and Dog."
 image_src: /storage/releases/4.5/images/gdscript-abstract.webp
 image_src_2x: /storage/releases/4.5/images/gdscript-abstract-2x.webp
 media_position: top
