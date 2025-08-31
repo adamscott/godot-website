@@ -15,9 +15,7 @@ text: |
 
   Thanks to AccessKit, we added screen reader support to `Control` nodes. We also added screen reader bindings in order to customize the behavior of any type of `Node`.
 
-  As this feature is quite new, screen reader support for the Godot Editor itself is not complete yet. Support is only implemented for the Project Manager, standard UI nodes, and the inspector. We commit to extend support in future versions.
-
-  Don’t hesitate to leave us any feedback you might have!
+  As this feature is quite new, please note that its integration is still in its experimental phase. And screen reader support for the Godot Editor itself is not complete yet—it is only implemented for the Project Manager, standard UI nodes, and the inspector. Expect follow-ups in future updates.
 
   [^screen-reader-support-mdn]: [MDN article on screen readers](https://developer.mozilla.org/en-US/docs/Glossary/Screen_reader).
 contributors:
