@@ -14,7 +14,7 @@ text: |
 
   This new feature is the result of an overhaul of the duplication logic for arrays, dictionaries, and resources. For developers, we made sure to keep what was working and consistent intact. If you need more details, feel free to consult our new exhaustive documentation about the duplication specification.[^duplicate-at-ease-with-expected-results]
 
-  [^duplicate-at-ease-with-expected-results]: See [`Array`](https://docs.godotengine.org/en/latest/classes/class_array.html#class-array-method-duplicate), [`Dictionary`](https://docs.godotengine.org/en/latest/classes/class_dictionary.html#class-dictionary-method-duplicate), and [`Resource`](https://docs.godotengine.org/en/latest/classes/class_resource.html#class-resource-method-duplicate) API documentation.
+  [^duplicate-at-ease-with-expected-results]: See the [`Array`](https://docs.godotengine.org/en/latest/classes/class_array.html#class-array-method-duplicate), [`Dictionary`](https://docs.godotengine.org/en/latest/classes/class_dictionary.html#class-dictionary-method-duplicate), and [`Resource`](https://docs.godotengine.org/en/latest/classes/class_resource.html#class-resource-method-duplicate) API documentation.
 contributors:
 - name: Pedro J. Estébanez
   github: RandomShaper
