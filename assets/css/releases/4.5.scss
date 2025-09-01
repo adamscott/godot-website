@@ -14,6 +14,12 @@ $one-column-max-width: calc($column-max-width * 2) - calc($grid-gap * 1);
 $two-columns-max-width: calc($column-max-width * 3) - calc($grid-gap * 2);
 $mobile-max-width: 700px;
 
+@mixin screen-is-three-columns-wide() {
+	@media screen and (width > #{$two-columns-max-width}) {
+		@content;
+	}
+}
+
 @mixin screen-is-two-columns-wide() {
 	@media screen and (max-width: #{$two-columns-max-width}) {
 		@content;
@@ -138,6 +144,9 @@ $donate-robot-size: 500px;
 
 :root {
 	--card-padding: #{release.get-desktop($card-padding)};
+	--one-column-max-width: #{$one-column-max-width};
+	--two-columns-max-width: #{$two-columns-max-width};
+
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--card-padding);
 
@@ -1709,7 +1718,7 @@ ul.list-style-none {
 	}
 }
 
-.span-3 {
+@mixin span-3 {
 	grid-column: span 3;
 
 	@include screen-is-two-columns-wide() {
@@ -1721,7 +1730,7 @@ ul.list-style-none {
 	}
 }
 
-.span-2-at-3-col {
+@mixin span-2-at-3-col {
 	grid-column: span 2;
 
 	@include screen-is-two-columns-wide() {
@@ -1729,11 +1738,43 @@ ul.list-style-none {
 	}
 }
 
-.span-2 {
+@mixin span-2 {
 	grid-column: span 2;
 
 	@include screen-is-one-column-wide() {
 		grid-column: span 1;
+	}
+}
+
+.span-3 {
+	@include span-3;
+}
+
+.span-2-at-3-col {
+	@include span-2-at-3-col;
+}
+
+.span-2 {
+	&:not(.temporary-span-3-col-3) {
+		@include span-2;
+	}
+}
+
+.temporary-span-2-col-2 {
+	@include screen-is-two-columns-wide() {
+		@include span-2;
+	}
+}
+
+.temporary-span-2-col-3 {
+	@include screen-is-three-columns-wide() {
+		@include span-2;
+	}
+}
+
+.temporary-span-3-col-3 {
+	@include screen-is-three-columns-wide() {
+		@include span-3;
 	}
 }
 

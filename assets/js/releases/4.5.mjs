@@ -536,3 +536,115 @@ for (const intlBlockquoteEntry of intlBlockquoteEntries) {
 	intlBlockquoteTimeline.sync(entryAnimation);
 }
 intlBlockquoteTimeline.init();
+
+// Fix grid orphans.
+const getCSSVariableValue = (name) => {
+	return parseInt(
+		window.getComputedStyle(document.body).getPropertyValue(name),
+	);
+};
+const TEMPORARY_SPAN_2_COL_2 = "temporary-span-2-col-2";
+const TEMPORARY_SPAN_2_COL_3 = "temporary-span-2-col-3";
+const TEMPORARY_SPAN_3_COL_3 = "temporary-span-3-col-3";
+const TEMPORARY_SPAN_CLASSES = [
+	TEMPORARY_SPAN_2_COL_2,
+	TEMPORARY_SPAN_2_COL_3,
+	TEMPORARY_SPAN_3_COL_3,
+];
+const TEMPORARY_SPAN_CLASSES_LIST = TEMPORARY_SPAN_CLASSES.map(
+	(className) => `.${className}`,
+).join(", ");
+let fixGridOrphansAnimationFrame = -1;
+let lastColumns = -1;
+const toFixedFloat = (num, precision) => {
+	return parseFloat(num.toFixed(precision));
+};
+const fixGridOrphansProcess = () => {
+	fixGridOrphansAnimationFrame = -1;
+
+	const cardPadding = getCSSVariableValue("--card-padding");
+	const oneColumnMaxWidth = getCSSVariableValue("--one-column-max-width");
+	const twoColumnsMaxWidth = getCSSVariableValue("--two-columns-max-width");
+
+	const columns =
+		document.body.clientWidth > twoColumnsMaxWidth
+			? 3
+			: document.body.clientWidth > oneColumnMaxWidth
+				? 2
+				: 1;
+	if (columns === lastColumns) {
+		fixGridOrphansRequestFrame();
+		return;
+	}
+	lastColumns = columns;
+
+	const temporarySpans = Array.from(
+		document.querySelectorAll(TEMPORARY_SPAN_CLASSES_LIST),
+	);
+	for (const temporarySpan of temporarySpans) {
+		temporarySpan.classList.remove(...TEMPORARY_SPAN_CLASSES);
+	}
+
+	if (columns === 1) {
+		fixGridOrphansRequestFrame();
+		return;
+	}
+
+	for (const releaseCards of Array.from(
+		document.querySelectorAll(".release-cards"),
+	)) {
+		const releaseCardsWidth = releaseCards.clientWidth;
+		const releaseCardWidth =
+			(releaseCardsWidth - (columns - 1) * cardPadding) / columns;
+		const releaseCardSpan2Width = releaseCardWidth * 2 + cardPadding;
+		const releaseCardSpan3Width = releaseCardWidth * 3 + cardPadding * 2;
+		const yMap = new Map();
+		for (const releaseCard of releaseCards.querySelectorAll(".release-card")) {
+			const boundingBox = releaseCard.getBoundingClientRect();
+			if (yMap.has(boundingBox.y)) {
+				yMap.get(boundingBox.y).push(releaseCard);
+			} else {
+				yMap.set(boundingBox.y, [releaseCard]);
+			}
+		}
+		for (const [_, cards] of yMap) {
+			if (cards.length === columns) {
+				continue;
+			}
+			const cardsColumns = cards.reduce((accumulator, card) => {
+				const EPSILON = 1;
+				const cardWidth = card.clientWidth;
+				return accumulator +
+					(Math.abs(cardWidth - releaseCardSpan3Width) < EPSILON)
+					? 3
+					: Math.abs(cardWidth - releaseCardSpan2Width) < EPSILON
+						? 2
+						: 1;
+			}, 0);
+			if (cardsColumns === columns) {
+				continue;
+			}
+			if (cards.length === 2) {
+				cards[1].classList.add(TEMPORARY_SPAN_2_COL_3);
+				continue;
+			}
+			if (columns === 3) {
+				cards[0].classList.add(TEMPORARY_SPAN_3_COL_3);
+			} else {
+				cards[0].classList.add(TEMPORARY_SPAN_2_COL_2);
+			}
+		}
+	}
+
+	fixGridOrphansRequestFrame();
+};
+const fixGridOrphansRequestFrame = () => {
+	if (fixGridOrphansAnimationFrame !== -1) {
+		return;
+	}
+
+	fixGridOrphansAnimationFrame = window.requestAnimationFrame(
+		fixGridOrphansProcess,
+	);
+};
+fixGridOrphansRequestFrame();
