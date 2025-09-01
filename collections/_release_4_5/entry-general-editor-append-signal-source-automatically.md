@@ -14,4 +14,8 @@ contributors:
 - name: 风青山
   github: Rindbee
 read_more: https://github.com/godotengine/godot/pull/60143
+image_src: /storage/releases/4.5/images/append-signal-source.webp
+image_src_2x: /storage/releases/4.5/images/append-signal-source-2x.webp
+media: top
+position: bottom-center
 ---
