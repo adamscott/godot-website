@@ -1,6 +1,7 @@
 ---
 ---
 
+@use "sass:color";
 @use "sass:map";
 @use "sass:selector";
 @use "common/colors";
@@ -1044,6 +1045,39 @@ $donate-robot-size: 500px;
 							.c-link-a {
 								color: white;
 								text-decoration-color: white;
+
+								$color-mix-value: 50%;
+
+								&:visited {
+									color: color-mix(
+										in srgb,
+										white,
+										var(--color-invert-highlight) $color-mix-value
+									);
+									text-decoration-color: color-mix(
+										in srgb,
+										white,
+										var(--color-invert-highlight) $color-mix-value
+									);
+								}
+
+								@include release.is-dark() {
+									color: black;
+									text-decoration-color: black;
+
+									&:visited {
+										color: color-mix(
+											in srgb,
+											black,
+											var(--color-invert-highlight) $color-mix-value
+										);
+										text-decoration-color: color-mix(
+											in srgb,
+											black,
+											var(--color-invert-highlight) $color-mix-value
+										);
+									}
+								}
 							}
 
 							.contributor-area {
@@ -1389,9 +1423,37 @@ $donate-robot-size: 500px;
 								font-size: 21px;
 								font-weight: 700;
 
+								$color-mix-value: 50%;
+
+								&:visited {
+									color: color-mix(
+										in srgb,
+										black,
+										var(--color-highlight) $color-mix-value
+									);
+									text-decoration-color: color-mix(
+										in srgb,
+										black,
+										var(--color-highlight) $color-mix-value
+									);
+								}
+
 								@include release.is-dark() {
 									color: white;
 									text-decoration-color: white;
+
+									&:visited {
+										color: color-mix(
+											in srgb,
+											white,
+											var(--color-highlight) $color-mix-value
+										);
+										text-decoration-color: color-mix(
+											in srgb,
+											white,
+											var(--color-highlight) $color-mix-value
+										);
+									}
 								}
 							}
 
