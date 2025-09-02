@@ -19,4 +19,5 @@ contributors:
   github: Arnklit
 read_more: 
   https://github.com/godotengine/godot/issues?q=is%3Apr%20state%3Amerged%2095564%20100470%20103130%20103584
+inverted: true
 ---

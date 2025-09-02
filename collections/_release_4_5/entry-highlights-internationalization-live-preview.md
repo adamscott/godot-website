@@ -18,4 +18,5 @@ contributors:
 - name: Haoyu Qiu
   github: timothyqiu
 read_more: https://github.com/godotengine/godot/pull/96921
+inverted: true
 ---

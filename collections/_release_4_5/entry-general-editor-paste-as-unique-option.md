@@ -14,4 +14,5 @@ contributors:
 - name: Hugo Locurcio
   github: Calinou
 read_more: https://github.com/godotengine/godot/pull/103980
+inverted: true
 ---
