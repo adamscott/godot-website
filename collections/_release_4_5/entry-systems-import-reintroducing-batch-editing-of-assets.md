@@ -10,7 +10,7 @@ blockquote: If it ain’t broke…
 text: |
   Want to quickly change the same import setting for multiple resource files?
 
-  We reintroduced options in the import dock for batch editing of assets. It means that you can select these files in the FileSystem dock and the Import dock will react appropriately. It will let you select which properties you want to edit. With a single click of the “Reimport” button, your new settings will be applied to each.
+  We reintroduced options in the Import dock for batch editing of assets. Now, when you select files in the FileSystem dock, the Import dock will let you select which properties you want to edit. With a single click of the “Reimport” button, your new import settings will be applied to all selected files simultaneously.
 contributors:
 - name: bruvzg
   github: bruvzg
