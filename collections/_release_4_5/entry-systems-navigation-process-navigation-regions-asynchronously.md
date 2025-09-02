@@ -3,7 +3,7 @@ type: entry
 section: systems
 subsection: navigation
 rank: 1
-importance: 3
+importance: 4
 anchor: process-navigation-regions-asynchronously
 title: Process navigation regions asynchronously
 text: |
