@@ -7,10 +7,10 @@ importance: 2
 anchor: animation-player-quality-of-life-upgrades
 title: Animation player quality-of-life upgrades
 text: |
-  The animation player did receive some needed love.
-  - You can now use the selection box to select and scale the bezier editor points. It makes it a piece of cake to perform changes in batches.
-  - When creating bezier points, you can now auto tangent new points in a balanced or mirrored manner.
-  - You can now sort the animation player animations alphabetically.
+  The animation player has received some needed love!
+  - You can now use the selection box to select and scale Bézier editor points. Now it’s a piece of cake to perform batch changes.
+  - When creating Bézier points, you can now auto-tangent new points in a balanced or mirrored manner.
+  - You can now sort the animation player’s animations alphabetically.
   - It is also now possible to filter animations by their name!
 contributors:
 - name: Michael Alexsander
