@@ -1,12 +1,11 @@
 ---
 type: entry
 section: systems
-subsection: xr
-rank: 0
+subsection: XR
+rank: 1
 importance: 4
 anchor: fragment-density-map-support
 title: Fragment density map support
-blockquote: TODO
 text: |
   In order to push great visuals on a VR headset, a little cheating is often necessary. As players tend to turn their head rather than move their eyes too far from the center and as pixels around the edges of the viewport are often distorted by the lens, why should the device render these parts at full resolution?
 
