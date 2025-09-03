@@ -88,7 +88,7 @@ module Jekyll
 
       return "<code class=\"highlight\">#{highlights_result.gsub('\n', '<br>')}</code>" if block
 
-      return "<span class=\"code-highlight\">#{highlights_result}</span>" unless highlight_only
+      return "<span class=\"code-highlight\">#{highlights_result}</span>" unless highlight_only && num_highlights == 1
 
       highlights_result
     end

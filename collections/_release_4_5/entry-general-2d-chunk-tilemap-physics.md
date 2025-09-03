@@ -10,7 +10,7 @@ blockquote: Fusion… HA!
 text: |
   Ever since 2D tilemaps were first implemented, physics always relied on the concept of “one tile, one body”. While this works for most games, it can easily lead to performance issues in 2D scenes relying on physics as the number of bodies is extremely wasteful.
 
-  The system has been reworked from the ground up. Now, <code class="highlight"><span class="enginetype">TileMapLayer</span></code> physics merge cell shapes into bigger collision shapes whenever possible.
+  The system has been reworked from the ground up. Now, ``@[TileMapLayer](enginetype)`` physics merge cell shapes into bigger collision shapes whenever possible.
 contributors:
 - name: Gilles Roudière
   github: groud

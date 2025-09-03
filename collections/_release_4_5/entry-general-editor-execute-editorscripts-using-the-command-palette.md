@@ -5,9 +5,9 @@ subsection: editor
 rank: 6
 importance: 3
 anchor: entry-general-editor-execute-editorscripts-using-the-command-palette
-title: "Execute `EditorScript`s using the command palette"
+title: "Execute ``@[EditorScript](enginetype)``s using the command palette"
 text: |
-  Any named <code class="highlight"><span class="enginetype">EditorScript</span></code> files in your project now appear in the command palette, making it much easier to execute specific project commands.
+  Any named ``@[EditorScript](enginetype)`` files in your project now appear in the command palette, making it much easier to execute specific project commands.
 contributors:
 - name: HolonProduction
   github: HolonProduction
