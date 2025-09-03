@@ -637,6 +637,7 @@ $donate-robot-size: 500px;
 		padding: 0 calc($_padding / 2);
 		margin: 0 0;
 		border-radius: $_padding;
+		white-space: nowrap;
 
 		color: var(--color-code-text);
 		font-family:
@@ -1846,6 +1847,10 @@ ul.list-style-none {
 
 .overflow-y-hidden {
 	overflow-y: hidden;
+}
+
+.no-break {
+	white-space: nowrap;
 }
 
 // Internationalization live preview animation.
