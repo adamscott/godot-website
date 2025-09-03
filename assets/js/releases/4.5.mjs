@@ -612,14 +612,14 @@ const fixGridOrphansProcess = () => {
 				continue;
 			}
 			const cardsColumns = cards.reduce((accumulator, card) => {
-				const EPSILON = 1;
-				const cardWidth = card.clientWidth;
-				return accumulator +
-					(Math.abs(cardWidth - releaseCardSpan3Width) < EPSILON)
-					? 3
-					: Math.abs(cardWidth - releaseCardSpan2Width) < EPSILON
-						? 2
-						: 1;
+				return (
+					accumulator +
+					(card.classList.contains("span-3")
+						? 3
+						: card.classList.contains("span-2")
+							? 2
+							: 1)
+				);
 			}, 0);
 			if (cardsColumns === columns) {
 				continue;
