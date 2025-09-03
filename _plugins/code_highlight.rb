@@ -26,7 +26,7 @@ module Jekyll
 
     CodeBlock = Struct.new(:begin, :end, :delimiter, :data, :type) do
       def valid?
-        delimiter != '`'
+        !((delimiter == '`' && !block?) || (delimiter == '```' && block?))
       end
 
       def block?
