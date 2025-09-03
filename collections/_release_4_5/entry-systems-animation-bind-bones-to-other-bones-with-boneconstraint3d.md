@@ -5,7 +5,7 @@ subsection: animation
 rank: 0
 importance: 2
 anchor: bind-bones-to-other-bones-with-boneconstraint3d
-title: Bind bones to other bones with `BoneConstraint3D`
+title: Bind bones to other bones with ``@[BoneConstraint3D](enginetype)``
 blockquote: |
   Yo dawg, I heard you like constraints, so I put constraints in your bones so you can move bones when bones move.
 text: |

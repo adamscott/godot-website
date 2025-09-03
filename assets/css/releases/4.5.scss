@@ -634,10 +634,10 @@ $donate-robot-size: 500px;
 		$_padding: 5px;
 
 		display: inline-block;
-		padding: 0 calc($_padding / 2);
+		// padding: 0 calc($_padding / 2);
+		padding: 0 0;
 		margin: 0 0;
 		border-radius: $_padding;
-		white-space: nowrap;
 
 		color: var(--color-code-text);
 		font-family:
@@ -1340,6 +1340,13 @@ $donate-robot-size: 500px;
 
 								&:hover {
 									text-decoration: underline;
+									text-decoration-color: var(--color-top);
+
+									code.highlight,
+									.code-highlight {
+										text-decoration: underline;
+										text-decoration-color: var(--color-top);
+									}
 								}
 
 								p {
