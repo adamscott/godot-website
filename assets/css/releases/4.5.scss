@@ -1049,38 +1049,33 @@ $donate-robot-size: 500px;
 
 						.c-content {
 							a {
-								color: var(--color-invert-highlight);
-								text-decoration-color: var(--color-invert-highlight);
+								@mixin setup-a-color($color) {
+									color: $color;
+									text-decoration-color: $color;
 
-								&:hover {
 									.code-highlight {
 										text-decoration: underline;
-										text-decoration-color: var(--color-invert-highlight);
+										text-decoration-color: $color;
 									}
-								}
-
-								&:visited {
-									color: color-mix(
-										in srgb,
-										var(--color-invert-highlight),
-										black 10%
-									);
-									text-decoration-color: color-mix(
-										in srgb,
-										var(--color-invert-highlight),
-										black 10%
-									);
 
 									&:hover {
 										.code-highlight {
 											text-decoration: underline;
-											text-decoration-color: color-mix(
-												in srgb,
-												var(--color-invert-highlight),
-												black 10%
-											);
+											text-decoration-color: $color;
 										}
 									}
+								}
+
+								@include setup-a-color($color: var(--color-invert-highlight));
+
+								&:visited {
+									@include setup-a-color(
+										$color: color-mix(
+												in oklab,
+												var(--color-invert-highlight),
+												black 10%
+											)
+									);
 								}
 							}
 							.links-container {
@@ -1094,40 +1089,29 @@ $donate-robot-size: 500px;
 
 						.c-link {
 							.c-link-a {
-								color: white;
-								text-decoration-color: white;
+								@mixin inverted-c-link-a {
+									$link-color: white;
+									color: $link-color;
+									text-decoration-color: $link-color;
 
-								$color-mix-value: 50%;
-
-								&:visited {
-									color: color-mix(
-										in srgb,
-										white,
-										var(--color-invert-highlight) $color-mix-value
-									);
-									text-decoration-color: color-mix(
-										in srgb,
-										white,
-										var(--color-invert-highlight) $color-mix-value
-									);
-								}
-
-								@include release.is-dark() {
-									color: black;
-									text-decoration-color: black;
+									$color-mix-value: 10%;
 
 									&:visited {
-										color: color-mix(
-											in srgb,
-											black,
-											var(--color-invert-highlight) $color-mix-value
+										$color-to-mix: color-mix(
+											in oklab,
+											var(--color-invert-highlight),
+											black 15%
 										);
-										text-decoration-color: color-mix(
-											in srgb,
-											black,
-											var(--color-invert-highlight) $color-mix-value
-										);
+										$color: color-mix(in oklab, $link-color, $color-to-mix 90%);
+										color: $color;
+										text-decoration-color: $color;
 									}
+								}
+
+								@include inverted-c-link-a();
+
+								@include release.is-dark() {
+									@include inverted-c-link-a();
 								}
 							}
 
@@ -1476,7 +1460,7 @@ $donate-robot-size: 500px;
 								&:visited {
 									@include setup-a-color(
 										$color: color-mix(
-												in srgb,
+												in oklab,
 												var(--color-highlight),
 												black 10%
 											)
@@ -1499,19 +1483,16 @@ $donate-robot-size: 500px;
 								font-size: 21px;
 								font-weight: 700;
 
-								$color-mix-value: 50%;
+								$color-mix-value: 10%;
 
 								&:visited {
-									color: color-mix(
-										in srgb,
+									$color: color-mix(
+										in oklab,
 										black,
-										var(--color-highlight) $color-mix-value
+										var(--color-highlight) 50%
 									);
-									text-decoration-color: color-mix(
-										in srgb,
-										black,
-										var(--color-highlight) $color-mix-value
-									);
+									color: $color;
+									text-decoration-color: $color;
 								}
 
 								@include release.is-dark() {
@@ -1519,16 +1500,13 @@ $donate-robot-size: 500px;
 									text-decoration-color: white;
 
 									&:visited {
-										color: color-mix(
-											in srgb,
+										$color: color-mix(
+											in oklab,
 											white,
-											var(--color-highlight) $color-mix-value
+											var(--color-highlight) 50%
 										);
-										text-decoration-color: color-mix(
-											in srgb,
-											white,
-											var(--color-highlight) $color-mix-value
-										);
+										color: $color;
+										text-decoration-color: $color;
 									}
 								}
 							}
