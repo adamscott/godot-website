@@ -64,19 +64,49 @@ $header-bar-gap: 10px;
 $header-version-font-weight: 800;
 
 $release-background-end: #bcbcbc;
-$release-title-font-size: release.desktop-mobile(35px, 25px);
-$release-section-margin-top: release.desktop-mobile(80px, 40px);
-$release-section-margin-bottom: release.desktop-mobile(40px, 20px);
 
-$card-padding: release.desktop-mobile(17px, 15px);
-$card-title-font-size: release.desktop-mobile(20px, 18px);
-$card-content-font-size-clamp-min: release.desktop-mobile(14px, 0.8em);
-$card-content-font-size-clamp-val: release.desktop-mobile(7cqw, 4cqw);
-$card-content-font-size-clamp-max: release.desktop-mobile(16px, 1em);
+// -- Clamped-versions (see https://www.marcbacon.com/tools/clamp-calculator/) --
+// Target base:           16px
+// Viewport base:           16px
+// Viewport range: 700px, 1000px
+
+// $release-title-font-size: release.desktop-mobile(35px, 25px);
+// Target values:    15px,   17px
+$release-title-font-size: clamp(1.563rem, 0.104rem + 3.333vw, 2.188rem);
+
+// $release-section-margin-top: release.desktop-mobile(80px, 40px);
+// Target values:    40px,   80px
+$release-section-margin-top: clamp(2.5rem, -3.333rem + 13.333vw, 5rem);
+
+// $release-section-margin-bottom: release.desktop-mobile(40px, 20px);
+// Target values:    20px,   40px
+$release-section-margin-bottom: calc(#{$release-section-margin-top} / 2);
+
+// $card-padding: release.desktop-mobile(17px, 15px);
+// Target values:    15px,   17px
+$card-padding: clamp(0.938rem, 0.646rem + 0.667vw, 1.063rem);
+
+// $card-title-font-size: release.desktop-mobile(20px, 18px);
+// Target values:    18px,   20px
+$card-title-font-size: clamp(1.125rem, 0.833rem + 0.667vw, 1.25rem);
+
+// $card-content-font-size-clamp-min: release.desktop-mobile(14px, 0.8em);
+// $card-content-font-size-clamp-val: release.desktop-mobile(7cqw, 4cqw);
+// $card-content-font-size-clamp-max: release.desktop-mobile(16px, 1em);
+// Target values:    14px,   16px
+// Viewport range:  400px, 1600px
+$card-content-font-size: clamp(0.875rem, 0.833rem + 0.167vw, 1rem);
+
+// $download-gap: release.desktop-mobile(8px, 4px);
+// Target values:    4px,   8px
+$download-gap: clamp(0.25rem, -0.333rem + 1.333vw, 0.5rem);
+
+// $download-font-size: release.desktop-mobile(18px, 12px);
+// Target values:    12px,   18px
+$download-font-size: clamp(0.75rem, -0.125rem + 2vw, 1.125rem);
+// -- end clamped --
+
 $card-box-shadow: 0 9px 10px -10px #0000008f;
-
-$download-gap: release.desktop-mobile(8px, 4px);
-$download-font-size: release.desktop-mobile(18px, 12px);
 
 $section-hue-offset: 10;
 $sections: release.generate-sections(
@@ -144,16 +174,14 @@ $donate-robot-size: 500px;
 }
 
 :root {
-	--card-padding: #{release.get-desktop($card-padding)};
+	font-size: 16px;
+
+	--card-padding: #{$card-padding};
 	--one-column-max-width: #{$one-column-max-width};
 	--two-columns-max-width: #{$two-columns-max-width};
 
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--card-padding);
-
-	@include is-mobile() {
-		--card-padding: #{release.get-mobile($card-padding)};
-	}
 
 	@media (prefers-reduced-motion) {
 		scroll-behavior: auto;
@@ -479,11 +507,7 @@ $donate-robot-size: 500px;
 	.c-blockquote {
 		padding-left: var(--card-padding);
 		border-left: 2px solid grey;
-		font-size: clamp(
-			var(--card-content-font-size-clamp-min),
-			var(--card-content-font-size-clamp-val),
-			var(--card-content-font-size-clamp-max)
-		);
+		font-size: var(--card-content-font-size);
 		font-weight: 400;
 		font-style: italic;
 
@@ -529,28 +553,16 @@ $donate-robot-size: 500px;
 	/**
 	 * Responsive sizes.
 	 */
-	--release-title-font-size: #{release.get-desktop($release-title-font-size)};
-	--release-section-margin-top: #{release.get-desktop(
-			$release-section-margin-top
-		)};
-	--release-section-margin-bottom: #{release.get-desktop(
-			$release-section-margin-bottom
-		)};
+	--release-title-font-size: #{$release-title-font-size};
+	--release-section-margin-top: #{$release-section-margin-top};
+	--release-section-margin-bottom: #{$release-section-margin-bottom};
 
-	--card-padding: #{release.get-desktop($card-padding)};
-	--card-title-font-size: #{release.get-desktop($card-title-font-size)};
-	--card-content-font-size-clamp-min: #{release.get-desktop(
-			$card-content-font-size-clamp-min
-		)};
-	--card-content-font-size-clamp-val: #{release.get-desktop(
-			$card-content-font-size-clamp-val
-		)};
-	--card-content-font-size-clamp-max: #{release.get-desktop(
-			$card-content-font-size-clamp-max
-		)};
+	--card-padding: #{$card-padding};
+	--card-title-font-size: #{$card-title-font-size};
+	--card-content-font-size: #{$card-content-font-size};
 
-	--download-gap: #{release.get-desktop($download-gap)};
-	--download-font-size: #{release.get-desktop($download-font-size)};
+	--download-gap: #{$download-gap};
+	--download-font-size: #{$download-font-size};
 
 	/** Color **/
 	--card-background-color: white;
@@ -602,31 +614,6 @@ $donate-robot-size: 500px;
 
 	@include release.is-light() {
 		background-color: #cecece;
-	}
-
-	@include is-mobile() {
-		--release-title-font-size: #{release.get-mobile($release-title-font-size)};
-		--release-section-margin-top: #{release.get-mobile(
-				$release-section-margin-top
-			)};
-		--release-section-margin-bottom: #{release.get-mobile(
-				$release-section-margin-bottom
-			)};
-
-		--card-padding: #{release.get-mobile($card-padding)};
-		--card-title-font-size: #{release.get-mobile($card-title-font-size)};
-		--card-content-font-size-clamp-min: #{release.get-mobile(
-				$card-content-font-size-clamp-min
-			)};
-		--card-content-font-size-clamp-val: #{release.get-mobile(
-				$card-content-font-size-clamp-val
-			)};
-		--card-content-font-size-clamp-max: #{release.get-mobile(
-				$card-content-font-size-clamp-max
-			)};
-
-		--download-gap: #{release.get-mobile($download-gap)};
-		--download-font-size: #{release.get-mobile($download-font-size)};
 	}
 
 	pre:has(code.highlight, .code-highlight) {
@@ -1405,11 +1392,7 @@ $donate-robot-size: 500px;
 
 						.c-content {
 							grid-area: contnt;
-							font-size: clamp(
-								var(--card-content-font-size-clamp-min),
-								var(--card-content-font-size-clamp-val),
-								var(--card-content-font-size-clamp-max)
-							);
+							font-size: var(--card-content-font-size);
 
 							hyphens: auto;
 
