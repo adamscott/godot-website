@@ -5,7 +5,7 @@ require 'English'
 module Jekyll
   # Definition of the filters.
   module CodeHighlightFilters
-    def highlight_code(input)
+    def manual_highlight_code(input)
       new_input = input
       last_code_block_end = 0
       until (code_block = find_next_code_block(new_input, last_code_block_end)).nil?
@@ -19,35 +19,49 @@ module Jekyll
                     + (new_input[code_block.end..] || '')
         last_code_block_end = 0
       end
+
       new_input
     end
 
     private
 
-    CodeBlock = Struct.new(:begin, :end, :delimiter, :data, :type) do
+    CodeBlock = Struct.new(:begin, :end, :delimiter, :data) do
       def valid?
-        !((delimiter == '`' && !block?) || (delimiter == '```' && block?))
+        !(delimiter == '`' && !block?) || (block? && type == 'manual-highlight')
       end
 
       def block?
-        data.start_with?('\n')
+        data.include?("\n")
       end
 
       def contents
-        return unindent(data) if block?
+        if block?
+          new_content = data.delete_prefix("#{type}\n")
+          new_content = unindent(new_content)
+          # Make sure that it ends with a newline.
+          new_content = "#{new_content.delete_suffix("\n")}\n"
+          return new_content
+        end
 
         data
+      end
+
+      def type
+        return '' unless block?
+
+        /^(.+?)\n/ =~ data
+        Regexp.last_match(1) || ''
       end
 
       private
 
       def unindent(str)
-        str.gsub(/^#{str.scan(/^\s+/).min}/, '')
+        str.gsub(/^#{str.scan(/^(?:[^\S\n\r]+|$)/).min}/, '')
       end
     end
 
     def find_next_code_block(input, from, delimiter = '`')
-      code_block_start_regex = Regexp.new("(?:#{delimiter})+")
+      code_block_start_regex = /(?:#{delimiter})+/
       from_substr_start = input[from..]
       code_block_start_match = code_block_start_regex.match(from_substr_start)
       return nil if code_block_start_match.nil?
@@ -56,7 +70,7 @@ module Jekyll
       code_block_start_end = from + code_block_start_match.end(0)
       code_block_delimiter = code_block_start_match[0]
 
-      code_block_end_regex = Regexp.new("(?<!`)#{code_block_delimiter}(?!`)")
+      code_block_end_regex = /(?<!`)#{code_block_delimiter}(?!`)/
       from_substr_end = input[code_block_start_end..]
       code_block_end_match = code_block_end_regex.match(from_substr_end)
       return nil if code_block_end_match.nil?
@@ -73,20 +87,38 @@ module Jekyll
     def replace_highlights(input, block: false)
       return input if input.empty?
 
-      highlights_regex = /@\[(?<content>.+?)\]\((?<type>.+?)\)/
-      num_highlights = input.scan(highlights_regex).length
+      highlights_regex = /(?<!\\)@\[(?<content>.+?)\]\((?<type>.+?)\)/
+      non_highlights_regex = /(?<non_highlight>.*?)(?:(?<highlight>#{highlights_regex})|$)/
 
+      num_highlights = input.scan(highlights_regex).length
       highlight_only = input.gsub(highlights_regex, '') == ''
 
-      highlights_result = input.gsub(highlights_regex) do |_match|
+      force_spaces_input = input.gsub(non_highlights_regex) do |_match|
+        non_highlight = $LAST_MATCH_INFO[:non_highlight]
+        highlight = $LAST_MATCH_INFO[:highlight] || ''
+        non_highlight.gsub!('<', '&lt;')
+        non_highlight.gsub!('>', '&gt;')
+        non_highlight + highlight
+      end
+
+      highlights_result = force_spaces_input.gsub(highlights_regex) do |_match|
         classes = []
         classes.push('code-highlight') if num_highlights == 1 && !block
         classes.push($LAST_MATCH_INFO[:type])
+        content = $LAST_MATCH_INFO[:content]
+        content.gsub!('<', '&lt;')
+        content.gsub!('>', '&gt;')
 
-        "<span class=\"#{classes.join(' ')}\">#{$LAST_MATCH_INFO[:content]}</span>"
+        "<span class=\"#{classes.join(' ')}\">#{content}</span>"
       end
 
-      return "<code class=\"highlight\">#{highlights_result.gsub('\n', '<br>')}</code>" if block
+      if block
+        return <<~TEXT_END
+          <pre class="manual" markdown=0>
+               <code class=\"highlight\">#{highlights_result}</code>
+          </pre>
+        TEXT_END
+      end
 
       return "<span class=\"code-highlight\">#{highlights_result}</span>" unless highlight_only && num_highlights == 1
 

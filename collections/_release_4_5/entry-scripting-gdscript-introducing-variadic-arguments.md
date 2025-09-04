@@ -9,20 +9,23 @@ title: Introducing variadic arguments
 text: |
   GDScript functions can now accept an arbitrary number of parameters!
 
-  <code class="highlight">
-    <span class="keyword">extends</span> <span class="enginetype">Node</span><br>
-    <br>
-    <span class="keyword">func</span> <span class="function">sum</span><span class="symbol">(</span>first_number<span class="symbol">:</span> <span class="basetype">float</span><span class="symbol">,</span> <span class="symbol">...</span>numbers<span class="symbol">:</span> <span class="basetype">Array</span><span class="symbol">) -></span> <span class="enginetype">float</span><span class="symbol">:</span><br>
-    &nbsp;&nbsp;<span class="keyword">var</span> total <span class="symbol">:=</span> first_number<br>
-    &nbsp;&nbsp;<span class="keyword">for</span> number <span class="keyword">in</span> numbers<span class="symbol">:</span><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;total <span class="symbol">+=</span> number<br>
-    &nbsp;&nbsp;<span class="keyword">return</span> total<br>
-    <br>
-    <span class="keyword">func</span> <span class="function">_ready</span><span class="symbol">() -></span> <span class="enginetype">void</span><span class="symbol">:</span><br>
-    &nbsp;&nbsp;<span class="function">sum</span><span class="symbol">(</span><span class="basetype">1</span><span class="symbol">)</span><wbr>&nbsp;<wbr>&nbsp;<wbr><span class="comment"># 1.0</span><br>
-    &nbsp;&nbsp;<span class="function">sum</span><span class="symbol">(</span><span class="basetype">1</span><span class="symbol">,</span> <span class="basetype">2</span><span class="symbol">,</span> <span class="basetype">3</span><span class="symbol">)</span><wbr>&nbsp;<wbr>&nbsp;<wbr><span class="comment"># 6.0</span><br>
-    &nbsp;&nbsp;<span class="function">sum</span><span class="symbol">(</span><span class="basetype">1</span><span class="symbol">,</span> <span class="basetype">2</span><span class="symbol">,</span> <span class="basetype">3</span><span class="symbol">,</span> <span class="basetype">4</span><span class="symbol">,</span> <span class="basetype">5</span><span class="symbol">)</span><wbr>&nbsp;<wbr>&nbsp;<wbr><span class="comment"># 15.0</span><br>
-  </code>
+  ```manual-highlight
+  @[extends](keyword) @[Node](enginetype)
+
+
+  @[func](keyword) @[sum](function)@[&lpar;](symbol)first_number@[:](symbol) @[float](basetype)@[,](symbol) @[...](symbol)numbers@[:](symbol) @[Array](basetype)@[&rpar; ->](symbol) @[float](basetype)@[:](symbol)
+    @[var](keyword) total @[:=](symbol) first_number
+    @[for](keyword) number @[in](symbol) numbers@[:](symbol)
+      total @[+=](symbol) number
+    @[return](keyword) total
+
+
+  @[func](keyword) @[_ready](function)@[&lpar;&rpar; ->](symbol) @[void](basetype)@[:](symbol)
+    @[sum](function)@[&lpar;](symbol)@[1](basetype)@[&rpar;](symbol)  @[# 1.0](comment)
+    @[sum](function)@[&lpar;](symbol)@[1](basetype)@[,](symbol) @[2](basetype)@[,](symbol) @[3](basetype)@[&rpar;](symbol)  @[# 6.0](comment)
+    @[sum](function)@[&lpar;](symbol)@[1](basetype)@[,](symbol) @[2](basetype)@[,](symbol) @[3](basetype)@[,](symbol) @[4](basetype)@[,](symbol) @[5](basetype)@[&rpar;](symbol)  @[# 15.0](comment)
+
+  ```
 contributors:
 - name: Danil Alexeev
   github: dalexeev

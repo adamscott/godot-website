@@ -629,16 +629,30 @@ $donate-robot-size: 500px;
 		--download-font-size: #{release.get-mobile($download-font-size)};
 	}
 
-	code.highlight,
-	.code-highlight {
-		$_padding: 5px;
+	pre:has(code.highlight, .code-highlight) {
+		font-family: unset;
+		background: unset;
+		padding: unset;
+		margin: unset;
+		font-size: unset;
+		line-height: unset;
+		border-radius: unset;
+		overflow-y: unset;
 
+		code.highlight,
+		.code-highlight {
+			width: 100%;
+			box-sizing: border-box;
+		}
+	}
+
+	@mixin code-highlight($padding) {
 		display: inline-block;
-		// padding: 0 calc($_padding / 2);
-		padding: 0 0;
 		margin: 0 0;
-		border-radius: $_padding;
+		border-radius: $padding;
+		white-space: pre-wrap;
 
+		line-height: normal;
 		color: var(--color-code-text);
 		font-family:
 			ui-monospace,
@@ -681,6 +695,19 @@ $donate-robot-size: 500px;
 			&.#{$key} {
 				color: var(--color-code-#{$key});
 			}
+		}
+	}
+
+	& {
+		$_padding: var(--card-padding);
+
+		code.highlight,
+		.code-highlight {
+			@include code-highlight($padding: $_padding);
+		}
+		code.highlight {
+			padding: $_padding;
+			padding-top: calc($_padding * 2);
 		}
 	}
 
