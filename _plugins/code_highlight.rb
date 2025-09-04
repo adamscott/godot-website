@@ -38,6 +38,7 @@ module Jekyll
         if block?
           new_content = data.delete_prefix("#{type}\n")
           new_content = unindent(new_content)
+
           # Make sure that it ends with a newline.
           new_content = "#{new_content.delete_suffix("\n")}\n"
           return new_content
@@ -56,7 +57,18 @@ module Jekyll
       private
 
       def unindent(str)
-        str.gsub(/^#{str.scan(/^(?:[^\S\n\r]+|$)/).min}/, '')
+        loop do
+          populated_lines_regex = /^.+/
+          unindent_regex = /^#{str.scan(/^[^\S\n\r]+/).min}/
+
+          # We hit the maximum.
+          break unless str.scan(unindent_regex).length == str.scan(populated_lines_regex).length
+
+          unindented_str = str.gsub(unindent_regex, '')
+          str = unindented_str
+        end
+
+        str
       end
     end
 
