@@ -1047,6 +1047,14 @@ $donate-robot-size: 500px;
 							a {
 								color: var(--color-invert-highlight);
 								text-decoration-color: var(--color-invert-highlight);
+
+								&:hover {
+									.code-highlight {
+										text-decoration: underline;
+										text-decoration-color: var(--color-invert-highlight);
+									}
+								}
+
 								&:visited {
 									color: color-mix(
 										in srgb,
@@ -1058,6 +1066,17 @@ $donate-robot-size: 500px;
 										var(--color-invert-highlight),
 										black 10%
 									);
+
+									&:hover {
+										.code-highlight {
+											text-decoration: underline;
+											text-decoration-color: color-mix(
+												in srgb,
+												var(--color-invert-highlight),
+												black 10%
+											);
+										}
+									}
 								}
 							}
 							.links-container {
@@ -1431,14 +1450,27 @@ $donate-robot-size: 500px;
 							}
 
 							a {
-								color: var(--color-highlight);
-								text-decoration-color: var(--color-highlight);
+								@mixin setup-a-color($color) {
+									color: $color;
+									text-decoration-color: $color;
+
+									&:hover {
+										.code-highlight {
+											text-decoration: underline;
+											text-decoration-color: $color;
+										}
+									}
+								}
+
+								@include setup-a-color($color: var(--color-highlight));
+
 								&:visited {
-									color: color-mix(in srgb, var(--color-highlight), black 10%);
-									text-decoration-color: color-mix(
-										in srgb,
-										var(--color-highlight),
-										black 10%
+									@include setup-a-color(
+										$color: color-mix(
+												in srgb,
+												var(--color-highlight),
+												black 10%
+											)
 									);
 								}
 							}
