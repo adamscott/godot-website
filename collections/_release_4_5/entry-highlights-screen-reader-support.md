@@ -13,7 +13,7 @@ text: |
 
   After 32,000 lines of code, hundred of comments, and countless hours of feedback and testing, we are proud to introduce the integration of [AccessKit](https://accesskit.dev/) in the engine. It is a framework that launched 2 years ago in order to offer a way to bridge most of the platforms (macOS, Windows, and Unix/Linux using [D-Bus](https://en.wikipedia.org/wiki/D-Bus)) over a common API.
 
-  Thanks to AccessKit, we added screen reader support to <code class="highlight"><span class="enginetype">Control</span></code> nodes. We also added screen reader bindings in order to customize the behavior of any type of <code class="highlight"><span class="enginetype">Node</span></code>.
+  Thanks to AccessKit, we added screen reader support to ``@[Control](enginetype)`` nodes. We also added screen reader bindings in order to customize the behavior of any type of ``@[Node](enginetype)``.
 
   As this feature is quite new, please note that its integration is still in its experimental phase. And screen reader support for the Godot Editor itself is not complete yet—it is only implemented for the Project Manager, standard UI nodes, and the inspector. Expect follow-ups in future updates.
 

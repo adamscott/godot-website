@@ -7,7 +7,7 @@ importance: 4
 anchor: script-color-picker
 title: Script color picker
 text: |
-  Not everyone can read colors. So we added a little color preview next to every <code class="highlight"><span class="enginetype">Color</span></code> value.
+  Not everyone can read colors. So we added a little color preview next to every ``@[Color](basetype)`` value.
 
   We even pushed the idea further: if you click that preview icon, you can edit the value on the spot using a color picker.
 contributors:

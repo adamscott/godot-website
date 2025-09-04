@@ -7,7 +7,7 @@ importance: 4
 anchor: allow-calling-object-set-script-instance-from-gdextension
 title: |
   Allow calling
-  ``@[Object](enginetype)@[::](symbol)@[set_script_instance](membervariable)@[()](symbol)``
+  ``@[Object](enginetype)@[::](symbol)@[](wbr)@[set_script_instance](membervariable)@[()](symbol)``
   from GDExtension"
 text: |
   Great news for scripting language support in Godot!

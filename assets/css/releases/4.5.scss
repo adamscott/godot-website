@@ -616,6 +616,21 @@ $donate-robot-size: 500px;
 		background-color: #cecece;
 	}
 
+	figure.file {
+		margin: var(--card-padding) 0;
+
+		figcaption {
+			margin: calc(var(--card-padding) / 4) 0;
+			color: color-mix(in oklab, var(--card-color), transparent 20%);
+
+			&::before {
+				content: "📄";
+				margin-left: var(--card-padding);
+				margin-right: calc(var(--card-padding) / 2);
+			}
+		}
+	}
+
 	pre:has(code.highlight, .code-highlight) {
 		font-family: unset;
 		background: unset;
@@ -631,10 +646,13 @@ $donate-robot-size: 500px;
 			width: 100%;
 			box-sizing: border-box;
 		}
+
+		& + pre:has(code.highlight, .code-highlight) {
+			margin-top: var(--card-padding);
+		}
 	}
 
 	@mixin code-highlight() {
-		display: inline-block;
 		margin: 0 0;
 		border-radius: 5px;
 		white-space: pre-wrap;
@@ -655,7 +673,6 @@ $donate-robot-size: 500px;
 			var(--color-code-background),
 			transparent 15%
 		);
-		border: 1px solid color-mix(in oklab, transparent, black 10%);
 
 		@include release.is-dark() {
 			background-color: color-mix(
@@ -663,7 +680,6 @@ $donate-robot-size: 500px;
 				var(--color-code-background),
 				transparent 50%
 			);
-			border-color: color-mix(in oklab, transparent, white 10%);
 		}
 
 		@each $key
@@ -696,12 +712,21 @@ $donate-robot-size: 500px;
 			@include code-highlight();
 		}
 		code.highlight {
+			display: block;
+
 			padding: $_padding;
 			padding-top: calc($_padding * 2);
+
+			// Add border specifically for the <code> block content.
+			border: 1px solid color-mix(in oklab, transparent, black 10%);
+			@include release.is-dark() {
+				border-color: color-mix(in oklab, transparent, white 10%);
+			}
 		}
 		.code-highlight {
-			padding: 0 0.1em;
-			margin: 0 0.1em;
+			display: inline;
+			// padding: 0 0.1em;
+			// margin: 0 0.1em;
 		}
 	}
 
