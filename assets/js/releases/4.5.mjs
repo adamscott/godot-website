@@ -79,7 +79,9 @@ const sectionContainers = Array.from(
 );
 for (const sectionContainer of sectionContainers) {
 	elements.push({
-		element: sectionContainer.querySelector(".section-title h3"),
+		element: sectionContainer.querySelector(
+			".section-title h3, .section-title h4",
+		),
 		container: sectionContainer.querySelector(".section-title"),
 		isLastOfType: true,
 	});
@@ -87,11 +89,14 @@ for (const sectionContainer of sectionContainers) {
 	// sectionContainer.classList.add("overflow-y-hidden");
 }
 elements.sort((a, b) => {
-	const aRect = a?.element?.getBoundingClientRect();
-	const bRect = b?.element?.getBoundingClientRect();
-	return (aRect?.top ?? 1) - (bRect?.top ?? 2);
+	const aRect = a.element.getBoundingClientRect();
+	const bRect = b.element.getBoundingClientRect();
+	return aRect.top - bRect.top;
 });
 for (const element of elements) {
+	if (element.element == null) {
+		debugger;
+	}
 	if (element.element.getBoundingClientRect().top < windowHeight) {
 		if (element.isLastOfType) {
 			// element.container.classList.remove("overflow-y-hidden");
@@ -530,8 +535,8 @@ for (const intlBlockquoteEntry of intlBlockquoteEntries) {
 	});
 	const entryAnimation = animate(chars, {
 		y: [
-			{ to: ["100%", "0%"] },
-			{ to: "-100%", delay: prefersReducedMotion ? 0 : 750, ease: "in(3)" },
+			{ to: ["120%", "0%"] },
+			{ to: "-120%", delay: prefersReducedMotion ? 0 : 750, ease: "in(3)" },
 		],
 		duration: 750,
 		ease: "out(3)",

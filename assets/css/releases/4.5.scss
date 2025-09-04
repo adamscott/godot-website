@@ -2,6 +2,7 @@
 ---
 
 @use "sass:color";
+@use "sass:list";
 @use "sass:map";
 @use "sass:selector";
 @use "common/colors";
@@ -173,6 +174,28 @@ $donate-robot-size: 500px;
 	}
 }
 
+@mixin text-punch($weight, $force_pure: false) {
+	$shadow-color: var(--text-punch-shadow-color);
+	@if $force_pure {
+		$shadow-color: var(--text-punch-shadow-color-pure);
+	}
+
+	@if $weight == micro {
+		text-shadow: 0 1.5px 4.5px $shadow-color;
+	} @else if list.index((light, bold), $weight) {
+		$light-shadow: 0 1.5px 2.5px $shadow-color;
+		$bold-shadow: 0px 1px 1px $shadow-color;
+
+		@if $weight == light {
+			text-shadow: $light-shadow;
+		} @else {
+			text-shadow: $light-shadow, $bold-shadow;
+		}
+	} @else {
+		@error "#{$weight} is not a valid text-punch value.";
+	}
+}
+
 :root {
 	font-size: 16px;
 
@@ -180,11 +203,34 @@ $donate-robot-size: 500px;
 	--one-column-max-width: #{$one-column-max-width};
 	--two-columns-max-width: #{$two-columns-max-width};
 
-	scroll-behavior: smooth;
-	scroll-padding-top: var(--card-padding);
+	--text-punch-shadow-color-pure: color-mix(in oklab, black, transparent 20%);
+	--text-punch-shadow-color-dark: var(--text-punch-shadow-color-pure);
+	--text-punch-shadow-color-light: color-mix(
+		in oklab,
+		var(--text-punch-shadow-color-pure),
+		transparent 92.5%
+	);
+	--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
+	@include release.is-light() {
+		--text-punch-shadow-color: var(--text-punch-shadow-color-light);
+	}
+
+	& {
+		scroll-behavior: smooth;
+		scroll-padding-top: var(--card-padding);
+	}
 
 	@media (prefers-reduced-motion) {
 		scroll-behavior: auto;
+	}
+}
+
+.static-color-scheme {
+	&.static-color-scheme--light {
+		--text-punch-shadow-color: var(--text-punch-shadow-color-light);
+	}
+	&.static-color-scheme--dark {
+		--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
 	}
 }
 
@@ -222,6 +268,8 @@ $donate-robot-size: 500px;
 
 		color: black;
 		font-size: 1.5em;
+
+		@include text-punch($weight: bold);
 
 		&:hover {
 			span {
@@ -300,6 +348,8 @@ $donate-robot-size: 500px;
 			.main-download-details {
 				font-size: 14px;
 				opacity: 0.6;
+
+				@include text-punch($weight: micro);
 			}
 
 			.download-button {
@@ -313,6 +363,8 @@ $donate-robot-size: 500px;
 				background-color: var(--primary-color);
 				color: white;
 				line-height: 32px;
+
+				@include text-punch($weight: bold);
 
 				.download-title {
 					display: flex;
@@ -379,6 +431,8 @@ $donate-robot-size: 500px;
 	gap: calc(var(--card-padding) / 2);
 	align-items: center;
 	justify-content: center;
+
+	@include text-punch($weight: bold);
 
 	& > li {
 		margin: 0;
@@ -450,6 +504,8 @@ $donate-robot-size: 500px;
 			justify-content: space-between;
 			gap: 10px;
 			padding: var(--card-padding);
+
+			@include text-punch($weight: light);
 
 			&::after {
 				content: "";
@@ -622,6 +678,7 @@ $donate-robot-size: 500px;
 		figcaption {
 			margin: calc(var(--card-padding) / 4) 0;
 			color: color-mix(in oklab, var(--card-color), transparent 20%);
+			@include text-punch($weight: light);
 
 			&::before {
 				content: "📄";
@@ -674,6 +731,8 @@ $donate-robot-size: 500px;
 			transparent 15%
 		);
 
+		@include text-punch($weight: light);
+
 		@include release.is-dark() {
 			background-color: color-mix(
 				in oklab,
@@ -715,7 +774,7 @@ $donate-robot-size: 500px;
 			display: block;
 
 			padding: $_padding;
-			padding-top: calc($_padding * 2);
+			padding-top: calc($_padding * 1.5);
 
 			// Add border specifically for the <code> block content.
 			border: 1px solid color-mix(in oklab, transparent, black 10%);
@@ -725,8 +784,7 @@ $donate-robot-size: 500px;
 		}
 		.code-highlight {
 			display: inline;
-			// padding: 0 0.1em;
-			// margin: 0 0.1em;
+			background: none;
 		}
 	}
 
@@ -809,8 +867,11 @@ $donate-robot-size: 500px;
 				}
 
 				.header-text {
+					@include text-punch($weight: micro);
+
 					> .header-title {
 						color: $header-content-color;
+						@include text-punch($weight: bold);
 					}
 				}
 
@@ -827,58 +888,13 @@ $donate-robot-size: 500px;
 
 				&.header-content-note {
 					font-size: 75%;
+					@include text-punch($weight: micro);
+
 					.header-note-title {
 						font-style: italic;
 						font-weight: 800;
 						font-size: 125%;
-					}
-				}
-
-				.header-numbers {
-					margin: auto;
-					min-width: 405px;
-
-					.header-numbers-commits {
-						--bar-color: #{$header-bar-commits-color};
-						.header-numbers-line.inactive {
-							--bar-color: #{$header-bar-commits-color-inactive};
-						}
-					}
-
-					.header-numbers-contributors {
-						--bar-color: #{$header-bar-contributors-color};
-						.header-numbers-line.inactive {
-							--bar-color: #{$header-bar-contributors-color-inactive};
-						}
-					}
-
-					.header-numbers-entry {
-						margin-bottom: $header-numbers-gap;
-						&:last-of-type {
-							margin-bottom: 0;
-						}
-
-						.header-numbers-line {
-							font-variant-numeric: tabular-nums;
-							.version {
-								font-weight: $header-version-font-weight;
-								margin-right: $header-bar-gap;
-							}
-
-							&.inactive {
-								.version,
-								.number {
-									opacity: 0.7;
-								}
-							}
-							.bar {
-								display: inline-block;
-								height: $header-bar-height;
-								background-color: var(--bar-color, #{colors.$godot-blue});
-								transform: translateY(2px);
-								margin-right: $header-bar-gap;
-							}
-						}
+						@include text-punch($weight: bold);
 					}
 				}
 			} // .header-content
@@ -920,6 +936,8 @@ $donate-robot-size: 500px;
 			gap: var(--card-padding);
 			grid-template-columns: repeat(3, minmax($column-min-width, 1fr));
 			grid-auto-flow: row dense;
+
+			transform: translateY(0);
 
 			&.two-columns {
 				grid-template-columns: repeat(2, minmax($column-min-width, 1fr));
@@ -1374,6 +1392,8 @@ $donate-robot-size: 500px;
 							font-weight: 700;
 							font-size: var(--card-title-font-size);
 
+							@include text-punch($weight: bold);
+
 							a {
 								text-decoration: none;
 								color: var(--color-top);
@@ -1405,6 +1425,8 @@ $donate-robot-size: 500px;
 							font-size: clamp(30px, 7cqw, 35px);
 							font-weight: 800;
 
+							@include text-punch($weight: bold);
+
 							p {
 								line-height: normal;
 								margin: 0;
@@ -1420,6 +1442,8 @@ $donate-robot-size: 500px;
 							font-size: var(--card-content-font-size);
 
 							hyphens: auto;
+
+							@include text-punch($weight: micro);
 
 							& > p,
 							& > ul {
@@ -1482,6 +1506,8 @@ $donate-robot-size: 500px;
 							color: inherit;
 							user-select: none;
 
+							@include text-punch($weight: light);
+
 							.c-link-a {
 								color: black;
 								text-decoration-color: black;
@@ -1526,6 +1552,8 @@ $donate-robot-size: 500px;
 								font-size: 80%;
 								user-select: auto;
 
+								@include text-punch($weight: micro);
+
 								.contributor-icon {
 									grid-area: icon;
 									display: flex;
@@ -1540,6 +1568,8 @@ $donate-robot-size: 500px;
 									a {
 										color: var(--color-highlight);
 										text-decoration-color: var(--color-highlight);
+
+										@include text-punch($weight: light);
 									}
 								}
 							}
@@ -1696,6 +1726,8 @@ $donate-robot-size: 500px;
 
 						text-decoration: none;
 						cursor: pointer;
+
+						@include text-punch($weight: light);
 					}
 
 					.release-card-content-creator {
@@ -1754,7 +1786,8 @@ $donate-robot-size: 500px;
 				margin-bottom: calc(var(--card-padding) * 2);
 			}
 
-			.section-title h3 {
+			.section-title h3,
+			.section-title h4 {
 				position: relative;
 				background: var(--color-top)
 					linear-gradient(to bottom, var(--color-top), var(--color-bottom));
@@ -1771,6 +1804,9 @@ $donate-robot-size: 500px;
 				}
 
 				contain: paint;
+
+				@include text-punch($weight: bold);
+
 				.section-robot {
 					position: absolute;
 					bottom: 0;
@@ -1779,6 +1815,8 @@ $donate-robot-size: 500px;
 					color: var(--color-top);
 					font-size: $donate-robot-size;
 					z-index: -1;
+
+					text-shadow: none;
 				}
 			}
 
