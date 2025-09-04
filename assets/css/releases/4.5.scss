@@ -774,7 +774,6 @@ $donate-robot-size: 500px;
 			display: block;
 
 			padding: $_padding;
-			padding-top: calc($_padding * 1.5);
 
 			// Add border specifically for the <code> block content.
 			border: 1px solid color-mix(in oklab, transparent, black 10%);
