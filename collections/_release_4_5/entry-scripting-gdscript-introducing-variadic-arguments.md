@@ -24,7 +24,6 @@ text: |
     @[sum](function)@[&lpar;](symbol)@[1](basetype)@[&rpar;](symbol)  @[# 1.0](comment)
     @[sum](function)@[&lpar;](symbol)@[1](basetype)@[,](symbol) @[2](basetype)@[,](symbol) @[3](basetype)@[&rpar;](symbol)  @[# 6.0](comment)
     @[sum](function)@[&lpar;](symbol)@[1](basetype)@[,](symbol) @[2](basetype)@[,](symbol) @[3](basetype)@[,](symbol) @[4](basetype)@[,](symbol) @[5](basetype)@[&rpar;](symbol)  @[# 15.0](comment)
-
   ```
 contributors:
 - name: Danil Alexeev
