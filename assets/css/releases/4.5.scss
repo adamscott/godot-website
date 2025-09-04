@@ -709,6 +709,10 @@ $donate-robot-size: 500px;
 			padding: $_padding;
 			padding-top: calc($_padding * 2);
 		}
+		.code-highlight {
+			padding: 0 0.1em;
+			margin: 0 0.1em;
+		}
 	}
 
 	.replace-me {
