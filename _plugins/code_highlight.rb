@@ -27,7 +27,7 @@ module Jekyll
 
     CodeBlock = Struct.new(:begin, :end, :delimiter, :data) do
       def valid?
-        !(delimiter == '`' && !block?) || (block? && type == 'manual-highlight')
+        !(delimiter == '`' && !block?) || (block? && %w[manual manual-highlight].include?(type))
       end
 
       def block?
