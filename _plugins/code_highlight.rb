@@ -113,11 +113,9 @@ module Jekyll
       end
 
       if block
-        return <<~TEXT_END
-          <pre class="manual" markdown=0>
-               <code class=\"highlight\">#{highlights_result}</code>
-          </pre>
-        TEXT_END
+        code_tag = "<code class=\"highlight\">#{highlights_result}</code>"
+        pre_tag = "<pre class=\"manual\" markdown=0>#{code_tag}</pre>"
+        return pre_tag
       end
 
       return "<span class=\"code-highlight\">#{highlights_result}</span>" unless highlight_only && num_highlights == 1
