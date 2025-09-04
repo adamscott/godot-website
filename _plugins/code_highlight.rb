@@ -87,7 +87,7 @@ module Jekyll
     def replace_highlights(input, block: false)
       return input if input.empty?
 
-      highlights_regex = /(?<!\\)@\[(?<content>.+?)\]\((?<type>.+?)\)/
+      highlights_regex = /(?<!\\)@\[(?<content>.*?)\]\((?<type>.+?)\)/
       non_highlights_regex = /(?<non_highlight>.*?)(?:(?<highlight>#{highlights_regex})|$)/
 
       num_highlights = input.scan(highlights_regex).length
@@ -102,9 +102,12 @@ module Jekyll
       end
 
       highlights_result = force_spaces_input.gsub(highlights_regex) do |_match|
+        type = $LAST_MATCH_INFO[:type]
+        next '<wbr>' if type == 'wbr'
+
         classes = []
         classes.push('code-highlight') if num_highlights == 1 && !block
-        classes.push($LAST_MATCH_INFO[:type])
+        classes.push(type)
         content = $LAST_MATCH_INFO[:content]
         content.gsub!('<', '&lt;')
         content.gsub!('>', '&gt;')
