@@ -664,16 +664,19 @@ $donate-robot-size: 500px;
 			monospace;
 
 		background-color: color-mix(
-			in srgb,
+			in oklab,
 			var(--color-code-background),
 			transparent 15%
 		);
+		border: 1px solid color-mix(in oklab, transparent, black 10%);
+
 		@include release.is-dark() {
 			background-color: color-mix(
-				in srgb,
+				in oklab,
 				var(--color-code-background),
 				transparent 50%
 			);
+			border-color: color-mix(in oklab, transparent, white 10%);
 		}
 
 		@each $key
