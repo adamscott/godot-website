@@ -1090,19 +1090,14 @@ $donate-robot-size: 500px;
 						.c-link {
 							.c-link-a {
 								@mixin inverted-c-link-a {
-									$link-color: white;
+									$link-color: var(--color-invert-highlight);
 									color: $link-color;
 									text-decoration-color: $link-color;
 
 									$color-mix-value: 10%;
 
 									&:visited {
-										$color-to-mix: color-mix(
-											in oklab,
-											var(--color-invert-highlight),
-											black 15%
-										);
-										$color: color-mix(in oklab, $link-color, $color-to-mix 90%);
+										$color: color-mix(in oklab, $link-color, black 15%);
 										color: $color;
 										text-decoration-color: $color;
 									}
