@@ -86,6 +86,17 @@ for (const sectionContainer of sectionContainers) {
 		isLastOfType: true,
 	});
 
+	const sectionLinks = sectionContainer.querySelector(".section-links");
+	if (sectionLinks == null) {
+		continue;
+	}
+
+	elements.push({
+		element: sectionLinks,
+		container: sectionContainer.querySelector(".section-title"),
+		isLastOfType: true,
+	});
+
 	// sectionContainer.classList.add("overflow-y-hidden");
 }
 elements.sort((a, b) => {
