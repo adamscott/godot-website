@@ -646,10 +646,10 @@ $donate-robot-size: 500px;
 		}
 	}
 
-	@mixin code-highlight($padding) {
+	@mixin code-highlight() {
 		display: inline-block;
 		margin: 0 0;
-		border-radius: $padding;
+		border-radius: 5px;
 		white-space: pre-wrap;
 
 		line-height: normal;
@@ -703,7 +703,7 @@ $donate-robot-size: 500px;
 
 		code.highlight,
 		.code-highlight {
-			@include code-highlight($padding: $_padding);
+			@include code-highlight();
 		}
 		code.highlight {
 			padding: $_padding;
@@ -1453,6 +1453,11 @@ $donate-robot-size: 500px;
 								@mixin setup-a-color($color) {
 									color: $color;
 									text-decoration-color: $color;
+
+									.code-highlight {
+										text-decoration: underline;
+										text-decoration-color: $color;
+									}
 
 									&:hover {
 										.code-highlight {
