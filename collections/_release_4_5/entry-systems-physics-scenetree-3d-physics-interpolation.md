@@ -5,7 +5,7 @@ subsection: physics
 rank: 0
 importance: 2
 anchor: scenetree-3d-physics-interpolation
-title: "`SceneTree` 3D physics interpolation"
+title: "``@[SceneTree](enginetype)`` 3D physics interpolation"
 blockquote: Frames grow on trees now
 text: |
   We transplanted (or should we say "grafted"?) 3D physics interpolation to ``@[SceneTree](enginetype)``. [Introduced in Godot 4.4](/releases/4.4/#_3D-physics-interpolation), 3D physics interpolation is the concept of making physics-based movement appear fluid even if it’s running slower than the process frame-rate.

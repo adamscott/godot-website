@@ -5,7 +5,7 @@ subsection: editor
 rank: 5
 importance: 3
 anchor: export-variables-as-variant
-title: Export variables as `Variant`
+title: Export variables as ``@[Variant](basetype)``
 text: |
   With this new update, it is now possible to export variables as ``@[Variant](basetype)``.
 
