@@ -204,6 +204,49 @@ $donate-robot-size: 500px;
 	--two-columns-max-width: #{$two-columns-max-width};
 
 	& {
+		--color-code-symbol: #{colors.$code-symbol--light};
+		--color-code-keyword: #{colors.$code-keyword--light};
+		--color-code-controlflow: #{colors.$code-controlflow--light};
+		--color-code-basetype: #{colors.$code-basetype--light};
+		--color-code-enginetype: #{colors.$code-enginetype--light};
+		--color-code-usertype: #{colors.$code-usertype--light};
+		--color-code-comment: #{colors.$code-comment--light};
+		--color-code-string: #{colors.$code-string--light};
+		--color-code-background: #{colors.$code-background--light};
+		--color-code-text: #{colors.$code-text--light};
+		--color-code-function: #{colors.$code-function--light};
+		--color-code-membervariable: #{colors.$code-membervariable--light};
+		--color-code-gdscript-function: #{colors.$code-gdscript-function--light};
+		--color-code-gdscript-globalfunction: #{colors.$code-gdscript-globalfunction--light};
+		--color-code-gdscript-nodepath: #{colors.$code-gdscript-nodepath--light};
+		--color-code-gdscript-nodereference: #{colors.$code-gdscript-nodereference--light};
+		--color-code-gdscript-annotation: #{colors.$code-gdscript-annotation--light};
+		--color-code-gdscript-stringname: #{colors.$code-gdscript-stringname--light};
+		@include release.is-dark() {
+			--card-background-color: #333639;
+			--card-color: white;
+			--color-code-symbol: #{colors.$code-symbol--dark};
+			--color-code-keyword: #{colors.$code-keyword--dark};
+			--color-code-controlflow: #{colors.$code-controlflow--dark};
+			--color-code-basetype: #{colors.$code-basetype--dark};
+			--color-code-enginetype: #{colors.$code-enginetype--dark};
+			--color-code-usertype: #{colors.$code-usertype--dark};
+			--color-code-comment: #{colors.$code-comment--dark};
+			--color-code-string: #{colors.$code-string--dark};
+			--color-code-background: #{colors.$code-background--dark};
+			--color-code-text: #{colors.$code-text--dark};
+			--color-code-function: #{colors.$code-function--dark};
+			--color-code-membervariable: #{colors.$code-membervariable--dark};
+			--color-code-gdscript-function: #{colors.$code-gdscript-function--dark};
+			--color-code-gdscript-globalfunction: #{colors.$code-gdscript-globalfunction--dark};
+			--color-code-gdscript-nodepath: #{colors.$code-gdscript-nodepath--dark};
+			--color-code-gdscript-nodereference: #{colors.$code-gdscript-nodereference--dark};
+			--color-code-gdscript-annotation: #{colors.$code-gdscript-annotation--dark};
+			--color-code-gdscript-stringname: #{colors.$code-gdscript-stringname--dark};
+		}
+	}
+
+	& {
 		--text-punch-shadow-color--base--dark: black;
 		--text-punch-shadow-color--layer--dark: transparent 20%;
 		--text-punch-shadow-color--base--light: var(
@@ -224,6 +267,38 @@ $donate-robot-size: 500px;
 		--text-punch-shadow-color: var(--text-punch-shadow-color-default);
 		@include release.is-light() {
 			--text-punch-shadow-color-default: var(--text-punch-shadow-color-light);
+		}
+	}
+
+	& {
+		& {
+			--code-highlight-background-color-light: transparent;
+			--code-highlight-background-color-dark: color-mix(
+				in oklab,
+				var(--color-code-background),
+				transparent 5%
+			);
+			--code-highlight-background-color-default: var(
+				--code-highlight-background-color-light
+			);
+			--code-highlight-background-color: var(
+				--code-highlight-background-color-default
+			);
+			@include release.is-dark() {
+				--code-highlight-background-color-default: var(
+					--code-highlight-background-color-dark
+				);
+			}
+		}
+
+		& {
+			--code-highlight-padding-light: 0;
+			--code-highlight-padding-dark: 0 0.25em;
+			--code-highlight-padding-default: var(--code-highlight-padding-light);
+			--code-highlight-padding: var(--code-highlight-padding-default);
+			@include release.is-dark() {
+				--code-highlight-padding-default: var(--code-highlight-padding-dark);
+			}
 		}
 	}
 
@@ -638,46 +713,6 @@ $donate-robot-size: 500px;
 	/** Color **/
 	--card-background-color: white;
 	--card-color: #2d2d2d;
-	--color-code-symbol: #{colors.$code-symbol--light};
-	--color-code-keyword: #{colors.$code-keyword--light};
-	--color-code-controlflow: #{colors.$code-controlflow--light};
-	--color-code-basetype: #{colors.$code-basetype--light};
-	--color-code-enginetype: #{colors.$code-enginetype--light};
-	--color-code-usertype: #{colors.$code-usertype--light};
-	--color-code-comment: #{colors.$code-comment--light};
-	--color-code-string: #{colors.$code-string--light};
-	--color-code-background: #{colors.$code-background--light};
-	--color-code-text: #{colors.$code-text--light};
-	--color-code-function: #{colors.$code-function--light};
-	--color-code-membervariable: #{colors.$code-membervariable--light};
-	--color-code-gdscript-function: #{colors.$code-gdscript-function--light};
-	--color-code-gdscript-globalfunction: #{colors.$code-gdscript-globalfunction--light};
-	--color-code-gdscript-nodepath: #{colors.$code-gdscript-nodepath--light};
-	--color-code-gdscript-nodereference: #{colors.$code-gdscript-nodereference--light};
-	--color-code-gdscript-annotation: #{colors.$code-gdscript-annotation--light};
-	--color-code-gdscript-stringname: #{colors.$code-gdscript-stringname--light};
-	@include release.is-dark() {
-		--card-background-color: #333639;
-		--card-color: white;
-		--color-code-symbol: #{colors.$code-symbol--dark};
-		--color-code-keyword: #{colors.$code-keyword--dark};
-		--color-code-controlflow: #{colors.$code-controlflow--dark};
-		--color-code-basetype: #{colors.$code-basetype--dark};
-		--color-code-enginetype: #{colors.$code-enginetype--dark};
-		--color-code-usertype: #{colors.$code-usertype--dark};
-		--color-code-comment: #{colors.$code-comment--dark};
-		--color-code-string: #{colors.$code-string--dark};
-		--color-code-background: #{colors.$code-background--dark};
-		--color-code-text: #{colors.$code-text--dark};
-		--color-code-function: #{colors.$code-function--dark};
-		--color-code-membervariable: #{colors.$code-membervariable--dark};
-		--color-code-gdscript-function: #{colors.$code-gdscript-function--dark};
-		--color-code-gdscript-globalfunction: #{colors.$code-gdscript-globalfunction--dark};
-		--color-code-gdscript-nodepath: #{colors.$code-gdscript-nodepath--dark};
-		--color-code-gdscript-nodereference: #{colors.$code-gdscript-nodereference--dark};
-		--color-code-gdscript-annotation: #{colors.$code-gdscript-annotation--dark};
-		--color-code-gdscript-stringname: #{colors.$code-gdscript-stringname--dark};
-	}
 
 	a {
 		text-decoration-thickness: 1px;
@@ -741,12 +776,8 @@ $donate-robot-size: 500px;
 			Liberation Mono,
 			monospace;
 
-		--code-highlight-background-color: color-mix(
-			in oklab,
-			var(--color-code-background),
-			transparent 15%
-		);
 		background-color: var(--code-highlight-background-color);
+		padding: var(--code-highlight-padding);
 
 		@include text-punch($weight: micro);
 
@@ -781,8 +812,6 @@ $donate-robot-size: 500px;
 	}
 
 	& {
-		$_padding: var(--card-padding);
-
 		code.highlight,
 		.code-highlight {
 			@include code-highlight();
@@ -790,17 +819,23 @@ $donate-robot-size: 500px;
 		code.highlight {
 			display: block;
 
-			padding: $_padding;
+			& {
+				// Add border specifically for the <code> block content.
+				border: 1px solid color-mix(in oklab, transparent, black 10%);
+				@include release.is-dark() {
+					border-color: color-mix(in oklab, transparent, white 10%);
+				}
+			}
 
-			// Add border specifically for the <code> block content.
-			border: 1px solid color-mix(in oklab, transparent, black 10%);
-			@include release.is-dark() {
-				border-color: color-mix(in oklab, transparent, white 10%);
+			& {
+				--code-highlight-padding: var(--card-padding);
+				@include release.is-dark() {
+					--code-highlight-padding: var(--card-padding);
+				}
 			}
 		}
 		.code-highlight {
 			display: inline;
-			padding: 0 0.25em;
 		}
 	}
 
@@ -1077,6 +1112,10 @@ $donate-robot-size: 500px;
 
 			&.inverted {
 				--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
+				--code-highlight-background-color: var(
+					--code-highlight-background-color-dark
+				);
+				--code-highlight-padding: var(--code-highlight-padding-dark);
 
 				background: var(--color-top)
 					linear-gradient(to bottom, var(--color-top), var(--color-bottom));
@@ -1086,8 +1125,6 @@ $donate-robot-size: 500px;
 					.release-card-content .release-card-content-container {
 						.code-highlight {
 							--text-punch-shadow-color: var(--text-punch-shadow-color-light);
-							// background-color: var(--code-highlight-background-color);
-							// padding: 0 0.25em;
 						}
 
 						.c-title {
