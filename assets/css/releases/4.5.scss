@@ -203,16 +203,28 @@ $donate-robot-size: 500px;
 	--one-column-max-width: #{$one-column-max-width};
 	--two-columns-max-width: #{$two-columns-max-width};
 
-	--text-punch-shadow-color-pure: color-mix(in oklab, black, transparent 20%);
-	--text-punch-shadow-color-dark: var(--text-punch-shadow-color-pure);
-	--text-punch-shadow-color-light: color-mix(
-		in oklab,
-		var(--text-punch-shadow-color-pure),
-		transparent 92.5%
-	);
-	--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
-	@include release.is-light() {
-		--text-punch-shadow-color: var(--text-punch-shadow-color-light);
+	& {
+		--text-punch-shadow-color--base--dark: black;
+		--text-punch-shadow-color--layer--dark: transparent 20%;
+		--text-punch-shadow-color--base--light: var(
+			--text-punch-shadow-color--base--dark
+		);
+		--text-punch-shadow-color--layer--light: transparent 92.5%;
+		--text-punch-shadow-color-dark: color-mix(
+			in oklab,
+			var(--text-punch-shadow-color--base--dark),
+			var(--text-punch-shadow-color--layer--dark)
+		);
+		--text-punch-shadow-color-light: color-mix(
+			in oklab,
+			var(--text-punch-shadow-color--base--light),
+			var(--text-punch-shadow-color--layer--light)
+		);
+		--text-punch-shadow-color-default: var(--text-punch-shadow-color-dark);
+		--text-punch-shadow-color: var(--text-punch-shadow-color-default);
+		@include release.is-light() {
+			--text-punch-shadow-color-default: var(--text-punch-shadow-color-light);
+		}
 	}
 
 	& {
@@ -222,15 +234,6 @@ $donate-robot-size: 500px;
 
 	@media (prefers-reduced-motion) {
 		scroll-behavior: auto;
-	}
-}
-
-.static-color-scheme {
-	&.static-color-scheme--light {
-		--text-punch-shadow-color: var(--text-punch-shadow-color-light);
-	}
-	&.static-color-scheme--dark {
-		--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
 	}
 }
 
@@ -285,6 +288,8 @@ $donate-robot-size: 500px;
 }
 
 #foundation-donate {
+	--text-punch-shadow-color: var(--text-punch-shadow-color-default);
+
 	background-color: #eff1f5;
 	@include release.is-dark() {
 		background-color: #283a5b;
@@ -327,6 +332,8 @@ $donate-robot-size: 500px;
 }
 
 #download-download {
+	--text-punch-shadow-color: var(--text-punch-shadow-color-default);
+
 	.release-card-media {
 		.release-platform {
 			display: none;
@@ -353,6 +360,8 @@ $donate-robot-size: 500px;
 			}
 
 			.download-button {
+				--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
+
 				display: grid;
 				gap: var(--card-padding);
 				padding: 0;
@@ -382,6 +391,8 @@ $donate-robot-size: 500px;
 					}
 				}
 				.download-hint {
+					--text-punch-shadow-color: var(--text-punch-shadow-color-light);
+
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
@@ -394,6 +405,8 @@ $donate-robot-size: 500px;
 						var(--button-border-radius) 0;
 					height: 100%;
 					box-sizing: border-box;
+
+					@include text-punch($weight: bold);
 				}
 			}
 
@@ -421,6 +434,8 @@ $donate-robot-size: 500px;
 }
 
 .links-container {
+	--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
+
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -712,7 +727,8 @@ $donate-robot-size: 500px;
 	@mixin code-highlight() {
 		margin: 0 0;
 		border-radius: 5px;
-		white-space: pre-wrap;
+		white-space: break-spaces;
+		hyphens: none;
 
 		line-height: normal;
 		color: var(--color-code-text);
@@ -725,11 +741,12 @@ $donate-robot-size: 500px;
 			Liberation Mono,
 			monospace;
 
-		background-color: color-mix(
+		--code-highlight-background-color: color-mix(
 			in oklab,
 			var(--color-code-background),
 			transparent 15%
 		);
+		background-color: var(--code-highlight-background-color);
 
 		@include text-punch($weight: micro);
 
@@ -783,7 +800,7 @@ $donate-robot-size: 500px;
 		}
 		.code-highlight {
 			display: inline;
-			background: none;
+			padding: 0 0.25em;
 		}
 	}
 
@@ -1057,12 +1074,20 @@ $donate-robot-size: 500px;
 			}
 
 			&.inverted {
+				--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
+
 				background: var(--color-top)
 					linear-gradient(to bottom, var(--color-top), var(--color-bottom));
 				color: white;
 
 				.release-card-container {
 					.release-card-content .release-card-content-container {
+						.code-highlight {
+							--text-punch-shadow-color: var(--text-punch-shadow-color-light);
+							// background-color: var(--code-highlight-background-color);
+							// padding: 0 0.25em;
+						}
+
 						.c-title {
 							color: white;
 
@@ -1714,6 +1739,8 @@ $donate-robot-size: 500px;
 					}
 
 					.release-card-button {
+						--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
+
 						display: flex;
 						justify-content: center;
 						align-items: center;
@@ -1784,6 +1811,8 @@ $donate-robot-size: 500px;
 			}
 
 			.section-title {
+				--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
+
 				container-type: inline-size;
 				container-name: section-title;
 				margin-bottom: calc(var(--card-padding) * 2);

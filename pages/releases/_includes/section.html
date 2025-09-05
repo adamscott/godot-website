@@ -20,7 +20,7 @@
 	{% endfor %}
 {% endif %}
 {% if section_features.size > 0 %}
-	<div id="{{section.anchor}}" class="section section-{{section.anchor}} static-color-scheme static-color-scheme--dark">
+	<div id="{{section.anchor}}" class="section section-{{section.anchor}}">
 		<div class="section-title">
 			<div class="container">
 				<h3>
@@ -78,7 +78,7 @@
 			{% assign features = data | where: "section", section.anchor | where: "subsection", subsection.anchor | sort: "rank" %}
 			{% if features.size > 0 %}
 				{% assign is_two_columns = subsection.two_columns | default: false %}
-				<div id="{{section.anchor}}-{{subsection.anchor}}" class="section subsection section-{{section.anchor}} section-{{section.anchor}}-{{subsection.anchor}} static-color-scheme static-color-scheme--dark">
+				<div id="{{section.anchor}}-{{subsection.anchor}}" class="section subsection section-{{section.anchor}} section-{{section.anchor}}-{{subsection.anchor}}">
 					<div class="section-title">
 						<div class="container">
 							<h4>
