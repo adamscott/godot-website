@@ -181,7 +181,7 @@ $donate-robot-size: 500px;
 	}
 
 	@if $weight == micro {
-		text-shadow: 0 1.5px 4.5px $shadow-color;
+		text-shadow: 0 1.5px 5.5px $shadow-color;
 	} @else if list.index((light, bold), $weight) {
 		$light-shadow: 0 1.5px 2.5px $shadow-color;
 		$bold-shadow: 0px 1px 1px $shadow-color;
