@@ -839,6 +839,10 @@ $donate-robot-size: 500px;
 					--code-highlight-padding: var(--card-padding);
 				}
 			}
+
+			& {
+				box-shadow: 0 1px 5px var(--text-punch-shadow-color);
+			}
 		}
 		.code-highlight {
 			display: inline;
