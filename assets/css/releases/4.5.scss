@@ -731,7 +731,7 @@ $donate-robot-size: 500px;
 			transparent 15%
 		);
 
-		@include text-punch($weight: light);
+		@include text-punch($weight: micro);
 
 		@include release.is-dark() {
 			background-color: color-mix(
