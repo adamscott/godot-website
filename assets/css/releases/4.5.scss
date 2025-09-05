@@ -1137,12 +1137,17 @@ $donate-robot-size: 500px;
 									);
 								}
 							}
+
 							.links-container {
 								a,
 								a:visited {
 									color: white;
 									text-decoration-color: white;
 								}
+							}
+
+							.footnotes {
+								border-top-color: color-mix(in oklab, white, transparent 90%);
 							}
 						}
 
@@ -1526,6 +1531,11 @@ $donate-robot-size: 500px;
 											)
 									);
 								}
+							}
+
+							.footnotes {
+								border-top: 1px solid
+									color-mix(in oklab, black, transparent 90%);
 							}
 						}
 
