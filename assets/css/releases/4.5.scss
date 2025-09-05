@@ -222,9 +222,8 @@ $donate-robot-size: 500px;
 		--color-code-gdscript-nodereference: #{colors.$code-gdscript-nodereference--light};
 		--color-code-gdscript-annotation: #{colors.$code-gdscript-annotation--light};
 		--color-code-gdscript-stringname: #{colors.$code-gdscript-stringname--light};
+
 		@include release.is-dark() {
-			--card-background-color: #333639;
-			--card-color: white;
 			--color-code-symbol: #{colors.$code-symbol--dark};
 			--color-code-keyword: #{colors.$code-keyword--dark};
 			--color-code-controlflow: #{colors.$code-controlflow--dark};
@@ -711,8 +710,15 @@ $donate-robot-size: 500px;
 	--download-font-size: #{$download-font-size};
 
 	/** Color **/
-	--card-background-color: white;
-	--card-color: #2d2d2d;
+	& {
+		--card-background-color: white;
+		--card-color: #2d2d2d;
+
+		@include release.is-dark() {
+			--card-background-color: #333639;
+			--card-color: white;
+		}
+	}
 
 	a {
 		text-decoration-thickness: 1px;
