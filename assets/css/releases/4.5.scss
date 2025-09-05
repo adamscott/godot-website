@@ -855,8 +855,9 @@ $donate-robot-size: 500px;
 				height: $header-logo-height;
 				margin-bottom: 60px;
 				filter: drop-shadow(
-					0 0 20px #000000fc
-				); // To give it some distinction from the background
+						0 10px 30px color-mix(in oklab, black, transparent 75%)
+					)
+					drop-shadow(0 5px 10px black) drop-shadow(0 2px 1px black); // To give it some distinction from the background
 
 				.header-main-title-text {
 					display: none;
@@ -883,6 +884,7 @@ $donate-robot-size: 500px;
 				}
 
 				.header-text {
+					--text-punch-shadow-color: var(--text-punch-shadow-color-dark);
 					@include text-punch($weight: micro);
 
 					> .header-title {
