@@ -896,9 +896,9 @@ $donate-robot-size: 500px;
 				height: $header-logo-height;
 				margin-bottom: 60px;
 				filter: drop-shadow(
-						0 10px 30px color-mix(in oklab, black, transparent 75%)
+						0 0 30px color-mix(in oklab, black, transparent 75%)
 					)
-					drop-shadow(0 5px 10px black) drop-shadow(0 2px 1px black); // To give it some distinction from the background
+					drop-shadow(0 0 10px black) drop-shadow(0 0 1px black); // To give it some distinction from the background
 
 				.header-main-title-text {
 					display: none;
