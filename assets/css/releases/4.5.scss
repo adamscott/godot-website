@@ -1417,6 +1417,10 @@ $donate-robot-size: 500px;
 									margin: 0;
 								}
 							}
+
+							.code-highlight {
+								@include text-punch($weight: bold);
+							}
 						}
 
 						.c-blockquote {
