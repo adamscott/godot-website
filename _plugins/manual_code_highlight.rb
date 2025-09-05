@@ -14,9 +14,12 @@ module Jekyll
           next
         end
 
-        new_input = (new_input[0..[code_block.begin - 1, 0].max] || '') \
+        code_block_begin = ''
+        code_block_begin = new_input[0..code_block.begin - 1] || '' if code_block.begin.positive?
+        new_input = code_block_begin \
                     + replace_highlights(code_block.contents, block: code_block.block?) \
                     + (new_input[code_block.end..] || '')
+
         last_code_block_end = 0
       end
 
