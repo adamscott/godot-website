@@ -18,5 +18,9 @@ contributors:
 - name: Haoyu Qiu
   github: timothyqiu
 read_more: https://github.com/godotengine/godot/pull/96921
+video_poster: /storage/releases/4.5/video/godot_i18n_preview.webp
+video_src: /storage/releases/4.5/video/godot_i18n_preview.webm
+media_position: bottom
+position: top-left
 inverted: true
 ---

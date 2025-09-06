@@ -502,27 +502,27 @@ if (intlBlockquote == null) {
 // (https://hosted.weblate.org/projects/godot-engine/godot/)
 // Source for the translations: https://www.berlitz.com/blog/hello-different-languages
 const intlBlockquoteTextEntries = [
-	{ text: "Hello" }, // English
-	{ text: "مرحبًا", rtl: true }, // Arabic
-	{ text: "你好" }, // Chinese
-	{ text: "Hallo" }, // Dutch
-	{ text: "Bonjour" }, // French
-	{ text: "Guten tag" }, // German
-	{ text: "Halo" }, // Indonesian
-	{ text: "Dia dhuit" }, // Irish
-	{ text: "Ciao" }, // Italian
-	{ text: "こんにちは" }, // Japanese
-	{ text: "안녕하세요" }, // Korean
-	{ text: "سلام", rtl: true }, // Persan
-	{ text: "Cześć" }, // Polish
-	{ text: "Olá" }, // Portuguese
-	{ text: "Oi" }, // Portuguese (Brazil)
-	{ text: "Привет" }, // Russian
-	{ text: "Hola" }, // Spanish
-	{ text: "Hallå" }, // Swedish
-	{ text: "வணக்கம்" }, // Tamil
-	{ text: "Merhaba" }, // Turkish
-	{ text: "привіт" }, // Ukranian
+	{ text: "Hello" }, // en (English)
+	{ text: "مرحبًا", rtl: true }, // ar (Arabic)
+	{ text: "你好" }, // zh (Chinese)
+	{ text: "Hallo" }, // nl (Dutch)
+	{ text: "Bonjour" }, // fr (French)
+	{ text: "Guten tag" }, // de (German)
+	{ text: "Halo" }, // id (Indonesian)
+	{ text: "Dia dhuit" }, // ga (Irish)
+	{ text: "Ciao" }, // it (Italian)
+	{ text: "こんにちは" }, // ja (Japanese)
+	{ text: "안녕하세요" }, // ko (Korean)
+	{ text: "سلام", rtl: true }, // fa (Persian)
+	{ text: "Cześć" }, // pl (Polish)
+	{ text: "Olá" }, // pt (Portuguese)
+	{ text: "Oi" }, // pt-BR (Portuguese (Brazil))
+	{ text: "Привет" }, // ru (Russian)
+	{ text: "Hola" }, // es (Spanish)
+	{ text: "Hallå" }, // sv (Swedish)
+	{ text: "வணக்கம்" }, // ta (Tamil)
+	{ text: "Merhaba" }, // tr (Turkish)
+	{ text: "привіт" }, // uk (Ukranian)
 ];
 
 for (const intlBlockquoteTextEntry of intlBlockquoteTextEntries) {
