@@ -7,7 +7,7 @@ importance: 3
 anchor: openxr-render-models
 title: OpenXR render models
 text: |
-  Godot added support for the ``@[XR_EXT_render_model](membervariable)`` and ``@[XR_EXT_interaction_render_model](membervariable)`` extensions introduced in OpenXR.
+  We’ve added support for the ``@[XR_EXT_render_model](membervariable)`` and ``@[XR_EXT_interaction_render_model](membervariable)`` extensions introduced in OpenXR.
 
   These extensions, when enabled and supported, give an application access to fully animated models of the controllers currently held by users. This means Meta Quest 3S and Pico 4 Ultra users will see their respective controllers in their hands without extra effort from the developer.
 
