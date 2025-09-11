@@ -7,7 +7,7 @@ importance: 4
 anchor: application-spacewarp-reporting-for-duty
 title: Application SpaceWarp, reporting for duty
 text: |
-  As mobile headset resources can be sparse, it is important to know how to optimize the compute budget. Considering XR requires a high refresh rate for a multitude of reasons, this leaves developper with a limited timeframe to render. But what if it could be possible to use frame synthesis to our advantage? We could render at half-rate, giving ourselves way more time to process, while leveraging the GPU to generate the next one.
+  Mobile headset resources can be sparse, so it's important to know how to optimize the compute budget. Because XR requires a high refresh rate, developers are left with a limited timeframe to render. But what we could use frame synthesis to our advantage? We could render at half-rate while the GPU synthesizes the next one, keeping at whole the targeted framerate while giving ourselves effectively much more time.
 
   That’s exactly what Meta’s [Application SpaceWarp](https://developers.meta.com/horizon/blog/introducing-application-spacewarp/) does. We now support this technology with the latest release of our [OpenXR vendors plugin](https://godotengine.org/article/godot-openxr-vendors-plugin-400/), thanks to the implementation of motion vectors in the Mobile renderer.
 
