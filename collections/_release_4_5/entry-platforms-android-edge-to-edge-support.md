@@ -7,7 +7,7 @@ importance: 4
 anchor: edge-to-edge-support
 title: Edge-to-edge support
 text: |
-  Usually, developers had two choices for displaying content on the screen: either their app leaves the top and bottom areas for the system status and navigation bars, or their app could go full-screen, reclaiming all the space without displaying these bars.
+  Usually, developers had two choices for displaying content on the screen: either their app leaves the top and bottom areas for the system status and navigation bars, or their app could go full-screen, claiming all the space without displaying these bars.
 
   From now on, once targetting SDK 35, there’s a new option. Android has a new feature called ["edge-to-edge"](https://developer.android.com/develop/ui/views/layout/edge-to-edge) display. It offers the developers the ability to draw on the entire screen, as if it was fullscreen, but with system bar overlays.
 
