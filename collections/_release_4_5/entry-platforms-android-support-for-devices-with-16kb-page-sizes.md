@@ -11,7 +11,9 @@ text: |
 
   Pages can come in multiple sizes depending on the platform. Since its inception, Android only supported 4KB page sizes, but the Android team [recently announced](https://developer.android.com/guide/practices/page-sizes) compatibility with 16KB page sizes from Android 15 onwards. Developers should note, though, that starting on 1 November 2025, Google Play will require all new submitted apps targeting Android 15 to support 16KB page sizes.
 
-  Fortunately, we’ve got your back; Godot 4.5 supports this feature out of the box.
+  Fortunately, we’ve got your back; Godot 4.5 supports this feature out of the box.[^support-for-devices-with-16kb-page-sizes-dotnet]
+
+  [^support-for-devices-with-16kb-page-sizes-dotnet]: If you're using .NET in your project, you'll need to switch to .NET 9 in order to support 16KB page sizes.
 contributors:
 - name: Fredia Huya-Kouadio
   github: m4gr3d
