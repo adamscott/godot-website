@@ -15,7 +15,7 @@ module Jekyll
         end
 
         code_block_begin = ''
-        code_block_begin = new_input[0..code_block.begin - 1] || '' if code_block.begin.positive?
+        code_block_begin = new_input[0..code_block.begin - 1] || '' if code_block.begin > 0
         new_input = code_block_begin \
                     + replace_highlights(code_block.contents, block: code_block.block?) \
                     + (new_input[code_block.end..] || '')
