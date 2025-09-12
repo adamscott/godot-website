@@ -13,7 +13,7 @@ text: |
 
   Fortunately, we’ve got your back; Godot 4.5 supports this feature out of the box.[^support-for-devices-with-16kb-page-sizes-dotnet]
 
-  [^support-for-devices-with-16kb-page-sizes-dotnet]: If you're using .NET in your project, you'll need to switch to .NET 9 in order to support 16KB page sizes.
+  [^support-for-devices-with-16kb-page-sizes-dotnet]: **.NET users:** .NET 9 (or higher) is required for 16KB page sizes support.
 contributors:
 - name: Fredia Huya-Kouadio
   github: m4gr3d
