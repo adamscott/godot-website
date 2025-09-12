@@ -15,4 +15,9 @@ contributors:
 - name: Haoyu Qiu
   github: timothyqiu
 read_more: https://github.com/godotengine/godot/pull/107130
+media_position: right
+position: top-right
+image_alt: Editor documentation showing that some methods are `required`
+image_src: /storage/releases/4.5/images/godot_required-qualifier.webp
+image_src_2x: /storage/releases/4.5/images/godot_required-qualifier_2x.webp
 ---
