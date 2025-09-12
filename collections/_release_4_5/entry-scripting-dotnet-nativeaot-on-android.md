@@ -3,7 +3,7 @@ type: entry
 section: scripting
 subsection: dotnet
 rank: 0
-importance: 2
+importance: 3
 anchor: nativeaot-on-android
 title: NativeAOT on Android
 blockquote: Fluent in your device’s language

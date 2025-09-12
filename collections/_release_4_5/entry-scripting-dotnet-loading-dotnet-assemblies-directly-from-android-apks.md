@@ -2,7 +2,7 @@
 type: entry
 section: scripting
 subsection: dotnet
-rank: 2
+rank: 1
 importance: 4
 anchor: loading-dotnet-assemblies-directly-from-android-apks
 title: Loading .NET assemblies directly from Android APKs
