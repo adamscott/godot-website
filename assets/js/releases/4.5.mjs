@@ -11,6 +11,11 @@ import "../modules/dashjs@5.0.3.esm.min.js";
 
 const { outCirc, inCirc } = eases;
 
+let mousePosition = {
+	x: 0,
+	y: 0,
+};
+
 // Reduced motion.
 const prefersReducedMotion = window.matchMedia(
 	"prefers-reduced-motion: reduce",
@@ -341,10 +346,12 @@ const scrollToTopObserver = new IntersectionObserver((entries, observer) => {
 });
 scrollToTopObserver.observe(linksElement);
 
-// Image comparisons.
+// Image comparisons (non carousel).
 /** @type {HTMLDivElement[]} */
 const releaseCardMediaElements = Array.from(
-	document.querySelectorAll(".release-card-media"),
+	document.querySelectorAll(
+		".release-card-media:not(:has(> .release-card-carousel-container))",
+	),
 );
 for (const releaseCardMedia of releaseCardMediaElements) {
 	/** @type {HTMLVideoElement[]} */
@@ -396,6 +403,324 @@ for (const releaseCardMedia of releaseCardMediaElements) {
 
 	updateMaskWidth();
 	updateComparisonRangeIndicator();
+}
+
+// Image comparisons (carousel).
+const findNextCarouselElements = (
+	leftElements,
+	contentCreatorElements,
+	rightElements = [],
+	searchType = "next",
+) => {
+	if (searchType !== "next" && searchType !== "previous") {
+		throw new Error("Unknown searchType:", searchType);
+	}
+	let nextIndex = searchType === "next" ? 1 : -1;
+
+	let leftElement = null;
+	let leftElementIndex = -1;
+	for (const [index, element] of leftElements.entries()) {
+		if (element.classList.contains("hidden")) {
+			continue;
+		}
+		if (index + nextIndex >= leftElements.length) {
+			// Overflow.
+			leftElementIndex = 0;
+		} else if (index + nextIndex < 0) {
+			// Underflow.
+			leftElementIndex = leftElements.length - 1;
+		} else {
+			leftElementIndex = index + nextIndex;
+		}
+		break;
+	}
+
+	if (leftElementIndex === -1) {
+		return {
+			left: null,
+			contentCreator: null,
+			right: null,
+		};
+	}
+
+	leftElement = leftElements[leftElementIndex];
+
+	let contentCreatorElement = null;
+	if (leftElementIndex < contentCreatorElements.length) {
+		contentCreatorElement = contentCreatorElements[leftElementIndex];
+	}
+
+	let rightElement = null;
+	if (leftElementIndex < rightElements.length) {
+		rightElement = rightElements[leftElementIndex];
+	}
+
+	return {
+		left: leftElement,
+		contentCreator: contentCreatorElement,
+		right: rightElement,
+	};
+};
+
+/** @type {HTMLDivElement[]} */
+const releaseCardMediaCarouselElements = Array.from(
+	document.querySelectorAll(
+		".release-card-media:has(> .release-card-carousel-container)",
+	),
+);
+for (const releaseCardMedia of releaseCardMediaCarouselElements) {
+	// Cannot be null, we just checked.
+	/** @type {HTMLDivElement} */
+	const carouselContainer = releaseCardMedia.querySelector(
+		".release-card-carousel-container",
+	);
+
+	/** @type {boolean} */
+	const hasComparison = carouselContainer.classList.contains(
+		"release-card-carousel-container--has-comparison",
+	);
+
+	/** @type {HTMLDivElement | null} */
+	const carouselLeftContainer = carouselContainer.querySelector(
+		".release-card-carousel-left",
+	);
+	if (carouselLeftContainer == null) {
+		throw new Error(
+			"Couldn't find carousel `.release-card-carousel-left` container in the following element:",
+			carouselContainer,
+		);
+	}
+
+	/** @type {HTMLDivElement | null} */
+	const carouselContentCreatorContainer = carouselContainer.querySelector(
+		".release-card-carousel-content-creator",
+	);
+	if (carouselContentCreatorContainer == null) {
+		throw new Error(
+			"Couldn't find carousel `.release-card-carousel-content-creator` container in the following element:",
+			carouselContainer,
+		);
+	}
+
+	/** @type {HTMLDivElement | null} */
+	let carouselRightContainer = null;
+	if (hasComparison) {
+		carouselRightContainer = carouselContainer.querySelector(
+			".release-card-carousel-right",
+		);
+		if (carouselRightContainer == null) {
+			throw new Error(
+				"Couldn't find carousel `.release-card-carousel-right` container in the following element:",
+				carouselContainer,
+			);
+		}
+	}
+
+	/** @type {HTMLDivElement[]} */
+	const leftContainerElements = Array.from(
+		carouselLeftContainer.querySelectorAll(".release-card-carousel-element"),
+	);
+	/** @type {HTMLDivElement[]} */
+	const carouselContentCreatorElements = Array.from(
+		carouselContentCreatorContainer.querySelectorAll(
+			".release-card-content-creator",
+		),
+	);
+	/** @type {HTMLDivElement[]} */
+	let rightContainerElements = [];
+	if (carouselRightContainer != null) {
+		rightContainerElements = Array.from(
+			carouselRightContainer.querySelectorAll(".release-card-carousel-element"),
+		);
+	}
+
+	/** @type {HTMLDivElement[]} */
+	const controlLeft = carouselContainer.querySelector(
+		".release-card-carousel-control-left",
+	);
+	if (controlLeft != null) {
+		controlLeft.classList.remove("hidden");
+		controlLeft.addEventListener("click", (event) => {
+			carouselContainer.dispatchEvent(
+				new CustomEvent("carousel_previous_element"),
+			);
+		});
+		controlLeft.addEventListener("keyup", (event) => {
+			switch (event.key) {
+				case "Enter":
+				case " ":
+					controlLeft.click();
+					event.preventDefault();
+				default:
+				// Do nothing.
+			}
+		});
+		document.addEventListener("keyup", (event) => {
+			const targetElement = document.elementFromPoint(
+				mousePosition.x,
+				mousePosition.y,
+			);
+			if (!carouselContainer.contains(targetElement)) {
+				return;
+			}
+			switch (event.key) {
+				case "ArrowLeft":
+					controlLeft.click();
+					event.preventDefault();
+				default:
+				// Do nothing.
+			}
+		});
+	}
+	/** @type {HTMLDivElement[]} */
+	const controlRight = carouselContainer.querySelector(
+		".release-card-carousel-control-right",
+	);
+	if (controlRight != null) {
+		controlRight.classList.remove("hidden");
+		controlRight.addEventListener("click", (event) => {
+			carouselContainer.dispatchEvent(new CustomEvent("carousel_next_element"));
+		});
+		controlRight.addEventListener("keyup", (event) => {
+			switch (event.key) {
+				case "Enter":
+				case " ":
+					controlRight.click();
+					event.preventDefault();
+				default:
+				// Do nothing.
+			}
+		});
+		document.addEventListener("keyup", (event) => {
+			const targetElement = document.elementFromPoint(
+				mousePosition.x,
+				mousePosition.y,
+			);
+			if (!carouselContainer.contains(targetElement)) {
+				return;
+			}
+			switch (event.key) {
+				case "ArrowRight":
+					controlRight.click();
+					event.preventDefault();
+				default:
+				// Do nothing.
+			}
+		});
+	}
+
+	carouselContainer.addEventListener("carousel_previous_element", (event) => {
+		console.log("previous");
+		const previousElements = findNextCarouselElements(
+			leftContainerElements,
+			carouselContentCreatorElements,
+			rightContainerElements,
+			"previous",
+		);
+		for (const element of leftContainerElements) {
+			if (element === previousElements.left) {
+				element.classList.remove("hidden");
+			} else {
+				element.classList.add("hidden");
+			}
+		}
+		for (const element of carouselContentCreatorElements) {
+			if (element === previousElements.contentCreator) {
+				element.classList.remove("hidden");
+			} else {
+				element.classList.add("hidden");
+			}
+		}
+		for (const element of rightContainerElements) {
+			if (element === previousElements.right) {
+				element.classList.remove("hidden");
+			} else {
+				element.classList.add("hidden");
+			}
+		}
+	});
+	carouselContainer.addEventListener("carousel_next_element", (event) => {
+		console.log("next");
+		const nextElements = findNextCarouselElements(
+			leftContainerElements,
+			carouselContentCreatorElements,
+			rightContainerElements,
+			"next",
+		);
+		for (const element of leftContainerElements) {
+			if (element === nextElements.left) {
+				element.classList.remove("hidden");
+			} else {
+				element.classList.add("hidden");
+			}
+		}
+		for (const element of carouselContentCreatorElements) {
+			if (element === nextElements.contentCreator) {
+				element.classList.remove("hidden");
+			} else {
+				element.classList.add("hidden");
+			}
+		}
+		for (const element of rightContainerElements) {
+			if (element === nextElements.right) {
+				element.classList.remove("hidden");
+			} else {
+				element.classList.add("hidden");
+			}
+		}
+	});
+
+	if (hasComparison) {
+		/** @type {HTMLInputElement | null} */
+		const comparisonRange =
+			carouselContainer.querySelector(".comparison-range");
+		if (comparisonRange == null) {
+			continue;
+		}
+
+		/** @type {HTMLDivElement | null} */
+		const comparisonRangeIndicator = carouselContainer.querySelector(
+			".comparison-range-indicator",
+		);
+		if (comparisonRangeIndicator == null) {
+			continue;
+		}
+
+		/** @type {HTMLVideoElement[]} */
+		const videoElements = Array.from(
+			carouselContainer.querySelectorAll("video"),
+		);
+
+		const updateMaskWidth = () => {
+			carouselRightContainer.style = `--mask-width: ${comparisonRange.valueAsNumber}%;`;
+		};
+		const updateComparisonRangeIndicator = () => {
+			comparisonRangeIndicator.style = `left: calc(${comparisonRange.valueAsNumber}% - (0.25em / 2))`;
+		};
+
+		/** @type {(event: MouseEvent) => void} */
+		const onPointerEvent = (event) => {
+			const bounds = comparisonRange.getBoundingClientRect();
+			const x = event.clientX - bounds.left;
+			const width = bounds.width;
+			comparisonRange.valueAsNumber = (x / width) * 100;
+
+			for (const videoElement of videoElements) {
+				if (videoElement.paused) {
+					videoElement.play();
+				}
+			}
+
+			updateMaskWidth();
+			updateComparisonRangeIndicator();
+		};
+
+		comparisonRange.addEventListener("pointerdown", onPointerEvent);
+		comparisonRange.addEventListener("pointermove", onPointerEvent);
+
+		updateMaskWidth();
+		updateComparisonRangeIndicator();
+	}
 }
 
 // target="_blank"
@@ -669,3 +994,9 @@ const fixGridOrphansRequestFrame = () => {
 	);
 };
 fixGridOrphansRequestFrame();
+
+// Update mouse position.
+document.addEventListener("mousemove", (event) => {
+	mousePosition.x = event.clientX;
+	mousePosition.y = event.clientY;
+});
