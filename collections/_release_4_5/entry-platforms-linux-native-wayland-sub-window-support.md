@@ -15,4 +15,8 @@ contributors:
 - name: deralmas
   github: deralmas
 read_more: https://github.com/godotengine/godot/pull/101774
+image_alt: Godot Editor running on KDE Plasma 6.4 displaying multiple Wayland sub-windows (i.e. the editor settings window and a hover pop-up)
+image_src: /storage/releases/4.5/images/godot_wayland-multiwin.webp
+image_src_2x: /storage/releases/4.5/images/godot_wayland-multiwin_2x.webp
+media_position: right
 ---
