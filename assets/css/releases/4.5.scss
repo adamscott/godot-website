@@ -430,6 +430,7 @@ $donate-robot-size: 500px;
 				font-size: 14px;
 				opacity: 0.6;
 
+				--text-punch-shadow-color: var(--text-punch-shadow-color-default);
 				@include text-punch($weight: micro);
 			}
 
