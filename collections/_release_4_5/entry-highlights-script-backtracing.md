@@ -13,7 +13,7 @@ text: |
 
   Custom loggers allow developers to intercept log messages and errors. That makes it possible to create a tool for reporting bugs within your game.
 
-  Script backtracing, on the other hand, gives developers the exact details on where an issue happened in the code.[^script-backtracing-enable] Even in "Release" builds.
+  Script backtracing, on the other hand, gives developers the exact details on where an issue happened in the code. Even in "Release" builds.[^script-backtracing-enable]
 
   Developers will now be able to report issues to the [issue tracker](https://github.com/godotengine/godot/issues) more accurately, making Godot more stable for them and their users.
 
