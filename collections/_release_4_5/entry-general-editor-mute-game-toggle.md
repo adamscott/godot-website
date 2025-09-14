@@ -17,4 +17,9 @@ contributors:
 - name: Malcolm Anderson
   github: Meorge
 read_more: https://github.com/godotengine/godot/pull/99555
+image_alt: Screenshot of the mute button in the editor.
+image_src: /storage/releases/4.5/images/godot_editor-mute-button.webp
+image_src_2x: /storage/releases/4.5/images/godot_editor-mute-button_2x.webp
+position: top-center
+media_position: top
 ---
