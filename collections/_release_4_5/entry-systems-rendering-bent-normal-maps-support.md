@@ -21,4 +21,35 @@ contributors:
 - name: Capry
   github: LunaCapra
 read_more: https://github.com/godotengine/godot/pull/89988
+media_position: left
+carousel:
+  comparison: true
+  elements:
+  - image_alt: Scene without bent normals of a coffee machine on an industrial drawer with cups and coffee cans around.
+    image_src: /storage/releases/4.5/images/godot_bent-normals-1_disabled.webp
+    image_src_2x: /storage/releases/4.5/images/godot_bent-normals-1_disabled_2x.webp
+    image_label: Without
+    image_comparison_alt: Scene with bent normals of a coffee machine on an industrial drawer with cups and coffee cans around.
+    image_comparison_src: /storage/releases/4.5/images/godot_bent-normals-1_enabled.webp
+    image_comparison_src_2x: /storage/releases/4.5/images/godot_bent-normals-1_enabled_2x.webp
+    image_comparison_label: With
+    content_creator: "[@LunaCapra](https://github.com/LunaCapra)"
+  - image_alt: Scene without bent normals of a vintage couch.
+    image_src: /storage/releases/4.5/images/godot_bent-normals-2_disabled.webp
+    image_src_2x: /storage/releases/4.5/images/godot_bent-normals-2_disabled_2x.webp
+    image_label: Without
+    image_comparison_alt: Scene with bent normals of a vintage couch.
+    image_comparison_src: /storage/releases/4.5/images/godot_bent-normals-2_enabled.webp
+    image_comparison_src_2x: /storage/releases/4.5/images/godot_bent-normals-2_enabled_2x.webp
+    image_comparison_label: With
+    content_creator: "[@LunaCapra](https://github.com/LunaCapra)"
+  - image_alt: Scene without bent normals of a table with medieval metallic cups on top.
+    image_src: /storage/releases/4.5/images/godot_bent-normals-3_disabled.webp
+    image_src_2x: /storage/releases/4.5/images/godot_bent-normals-3_disabled_2x.webp
+    image_label: Without
+    image_comparison_alt: Scene with bent normals of a table with medieval metallic cups on top.
+    image_comparison_src: /storage/releases/4.5/images/godot_bent-normals-3_enabled.webp
+    image_comparison_src_2x: /storage/releases/4.5/images/godot_bent-normals-3_enabled_2x.webp
+    image_comparison_label: With
+    content_creator: "[@LunaCapra](https://github.com/LunaCapra)"
 ---
