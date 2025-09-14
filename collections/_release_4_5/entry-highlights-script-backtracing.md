@@ -24,4 +24,9 @@ contributors:
 - name: Juan Linietsky
   github: reduz
 read_more: https://github.com/godotengine/godot/pull/91006
+image_alt: Screenshot of a terminal displaying script backtraces (one error, one warning).
+image_src: /storage/releases/4.5/images/godot_script-backtracing.webp
+image_src_2x: /storage/releases/4.5/images/godot_script-backtracing_2x.webp
+position: center-left
+media_position: bottom
 ---
