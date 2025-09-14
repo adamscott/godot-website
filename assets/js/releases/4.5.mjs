@@ -610,7 +610,6 @@ for (const releaseCardMedia of releaseCardMediaCarouselElements) {
 	}
 
 	carouselContainer.addEventListener("carousel_previous_element", (event) => {
-		console.log("previous");
 		const previousElements = findNextCarouselElements(
 			leftContainerElements,
 			carouselContentCreatorElements,
@@ -640,7 +639,6 @@ for (const releaseCardMedia of releaseCardMediaCarouselElements) {
 		}
 	});
 	carouselContainer.addEventListener("carousel_next_element", (event) => {
-		console.log("next");
 		const nextElements = findNextCarouselElements(
 			leftContainerElements,
 			carouselContentCreatorElements,
