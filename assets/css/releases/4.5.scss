@@ -586,6 +586,8 @@ $donate-robot-size: 500px;
 #special-thanks-release-authors {
 	.release-card-media {
 		.release-card-authors {
+			--text-punch-shadow-color: var(--text-punch-shadow-color-default);
+
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
