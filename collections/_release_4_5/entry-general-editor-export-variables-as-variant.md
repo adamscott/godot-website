@@ -16,5 +16,10 @@ contributors:
 - name: Tomasz Chabora
   github: KoBeWi
 read_more: https://github.com/godotengine/godot/pull/89324
+image_alt: Godot Editor with an exported variable as Variant.
+image_src: /storage/releases/4.5/images/godot_export-variant.webp
+image_src_2x: /storage/releases/4.5/images/godot_export-variant_2x.webp
+position: center-right
+media_position: right
 inverted: true
 ---
