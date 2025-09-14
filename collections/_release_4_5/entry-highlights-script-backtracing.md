@@ -28,5 +28,5 @@ image_alt: Screenshot of a terminal displaying script backtraces (one error, one
 image_src: /storage/releases/4.5/images/godot_script-backtracing.webp
 image_src_2x: /storage/releases/4.5/images/godot_script-backtracing_2x.webp
 position: center-left
-media_position: bottom
+media_position: top
 ---
