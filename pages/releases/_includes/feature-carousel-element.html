@@ -35,6 +35,8 @@
 			{% assign video_label = element.video_comparison_label %}
 		{% endif %}
 
+		<link rel="preload" href="{{video_src}}" as="video" type="video/webm">
+
 		<div class="release-card-video-container">
 			<noscript>
 				<video class="release-card-video {{position_class}}"
@@ -65,6 +67,9 @@
 			{% assign image_src_2x = element.image_comparison_src_2x %}
 			{% assign image_label = element.image_comparison_label %}
 		{% endif %}
+
+		<link rel="preload" href="{{image_src}}" as="image" type="image/webp" media="(resolution < 2dppx)">
+		<link rel="preload" href="{{image_src_2x}}" as="image" type="image/webp" media="(resolution >= 2dppx)">
 
 		<div class="release-card-image-container">
 			<img class="release-card-image {{position_class}}"
