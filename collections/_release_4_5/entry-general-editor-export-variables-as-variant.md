@@ -16,4 +16,5 @@ contributors:
 - name: Tomasz Chabora
   github: KoBeWi
 read_more: https://github.com/godotengine/godot/pull/89324
+inverted: true
 ---
