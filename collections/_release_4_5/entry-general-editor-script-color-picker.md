@@ -14,4 +14,9 @@ contributors:
 - name: Koliur Rahman
   github: dugramen
 read_more: https://github.com/godotengine/godot/pull/105724
+image_alt: Script editor of the Godot Editor showing the new Color preview.
+image_src: /storage/releases/4.5/images/godot_script-color.webp
+image_src_2x: /storage/releases/4.5/images/godot_script-color_2x.webp
+position: top-center
+media_position: top
 ---
