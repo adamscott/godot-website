@@ -46,7 +46,7 @@ carousel:
     image_src: /storage/releases/4.5/images/godot_specular-occlusion_forwardplus-4-disabled.webp
     image_src_2x: /storage/releases/4.5/images/godot_specular-occlusion_forwardplus-4-disabled_2x.webp
     image_label: Forward+ w/o
-    image_alt: Car wheel scene on Forward+ with specular occlusion from ambient light.
+    image_comparison_alt: Car wheel scene on Forward+ with specular occlusion from ambient light.
     image_comparison_src: /storage/releases/4.5/images/godot_specular-occlusion_forwardplus-4-enabled.webp
     image_comparison_src_2x: /storage/releases/4.5/images/godot_specular-occlusion_forwardplus-4-enabled_2x.webp
     image_comparison_label: Forward+ w/
