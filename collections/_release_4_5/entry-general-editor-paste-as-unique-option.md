@@ -14,5 +14,10 @@ contributors:
 - name: Hugo Locurcio
   github: Calinou
 read_more: https://github.com/godotengine/godot/pull/103980
+image_alt: Screenshot of the Godot Editor new \"Paste as Unique\" option.
+image_src: /storage/releases/4.5/images/godot_editor-paste-as-unique.webp
+image_src_2x: /storage/releases/4.5/images/godot_editor-paste-as-unique_2x.webp
+position: bottom-right
+media_position: bottom
 inverted: true
 ---
