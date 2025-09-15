@@ -4,7 +4,7 @@ excerpt: From mind-blowing effects now made possible by the stencil buffer to ac
 categories: ["release"]
 author: "Godot contributors"
 image: /storage/blog/covers/godot-4-5-making-dreams-accessible.webp
-date: 2025-09-01 15:45:00
+date: 2025-09-15 20:00:00
 redirect_to:
  - /releases/4.5/
 ---
