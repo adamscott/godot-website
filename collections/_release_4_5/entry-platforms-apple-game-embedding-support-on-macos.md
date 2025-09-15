@@ -12,4 +12,9 @@ contributors:
 - name: Stuart Carnie
   github: stuartcarnie
 read_more: https://github.com/godotengine/godot/pull/105884
+image_alt: Screenshot of the Godot Editor on macOS running an embedded game.
+image_src: /storage/releases/4.5/images/godot_macos-game-embedding.webp
+image_src_2x: /storage/releases/4.5/images/godot_macos-game-embedding_2x.webp
+position: top-right
+media_position: bottom
 ---
