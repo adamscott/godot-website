@@ -18,4 +18,8 @@ contributors:
 - name: bruvzg
   github: bruvzg
 read_more: https://github.com/godotengine/godot/pull/76829
+image_alt: Screenshot of the new accessibility options in editor.
+image_src: /storage/releases/4.5/images/godot_screen-reader.webp
+image_src_2x: /storage/releases/4.5/images/godot_screen-reader_2x.webp
+media_position: bottom
 ---
