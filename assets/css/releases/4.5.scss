@@ -942,8 +942,6 @@ $donate-robot-size: 500px;
 				}
 
 				p {
-					hyphens: auto;
-
 					&:first-child {
 						margin-top: 0;
 					}
@@ -1525,8 +1523,6 @@ $donate-robot-size: 500px;
 						.c-content {
 							grid-area: contnt;
 							font-size: var(--card-content-font-size);
-
-							hyphens: auto;
 
 							@include text-punch($weight: micro);
 
