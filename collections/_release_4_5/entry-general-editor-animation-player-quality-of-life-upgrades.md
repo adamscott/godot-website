@@ -19,5 +19,9 @@ contributors:
   github: Arnklit
 read_more: 
   https://github.com/godotengine/godot/issues?q=is%3Apr%20state%3Amerged%2095564%20100470%20103130%20103584
+video_src: /storage/releases/4.5/video/godot_animation-player.webm
+video_poster: /storage/releases/4.5/video/godot_animation-player.webp
+media_position: right
+content_creator: "[@deralmas](https://github.com/deralmas)"
 inverted: true
 ---
