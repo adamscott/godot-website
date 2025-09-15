@@ -9,9 +9,9 @@ redirect_to:
  - /releases/4.5/
 ---
 
-Look forward to plenty of quality of life improvements hidden within this release. Faster load speeds, reduced stutter, streamlined processes — spotting all the optimizations that have been applied in the background will take some time.
+From mind-blowing effects now made possible by the stencil buffer to accessible descriptions of your GUI elements that opens up the possibility for people with disabilities to play your game — we are proud to present to you Godot 4.5.
 
-On top of that, long-awaited comfort features like embedded game windows and interactive in-game editing will feel more in line with other software on the market, making transitioning between them an even smoother experience. The editor overhaul alone takes up a big chunk of this release, after all.
+With this new release, we made meticulous efforts in order to amplify what is possible to do with our engine, guided by our goal of making gaming and game development for everyone.
 
 We invite you to take a look over at the [4.5 release page](/releases/4.5/).
 
