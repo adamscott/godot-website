@@ -14,7 +14,8 @@ contributors:
 - name: David Snopek
   github: dsnopek
 read_more: https://github.com/godotengine/godot/pull/104624
-image_alt: Screenshot of the project manager with the duplicate button highlighted and the upgrade tool popup.
+image_alt: Screenshot of the project manager with the duplicate button 
+  highlighted and the upgrade tool popup.
 image_src: /storage/releases/4.5/images/godot_project-manager-backup.webp
 image_src_2x: /storage/releases/4.5/images/godot_project-manager-backup_2x.webp
 media_position: bottom

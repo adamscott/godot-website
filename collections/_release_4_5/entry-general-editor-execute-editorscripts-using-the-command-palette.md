@@ -14,6 +14,7 @@ contributors:
 read_more: https://github.com/godotengine/godot/pull/99318
 image_alt: Command palette showing an EditorScript entry.
 image_src: /storage/releases/4.5/images/godot_editorscript-command-palette.webp
-image_src_2x: /storage/releases/4.5/images/godot_editorscript-command-palette_2x.webp
+image_src_2x: 
+  /storage/releases/4.5/images/godot_editorscript-command-palette_2x.webp
 media_position: bottom
 ---

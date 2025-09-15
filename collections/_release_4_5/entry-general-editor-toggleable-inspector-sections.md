@@ -15,8 +15,10 @@ contributors:
 - name: lodetrick
   github: lodetrick
 read_more: https://github.com/godotengine/godot/pull/105272
-video_src: /storage/releases/4.5/video/godot_editor-toggle-inspector-section.webm
-video_poster: /storage/releases/4.5/video/godot_editor-toggle-inspector-section.webp
+video_src: 
+  /storage/releases/4.5/video/godot_editor-toggle-inspector-section.webm
+video_poster: 
+  /storage/releases/4.5/video/godot_editor-toggle-inspector-section.webp
 position: center-right
 media_position: right
 ---
