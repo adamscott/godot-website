@@ -3,7 +3,7 @@ type: entry
 section: general
 subsection: GUI
 rank: 0
-importance: 3
+importance: 4
 anchor: cascade-content-easily-with-foldablecontainer
 title: Cascade content easily with ``@[FoldableContainer](enginetype)``
 text: |

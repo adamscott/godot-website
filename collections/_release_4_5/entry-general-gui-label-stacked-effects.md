@@ -3,7 +3,7 @@ type: entry
 section: general
 subsection: GUI
 rank: 1
-importance: 4
+importance: 3
 anchor: label-stacked-effects
 title: Label stacked effects
 text: |
@@ -14,4 +14,8 @@ contributors:
 - name: DE YU
   github: Delsin-Yu
 read_more: https://github.com/godotengine/godot/pull/104731
+image_alt: Screenshot of a label (saying "Best label ever!") with stacked effects, such as a white and a red outline, and two drop shadows.
+image_src: /storage/releases/4.5/images/godot_label-stacked-effects.webp
+image_src_2x: /storage/releases/4.5/images/godot_label-stacked-effects_2x.webp
+media_position: left
 ---
