@@ -536,7 +536,7 @@ for (const releaseCardMedia of releaseCardMediaCarouselElements) {
 
 	/** @type {HTMLDivElement[]} */
 	const controlLeft = carouselContainer.querySelector(
-		".release-card-carousel-control-left",
+		".release-card-carousel-control--left",
 	);
 	if (controlLeft != null) {
 		controlLeft.classList.remove("hidden");
@@ -574,7 +574,7 @@ for (const releaseCardMedia of releaseCardMediaCarouselElements) {
 	}
 	/** @type {HTMLDivElement[]} */
 	const controlRight = carouselContainer.querySelector(
-		".release-card-carousel-control-right",
+		".release-card-carousel-control--right",
 	);
 	if (controlRight != null) {
 		controlRight.classList.remove("hidden");

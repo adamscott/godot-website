@@ -1717,14 +1717,14 @@ $donate-robot-size: 500px;
 							height: 100%;
 						}
 
-						.release-card-carousel-control-left,
-						.release-card-carousel-control-right {
+						.release-card-carousel-control {
+							$height: 4em;
 							display: flex;
 							position: absolute;
-							top: 0;
+							top: calc(50% - #{calc($height / 2)});
 							left: 0;
-							width: 4em;
-							height: 100%;
+							width: $height;
+							height: $height;
 							align-items: center;
 							justify-content: center;
 							cursor: pointer;
@@ -1759,14 +1759,15 @@ $donate-robot-size: 500px;
 
 							.character {
 								user-select: none;
-								font-size: 400%;
+								font-size: 300%;
+								transform: translate(0, -0.1em);
 								@include text-punch($weight: bold);
 							}
-						}
 
-						.release-card-carousel-control-right {
-							left: unset;
-							right: 0;
+							&--right {
+								left: unset;
+								right: 0;
+							}
 						}
 
 						&--has-comparison {
