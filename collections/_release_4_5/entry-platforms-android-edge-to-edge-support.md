@@ -15,5 +15,7 @@ text: |
 contributors:
 - name: Fredia Huya-Kouadio
   github: m4gr3d
+- name: Anish Mishra
+  github: syntaxerror247
 read_more: https://github.com/godotengine/godot/pull/107742
 ---
