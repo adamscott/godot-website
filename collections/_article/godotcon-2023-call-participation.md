@@ -89,7 +89,7 @@ We would like to address a big thank you to our current sponsors without whom th
 			<img src="/storage/blog/godotcon2023/microsoft.png" style="background-color: none;" alt="Microsoft">
 		</a>
 		<a class="sponsor-card" href="https://www.duandigames.com/" target="_blank" rel="noopener">
-			<img src="/storage/blog/godotcon2023/DU&I.png" style="background-color: none;" alt="DU&I">
+			<img src="/storage/blog/godotcon2023/DU_I.png" style="background-color: none;" alt="DU&I">
 		</a>
 	</div>
 </section>
