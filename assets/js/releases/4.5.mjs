@@ -5,9 +5,9 @@ import {
 	eases,
 	text,
 	stagger,
-} from "../modules/anime@4.1.2_esm.js";
+} from "../modules/anime_4.1.2_esm.js";
 import detectPlatform from "../modules/detect-browser.mjs";
-import "../modules/dashjs@5.0.3.esm.min.js";
+import "../modules/dashjs_5.0.3.esm.min.js";
 
 const { outCirc, inCirc } = eases;
 
