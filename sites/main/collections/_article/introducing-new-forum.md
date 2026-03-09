@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/introducing-new-forum.md

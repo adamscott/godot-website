@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/become-godot-contributor-hacktoberfest-2018.md

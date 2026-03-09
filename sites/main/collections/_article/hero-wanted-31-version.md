@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/hero-wanted-31-version.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/change-image.md

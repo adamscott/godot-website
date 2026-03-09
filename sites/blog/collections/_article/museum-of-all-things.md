@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/museum-of-all-things.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/beyond-100000-you-re-breathtaking.md

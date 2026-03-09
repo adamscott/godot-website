@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/code-of-conduct-godot-community.md

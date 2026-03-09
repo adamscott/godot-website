@@ -1,0 +1,1 @@
+../../../common/jekyll/_plugins/ensure_magic_type.rb

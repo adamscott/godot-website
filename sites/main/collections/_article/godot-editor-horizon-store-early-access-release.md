@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-editor-horizon-store-early-access-release.md

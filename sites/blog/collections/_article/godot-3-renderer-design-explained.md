@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-3-renderer-design-explained.md

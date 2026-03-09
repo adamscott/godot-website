@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/shedding-light-on-godot-development-process.md

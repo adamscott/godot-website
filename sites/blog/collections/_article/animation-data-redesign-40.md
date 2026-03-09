@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/animation-data-redesign-40.md

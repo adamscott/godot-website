@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-rmll-lsm-2018-strasbourg-july-7-12.md

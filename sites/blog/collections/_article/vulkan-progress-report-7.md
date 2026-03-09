@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/vulkan-progress-report-7.md

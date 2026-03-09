@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/submissions-open-godot-2019-showreel.md

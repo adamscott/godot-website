@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-2-1-rc1-out.md

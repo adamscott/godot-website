@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/online-godotcon-july-2021-call-participation.md

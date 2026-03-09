@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/results-godot-jam-june-2018.md

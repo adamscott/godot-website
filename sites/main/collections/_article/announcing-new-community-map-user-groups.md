@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/announcing-new-community-map-user-groups.md

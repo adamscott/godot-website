@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/about-godot4-vulkan-gles3-and-gles2.md

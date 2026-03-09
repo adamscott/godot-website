@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/movie-maker-mode-arrives-in-godot-4.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-40-will-get-new-modernized-lightmapper.md

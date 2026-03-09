@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/join-us-gdc-during-godot-meetup-2018.md

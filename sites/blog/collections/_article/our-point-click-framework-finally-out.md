@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/our-point-click-framework-finally-out.md

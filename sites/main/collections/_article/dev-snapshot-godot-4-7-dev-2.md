@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/dev-snapshot-godot-4-7-dev-2.md

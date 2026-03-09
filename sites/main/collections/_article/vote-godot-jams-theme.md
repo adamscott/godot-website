@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/vote-godot-jams-theme.md

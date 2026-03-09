@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/tiles-editor-progress-3.md

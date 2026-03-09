@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/release-management-4-0-and-beyond.md

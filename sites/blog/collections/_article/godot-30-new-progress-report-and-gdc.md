@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-30-new-progress-report-and-gdc.md

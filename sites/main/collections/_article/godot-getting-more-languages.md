@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-getting-more-languages.md

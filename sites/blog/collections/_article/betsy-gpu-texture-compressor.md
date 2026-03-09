@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/betsy-gpu-texture-compressor.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-wild-jam-october-2018-results.md

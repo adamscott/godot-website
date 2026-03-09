@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/schedule-godotcon-2020-brussels.md

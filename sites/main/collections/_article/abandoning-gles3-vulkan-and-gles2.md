@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/abandoning-gles3-vulkan-and-gles2.md

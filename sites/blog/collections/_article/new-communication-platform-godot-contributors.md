@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/new-communication-platform-godot-contributors.md

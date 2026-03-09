@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/fbx-importer-rewritten-for-godot-3-2-4.md

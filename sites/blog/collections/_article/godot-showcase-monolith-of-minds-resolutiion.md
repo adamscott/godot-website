@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-showcase-monolith-of-minds-resolutiion.md

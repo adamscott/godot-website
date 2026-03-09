@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/we-hired-gdquest-work-manual.md

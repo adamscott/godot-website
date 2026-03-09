@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-4-will-discontinue-visual-scripting.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/maintenance-release-godot-2-0-4.md

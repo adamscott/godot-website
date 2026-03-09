@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godots-graduation-godot-moves-to-a-new-foundation.md

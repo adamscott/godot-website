@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-rmll-2015-france.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/get-ready-fosdem-and-godotcon-2018.md

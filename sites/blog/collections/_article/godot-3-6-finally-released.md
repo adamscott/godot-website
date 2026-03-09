@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-3-6-finally-released.md

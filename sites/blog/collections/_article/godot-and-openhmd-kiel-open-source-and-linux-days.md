@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-and-openhmd-kiel-open-source-and-linux-days.md

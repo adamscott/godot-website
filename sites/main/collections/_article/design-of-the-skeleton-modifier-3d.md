@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/design-of-the-skeleton-modifier-3d.md

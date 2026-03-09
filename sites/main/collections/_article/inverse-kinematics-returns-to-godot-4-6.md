@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/inverse-kinematics-returns-to-godot-4-6.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-2-1-reaches-beta-ready-for-testing.md

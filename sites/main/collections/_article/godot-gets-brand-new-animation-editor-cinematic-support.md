@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-gets-brand-new-animation-editor-cinematic-support.md

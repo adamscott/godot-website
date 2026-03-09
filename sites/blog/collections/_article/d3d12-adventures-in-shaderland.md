@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/d3d12-adventures-in-shaderland.md

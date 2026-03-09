@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/animation-retargeting-in-godot-4-0.md

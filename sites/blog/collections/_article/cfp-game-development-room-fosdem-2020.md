@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/cfp-game-development-room-fosdem-2020.md

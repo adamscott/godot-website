@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/community-forum-back.md

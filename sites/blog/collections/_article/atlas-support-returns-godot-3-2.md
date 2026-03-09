@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/atlas-support-returns-godot-3-2.md

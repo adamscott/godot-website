@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-2020-year-in-review-video.md

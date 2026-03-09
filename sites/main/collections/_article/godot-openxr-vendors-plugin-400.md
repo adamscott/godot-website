@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-openxr-vendors-plugin-400.md

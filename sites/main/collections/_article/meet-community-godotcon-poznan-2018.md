@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/meet-community-godotcon-poznan-2018.md

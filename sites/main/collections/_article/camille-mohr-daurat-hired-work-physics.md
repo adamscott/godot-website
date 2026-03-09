@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/camille-mohr-daurat-hired-work-physics.md

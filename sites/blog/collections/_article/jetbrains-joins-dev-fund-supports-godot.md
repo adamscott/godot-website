@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/jetbrains-joins-dev-fund-supports-godot.md

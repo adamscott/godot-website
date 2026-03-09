@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/gles2-renderer-optimization-2d-batching.md

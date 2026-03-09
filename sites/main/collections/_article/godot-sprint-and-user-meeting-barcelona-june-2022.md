@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-sprint-and-user-meeting-barcelona-june-2022.md

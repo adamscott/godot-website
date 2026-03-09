@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/fixing-godot-games-published-google-play.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/preparing-gdc-2018.md

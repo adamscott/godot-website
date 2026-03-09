@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/funding-breakdown-and-hiring-process.md

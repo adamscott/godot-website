@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-40-gets-global-and-instance-shader-uniforms.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-gets-2d-skeletal-deform.md

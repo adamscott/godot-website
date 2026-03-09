@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/will-your-contribution-be-merged-heres-how-tell.md

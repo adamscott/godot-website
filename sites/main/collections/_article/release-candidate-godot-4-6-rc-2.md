@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/release-candidate-godot-4-6-rc-2.md

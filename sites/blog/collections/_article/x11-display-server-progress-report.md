@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/x11-display-server-progress-report.md

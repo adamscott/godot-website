@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/fill-blank-class-reference.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/meet-community-fosdem-and-godotcon-2019.md

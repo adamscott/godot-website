@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-4-3-a-shared-effort.md

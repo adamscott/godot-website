@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/open-arpg-and-jrpg-demos-gdquest.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/new-showcase-for-projects-made-with-godot.md

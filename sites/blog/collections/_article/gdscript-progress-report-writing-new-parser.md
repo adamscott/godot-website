@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/gdscript-progress-report-writing-new-parser.md

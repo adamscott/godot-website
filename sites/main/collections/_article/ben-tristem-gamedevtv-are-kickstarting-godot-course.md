@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/ben-tristem-gamedevtv-are-kickstarting-godot-course.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/future-patreon-and-donations.md

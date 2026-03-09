@@ -1,0 +1,1 @@
+../../../common/well-known/security.txt

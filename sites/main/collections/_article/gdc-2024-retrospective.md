@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/gdc-2024-retrospective.md

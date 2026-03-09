@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-foundation-update-2023.md

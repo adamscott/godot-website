@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/first-godot-3-docs-sprint-sept-9.md

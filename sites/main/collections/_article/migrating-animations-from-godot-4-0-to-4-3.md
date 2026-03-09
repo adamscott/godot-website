@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/migrating-animations-from-godot-4-0-to-4-3.md

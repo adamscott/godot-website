@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-3-capitole-du-libre-2017.md

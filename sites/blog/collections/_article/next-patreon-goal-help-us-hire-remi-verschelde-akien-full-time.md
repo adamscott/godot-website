@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/next-patreon-goal-help-us-hire-remi-verschelde-akien-full-time.md

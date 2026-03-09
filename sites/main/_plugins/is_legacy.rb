@@ -1,0 +1,1 @@
+../../../common/jekyll/_plugins/is_legacy.rb

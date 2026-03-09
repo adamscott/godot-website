@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godotcon-2018-venue-and-call-proposals.md

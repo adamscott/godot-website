@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/2022-retrospective.md

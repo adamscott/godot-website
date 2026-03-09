@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/only-two-buttons-dozens-games.md

@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-xr-community-nov-2024.md

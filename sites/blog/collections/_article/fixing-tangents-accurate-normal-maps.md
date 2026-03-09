@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/fixing-tangents-accurate-normal-maps.md

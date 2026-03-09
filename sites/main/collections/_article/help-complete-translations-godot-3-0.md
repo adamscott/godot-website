@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/help-complete-translations-godot-3-0.md

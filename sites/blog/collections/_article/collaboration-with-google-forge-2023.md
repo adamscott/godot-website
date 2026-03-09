@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/collaboration-with-google-forge-2023.md

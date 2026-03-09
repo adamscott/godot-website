@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/navigation-server-godot-4-0.md

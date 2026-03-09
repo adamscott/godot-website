@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/gamescom-2024.md

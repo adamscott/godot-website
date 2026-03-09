@@ -1,0 +1,1 @@
+../../../../common/jekyll/collections/_article/godot-google-summer-code-2019.md
