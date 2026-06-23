@@ -1,46 +1,54 @@
-(()=>{
+(() => {
+	function clamp(number, min, max) {
+		return Math.max(min, Math.min(number, max));
+	}
 
-    function clamp(number, min, max) {
-        return Math.max(min, Math.min(number, max));
-    }
+	const compareBlocks = document.querySelectorAll(".media-compare");
 
+	for (const compareBlock of compareBlocks) {
+		const slider = compareBlock.querySelector(".slider");
+		const beforeBlock = compareBlock.querySelector(".before");
 
-    let compareBlocks = document.querySelectorAll(".media-compare");
+		const onPointerEvent = (pEventName, pEvent) => {
+			const mousePressed = pEvent.buttons == 1;
+			if (!mousePressed) {
+				return;
+			}
 
-    compareBlocks.forEach((compareBlock) => {
-        let slider = compareBlock.querySelector(".slider");
-        let beforeBlock = compareBlock.querySelector(".before");
+			pEvent.stopPropagation();
+			pEvent.preventDefault();
 
-        let onMouseEvent = function(e){
-            let mousePressed = e.buttons == 1;
-            if (!mousePressed) return;
+			switch (pEventName) {
+				case "pointermove":
+					compareBlock.classList.add("pointer-moving");
+					break;
+				case "pointerup":
+					compareBlock.classList.remove("pointer-moving");
+					break;
+			}
 
-            e.stopPropagation();
-            e.preventDefault();
+			let percent =
+				clamp(pEvent.layerX / compareBlock.clientWidth, 0.0, 1.0) * 100.0;
 
-            let percent = clamp(e.layerX / compareBlock.clientWidth, 0.0, 1.0) * 100.0;
+			if (percent < 10) {
+				percent = 0;
+				compareBlock.classList.add("transition");
+			} else if (percent > 90) {
+				percent = 100;
+				compareBlock.classList.add("transition");
+			} else {
+				compareBlock.classList.remove("transition");
+			}
 
-            if(percent < 10) {
-                percent = 0;
-                compareBlock.classList.add("transition");
-            }else if(percent > 90) {
-                percent = 100;
-                compareBlock.classList.add("transition");
-            }else{
-                if(compareBlock.classList.contains("transition")){
-                    compareBlock.classList.remove("transition");
-                }
-            };
+			slider.style.left = `${percent}%`;
+			beforeBlock.style.clipPath = `inset(0 ${100.0 - percent}% 0 0)`;
+		};
 
-            slider.style.left = `${percent}%`;
-            beforeBlock.style.clipPath = `inset(0 ${100.0 - percent}% 0 0)`;
-        }
-
-        compareBlock.addEventListener("pointerdown", onMouseEvent);
-        compareBlock.addEventListener("pointermove", onMouseEvent);
-
-
-
-
-    });
+		for (const eventName of ["pointerdown", "pointerup", "pointermove"]) {
+			compareBlock.addEventListener(
+				eventName,
+				onPointerEvent.bind(null, eventName),
+			);
+		}
+	}
 })();
